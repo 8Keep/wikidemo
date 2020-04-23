@@ -2,10 +2,10 @@ module.exports = {
   title: 'jMonkeyEngine Documentation',
   tagline: '',
   url: 'https://8keep.github.io',
-  baseUrl: '/',
+  baseUrl: '/wikidemo/',
   favicon: 'img/favicon.ico',
   organizationName: '8keep',
-  projectName: '8keep.github.io',
+  projectName: 'wikidemo',
   themeConfig: {
     prism: {
       theme: require('prism-react-renderer/themes/github'),
