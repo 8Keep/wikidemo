@@ -22,7 +22,7 @@ module.exports = {
               type: 'category',
               label: 'Beginner Tutorials',
               items: [
-                'jme3/beginner/hello_simpleaplication',
+                'jme3/beginner/hello_simpleapplication',
                 'jme3/beginner/hello_node',
                 'jme3/beginner/hello_asset',
                 'jme3/beginner/hello_main_event_loop',
