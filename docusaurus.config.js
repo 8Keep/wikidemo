@@ -2,7 +2,7 @@ module.exports = {
   title: 'jMonkeyEngine Documentation',
   tagline: '',
   url: 'https://8keep.github.io',
-  baseUrl: '/wikidemo',
+  baseUrl: '/wikidemo/',
   favicon: 'img/favicon.ico',
   organizationName: '8keep',
   projectName: 'wikidemo',
