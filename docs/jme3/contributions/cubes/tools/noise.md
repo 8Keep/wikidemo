@@ -1,0 +1,48 @@
+Noises are arrays of random numbers, that "fit together in some way -
+They're often used to generate content, for example block worlds. After
+specifying a noise, the framework will generate the random numbers and
+place according blocks (the larger the number, the heigher the terrain
+at this point).
+
+::: {.important}
+Remember that large noises will take some time to calculate.
+:::
+
+Generate a noise
+================
+
+![noise\_example.jpg](http://destroflyer.mania-community.de/other/imagehost/cubes/noise_example.jpg)
+
+At the moment, the framework supports only one noise type (based on the
+[Diamond-square
+Algorithm](http://en.wikipedia.org/wiki/Diamond-square_algorithm)) - You
+can see a visualization of such a noise at the right.
+
+This is how you can use it:
+
+```java
+//Create the block terrain (4x1x4 chunks)
+BlockTerrainControl blockTerrain = new BlockTerrainControl(new Vector3Int(4, 1, 4));
+
+//Specify location, size, roughness and the block class
+//(The smaller the roughness, the flatter the generated terrain)
+blockTerrain.setBlocksFromNoise(new Vector3Int(0, 0, 0), new Vector3Int(64, 50, 64), 0.3f, CubesTestAssets.BLOCK_GRASS);
+
+//Add the block terrain to a node
+Node terrainNode = new Node();
+terrainNode.addControl(blockTerrain);
+rootNode.attachChild(terrainNode);
+```
+
+Some random results of the according noise:
+
+![test\_noise.png](http://destroflyer.mania-community.de/other/imagehost/cubes/test_noise.png)
+
+Further improvements
+====================
+
+-   There will be mutltiple noises available and even an interface to
+    define your own noises
+
+-   It will be possible to specify a loader, that selects a "suitable
+    block type dependant on the location
