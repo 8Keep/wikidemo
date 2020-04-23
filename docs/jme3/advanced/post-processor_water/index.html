@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Docusaurus v2.0.0-alpha.50">
+<script src="/js/dark_default.js"></script>
+
+<title data-react-helmet="true">post-processor_water | jMonkeyEngine Documentation</title>
+
+<meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="post-processor_water | jMonkeyEngine Documentation"><meta data-react-helmet="true" name="description" content="The awesome SeaMonkey WaterFilter is highly configurable. It can render"><meta data-react-helmet="true" property="og:description" content="The awesome SeaMonkey WaterFilter is highly configurable. It can render"><meta data-react-helmet="true" property="og:url" content="https://8keep.github.io/wikidemo/docs/jme3/advanced/post-processor_water">
+
+<link data-react-helmet="true" rel="shortcut icon" href="/wikidemo/img/favicon.ico">
+
+
+<link rel="stylesheet" href="/wikidemo/styles.7d008dc0.css">
+
+
+<link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
+
+<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+
+<link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
+
+<link rel="preload" href="/wikidemo/1.e501629b.js" as="script">
+
+<link rel="preload" href="/wikidemo/2.c824d386.js" as="script">
+
+<link rel="preload" href="/wikidemo/302.1d1a2997.js" as="script">
+
+<link rel="preload" href="/wikidemo/394d525a.30c299b8.js" as="script">
+
+<link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
+
+<link rel="preload" href="/wikidemo/8d6cc108.2b9ea1fb.js" as="script">
+
+</head>
+<body>
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=window.matchMedia("(prefers-color-scheme: dark)"),n=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();null!==n?t(n):e.matches&&t("dark")}()</script>
+<div id="__docusaurus">
+<nav class="navbar navbar--light navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><div aria-label="Navigation bar toggle" class="navbar__toggle" role="button" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></div><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></div><div class="navbar__items navbar__items--right"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="navbar__item navbar__link">GitHub</a><div class="react-toggle react-toggle--disabled displayOnlyInLargeViewport_1gtM"><div class="react-toggle-track"><div class="react-toggle-track-check"><span class="toggle_keGJ moon_1gwN"></span></div><div class="react-toggle-track-x"><span class="toggle_keGJ sun_3CPA"></span></div></div><div class="react-toggle-thumb"></div><input type="checkbox" disabled="" aria-label="Dark mode toggle" class="react-toggle-screenreader-only"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div><div class="navbar-sidebar"><div class="navbar-sidebar__brand"><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a></div><div class="navbar-sidebar__items"><div class="menu"><ul class="menu__list"><li class="menu__list-item"><a aria-current="page" class="menu__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></li><li class="menu__list-item"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="menu__link">GitHub</a></li></ul></div></div></div></nav><div class="main-wrapper"><div class="docPage_1kjD"><main class="docMainContainer_FFX1"><div class="padding-vert--lg"><div class="container"><div class="row"><div class="col docItemCol_2GOA"><div class="docItemContainer_2cwg"><article><header><h1 class="docTitle_1vWb">post-processor_water</h1></header><div class="markdown"><p>The awesome SeaMonkey WaterFilter is highly configurable. It can render
+any type of water and also simulates the underwater part of the effect,
+including light effects called caustics. The effect is based on
+<a href="https://www.gamedev.net/articles/programming/graphics/rendering-water-as-a-post-process-effect-r2642/">Wojciech Toman&#x27;s Rendering Water as a Post-process
+Effect</a>
+published on gamedev.net. Here&#x27;s a video:</p><p><img src="/images/jme3/advanced/water-post.png" alt="water-post.png"></p><p>::: {.note}
+The SeaMonkey WaterFilter is ideal for oceans and lakes, and especially
+for under-water scenes. If you only need a small simple water surface,
+such as a water trough or a shallow fountain, the
+<a href="/wikidemo/docs/jme3/advanced/water">SimpleWaterProcessor</a> may already be all
+you need.
+:::</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="the-theory"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#the-theory" title="Direct link to heading">#</a>The Theory</h1><p>The effect is part of a deferred rendering process, taking advantage of
+the pre-computed position buffer and back buffer (a texture representing
+the screen&#x27;s pixels position in view space, and a texture of the
+rendered scene).</p><p>After some calculation, this allows to reconstruct the position in world
+space for each pixel on the screen. &quot;If a pixel is under a given water
+height, let&#x27;s render it as a blue pixel! Blue pixel? Not exactly, we
+want waves, we want ripples, we want foam, we want reflection and
+refraction.</p><p>The GameDev.net article describes how those effects are achieved, but
+the main idea is to generate waves from a height map, create ripples
+from a normal map, blend in the foam texture when the water depth is
+below a certain height, compute the refraction color with a clever color
+extinction algorithm, and then, display the reflection and specular
+effect by computing a Fresnel term (like in the simple water effect). In
+addition, this effect allows to blend the water shore with the ground to
+avoid the hard edges of classic water effects based on grids or quads.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="how-did-we-implement-it-in-jme3"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#how-did-we-implement-it-in-jme3" title="Direct link to heading">#</a>How Did We Implement it in jME3?</h1><p>jME3 default behavior is to use a forward rendering process, so there is
+no position buffer rendered that we can take advantage of. But while
+rendering the main scene to a frame buffer in the FilterPostPorcessor,
+we can write the hardware depth buffer to a texture, with nearly no
+additional cost.</p><p>There are several ways of reconstructing the world space position of a
+pixel from the depth buffer. The computational cost is higher than just
+fetching the position from a position buffer, but the bandwidth and the
+memory required is a lot lower.</p><p>Now we have the rendered scene in a texture, and we can reconstruct the
+position in world space of each pixel. We&#x27;re good to go!</p><p>-- Nehon</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="sample-code"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#sample-code" title="Direct link to heading">#</a>Sample Code</h1><p>These are test cases in the jME3 repository:</p><ul><li><p><a href="https://github.com/jMonkeyEngine/jmonkeyengine/tree/master/jme3-examples/src/main/java/jme3test/water/TestPostWater.java">TestPostWater.java</a>
+(ocean island)</p></li><li><p><a href="https://github.com/jMonkeyEngine/jmonkeyengine/tree/master/jme3-examples/src/main/java/jme3test/water/TestPostWaterLake.java">TestPostWaterLake.java</a>
+(calm and muddy water pond)</p></li><li><p><a href="https://github.com/jMonkeyEngine/jmonkeyengine/tree/master/jme3-examples/src/main/java/jme3test/water/TestMultiPostWater.java">TestMultiPostWater.java</a>
+(several ponds of different sizes at different heights etc)</p></li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="using-the-water-filter"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#using-the-water-filter" title="Direct link to heading">#</a>Using the Water Filter</h2><p>In the <code>simpleInitApp()</code> method, you attach your scene to the rootNode,
+typically a terrain with a sky. Remember to add a directional light,
+since the water relies on the light direction vector. The WaterFilter
+constructor expects a node with the scene attached that should be
+reflected in the water, and vector information from the light source&#x27;s
+direction.</p><p>This is how you use the water filter post-processor code in your code:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">private</span><span class="token plain"> </span><span class="token class-name">FilterPostProcessor</span><span class="token plain"> fpp</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">private</span><span class="token plain"> </span><span class="token class-name">WaterFilter</span><span class="token plain"> water</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">private</span><span class="token plain"> </span><span class="token class-name">Vector3f</span><span class="token plain"> lightDir </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">new</span><span class="token plain"> </span><span class="token class-name">Vector3f</span><span class="token punctuation" style="color:#393A34">(</span><span class="token operator" style="color:#393A34">-</span><span class="token number" style="color:#36acaa">4.9f</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">-</span><span class="token number" style="color:#36acaa">1.3f</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">5.9f</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> </span><span class="token comment" style="color:#999988;font-style:italic">// same as light source</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">private</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">float</span><span class="token plain"> initialWaterHeight </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0.8f</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> </span><span class="token comment" style="color:#999988;font-style:italic">// choose a value for your scene</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
+</span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">public</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">void</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">simpleInitApp</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  fpp </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">new</span><span class="token plain"> </span><span class="token class-name">FilterPostProcessor</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">assetManager</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  water </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">new</span><span class="token plain"> </span><span class="token class-name">WaterFilter</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">rootNode</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> lightDir</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  water</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">setWaterHeight</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">initialWaterHeight</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  fpp</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">addFilter</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">water</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  viewPort</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">addProcessor</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">fpp</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span></div></div></div></div></div><p>Usually you make the water reflect everything attached to the rootNode.
+But you can also give a custom node (a subnode of the rootNode) to the
+WaterFilter constructor that has only a subset of scene nodes attached.
+This would be a relevant optimization if you have lots of nodes that are
+far away from the water, or covered, and will never be reflected.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="optional-waves"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#optional-waves" title="Direct link to heading">#</a>Optional: Waves</h2><p>If you want waves, set the water height in the update loop. We reuse the
+initialWaterHeight variable, and repeatedly reset the waterHeight value
+according to time. This causes the waves.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">private</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">float</span><span class="token plain"> time </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0.0f</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">private</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">float</span><span class="token plain"> waterHeight </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0.0f</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
+</span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token annotation punctuation" style="color:#393A34">@Override</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">public</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">void</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">simpleUpdate</span><span class="token punctuation" style="color:#393A34">(</span><span class="token keyword" style="color:#00009f">float</span><span class="token plain"> tpf</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token keyword" style="color:#00009f">super</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">simpleUpdate</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">tpf</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  time </span><span class="token operator" style="color:#393A34">+=</span><span class="token plain"> tpf</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  waterHeight </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token keyword" style="color:#00009f">float</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token class-name">Math</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">cos</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">time </span><span class="token operator" style="color:#393A34">*</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0.6f</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">%</span><span class="token plain"> </span><span class="token class-name">FastMath</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">TWO_PI</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">*</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">1.5f</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  water</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">setWaterHeight</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">initialWaterHeight </span><span class="token operator" style="color:#393A34">+</span><span class="token plain"> waterHeight</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span></div></div></div></div></div><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="optional-water-wave-and-color-effects"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#optional-water-wave-and-color-effects" title="Direct link to heading">#</a>Optional: Water Wave and Color Effects</h2><p><img src="/images/jme3/advanced/water-post-muddy.png" alt="water-post-muddy.png"></p><p>All these effects are optional. Every setter also has a getter.</p><p>+----------------------+----------------------+-----------------------+
+| Water method example | Effects: Waves       | Default               |
++======================+======================+=======================+
+| water                | Use this waterheight | 0.0f                  |
+| .setWaterHeight(-6); | method for causing   |                       |
+|                      | waves.               |                       |
++----------------------+----------------------+-----------------------+
+| water.se             | How high the highest | 1.0f                  |
+| tMaxAmplitude(0.3f); | waves are.           |                       |
++----------------------+----------------------+-----------------------+
+| water.s              | Sets the scale       | 0.005f                |
+| etWaveScale(0.008f); | factor of the waves  |                       |
+|                      | height map. The      |                       |
+|                      | smaller the value,   |                       |
+|                      | the bigger the       |                       |
+|                      | waves!               |                       |
++----------------------+----------------------+-----------------------+
+| water.               | Sets the wind        | Vector2f(0.0f, -1.0f) |
+| setWindDirection(new | direction, which is  |                       |
+| Vector2f(0,1))       | the direction where  |                       |
+|                      | the waves move       |                       |
++----------------------+----------------------+-----------------------+
+| w                    | How fast the waves   | 1.0f                  |
+| ater.setSpeed(0.7f); | move. Set it to 0.0f |                       |
+|                      | for still water.     |                       |
++----------------------+----------------------+-----------------------+
+| wat                  | This height map      | &quot;C                    |
+| er.setHeightTexture( | describes the shape  | ommon/MatDefs/Water/T |
+| (Texture2D)\         | of the waves         | extures/heightmap.jpg |
+| manag                |                      |                       |
+| er.loadTexture(&quot;Text |                      |                       |
+| ures/waveheight.png) |                      |                       |
+| )                    |                      |                       |
++----------------------+----------------------+-----------------------+
+| wat                  | This normal map      | &quot;Commo                |
+| er.setNormalTexture( | describes the shape  | n/MatDefs/Water/Textu |
+| (Texture2D)\         | of the waves         | res/gradient_map.jpg |
+| manage               |                      |                       |
+| r.loadTexture(&quot;Textu |                      |                       |
+| res/wavenormals.png) |                      |                       |
+| )                    |                      |                       |
++----------------------+----------------------+-----------------------+
+| water.s              | Switches the ripples | true                  |
+| etUseRipples(false); | effect on or off.    |                       |
++----------------------+----------------------+-----------------------+
+| water.               | Sets the normal      | 1.0f                  |
+| setNormalScale(0.5f) | scaling factors to   |                       |
+|                      | apply to the normal  |                       |
+|                      | map. The higher the  |                       |
+|                      | value, the more      |                       |
+|                      | small ripples will   |                       |
+|                      | be visible on the    |                       |
+|                      | waves.               |                       |
++----------------------+----------------------+-----------------------+</p><p>+----------------------+----------------------+-----------------------+
+| Water method example | Effects: Color       | Default               |
++======================+======================+=======================+
+| water.s              | Usually you set this | Value given to        |
+| etLightDirection(new | to the same as the   | WaterFilter()         |
+| Vector3f(-0          | light source&#x27;s       | constructor.          |
+| .37f,-0.50f,-0.78f)) | direction. Use this  |                       |
+|                      | to set the light     |                       |
+|                      | direction if the sun |                       |
+|                      | is moving.           |                       |
++----------------------+----------------------+-----------------------+
+| water.setLightCo     | Usually you set this | RGBA.White            |
+| lor(ColorRGBA.White) | to the same as the   |                       |
+|                      | light source&#x27;s       |                       |
+|                      | color.               |                       |
++----------------------+----------------------+-----------------------+
+| water.se             | Sets the main water  | greenish blue\        |
+| tWaterColor(ColorRGB | color.               | ColorRGBA             |
+| A.Brown.mult(2.0f)); |                      | (0.0f,0.5f,0.5f,1.0f) |
++----------------------+----------------------+-----------------------+
+| w                    | Sets the deep water  | dark blue\            |
+| ater.setDeepWaterCol | color.               | ColorRGBA(0.0f,       |
+| or(ColorRGBA.Brown); |                      | 0.0f,0.2f,1.0f)       |
++----------------------+----------------------+-----------------------+
+| water.setWate        | Sets how fast colors | 0.1f                  |
+| rTransparency(0.2f); | fade out. use this   |                       |
+|                      | to control how clear |                       |
+|                      | (e.g. 0.05f) or      |                       |
+|                      | muddy (0.2f) water   |                       |
+|                      | is.                  |                       |
++----------------------+----------------------+-----------------------+
+| water.se             | Sets At what depth   | Vector3f(5f,20f,30f)  |
+| tColorExtinction(new | the refraction color |                       |
+| Vec                  | extincts. The three  |                       |
+| tor3f(10f,20f,30f)); | values are RGB (red, |                       |
+|                      | green, blue) in this |                       |
+|                      | order. Play with     |                       |
+|                      | these parameters to  |                       |
+|                      | &quot;muddy the water.    |                       |
++----------------------+----------------------+-----------------------+</p><p>+----------------------+----------------------+-----------------------+
+| Water method example | Effects: Shore       | Default               |
++======================+======================+=======================+
+| water.setCen         | Limit the water      | unused                |
+| ter(Vector3f.ZERO);\ | filter to a          |                       |
+| w                    | semisphere with the  |                       |
+| ater.setRadius(260); | given center and     |                       |
+|                      | radius. Use this for |                       |
+|                      | lakes and smaller    |                       |
+|                      | bodies of water.     |                       |
+|                      | Skip this for        |                       |
+|                      | oceans.              |                       |
++----------------------+----------------------+-----------------------+
+| water.set            | Sets how soft the    | 0.1f                  |
+| ShoreHardness(1.0f); | transition between   |                       |
+|                      | shore and water      |                       |
+|                      | should be. High      |                       |
+|                      | values mean a harder |                       |
+|                      | transition between   |                       |
+|                      | shore and water.     |                       |
++----------------------+----------------------+-----------------------+
+| water.setUs          | Renders shoreline    | true                  |
+| eHQShoreline(false); | with better quality  |                       |
+|                      | ?                    |                       |
++----------------------+----------------------+-----------------------+</p><p>+----------------------+----------------------+-----------------------+
+| Water method example | Effects: Foam        | Default               |
++======================+======================+=======================+
+| wate                 | Switches the white   | true                  |
+| r.setUseFoam(false); | foam on or off       |                       |
++----------------------+----------------------+-----------------------+
+| water.s              | Sets how much the    | 1.0f                  |
+| etFoamHardness(0.5f) | foam will blend with |                       |
+|                      | the shore to avoid a |                       |
+|                      | hard edged water     |                       |
+|                      | plane.               |                       |
++----------------------+----------------------+-----------------------+
+| water.               | The three values     | Vecto                 |
+| setFoamExistence(new | describe what depth  | r3f(0.45f,4.35f,1.0f) |
+| Vec                  | foam starts to fade  |                       |
+| tor3f(0.5f,5f,1.0f)) | out, at what depth   |                       |
+|                      | it is completely     |                       |
+|                      | invisible, at what   |                       |
+|                      | height foam for      |                       |
+|                      | waves appears (+     |                       |
+|                      | waterHeight).        |                       |
++----------------------+----------------------+-----------------------+
+| w                    | This foam texture    | &quot;Common/MatDefs/Wa    |
+| ater.setFoamTexture( | will be used with    | ter/Textures/foam.jpg |
+| (Texture2D)\         | WrapMode.Repeat      |                       |
+| manager.loadTexture  |                      |                       |
+| (&quot;Textures/foam.png) |                      |                       |
+| )                    |                      |                       |
++----------------------+----------------------+-----------------------+</p><p>+----------------------+----------------------+-----------------------+
+| Water method example | Effects: Light       | Default               |
++======================+======================+=======================+
+| wa                   | Sets how big the sun | 3.0f                  |
+| ter.setSunScale(1f); | should appear in the |                       |
+|                      | light&#x27;s specular     |                       |
+|                      | effect on the water. |                       |
++----------------------+----------------------+-----------------------+
+| water.s              | Switches specular    | true                  |
+| etUseSpecular(false) | effect on or off     |                       |
++----------------------+----------------------+-----------------------+
+| wate                 | Sets the shininess   | 0.7f                  |
+| r.setShininess(0.8f) | of the water         |                       |
+|                      | reflections          |                       |
++----------------------+----------------------+-----------------------+
+| water.se             | Switches the         | true                  |
+| tUseRefraction(true) | refraction effect on |                       |
+|                      | or off.              |                       |
++----------------------+----------------------+-----------------------+
+| water.setRefra       | The lower the value, | 0.3f                  |
+| ctionConstant(0.2f); | the less reflection  |                       |
+|                      | can be seen on       |                       |
+|                      | water. This is a     |                       |
+|                      | constant related to  |                       |
+|                      | the index of         |                       |
+|                      | refraction (IOR)     |                       |
+|                      | used to compute the  |                       |
+|                      | fresnel term.        |                       |
++----------------------+----------------------+-----------------------+
+| water.setRefr        | This value modifies  | 0.0f                  |
+| actionStrength(-0.1) | the current Fresnel  |                       |
+|                      | term. If you want to |                       |
+|                      | weaken reflections   |                       |
+|                      | use bigger value. If |                       |
+|                      | you want to empasize |                       |
+|                      | them, use a value    |                       |
+|                      | smaller than 0.      |                       |
++----------------------+----------------------+-----------------------+
+| water.setRe          | Sets the size of the | 512                   |
+| flectionMapSize(256) | reflection map. The  |                       |
+|                      | higher, the better   |                       |
+|                      | the quality, but the |                       |
+|                      | slower the effect.   |                       |
++----------------------+----------------------+-----------------------+</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="sound-effects"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#sound-effects" title="Direct link to heading">#</a>Sound Effects</h2><p>You should also add audio nodes with water sounds to complete the
+effect.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token class-name">AudioNode</span><span class="token plain"> waves </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">new</span><span class="token plain"> </span><span class="token class-name">AudioNode</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">assetManager</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;Sounds/Environment/Ocean Waves.ogg&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">false</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">waves</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">setLooping</span><span class="token punctuation" style="color:#393A34">(</span><span class="token boolean" style="color:#36acaa">true</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">audioRenderer</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">playSource</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">waves</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><p>See also: <a href="/wikidemo/docs/jme3/advanced/audio">audio</a>.</p><p>See also:</p><ul><li><p><a href="https://hub.jmonkeyengine.org/t/monkeys-at-the-beach/15000">JME3&#x27;s Water Post-Process
+Effect</a>
+by Nehon</p></li><li><p><a href="/wikidemo/docs/jme3/advanced/water">Simple water</a></p></li></ul></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/8keep/wikidemo/edit/master/docs/jme3/advanced/post-processor_water.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#using-the-water-filter" class="contents__link">Using the Water Filter</a></li><li><a href="#optional-waves" class="contents__link">Optional: Waves</a></li><li><a href="#optional-water-wave-and-color-effects" class="contents__link">Optional: Water Wave and Color Effects</a></li><li><a href="#sound-effects" class="contents__link">Sound Effects</a></li></ul></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div>Copyright © 2020 jMonkeyEngine.</div></div></div></footer>
+</div>
+
+<script src="/wikidemo/styles.08ff7081.js"></script>
+
+<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+
+<script src="/wikidemo/main.1b6aa70f.js"></script>
+
+<script src="/wikidemo/1.e501629b.js"></script>
+
+<script src="/wikidemo/2.c824d386.js"></script>
+
+<script src="/wikidemo/302.1d1a2997.js"></script>
+
+<script src="/wikidemo/394d525a.30c299b8.js"></script>
+
+<script src="/wikidemo/17896441.d065d5f5.js"></script>
+
+<script src="/wikidemo/8d6cc108.2b9ea1fb.js"></script>
+
+
+</body>
+</html>

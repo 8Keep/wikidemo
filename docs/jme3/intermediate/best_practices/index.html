@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Docusaurus v2.0.0-alpha.50">
+<script src="/js/dark_default.js"></script>
+
+<title data-react-helmet="true">best_practices | jMonkeyEngine Documentation</title>
+
+<meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="best_practices | jMonkeyEngine Documentation"><meta data-react-helmet="true" name="description" content="Every milestone of a game development project is made up of phases:"><meta data-react-helmet="true" property="og:description" content="Every milestone of a game development project is made up of phases:"><meta data-react-helmet="true" property="og:url" content="https://8keep.github.io/wikidemo/docs/jme3/intermediate/best_practices">
+
+<link data-react-helmet="true" rel="shortcut icon" href="/wikidemo/img/favicon.ico">
+
+
+<link rel="stylesheet" href="/wikidemo/styles.7d008dc0.css">
+
+
+<link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
+
+<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+
+<link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
+
+<link rel="preload" href="/wikidemo/1.e501629b.js" as="script">
+
+<link rel="preload" href="/wikidemo/2.c824d386.js" as="script">
+
+<link rel="preload" href="/wikidemo/302.1d1a2997.js" as="script">
+
+<link rel="preload" href="/wikidemo/394d525a.30c299b8.js" as="script">
+
+<link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
+
+<link rel="preload" href="/wikidemo/fced939a.299bdabc.js" as="script">
+
+</head>
+<body>
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=window.matchMedia("(prefers-color-scheme: dark)"),n=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();null!==n?t(n):e.matches&&t("dark")}()</script>
+<div id="__docusaurus">
+<nav class="navbar navbar--light navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><div aria-label="Navigation bar toggle" class="navbar__toggle" role="button" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></div><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></div><div class="navbar__items navbar__items--right"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="navbar__item navbar__link">GitHub</a><div class="react-toggle react-toggle--disabled displayOnlyInLargeViewport_1gtM"><div class="react-toggle-track"><div class="react-toggle-track-check"><span class="toggle_keGJ moon_1gwN"></span></div><div class="react-toggle-track-x"><span class="toggle_keGJ sun_3CPA"></span></div></div><div class="react-toggle-thumb"></div><input type="checkbox" disabled="" aria-label="Dark mode toggle" class="react-toggle-screenreader-only"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div><div class="navbar-sidebar"><div class="navbar-sidebar__brand"><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a></div><div class="navbar-sidebar__items"><div class="menu"><ul class="menu__list"><li class="menu__list-item"><a aria-current="page" class="menu__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></li><li class="menu__list-item"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="menu__link">GitHub</a></li></ul></div></div></div></nav><div class="main-wrapper"><div class="docPage_1kjD"><div class="docSidebarContainer_1cYp"><div class="sidebar_1kLs"><div class="menu menu--responsive menu_w2sC"><button aria-label="Open Menu" aria-haspopup="true" class="button button--secondary button--sm menu__button" type="button"><svg aria-label="Menu" class="sidebarMenuIcon_2vk4" xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 32 32" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/documentation">Documentation</a></li><li class="menu__list-item"><a class="menu__link menu__link--sublist menu__link--active" href="#!">jMonkeyEngine</a><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/bsd_license">License</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/githubtips">Github Tips</a></li><li class="menu__list-item"><a class="menu__link menu__link--sublist menu__link--active" href="#!">jME3</a><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3">jME3</a></li><li class="menu__list-item menu__list-item--collapsed"><a class="menu__link menu__link--sublist" href="#!">Beginner Tutorials</a><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_simpleapplication">hello_simpleapplication</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_node">hello_node</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_asset">hello_asset</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_main_event_loop">hello_main_event_loop</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_input_system">hello_input_system</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_material">hello_material</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_animation">hello_animation</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_picking">hello_picking</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_collision">hello_collision</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_terrain">hello_terrain</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_audio">hello_audio</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_effects">hello_effects</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_physics">hello_physics</a></li></ul></li><li class="menu__list-item"><a class="menu__link menu__link--sublist menu__link--active" href="#!">Intermediate Tutorials</a><ul class="menu__list"><li class="menu__list-item"><a class="menu__link menu__link--sublist menu__link--active" href="#!">Concepts</a><ul class="menu__list"><li class="menu__list-item"><a aria-current="page" class="menu__link menu__link--active" href="/wikidemo/docs/jme3/intermediate/best_practices">best_practices</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/intermediate/simpleapplication">simpleapplication</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/intermediate/appsettings">appsettings</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/features">features</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/intermediate/optimization">optimization</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/faq">faq</a></li></ul></li><li class="menu__list-item menu__list-item--collapsed"><a class="menu__link menu__link--sublist" href="#!">Maths Concepts</a><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/math_for_dummies">math_for_dummies</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/intermediate/math">math</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/math">math</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/rotate">rotate</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/math_video_tutorials">math_video_tutorials</a></li></ul></li><li class="menu__list-item menu__list-item--collapsed"><a class="menu__link menu__link--sublist" href="#!">3D Graphics Concepts</a><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/intermediate/multi-media_asset_pipeline">multi-media_asset_pipeline</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/scenegraph_for_dummies">scenegraph_for_dummies</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hellovector">hellovector</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/terminology">terminology</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/intermediate/how_to_use_materials">how_to_use_materials</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/intermediate/transparency_sorting">transparency_sorting</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/external/blender">blender</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/external/3dsmax">3dsmax</a></li></ul></li></ul></li></ul></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/logo">Logo</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/multiplayer_template">Multiplayer Template</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/report_bugs">Report Bugs</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/sdk">SDK</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/spidermonkey">SpiderMonkey</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/tasks">Tasks</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/team">Team</a></li></ul></li><li class="menu__list-item menu__list-item--collapsed"><a class="menu__link menu__link--sublist" href="#!">Wiki</a><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/docusaurus/styleguide">Style Guide</a></li></ul></li></ul></div></div></div><main class="docMainContainer_FFX1"><div class="padding-vert--lg"><div class="container"><div class="row"><div class="col docItemCol_2GOA"><div class="docItemContainer_2cwg"><article><header><h1 class="docTitle_1vWb">best_practices</h1></header><div class="markdown"><p>Every milestone of a game development project is made up of phases:
+Planning, development, testing, and release. Every milestone involves
+updates to multi-media assets and to code.</p><p>This \&quot;best practices\&quot; page is a collection of recommendations and
+expert tips. Feel free to add your own!</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="requirements-and-planning"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#requirements-and-planning" title="Direct link to heading">#</a>Requirements and Planning</h1><p>If you are a beginner, you should first <a href="http://www.hobbygamedev.com/digests/?page=free">read
+some</a> <a href="http://gamasutra.com/">articles
+about</a> <a href="http://www.google.com/search?q=3d+game+development">game
+development</a>. We
+cannot cover all general tips here.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="requirements-gathering"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#requirements-gathering" title="Direct link to heading">#</a>Requirements Gathering</h2><p>As a quick overview, answer yourself the following questions:</p><ul><li><p>Motivation</p><ul><li><p>Sum up your game idea in one catchy sentence. If you can&#x27;t, it&#x27;s
+too complicated.\
+Exmple: \&quot;Craft by day, fight by night!\&quot;</p></li><li><p>Who&#x27;s the target group? Are you making it for your friends or
+are you trying to attract the masses?</p></li></ul></li><li><p>Game type</p><ul><li><p>Point of view (first- or third-person camera)? What characters
+does the player control? (if applicable)</p></li><li><p>Time- or turn-based?</p></li><li><p>Genre (drama, horror, adventure, mystery, comedy, educational,
+documentary)?</p></li><li><p>Setting and background story? (historic, fantasy, anime,
+futuristic, utopia/dystopia, pirate, zombie, vampire...)?</p></li></ul></li><li><p>Gameplay</p><ul><li><p>What is the start state, what is the end state? (if applicable)</p></li><li><p>What resources does the player manage? How are resources gained,
+transformed, spent?\
+Exmple: points, health, speed, gold, xp, mana.</p></li><li><p>How does the player interact? Define rules, challenges, game
+mechanics.</p></li><li><p>What state is considered winning, and what losing, or is it an
+open world?</p></li></ul></li><li><p>Multi-media assets</p><ul><li>Which media will you need? How will you get this content?\
+Exmple: models, terrains; materials, textures; noises, music,
+voices; video, cutscenes; spoken/written dialog; level maps,
+quests, story; AI scripts.</li></ul></li><li><p>Interface</p><ul><li><p>Can you achieve a high degree of input control? (Even minor
+navigation and interaction glitches make the game unsolvable.)</p></li><li><p>Decide how to reflect current status, and changes in game
+states. E.g. health/damage in HUD.</p></li><li><p>Decide how to reward good moves and discourage bad ones.</p></li></ul></li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="planning-development-milestones"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#planning-development-milestones" title="Direct link to heading">#</a>Planning Development Milestones</h2><p>Use an <a href="http://en.wikipedia.org/wiki/Issue_tracking_system">issue and bug
+tracker</a> to outline
+what features you want and what components are needed.</p><ol><li><p>Pre-Alpha Development</p><ul><li><p>Artwork: Test asset loading and saving with mock-ups and stock
+art.</p></li><li><p>Lay out the overall application flow, i.e. switching between
+intro / options / game screen, etc.</p></li><li><p>Get one typical level working before you can announce the Alpha
+Release.\
+Exmple: if the game is a \&quot;Jump&#x27;n&#x27;Run\&quot;, jumping and running
+must work.</p></li></ul></li><li><p>Alpha Release</p></li><li><p>Pre-Beta Development</p><ul><li><p>Artwork: Replace all mock-ups with first drafts of real media
+and level maps.</p></li><li><p>Have your team members review and alpha test it on various
+systems, track bugs, debug, optimize.</p></li><li><p>Declare <a href="http://en.wikipedia.org/wiki/Feature_freeze">Feature
+Freeze</a> before you
+announce the Beta Release to prevent a bottomless pit of new
+bugs.</p></li></ul></li><li><p>Beta Release</p></li><li><p>Post-Beta Development</p><ul><li><p>Artwork: Fill in the final media and level maps.</p></li><li><p>Have external people review and beta test it, make it easy to
+report bugs.</p></li><li><p>Fix high-priority bugs, even out the kinks in code and gameplay,
+don&#x27;t add new features for now!</p></li></ul></li><li><p>Gamma Release, Delta Release... = Release Candidates</p><ul><li><p>Think you&#x27;re done? Make test runs incl. packaging and
+distribution. (Order form? download?)</p></li><li><p>Test the heck out of it. Last chance to find and fix a horrible
+bug.</p></li></ul></li><li><p>Omega = Final Release</p></li></ol><p>How you name or number these stages is fully up to your team.
+Development teams use numbered milestones (m1, m2, m3), Greek letters
+(ex. alpha, beta, gamma, delta), <a href="http://en.wikipedia.org/wiki/Software_versioning">\&quot;major.minor.patch-build\&quot;
+version</a> numbering
+(ex. \&quot;2.7.23-1328\&quot;), or combinations thereof.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="use-file-version-control"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#use-file-version-control" title="Direct link to heading">#</a>Use File Version Control</h2><p>Whether you work in a team or alone, keeping a version controlled
+repository of your code will help you roll-back buggy changes, or
+recover old code that someone deleted and that is now needed again.</p><ul><li><p>Treat commit messages as messages to your future self. \&quot;Made some
+changes\&quot; is <em>not</em> a commit message.</p></li><li><p>The jMonkeyEngine SDK supports Subversion, Mercurial, and Git.\
+If you don&#x27;t know which to choose, Subversion is a good choice for
+starters.</p></li><li><p>Set up your own local server, or get free remote hosting space from
+various open-source dev portals like
+<a href="http://sourceforge.net/">SourceForge</a>,
+<a href="https://github.com/">GitHub</a>, <a href="https://bitbucket.org/">BitBucket</a>
+(supports private projects), <a href="https://about.gitlab.com/">GitLab</a>
+(free private projects)...</p></li></ul><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="multi-media-asset-pipeline"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#multi-media-asset-pipeline" title="Direct link to heading">#</a>Multi-Media Asset Pipeline</h1><p>+-----------------------------------+-----------------------------------+
+| DO                                | DON&#x27;T                             |
++===================================+===================================+
+| Save original models+textures     | Don&#x27;t reference textures or       |
+| into <code>assets/Textures</code>.           | models outside your JME project.  |
++-----------------------------------+-----------------------------------+
+| Save sounds into <code>assets/Sounds.</code> | Don&#x27;t reference audio files       |
+|                                   | outside your JME project.         |
++-----------------------------------+-----------------------------------+
+| Create simple, low-polygon        | Don&#x27;t create high-polygon models, |
+| models.                           | they render too slow to be useful |
+|                                   | in games.                         |
++-----------------------------------+-----------------------------------+
+| Only use Diffuse Map, Normal Map, | Don&#x27;t use unsupported material    |
+| Glow Map, Specular Map.           | properties that are not listed in |
+|                                   | the [Materials                    |
+|                                   | Overview](../../jme3/             |
+|                                   | advanced/materials_overview). |
++-----------------------------------+-----------------------------------+
+| Use UV texture / texture atlases  | Don&#x27;t create models based on      |
+| / baking for each texture map.    | multiple separate textures, it    |
+|                                   | will break the model into         |
+|                                   | separate meshes.                  |
++-----------------------------------+-----------------------------------+
+| Convert Models to j3o format.     | Don&#x27;t reference GLTF/Ogre/OBJ     |
+| Move j3o files into               | files in your load() code,        |
+| <code>assets/Models</code>.                  | because these unoptimized files   |
+|                                   | are not packaged into the JAR.    |
++-----------------------------------+-----------------------------------+</p><p>Learn details about the <a href="/wikidemo/docs/jme3/intermediate/multi-media_asset_pipeline">Multi-Media Asset
+Pipeline</a> here.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="development-phase"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#development-phase" title="Direct link to heading">#</a>Development Phase</h1><p>::: {.note}
+Many game developers dream of creating their very own MMORPG with
+full-physics, AI, post-rendering effects, multi-player networking,
+procedurally generated maps, and customizable characters. So why aren&#x27;t
+there tons of MMORPGs out there?\
+Even for large experienced game producers, the creation of such a
+complex game is time-intensive and failure-prone. How familiar are you
+with multi-threading, persistence, optimization, client-server
+synchonization, ...? Unless your answer is \&quot;very!\&quot;, then start with a
+single-player desktop game, and work your way up -- just as the pros did
+when they started.
+:::</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="extend-simpleapplication"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#extend-simpleapplication" title="Direct link to heading">#</a>Extend SimpleApplication</h2><p>Every jME3 game is centered around one main class that (directly or
+indirectly) extends
+com.jme3.app.<a href="/wikidemo/docs/jme3/intermediate/simpleapplication">SimpleApplication</a>.</p><p>::: {.important}
+Note that although the \&quot;SimpleApplication\&quot; name might be misleading,
+all jME3 applications, including very large projects, are based on this
+class. The name only implies that this class itself is a simple
+application already. You make it \&quot;non-simple\&quot; by extending it!
+:::</p><p>For your future game releases, you will want to rely on your own
+framework (based on jME): Your custom framework extends jME&#x27;s
+SimpleApplication, and includes your custom methods for loading, saving,
+and arranging your scenes, your custom navigation methods, your inputs
+for pausing and switching your custom screens, your custom user
+interface (options screen, HUD, etc), your custom NPC factory, your
+custom physics properties, your custom networking synchronization, etc.</p><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>Writing and reusing (extending) your own base framework saves you time.
+When you update your generic base classes, all your games that extend
+them benefit from improvements to the base (just as all jME-based games
+benefit of improvements to the jME framework).\
+Also, your own framework gives all your games a common look and feel.</p></div></div><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="where-to-start"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#where-to-start" title="Direct link to heading">#</a>Where to Start?</h2><p>You have a list of features that you want in game, but which one do you
+implement first? You will keep adding features to a project that grows
+more and more complex, how can you minimize the amount of rewriting
+required?</p><ol><li><p>Make sure the game&#x27;s high-level frame (screen switching, network
+sync, loading/saving) is sound and solid.</p></li><li><p>Start with implementing the most complex game feature first -- the
+one that imposes most constraints on the structure of your project
+(for example: multi-player networking, or physics.)</p></li><li><p>Add only one larger feature at a time. If there are complex
+interactions (such as networking + physics), start with a small test
+case (one shared cube) and work your way up. Starting with a whole
+scene introduces too many extra sources of error.</p></li><li><p>Implement low-complexity decorations (audio and visual effects)
+last.</p></li><li><p>Test for side-effects on existing code after you add a new feature
+(regression test).</p></li></ol><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>Acknowledge whether you want a feature because it is necessary for
+gameplay, or simply because \&quot;everyone else has it\&quot;. Your goal should
+be to bring out the essence of your game idea. Don&#x27;t water down gameplay
+by attempting to make it \&quot;do everything, but better\&quot;. Successful
+high-performance games are the ones where someone made smart decisions
+what to keep and what to <em>drop</em>.</p></div></div><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="the-smart-way-to-add-custom-methods-and-fields"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#the-smart-way-to-add-custom-methods-and-fields" title="Direct link to heading">#</a>The Smart Way to Add Custom Methods and Fields</h2><p>::: {.warning}
+<strong>Avoid the Anti-Pattern:</strong> Don&#x27;t design complex role-based classes
+using Java inheritance, it will result in an unmaintainable mess.\
+Example: You start extending <code>Node</code> --&gt; <code>MyMobileNode</code> --&gt; <code>MyNPC</code>.
+Then you extend <code>MyFighterNPC</code> (defends, attacks) and <code>MyShopKeeperNPC</code>
+(trades) from <code>MyNPC</code>. What if you need an NPC that trades and defends
+itself, but doesn&#x27;t attack? Do you extend MyShopKeeperNPC and copy and
+paste the defensive methods from MyFighterNPC? Or do you extend
+MyFighterNPC and override the attacking methods of its parent? Neither
+is a clean solution.\
+Wouldn&#x27;t it be better if behaviours were a separate system, and
+attributes were separate components that you add to the entity that
+needs them?
+:::</p><p>You write Java classes named <code>Controls</code> to implement your Game Entities,
+and define an Entity&#x27;s visuals, attributes, and behaviours. In jME,
+<code>Spatial`s (`Nodes</code> or `Geometry`s) are the visual representation
+of the game entity in the scene graph.</p><ul><li><p>Game entities have <strong>attributes</strong> -- All Entities are neutral
+<em>things</em>, only their attributes define what an entity actually <em>is</em>
+(a person or a brick). In jME, we call these class fields of
+Spatials \&quot;user data\&quot;.\
+Example: Players have <strong>class fields</strong> for
+<code>id, health, coins, inventory, equipment, profession</code>.</p></li><li><p>Game entities have <strong>behaviours</strong> -- Behaviour systems communicate
+about the game state and modify attributes. In jME, these game
+mechanics are implemented in modular <code>update()</code> methods that all
+hook into the main update loop.\
+Example: Players have <strong>methods</strong> such as
+<code>walk(), addGold(), getHealth(), pickUpItem(), dropItem(), useItem(), attack()</code>.</p></li></ul><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p><strong>Follow the Best Practice:</strong> In general, use composition over
+inheritance and keep what an entity does (behaviour system) separate
+from what this entity is (attributes).</p><ul><li><p>Use <code>setUserData()</code> to add custom attributes to Spatials.</p></li><li><p>Use <a href="/wikidemo/docs/jme3/advanced/custom_controls">Controls</a> and
+<a href="/wikidemo/docs/jme3/advanced/application_states">Application States</a> to
+define custom behaviour systems.</p></li></ul></div></div><p>If your game is even more complex, you may want to learn about \&quot;real\&quot;
+Entity Systems, which form a quite different programming paradigm from
+object oriented coding but are scalable to very large proportions. Note
+however that this topic is very unintuitive to handle for an OOP
+programmer and you should really decide on a case basis if you really
+need this or not and gather some experiences before diving head first
+into a MMO project emoji:smiley[]</p><ul><li><p><a href="http://cowboyprogramming.com/2007/01/05/evolve-your-heirachy/">http://cowboyprogramming.com/2007/01/05/evolve-your-heirachy/</a></p></li><li><p><a href="http://www.gamasutra.com/blogs/MeganFox/20101208/88590/Game_Engines_101_The_EntityComponent_Model.php">http://www.gamasutra.com/blogs/MeganFox/20101208/88590/Game_Engines_101_The_EntityComponent_Model.php</a></p></li><li><p><a href="http://gamedev.stackexchange.com/questions/28695/variants-of-entity-component-systems">http://gamedev.stackexchange.com/questions/28695/variants-of-entity-component-systems</a></p></li><li><p><a href="http://t-machine.org/index.php/2012/03/16/entity-systems-what-makes-good-components-good-entities/">http://t-machine.org/index.php/2012/03/16/entity-systems-what-makes-good-components-good-entities/</a></p></li><li><p><a href="http://entity-systems.wikidot.com/">http://entity-systems.wikidot.com/</a></p></li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="the-smart-way-to-access-game-features"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#the-smart-way-to-access-game-features" title="Direct link to heading">#</a>The Smart Way to Access Game Features</h2><p><a href="/wikidemo/docs/jme3/intermediate/simpleapplication">SimpleApplication</a> gives
+you access to game features such as a the rootNode, assetManager,
+guiNode, inputManager, audioManager, physicsSpace, viewPort, and the
+camera. But what if you need this access also from another class? Don&#x27;t
+extend SimpleApplication a second time, and don&#x27;t pass around tons of
+object references in constructors! Needing access to application level
+objects is a sign that this class should be designed as an
+<a href="/wikidemo/docs/jme3/advanced/application_states">AppState</a> (read details
+there).</p><p>An AppState has access to all game features in the SimpleApplication via
+the <code>this.app</code> and <code>this.stateManager</code> objects. Examples:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token class-name">Spatial</span><span class="token plain"> sky </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token class-name">SkyFactory</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">createSky</span><span class="token punctuation" style="color:#393A34">(</span><span class="token keyword" style="color:#00009f">this</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">app</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">getAssetManager</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token string" style="color:#e3116c">&quot;sky.dds&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token boolean" style="color:#36acaa">false</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">this</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">app</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">getRootNode</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">attachChild</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"> sky </span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="the-smart-way-to-implement-game-logic"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#the-smart-way-to-implement-game-logic" title="Direct link to heading">#</a>The Smart Way to Implement Game Logic</h2><p>As your SimpleApplication-based game grows more advanced, you find
+yourself putting more and more interactions in the <code>simpleUpdate()</code>
+loop, and your <code>simpleInitApp()</code> methods grows longer and longer. It&#x27;s a
+best practice to move blocks of game mechanics into reusable component
+classes of their own. In jME3, these resuable classes are called
+<code>Controls</code> and <code>AppStates</code>.</p><ul><li><p>Use <a href="/wikidemo/docs/jme3/advanced/application_states">AppStates</a> to
+implement <em>global game mechanics</em>.</p><ul><li><p>Each AppState calls its own <code>initialize()</code> and <code>cleanup()</code>
+methods when it is attached to or detached from the game.</p></li><li><p>Each AppState runs its own <em>thread-safe</em> <code>update()</code> loop that
+hooks into the main <code>simpleUpdate()</code> loop.</p></li><li><p>You specify what happens if an AppState is paused/unpaused.</p></li><li><p>You can use an AppState to switch between sets of AppStates.</p></li><li><p>An AppState has access to everything in the SimpleApplication
+(rootNode, AssetManager, StateManager, InputListener, ViewPort,
+etc).</p></li></ul></li><li><p>Use <a href="/wikidemo/docs/jme3/advanced/custom_controls">Controls</a> to implement
+the <em>behaviour of game entities</em>.</p><ul><li><p>Controls add a type of behaviour (methods and fields) to an
+individual Spatial (a player, an NPC).</p></li><li><p>Each Control runs its own <em>thread-safe</em> <code>controlUpdate()</code> loop
+that hooks into the main <code>simpleUpdate()</code> loop.</p></li><li><p>One Spatial can be influenced by several Controls. (!)</p></li><li><p>Each Spatial needs its own instance of the Control.</p></li><li><p>A Control only has control over and access to the spatial that
+it is attached to (and its sub-spatials).</p></li></ul></li></ul><p>::: {.note}
+A game contains algorithms that do not directly affect spatials (for
+example, AI pathfinding code that calculates and chooses paths, but does
+not actually move spatials). You do not need to put such non-spatial
+code in controls, you can run thse things in a new thread. Only the
+tranformation code that actually modifies the spatial must be called
+from a control, or must be enqueue()ed.
+:::</p><p>Controls and AppStates often work together: An AppState can reach up to
+the application and <code>get</code> all Spatials from the rootNode that carry a
+specific Control, and perform a global action on them. Example: In
+BulletPhysics, all physical Spatials that carry RigidBodyControls are
+steered by the overall BulletAppState.</p><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>AppStates and Controls are extensions to a SimpleApplication. They are
+your modular building blocks to build a more complex game. In the ideal
+case, you move all init/update code into Controls and AppStates, and
+your simpleInitApp() and simpleUpdate() could end up virtually empty.
+This powerful and modular approach cleans up your code considerably.</p></div></div><p>Read all about <a href="/wikidemo/docs/jme3/advanced/custom_controls">Custom
+Controls</a> and <a href="/wikidemo/docs/jme3/advanced/application_states">Application
+States</a> here.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="optimize-application-performance"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#optimize-application-performance" title="Direct link to heading">#</a>Optimize Application Performance</h2><ul><li><p><a href="/wikidemo/docs/jme3/intermediate/optimization">Optimization</a> -- How to
+avoid wasting cycles</p></li><li><p><a href="/wikidemo/docs/jme3/advanced/multithreading">Multithreading</a> -- Use
+concurrency for long-running background tasks, but don&#x27;t manipulate
+the scene graph from outside the main thread (update loop)!</p></li><li><p>You can add a <a href="/wikidemo/docs/sdk/debugging_profiling_testing">Java
+Profiler</a> to the
+jMonkeyEngine SDK via Tools → Plugins → Available. The profiler
+presents statistics on the lifecycle of methods and objects.
+Performance problems may be caused by just a few methods that take
+long, or are called too often (try to cache values to avoid this).
+If object creation and garbage collection counts keep increasing,
+you are looking at a memory leak.</p></li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="dont-mess-with-geometric-state"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#dont-mess-with-geometric-state" title="Direct link to heading">#</a>Don&#x27;t Mess With Geometric State</h2><p><strong>These tips are especially important for users who already know jME2.</strong>
+Automatic handling of the Geometric State has improved in jME3, and it
+is now a best practice to <em>not</em> mess with it.</p><ul><li><p>Do not call <code>updateGeometricState()</code> on anything but the root node!</p></li><li><p>Do not override or mess with <code>updateGeometricState()</code> at all.</p></li><li><p>Do not use <code>getLocalTranslation().set()</code> to move a spatial in jME3,
+always use <code>setLocalTranslation()</code>.</p></li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="maintain-internal-documentation"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#maintain-internal-documentation" title="Direct link to heading">#</a>Maintain Internal Documentation</h2><p>It&#x27;s unlikely you will fully document <em>every</em> class you write, we hear
+you. However, you should at least write meaningful javadoc to provide
+context for your most crucial methods/parameters.</p><ul><li><p>What is this? How does it solve its task (input, algorithm used,
+output, side-effects)?</p></li><li><p>Write down implicit limits (e.g. min/max values) and defaults while
+you still remember.</p></li><li><p>In which situation do I want to use this, is this part of a larger
+process? Is this step required, or what are the alternatives?</p></li></ul><p>Treat javadoc as messages to your future self.
+<code>genNextVal() generates the next value</code> and
+<code>@param float factor A factor influencing the result</code> do <em>not</em> count as
+documentation.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="debugging-and-test-phase"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#debugging-and-test-phase" title="Direct link to heading">#</a>Debugging and Test Phase</h1><p><strong>A <a href="/wikidemo/docs/sdk/debugging_profiling_testing">Java Debugger</a></strong> is
+included in the jMonkeyEngine SDK. It allows you to set a break point in
+your code near the line of code where an exception happens. Then you
+step through the execution line by line and watch object and variable
+states live, to detect where the bug starts.</p><p><strong>Use the <a href="/wikidemo/docs/jme3/advanced/logging">Logger</a></strong> to print status
+messages during the development and debugging phase, instead of
+System.out.println(). The logger can be switched off with one line of
+code, whereas commenting out all your `println()`s takes a while.</p><p><strong>Unit Testing (<a href="https://docs.oracle.com/javase/1.5.0/docs/guide/language/assert.html">Java
+Assertions</a>)</strong>
+has a different status in 3D graphics development than in other types of
+software. You cannot write assertions that automatically test whether
+the rendered image <em>looks</em> correct, or whether interactions are
+<em>intuitive</em>. Still you should <a href="/wikidemo/docs/sdk/debugging_profiling_testing">create simple test
+cases</a> for individual game
+features such as loaders, content generators, effects. Run the test
+cases now and then to see whether they still work as intended -- or
+whether they are suffering from regressions or side-effects. Keep the
+test classes in the <code>test</code> directory of your project, don&#x27;t include them
+in the distribution.</p><p><strong>Quality Assurance (QA)</strong> means repeatedly checking a certain set of
+features that must work, but that might be unexpectedly broken as a
+side-effect. Every game has some crazy bugs somewhere -- but basic tasks
+<em>must work</em>, no excuse. This includes installing and de-installing;
+saving and loading; changing options; starting, pausing, quitting; basic
+actions such as walking, fighting, etc. After every milestone, you go
+through your QA list again and systematically look for regressions or
+newly introduced bugs. Check the application <em>on every supported
+operating system and hardware</em> (!) because not all graphic cards support
+the same features. If you don&#x27;t find the obvious bugs, your users will,
+and carelessness will put them off.</p><p><strong>Alpha and Beta Testing</strong> means that you ask someone to try to install
+and run your game. It should be a real user situation, where they are
+left to figure out the installation and gameplay by themselves--you only
+can include the usual read-me and help docs. Provide the testers with an
+easy method to report back what problems they encountered, what they
+liked best, or why they gave up. Evaluate whether reported problems are
+one-off glitches, or whether they must be fixed for the game to be
+playable for everyone.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="release-phase"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#release-phase" title="Direct link to heading">#</a>Release Phase</h1><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="pre-release-to-do-list"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#pre-release-to-do-list" title="Direct link to heading">#</a>Pre-Release To-Do List</h2><ul><li><p>Prepare a web page, a cool slogan, advertisements, etc</p></li><li><p>Verify that all assets are up-to-date and converted to .j3o.</p></li><li><p>Verify that your code loads the optimized .j3o files, and not the
+original model formats.</p></li><li><p>Prepare licenses of assets that you use for inclusion. (You <em>did</em>
+obtain permission to use them, right...?)</p></li><li><p>Switch off fine <a href="/wikidemo/docs/jme3/advanced/logging">logging</a> output.</p></li><li><p>Prepare promotional art: The most awesome screenshots (in thumbnail,
+square, vertical, horizontal, and fullscreen formats) and video
+clips. Include name, contact info, slogan, etc., so future customers
+can find you.</p></li><li><p>Prepare a readme.txt file, or installation guide, or handbook -- if
+applicable.</p></li><li><p>Get a certificate if one is required for your distribution method
+(see below).</p></li><li><p>Specify a <a href="http://en.wikipedia.org/wiki/Video_game_content_rating_system#Comparison">classification
+rating</a>
+(needed for e.g. app stores).</p></li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="distributing-the-executables"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#distributing-the-executables" title="Direct link to heading">#</a>Distributing the Executables</h2><p>The <a href="/wikidemo/docs/sdk/application_deployment">jMonkeyEngine SDK helps you with
+deployment</a>: You specify your
+branding and deployment options in the Project Properties dialog, and
+then choose Clean and Build from the context menu. <strong>If you use another
+IDE, consult this IDE&#x27;s documentation.</strong></p><p>Decide whether you want to release your game as WebStart, desktop JAR,
+mobile APK, or browser Applet -- Each has its pros and cons.</p><p>+-------------+---------------------------+---------------------------+
+| D           | Pros                      | Cons                      |
+| istribution |                           |                           |
++=============+===========================+===========================+
+| Desktop     | This is the standard way  | You need to offer three   |
+| Launcher\   | of distributing desktop   | separate,                 |
+| (.EXE,      | applications. The         | platform-dependent        |
+| .app,       | jMonkeyEngine SDK can be  | downloads.                |
+| .jar+.sh)   | configured to             |                           |
+|             | automatically create      |                           |
+|             | zipped launchers for each |                           |
+|             | operating system.         |                           |
++-------------+---------------------------+---------------------------+
+| Desktop     | Platform independent      | User must have Java       |
+| A           | desktop application.      | configured to run JARs    |
+| pplication\ |                           | when they are opened; or  |
+| (.JAR)      |                           | user must know how to run |
+|             |                           | JARs from command line;   |
+|             |                           | or you must provide a     |
+|             |                           | custom JAR wrapper.       |
++-------------+---------------------------+---------------------------+
+| Web Start\  | The user accesses a URL,  | Users need network        |
+| (.JNLP)     | saves the game as one     | connection to install the |
+|             | executable file. Easy     | game. Downloading bigger  |
+|             | process, no installer     | games takes a while as    |
+|             | required. You can allow   | opposed to running them   |
+|             | the game to be played     | from a CD.                |
+|             | offline.                  |                           |
++-------------+---------------------------+---------------------------+
+| Browser     | Easy to access and play   | Game only runs in the     |
+| Applet\     | game via most web         | browser. Game or settings |
+| (           | browsers. Userfriendly    | cannot be saved to disk.  |
+| .HTML+.JAR) | solution for quick small  | Some restrictions in      |
+|             | games.                    | default camera navigation |
+|             |                           | (jME cannot capture       |
+|             |                           | mouse.)                   |
++-------------+---------------------------+---------------------------+
+| Android\    | Game runs on Android      | Android devices do not    |
+| (.APK)      | devices.                  | support post-procesor     |
+|             |                           | effects.                  |
++-------------+---------------------------+---------------------------+</p><p>Which ever method you choose, a Java-Application works on the main
+operating systems: Windows, Mac OS, Linux, Android.</p><p>The distribution appears in a newly generated <code>dist</code> directory inside
+your project directory. These are the files that you upload or burn to
+CD to distribute to your customers.</p><p>See also:</p><ul><li><a href="http://www.gamedev.net/page/resources/_/creative/game-design/developing-your-game-concept-by-making-a-design-document-r3004">gamedev.net: Developing Your Game Concept By Making A Design
+Document</a></li></ul></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/8keep/wikidemo/edit/master/docs/jme3/intermediate/best_practices.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/wikidemo/docs/jme3/beginner/hello_physics"><div class="pagination-nav__link--sublabel">Previous</div><div class="pagination-nav__link--label">« hello_physics</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/wikidemo/docs/jme3/intermediate/simpleapplication"><div class="pagination-nav__link--sublabel">Next</div><div class="pagination-nav__link--label">simpleapplication »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#requirements-gathering" class="contents__link">Requirements Gathering</a></li><li><a href="#planning-development-milestones" class="contents__link">Planning Development Milestones</a></li><li><a href="#use-file-version-control" class="contents__link">Use File Version Control</a></li><li><a href="#extend-simpleapplication" class="contents__link">Extend SimpleApplication</a></li><li><a href="#where-to-start" class="contents__link">Where to Start?</a></li><li><a href="#the-smart-way-to-add-custom-methods-and-fields" class="contents__link">The Smart Way to Add Custom Methods and Fields</a></li><li><a href="#the-smart-way-to-access-game-features" class="contents__link">The Smart Way to Access Game Features</a></li><li><a href="#the-smart-way-to-implement-game-logic" class="contents__link">The Smart Way to Implement Game Logic</a></li><li><a href="#optimize-application-performance" class="contents__link">Optimize Application Performance</a></li><li><a href="#dont-mess-with-geometric-state" class="contents__link">Don&#39;t Mess With Geometric State</a></li><li><a href="#maintain-internal-documentation" class="contents__link">Maintain Internal Documentation</a></li><li><a href="#pre-release-to-do-list" class="contents__link">Pre-Release To-Do List</a></li><li><a href="#distributing-the-executables" class="contents__link">Distributing the Executables</a></li></ul></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div>Copyright © 2020 jMonkeyEngine.</div></div></div></footer>
+</div>
+
+<script src="/wikidemo/styles.08ff7081.js"></script>
+
+<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+
+<script src="/wikidemo/main.1b6aa70f.js"></script>
+
+<script src="/wikidemo/1.e501629b.js"></script>
+
+<script src="/wikidemo/2.c824d386.js"></script>
+
+<script src="/wikidemo/302.1d1a2997.js"></script>
+
+<script src="/wikidemo/394d525a.30c299b8.js"></script>
+
+<script src="/wikidemo/17896441.d065d5f5.js"></script>
+
+<script src="/wikidemo/fced939a.299bdabc.js"></script>
+
+
+</body>
+</html>

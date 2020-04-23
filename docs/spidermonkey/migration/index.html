@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Docusaurus v2.0.0-alpha.50">
+<script src="/js/dark_default.js"></script>
+
+<title data-react-helmet="true">migration | jMonkeyEngine Documentation</title>
+
+<meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="migration | jMonkeyEngine Documentation"><meta data-react-helmet="true" name="description" content="::: {.warning}"><meta data-react-helmet="true" property="og:description" content="::: {.warning}"><meta data-react-helmet="true" property="og:url" content="https://8keep.github.io/wikidemo/docs/spidermonkey/migration">
+
+<link data-react-helmet="true" rel="shortcut icon" href="/wikidemo/img/favicon.ico">
+
+
+<link rel="stylesheet" href="/wikidemo/styles.7d008dc0.css">
+
+
+<link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
+
+<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+
+<link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
+
+<link rel="preload" href="/wikidemo/1.e501629b.js" as="script">
+
+<link rel="preload" href="/wikidemo/2.c824d386.js" as="script">
+
+<link rel="preload" href="/wikidemo/302.1d1a2997.js" as="script">
+
+<link rel="preload" href="/wikidemo/394d525a.30c299b8.js" as="script">
+
+<link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
+
+<link rel="preload" href="/wikidemo/5f781dd7.c0c5e961.js" as="script">
+
+</head>
+<body>
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=window.matchMedia("(prefers-color-scheme: dark)"),n=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();null!==n?t(n):e.matches&&t("dark")}()</script>
+<div id="__docusaurus">
+<nav class="navbar navbar--light navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><div aria-label="Navigation bar toggle" class="navbar__toggle" role="button" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></div><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></div><div class="navbar__items navbar__items--right"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="navbar__item navbar__link">GitHub</a><div class="react-toggle react-toggle--disabled displayOnlyInLargeViewport_1gtM"><div class="react-toggle-track"><div class="react-toggle-track-check"><span class="toggle_keGJ moon_1gwN"></span></div><div class="react-toggle-track-x"><span class="toggle_keGJ sun_3CPA"></span></div></div><div class="react-toggle-thumb"></div><input type="checkbox" disabled="" aria-label="Dark mode toggle" class="react-toggle-screenreader-only"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div><div class="navbar-sidebar"><div class="navbar-sidebar__brand"><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a></div><div class="navbar-sidebar__items"><div class="menu"><ul class="menu__list"><li class="menu__list-item"><a aria-current="page" class="menu__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></li><li class="menu__list-item"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="menu__link">GitHub</a></li></ul></div></div></div></nav><div class="main-wrapper"><div class="docPage_1kjD"><main class="docMainContainer_FFX1"><div class="padding-vert--lg"><div class="container"><div class="row"><div class="col docItemCol_2GOA"><div class="docItemContainer_2cwg"><article><header><h1 class="docTitle_1vWb">migration</h1></header><div class="markdown"><p>::: {.warning}
+This article covers how to move away from an older, deprecated API! If
+you just start with JME3 networking, see
+<a href="/wikidemo/docs/jme3/advanced/networking">networking</a> for current documentation.
+:::</p><p>This document provides an overview of the new versus the old
+SpiderMonkey API, and a path for migrating from the old, now deprecated,
+API to the newer version. Much has changed. The <a aria-current="page" class="active" href="/wikidemo/docs/spidermonkey">original
+SpiderMonkey</a> implementation was a good concept and
+a clever implementation but suffered under the weight of rapid patches
+and some creeping design deficit. In the end, there were enough small
+problems, long-term maintenance issues, and limitations that a newer
+design was warranted. Some things will be very similar but others have
+changed very much. Hopefully for the better.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="overview"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#overview" title="Direct link to heading">#</a>Overview</h1><p>Most of the new SpiderMonkey API now exists as a set of interfaces and
+helper classes in the \&#x27;com.jme3.network\&#x27; package. For most users, this
+package and the \&#x27;message\&#x27; package will be all they need to worry
+about. The \&#x27;base\&#x27; and \&#x27;kernel\&#x27; packages only come into play when
+implementing custom network transports or alternate client/server
+protocols (<em>which are now possible</em>). Clients and Servers can be created
+from the factory methods on the Network helper class. Once a Server
+instance is created and started, it can accept remote connections from
+Clients. The Client objects represent the client-side of a client→server
+connection. Within the Server, these are HostedConnections. This is a
+distinct change from the old API.</p><p>+----------------------+----------------------+-----------------------+
+| Client               |                      | Server                |
++======================+======================+=======================+
+| com                  | ←→                   | com.jme3.net          |
+| .jme3.network.Client |                      | work.HostedConnection |
++----------------------+----------------------+-----------------------+</p><p>HostedConnections can hold application defined client-specific session
+attributes that the server-side listeners and services can use to track
+player information, etc.. MessageListeners can be registered with either
+the Client or the Server to be notified when new messages arrive. As
+before, these listeners can be registered to be notified about only
+specific types of messages. ClientStateListeners can be registered with
+a Client to detect changes in connection state. ConnectionListeners can
+be registered with a Server to be notified about HostedConnection
+arrivals and removals.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="whats-gone"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#whats-gone" title="Direct link to heading">#</a>What&#x27;s Gone?</h1><p>All of \&#x27;connection\&#x27;, \&#x27;events\&#x27;, \&#x27;queue\&#x27;, \&#x27;service\&#x27;,
+\&#x27;streaming\&#x27;, and \&#x27;sync\&#x27; are now deprecated. The \&#x27;service\&#x27;,
+\&#x27;streaming\&#x27;, and \&#x27;sync\&#x27; packages were too difficult to easily port
+to the new API and would have required additional code review for
+thread-related issues. Since the service manager model has <em>not</em> been
+ported and will likely live on in a different way, it was better to let
+these go until better solutions evolve. For example, streaming is
+probably better done more tightly integrated with the core API and as
+actual java.io streams.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="migration"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#migration" title="Direct link to heading">#</a>Migration</h1><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="packageclass-imports"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#packageclass-imports" title="Direct link to heading">#</a>Package/Class Imports</h2><p>As a first pass, use the following table for conversion and then see
+specific class notes.</p><p>+-----------------------------------+-----------------------------------+
+| Old Class                         | New Class                         |
++===================================+===================================+
+| c                                 | com.jme3.network.Client or        |
+| om.jme3.network.connection.Client | com.jme3.network.HostedConnection |
++-----------------------------------+-----------------------------------+
+| c                                 | com.jme3.network.Server           |
+| om.jme3.network.connection.Server |                                   |
++-----------------------------------+-----------------------------------+
+| com.j                             | com.jme3.network.MessageListener  |
+| me3.network.event.MessageListener |                                   |
++-----------------------------------+-----------------------------------+
+| com.jme3                          | com                               |
+| .network.event.ConnectionListener | .jme3.network.ClientStateListener |
+|                                   | or                                |
+|                                   | co                                |
+|                                   | m.jme3.network.ConnectionListener |
++-----------------------------------+-----------------------------------+
+| com.                              | no equivalent class, implement    |
+| jme3.network.event.MessageAdapter | MessageListener directly          |
++-----------------------------------+-----------------------------------+
+| com.jme                           | no equivalent class, implement    |
+| 3.network.event.ConnectionAdapter | ClientStateListener or            |
+|                                   | ConnectionListener directly       |
++-----------------------------------+-----------------------------------+
+| com.jme3.network.message.Message  | if used as a reference and not a  |
+|                                   | superclass,                       |
+|                                   | com.jme3.network.Message. The     |
+|                                   | base class stays the same for     |
+|                                   | message subclasses.               |
++-----------------------------------+-----------------------------------+</p><p>Doing all of those changes will certainly break your build... so now
+let&#x27;s fix it.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="client-and-messagelistener"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#client-and-messagelistener" title="Direct link to heading">#</a>Client and MessageListener</h2><p>This class is the hardest migration to perform. Do not get discouraged.
+The old version used com.jme3.network.connection.Client for both client
+side and server side. So, depending on context, these references will
+either change to com.jme3.network.Client or
+com.jme3.network.HostedConnection. In the case where calling code is not
+client or server specific, then there is also the common
+com.jme3.network.MessageConnection interface. In general, the actual
+client changes are of one of the following to types:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token class-name">Client</span><span class="token plain"> client </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">new</span><span class="token plain"> </span><span class="token class-name">Client</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"> host</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> port </span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">becomes</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token class-name">Client</span><span class="token plain"> client </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token class-name">Network</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">connectToServer</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"> host</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> port </span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><p>In the delayed connection case:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token class-name">Client</span><span class="token plain"> client </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">new</span><span class="token plain"> </span><span class="token class-name">Client</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  client</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">connect</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"> host</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> port </span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">becomes</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token class-name">NetworkClient</span><span class="token plain"> client </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token class-name">Network</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">createClient</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  client</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">connectToServer</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"> host</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> port </span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><p>NetworkClient is a Client. The rest of your code can just refer to
+Client. Those are the easy changes. The trickier ones are related to the
+MessageListeners.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="messagelistener"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#messagelistener" title="Direct link to heading">#</a>MessageListener</h3><p>By now you&#x27;ve figured out that all of your MessageListeners are broken
+because the new method signature is different. The source of a message
+is no longer stored with the message and is instead provided to the
+MessageListener. Depending on whether your MessageListener is being
+added to the Client or the Server, it will need to refer to either
+com.jme3.network.Client or com.jme3.network.HostedConnection in its
+messageReceived(), respectively. The MessageListener interface is
+generically typed to help make sure the right listener goes where it&#x27;s
+supposed to and so the listener implementations don&#x27;t have to cast all
+the time.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token comment" style="color:#999988;font-style:italic">// An example client-specific listener</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">public</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">class</span><span class="token plain"> </span><span class="token class-name">MyClientListener</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">implements</span><span class="token plain"> </span><span class="token class-name">MessageListener</span><span class="token generics punctuation" style="color:#393A34">&lt;</span><span class="token generics class-name">Client</span><span class="token generics punctuation" style="color:#393A34">&gt;</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token keyword" style="color:#00009f">public</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">void</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">messageReceived</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"> </span><span class="token class-name">Client</span><span class="token plain"> source</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token class-name">Message</span><span class="token plain"> m </span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">       </span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token keyword" style="color:#00009f">do</span><span class="token plain"> stuff</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">// And example server-specific listener</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">public</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">class</span><span class="token plain"> </span><span class="token class-name">MyServerListener</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">implements</span><span class="token plain"> </span><span class="token class-name">MessageListener</span><span class="token generics punctuation" style="color:#393A34">&lt;</span><span class="token generics class-name">HostedConnection</span><span class="token generics punctuation" style="color:#393A34">&gt;</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token keyword" style="color:#00009f">public</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">void</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">messageReceived</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"> </span><span class="token class-name">HostedConnection</span><span class="token plain"> source</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token class-name">Message</span><span class="token plain"> m </span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token keyword" style="color:#00009f">do</span><span class="token plain"> stuff</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token comment" style="color:#999988;font-style:italic">// A client or server listener</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">public</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">class</span><span class="token plain"> </span><span class="token class-name">MyGenericListener</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">implements</span><span class="token plain"> </span><span class="token class-name">MessageListener</span><span class="token generics punctuation" style="color:#393A34">&lt;</span><span class="token generics class-name">MessageConnection</span><span class="token generics punctuation" style="color:#393A34">&gt;</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token keyword" style="color:#00009f">public</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">void</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">messageReceived</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"> </span><span class="token class-name">MessageConnection</span><span class="token plain"> source</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token class-name">Message</span><span class="token plain"> m </span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">do</span><span class="token plain"> limited stuff</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span></div></div></div></div></div><p>Your listeners will fall into one of those three categories.</p><p>::: {.note}
+Several of the old MessageListener&#x27;s methods have gone away. The
+object-based methods didn&#x27;t fit with the new API and messageSent()
+seemed of little utility. It could be resurrected if there is demand.
+:::</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="client-method-changes"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#client-method-changes" title="Direct link to heading">#</a>Client method changes</h3><p>Some of the methods on the old Client class have changed or been
+removed. Here is a basic summary:</p><p>+-----------------------------------+-----------------------------------+
+| Old Method                        | New Method                        |
++===================================+===================================+
+| Client.disconnect()               | Client.close() or                 |
+|                                   | HostedConnection.close(reason)    |
++-----------------------------------+-----------------------------------+
+| Client.kick(reason)               | HostedConnection.close(reason)    |
++-----------------------------------+-----------------------------------+
+| Client.getClientID()              | Client.getId() or                 |
+|                                   | HostedConnection.getId()          |
++-----------------------------------+-----------------------------------+
+| Client.get/setPlayerID()          | no equivalent                     |
++-----------------------------------+-----------------------------------+
+| Client.get/setLabel()             | no equivalent                     |
++-----------------------------------+-----------------------------------+</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="no-ioexceptions"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#no-ioexceptions" title="Direct link to heading">#</a>No IOExceptions</h3><p>After you&#x27;ve done all of that, the compiler will be complaining about
+the fact that send(), broadcast(), etc. no longer throw IOException. So
+remove all of those try/catch blocks.</p><p>::: {.note}
+The truth is that even in the old API, expecting a real IOException from
+these methods was unreasonable because often times the message was
+queued and actually sent later by a separate thread. The new API assumes
+that all underlying transports will operate this way and so forgoes the
+artificial annoyance or sense of security provided by these \&#x27;throws\&#x27;
+clauses. It also simplifies the calling code a great deal.
+:::</p><p>Only API methods that actually perform direct IO (such as the
+Network.connectToServer() and NetworkClient.connectToServer() methods)
+will ever be declared to throw IOException.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="messagegetclient-and-messagegetconnection"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#messagegetclient-and-messagegetconnection" title="Direct link to heading">#</a>Message.getClient() and Message.getConnection()</h2><p>This is important enough to deserve its own sub-heading because your
+code <strong>will</strong> break if you use these as they now return null. Any reason
+for calling them is now provided directly to the MessageListener in the
+form of the source Client or source HostedConnection.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="client-id-and-player-id"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#client-id-and-player-id" title="Direct link to heading">#</a>Client ID and Player ID</h2><p>The ID of the Client and HostedConnection are now the same at both ends
+of a connection and the ID is given out authoritatively by the hosting
+Server. This removes some of the inconsistency on when to use the old
+player ID and when to use the old client ID as the new client ID serves
+both purposes. This leaves the game to be able to define its own player
+ID based on whatever user criteria it wants.</p><p>::: {.note}
+Many of the reasons for accessing the client ID on the server can now be
+taken care of using the session attributes on HostedConnection. It seems
+like a common use-case for these IDs was to look-up
+player/client-specific information in a java.util.Map. This information
+can now be set directly on the HostedConnection.
+:::</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="comjme3networkeventconnectionlistener"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#comjme3networkeventconnectionlistener" title="Direct link to heading">#</a>com.jme3.network.event.ConnectionListener</h2><p>Along with the shift from not using the same object at both ends of the
+client connection was a shift in the interfaces that are notified about
+those ends. On the client, there is now
+com.jme3.network.ClientStateListener which is notified when the client
+fully connects to the server (including any internal handshaking) and
+when the client is disconnected. On the server,
+com.jme3.network.ConnectionListener will be notified whenever new
+HostedConnections are added or removed. This listener isn&#x27;t notified
+until the connection is fully setup (including any internal
+handshaking).</p><p>+-----------------------------------+-----------------------------------+
+| Old Method                        | New Method                        |
++===================================+===================================+
+| clientConnected(Client)           | connect                           |
+|                                   | ionAdded(Server,HostedConnection) |
++-----------------------------------+-----------------------------------+
+| clientDisconnected(Client)        | connectio                         |
+|                                   | nRemoved(Server,HostedConnection) |
++-----------------------------------+-----------------------------------+</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="why-am-i-doing-this-again"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#why-am-i-doing-this-again" title="Direct link to heading">#</a>Why am I doing this again?</h1><p>As you&#x27;ve seen above, there are quite a few changes necessary to migrate
+to the new API. You might be asking yourself if it&#x27;s worth the trouble.
+The bottom line is that the old architecture had threading and stability
+issues that just couldn&#x27;t be fixed in any reasonable way. Some were
+minor, others kind of severe... and they combined to make trouble. If
+you&#x27;ve ever wondered why sometimes your clients connect and then the
+network connection hangs or stops sending data. Or if you&#x27;ve ever
+wondered why UDP/unreliable messages get corrupted or somehow won&#x27;t
+deserialize properly then you&#x27;ve run into some of these issues.
+Moreover, the lack of thread safety meant that user code sometimes had
+to do some strange and/or complicated work-arounds. The goal should be
+that the API should just work like it looks like it will with a minimum
+of hassle. The new architecture is built from the ground up for
+threading stability and for a clean separation between the public API,
+the message passing layer, and the underlying network transport
+implementations. You should be able to throw all kinds of stuff at it
+that would make the old system fall over and it should just hum along.
+There will certainly be some growing pains as we work the kinks out of
+the new system but it is already much more stable in even the most basic
+of stress tests.</p></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/8keep/wikidemo/edit/master/docs/spidermonkey/migration.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#packageclass-imports" class="contents__link">Package/Class Imports</a></li><li><a href="#client-and-messagelistener" class="contents__link">Client and MessageListener</a><ul><li><a href="#messagelistener" class="contents__link">MessageListener</a></li><li><a href="#client-method-changes" class="contents__link">Client method changes</a></li><li><a href="#no-ioexceptions" class="contents__link">No IOExceptions</a></li></ul></li><li><a href="#messagegetclient-and-messagegetconnection" class="contents__link">Message.getClient() and Message.getConnection()</a></li><li><a href="#client-id-and-player-id" class="contents__link">Client ID and Player ID</a></li><li><a href="#comjme3networkeventconnectionlistener" class="contents__link">com.jme3.network.event.ConnectionListener</a></li></ul></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div>Copyright © 2020 jMonkeyEngine.</div></div></div></footer>
+</div>
+
+<script src="/wikidemo/styles.08ff7081.js"></script>
+
+<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+
+<script src="/wikidemo/main.1b6aa70f.js"></script>
+
+<script src="/wikidemo/1.e501629b.js"></script>
+
+<script src="/wikidemo/2.c824d386.js"></script>
+
+<script src="/wikidemo/302.1d1a2997.js"></script>
+
+<script src="/wikidemo/394d525a.30c299b8.js"></script>
+
+<script src="/wikidemo/17896441.d065d5f5.js"></script>
+
+<script src="/wikidemo/5f781dd7.c0c5e961.js"></script>
+
+
+</body>
+</html>

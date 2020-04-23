@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Docusaurus v2.0.0-alpha.50">
+<script src="/js/dark_default.js"></script>
+
+<title data-react-helmet="true">cubes | jMonkeyEngine Documentation</title>
+
+<meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="cubes | jMonkeyEngine Documentation"><meta data-react-helmet="true" name="description" content="![header.png](http://destroflyer.mania-community.de/other/imagehost/cubes/header.png)"><meta data-react-helmet="true" property="og:description" content="![header.png](http://destroflyer.mania-community.de/other/imagehost/cubes/header.png)"><meta data-react-helmet="true" property="og:url" content="https://8keep.github.io/wikidemo/docs/jme3/contributions/cubes">
+
+<link data-react-helmet="true" rel="shortcut icon" href="/wikidemo/img/favicon.ico">
+
+
+<link rel="stylesheet" href="/wikidemo/styles.7d008dc0.css">
+
+
+<link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
+
+<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+
+<link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
+
+<link rel="preload" href="/wikidemo/1.e501629b.js" as="script">
+
+<link rel="preload" href="/wikidemo/2.c824d386.js" as="script">
+
+<link rel="preload" href="/wikidemo/302.1d1a2997.js" as="script">
+
+<link rel="preload" href="/wikidemo/394d525a.30c299b8.js" as="script">
+
+<link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
+
+<link rel="preload" href="/wikidemo/52b3c79b.1e9750cf.js" as="script">
+
+</head>
+<body>
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=window.matchMedia("(prefers-color-scheme: dark)"),n=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();null!==n?t(n):e.matches&&t("dark")}()</script>
+<div id="__docusaurus">
+<nav class="navbar navbar--light navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><div aria-label="Navigation bar toggle" class="navbar__toggle" role="button" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></div><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></div><div class="navbar__items navbar__items--right"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="navbar__item navbar__link">GitHub</a><div class="react-toggle react-toggle--disabled displayOnlyInLargeViewport_1gtM"><div class="react-toggle-track"><div class="react-toggle-track-check"><span class="toggle_keGJ moon_1gwN"></span></div><div class="react-toggle-track-x"><span class="toggle_keGJ sun_3CPA"></span></div></div><div class="react-toggle-thumb"></div><input type="checkbox" disabled="" aria-label="Dark mode toggle" class="react-toggle-screenreader-only"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div><div class="navbar-sidebar"><div class="navbar-sidebar__brand"><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a></div><div class="navbar-sidebar__items"><div class="menu"><ul class="menu__list"><li class="menu__list-item"><a aria-current="page" class="menu__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></li><li class="menu__list-item"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="menu__link">GitHub</a></li></ul></div></div></div></nav><div class="main-wrapper"><div class="docPage_1kjD"><main class="docMainContainer_FFX1"><div class="padding-vert--lg"><div class="container"><div class="row"><div class="col docItemCol_2GOA"><div class="docItemContainer_2cwg"><article><header><h1 class="docTitle_1vWb">cubes</h1></header><div class="markdown"><p><img src="http://destroflyer.mania-community.de/other/imagehost/cubes/header.png" alt="header.png"></p><p>::: {.important}
+This framework is still <strong>work-in-progress</strong> - I&#x27;ll keep you up-to-date
+about modifications. :)
+:::</p><p>As the title says, &quot;Cubes is a framework for block worlds (also called
+&quot;bloxel or &quot;minecraft-like) - It offers an easy way to add/remove
+blocks, block skinning, useful tools and user-specific behaviours.
+&quot;Cubes itself will not contain tools for creating crafting or RPG
+functionalities, it will <strong>only</strong> help you managing the block system.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="the-origin"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#the-origin" title="Direct link to heading">#</a>The origin</h1><p>In the summer of 2011, I (destroflyer) started a little minecraft clone
+(like almost every jMonkey) - nothing special, I just wanted a little
+block world in which players can walk around, place or remove blocks and
+the ability to save those maps. It didn&#x27;t take long until I stumbled
+across the &quot;batch-boxes-to-improve-performance, texture atlas and mesh
+optimization things - Luckily, I managed to get those to run, played a
+few rounds with a friend and that was it. The code was really quick \&#x27;n
+dirty and at this time, my studies at the university began. The &quot;game
+was never started anymore and was hidden in the jME-projects folder -
+Until a few days ago.</p><p>Almost every two days, a new thread in the forum appears, where people
+talk about &quot;bloxel worlds, mesh optimization, batching and so on... As
+the discussions about the GUI frameworks (Nifty and its upcoming
+alternatives) began, I thought: &quot;Why don&#x27;t you create a
+block-world-framework, that the people can use easily? :)</p><p>I read my old code (mainly the chunk management and the mesh optimizer)
+again and started to code the named framework from scratch - After a few
+hours, I made the block world run and after 2 days it seemed to work in
+the way I like it to work.</p><p>At the moment, the &quot;block engine includes all necessary features for a
+minecraft-like world and even a few useful tools (e.g. loading blocks
+from heightmaps, noises, ...) - Time to publish a first preview. :)</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="how-it-works"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#how-it-works" title="Direct link to heading">#</a>How it works</h1><p>The vertex buffers, UV coordinates, chunk management, block faces, ...
+... ... ... nah, just kidding. :P I think, everyone who knows about this
+topic, knows how bloxel-engines work. And in case you don&#x27;t - There are
+sooo many topics about this in the forum and even articles on the
+internet... I don&#x27;t want to explain everything, that was already
+explained by persons, who can do it much better than me.</p><p>Nevertheless, here are the basics: Blocks are merged to chunks (e.g.
+16x256x16 blocks), so only the according chunks need to be updated when
+the block is added/removed/whatever. The tricky thing when rendering is
+to only render the visible faces - If you have a huge mountain of
+blocks, you only need to render the blocks on the surface. And even in
+this case, only the faces that point outwards. ;) The framework does all
+this for you, no need to worry. You, as user, can just add/remove blocks
+as you wish without knowing about the chunks, the optimized geometries
+etc. etc.</p><p>⇒ You add a block ⇒ You see the block :)</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="performance"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#performance" title="Direct link to heading">#</a>Performance</h1><p>The performance is good I think - In a test case I had a scene with
+1.350.000 blocks (in 4x1x4 chunks of the size 16x256x16) and 20
+movements of a block per second - The result was 1200 FPS. The average
+time to generate the optimized geometry for a chunk was 5ms.</p><p>Of course, there are cases when every face has to be rendered - But even
+in generated worst cases I never fell under 300-400 FPS, so it <em>should</em>
+be fine for this stage of development (More about possible improvements
+later).</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="usage"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#usage" title="Direct link to heading">#</a>Usage</h1><p>Enough boring words about theory - Here&#x27;s how you use the framework. :)
+This happens in different parts:</p><ol><li><p><a href="/wikidemo/docs/jme3/contributions/cubes/settings">Settings</a></p><p>a.  <a href="/wikidemo/docs/jme3/contributions/cubes/register_your_blocks">Register Your
+Blocks</a></p><p>b.  <a href="/wikidemo/docs/jme3/contributions/cubes/build_your_block_world">Build Your Block
+World</a></p></li></ol><p>After executing these steps, you should come up with an application like
+the <a href="/wikidemo/docs/jme3/contributions/cubes/basic_example">Basic Example</a>.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="screenshots"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#screenshots" title="Direct link to heading">#</a>Screenshots</h1><p>Those are just some random screenshots that I made while creating and
+testing the block engine - They show in a nice way, what you can expect
+from the framework.</p><p><img src="http://destroflyer.mania-community.de/other/imagehost/cubes/test_physics.png" alt="test_physics.png"></p><p><img src="http://destroflyer.mania-community.de/other/imagehost/cubes/etherblocks_third_person.jpg" alt="etherblocks_third_person.jpg"></p><p><img src="http://destroflyer.mania-community.de/other/imagehost/cubes/wireframe_view.png" alt="wireframe_view.png"></p><p><img src="http://destroflyer.mania-community.de/other/imagehost/cubes/test_shapes.png" alt="test_shapes.png"></p><p><img src="http://destroflyer.mania-community.de/other/imagehost/cubes/scene_mountains.png" alt="scene_mountains.png"></p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="tools"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#tools" title="Direct link to heading">#</a>Tools</h1><p>The framework offers several tools to play around with your blockworld:</p><ul><li><p><a href="/wikidemo/docs/jme3/contributions/cubes/tools/heightmaps">Heightmaps</a></p></li><li><p><a href="/wikidemo/docs/jme3/contributions/cubes/tools/noise">Noise</a></p></li><li><p><a href="/wikidemo/docs/jme3/contributions/cubes/tools/picking">Picking</a></p></li><li><p><a href="/wikidemo/docs/jme3/contributions/cubes/tools/serialization">Serialization</a></p></li></ul><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="further-improvements--work-in-progress-things"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#further-improvements--work-in-progress-things" title="Direct link to heading">#</a>Further improvements / \&quot;Work-In-Progress\&quot; things</h1><p>The following list contains things, that are <strong>not yet</strong> (!) part of the
+framework, but are considered as useful. If you have any ideas what&#x27;s
+missing or what could be a cool feature, please tell me and (hopefully)
+it will be on the to-do list. :)</p><ul><li><p><strong>Wiki:</strong> List the included test applications (Tutorial, Heightmap,
+Noise, Modifications, ...)</p></li><li><p><strong>Wiki:</strong> List the included test data (Assets, Blocks, ...)</p></li><li><p><strong>Wiki:</strong> Write the missing instructions for some tools (e.g. how to
+create custom block shapes)</p></li><li><p><strong>BlockTerrain:</strong> Support for dynamic counts of chunks
+(Automatically add chunks if an out-of-bounds block is added)</p></li><li><p><strong>Lights:</strong> Implement a performant way to calculate if a block is
+affected by a &quot;light block and modify its texture accordingly</p></li></ul><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="where-is-this-available"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#where-is-this-available" title="Direct link to heading">#</a>Where is this available?</h1><p>This framework is available as plugin in the jMonkeyEngine SDK (&quot;Tools →
+&quot;Plugins), so users are able to download and integrate the library
+easily.</p><p>Hopefully, this thing will help some of you guys, when it&#x27;s released -
+Any ideas, hints and comments on this are appreciated. :)</p></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/8keep/wikidemo/edit/master/docs/jme3/contributions/cubes.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div>Copyright © 2020 jMonkeyEngine.</div></div></div></footer>
+</div>
+
+<script src="/wikidemo/styles.08ff7081.js"></script>
+
+<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+
+<script src="/wikidemo/main.1b6aa70f.js"></script>
+
+<script src="/wikidemo/1.e501629b.js"></script>
+
+<script src="/wikidemo/2.c824d386.js"></script>
+
+<script src="/wikidemo/302.1d1a2997.js"></script>
+
+<script src="/wikidemo/394d525a.30c299b8.js"></script>
+
+<script src="/wikidemo/17896441.d065d5f5.js"></script>
+
+<script src="/wikidemo/52b3c79b.1e9750cf.js"></script>
+
+
+</body>
+</html>

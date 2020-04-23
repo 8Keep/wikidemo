@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Docusaurus v2.0.0-alpha.50">
+<script src="/js/dark_default.js"></script>
+
+<title data-react-helmet="true">filters | jMonkeyEngine Documentation</title>
+
+<meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="filters | jMonkeyEngine Documentation"><meta data-react-helmet="true" name="description" content="Filters are used for scene-wide effects such as glow, fog, blur. The SDK"><meta data-react-helmet="true" property="og:description" content="Filters are used for scene-wide effects such as glow, fog, blur. The SDK"><meta data-react-helmet="true" property="og:url" content="https://8keep.github.io/wikidemo/docs/sdk/filters">
+
+<link data-react-helmet="true" rel="shortcut icon" href="/wikidemo/img/favicon.ico">
+
+
+<link rel="stylesheet" href="/wikidemo/styles.7d008dc0.css">
+
+
+<link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
+
+<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+
+<link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
+
+<link rel="preload" href="/wikidemo/1.e501629b.js" as="script">
+
+<link rel="preload" href="/wikidemo/2.c824d386.js" as="script">
+
+<link rel="preload" href="/wikidemo/302.1d1a2997.js" as="script">
+
+<link rel="preload" href="/wikidemo/394d525a.30c299b8.js" as="script">
+
+<link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
+
+<link rel="preload" href="/wikidemo/eb84d5f9.f70bff07.js" as="script">
+
+</head>
+<body>
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=window.matchMedia("(prefers-color-scheme: dark)"),n=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();null!==n?t(n):e.matches&&t("dark")}()</script>
+<div id="__docusaurus">
+<nav class="navbar navbar--light navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><div aria-label="Navigation bar toggle" class="navbar__toggle" role="button" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></div><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></div><div class="navbar__items navbar__items--right"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="navbar__item navbar__link">GitHub</a><div class="react-toggle react-toggle--disabled displayOnlyInLargeViewport_1gtM"><div class="react-toggle-track"><div class="react-toggle-track-check"><span class="toggle_keGJ moon_1gwN"></span></div><div class="react-toggle-track-x"><span class="toggle_keGJ sun_3CPA"></span></div></div><div class="react-toggle-thumb"></div><input type="checkbox" disabled="" aria-label="Dark mode toggle" class="react-toggle-screenreader-only"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div><div class="navbar-sidebar"><div class="navbar-sidebar__brand"><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a></div><div class="navbar-sidebar__items"><div class="menu"><ul class="menu__list"><li class="menu__list-item"><a aria-current="page" class="menu__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></li><li class="menu__list-item"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="menu__link">GitHub</a></li></ul></div></div></div></nav><div class="main-wrapper"><div class="docPage_1kjD"><main class="docMainContainer_FFX1"><div class="padding-vert--lg"><div class="container"><div class="row"><div class="col docItemCol_2GOA"><div class="docItemContainer_2cwg"><article><header><h1 class="docTitle_1vWb">filters</h1></header><div class="markdown"><p>Filters are used for scene-wide effects such as glow, fog, blur. The SDK
+lets you create a file storing combinations of filters. You can preview
+the filter settings on a loaded scene in the SDK. You can load them into
+your application (add them to the viewPort) to activate your
+preconfigured set of several filters in one step.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="creating-filters"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#creating-filters" title="Direct link to heading">#</a>Creating Filters</h1><p><img src="../sdk/filterexplorer.png" alt="filterexplorer.png"></p><p>To create a new filter:</p><ol><li><p>In the Projects window, right-click Assets→Effects.</p></li><li><p>Select File→New File...</p></li><li><p>Select Filter→Empty FilterPostProcessor File in the New File Wizard.</p><ul><li>An empty filter file appears in the Assets→Effects directory.</li></ul></li><li><p>Double-click the created file.</p><ul><li>The file opens in the FilterExplorer window.</li></ul></li></ol><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="editing-filters"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#editing-filters" title="Direct link to heading">#</a>Editing Filters</h1><p>To add filters or modify existing filters</p><ol><li><p>Double-click a j3f file to open it in the FilterExplorer window.</p></li><li><p>Right-click the j3f file&#x27;s root node to add a filter.</p><ul><li>Added filters are listed under the filter&#x27;s root node.</li></ul></li><li><p>Open the Properties window and select a filter in the
+FilterExplorer. Configure filter options like intensity etc.</p></li></ol><p>View the filter in the SceneComposer to see what you are doing:</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="viewing-filters"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#viewing-filters" title="Direct link to heading">#</a>Viewing Filters</h1><p><img src="../sdk/p3wuv.png" alt="p3wuv.png"></p><p>To see a loaded filter</p><ol><li><p>Open a model or scene in the SceneComposer.</p></li><li><p>Double-click a j3f file to open it in the FilterExplorer window.</p></li><li><p>Press the &quot;show filter button in the OpenGL window.</p></li></ol><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="loading-filters-in-a-game"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#loading-filters-in-a-game" title="Direct link to heading">#</a>Loading filters in a game</h1><p>To load a filter in a game (that is, to add it to your game&#x27;s viewport),
+add the following lines to your game&#x27;s simpleInit() method (or some
+other place):</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token class-name">FilterPostProcessor</span><span class="token plain"> processor </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token class-name">FilterPostProcessor</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> assetManager</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">loadAsset</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;Filters/MyFilter.j3f&quot;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">viewPort</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">addProcessor</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">processor</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/8keep/wikidemo/edit/master/docs/sdk/filters.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div>Copyright © 2020 jMonkeyEngine.</div></div></div></footer>
+</div>
+
+<script src="/wikidemo/styles.08ff7081.js"></script>
+
+<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+
+<script src="/wikidemo/main.1b6aa70f.js"></script>
+
+<script src="/wikidemo/1.e501629b.js"></script>
+
+<script src="/wikidemo/2.c824d386.js"></script>
+
+<script src="/wikidemo/302.1d1a2997.js"></script>
+
+<script src="/wikidemo/394d525a.30c299b8.js"></script>
+
+<script src="/wikidemo/17896441.d065d5f5.js"></script>
+
+<script src="/wikidemo/eb84d5f9.f70bff07.js"></script>
+
+
+</body>
+</html>

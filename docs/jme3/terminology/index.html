@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Docusaurus v2.0.0-alpha.50">
+<script src="/js/dark_default.js"></script>
+
+<title data-react-helmet="true">terminology | jMonkeyEngine Documentation</title>
+
+<meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="terminology | jMonkeyEngine Documentation"><meta data-react-helmet="true" name="description" content="Before you start, make certain you are familiar with the following"><meta data-react-helmet="true" property="og:description" content="Before you start, make certain you are familiar with the following"><meta data-react-helmet="true" property="og:url" content="https://8keep.github.io/wikidemo/docs/jme3/terminology">
+
+<link data-react-helmet="true" rel="shortcut icon" href="/wikidemo/img/favicon.ico">
+
+
+<link rel="stylesheet" href="/wikidemo/styles.7d008dc0.css">
+
+
+<link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
+
+<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+
+<link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
+
+<link rel="preload" href="/wikidemo/1.e501629b.js" as="script">
+
+<link rel="preload" href="/wikidemo/2.c824d386.js" as="script">
+
+<link rel="preload" href="/wikidemo/302.1d1a2997.js" as="script">
+
+<link rel="preload" href="/wikidemo/394d525a.30c299b8.js" as="script">
+
+<link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
+
+<link rel="preload" href="/wikidemo/b16a4528.29fe2775.js" as="script">
+
+</head>
+<body>
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=window.matchMedia("(prefers-color-scheme: dark)"),n=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();null!==n?t(n):e.matches&&t("dark")}()</script>
+<div id="__docusaurus">
+<nav class="navbar navbar--light navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><div aria-label="Navigation bar toggle" class="navbar__toggle" role="button" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></div><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></div><div class="navbar__items navbar__items--right"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="navbar__item navbar__link">GitHub</a><div class="react-toggle react-toggle--disabled displayOnlyInLargeViewport_1gtM"><div class="react-toggle-track"><div class="react-toggle-track-check"><span class="toggle_keGJ moon_1gwN"></span></div><div class="react-toggle-track-x"><span class="toggle_keGJ sun_3CPA"></span></div></div><div class="react-toggle-thumb"></div><input type="checkbox" disabled="" aria-label="Dark mode toggle" class="react-toggle-screenreader-only"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div><div class="navbar-sidebar"><div class="navbar-sidebar__brand"><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a></div><div class="navbar-sidebar__items"><div class="menu"><ul class="menu__list"><li class="menu__list-item"><a aria-current="page" class="menu__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></li><li class="menu__list-item"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="menu__link">GitHub</a></li></ul></div></div></div></nav><div class="main-wrapper"><div class="docPage_1kjD"><div class="docSidebarContainer_1cYp"><div class="sidebar_1kLs"><div class="menu menu--responsive menu_w2sC"><button aria-label="Open Menu" aria-haspopup="true" class="button button--secondary button--sm menu__button" type="button"><svg aria-label="Menu" class="sidebarMenuIcon_2vk4" xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 32 32" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/documentation">Documentation</a></li><li class="menu__list-item"><a class="menu__link menu__link--sublist menu__link--active" href="#!">jMonkeyEngine</a><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/bsd_license">License</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/githubtips">Github Tips</a></li><li class="menu__list-item"><a class="menu__link menu__link--sublist menu__link--active" href="#!">jME3</a><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3">jME3</a></li><li class="menu__list-item menu__list-item--collapsed"><a class="menu__link menu__link--sublist" href="#!">Beginner Tutorials</a><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_simpleapplication">hello_simpleapplication</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_node">hello_node</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_asset">hello_asset</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_main_event_loop">hello_main_event_loop</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_input_system">hello_input_system</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_material">hello_material</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_animation">hello_animation</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_picking">hello_picking</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_collision">hello_collision</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_terrain">hello_terrain</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_audio">hello_audio</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_effects">hello_effects</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hello_physics">hello_physics</a></li></ul></li><li class="menu__list-item"><a class="menu__link menu__link--sublist menu__link--active" href="#!">Intermediate Tutorials</a><ul class="menu__list"><li class="menu__list-item menu__list-item--collapsed"><a class="menu__link menu__link--sublist" href="#!">Concepts</a><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/intermediate/best_practices">best_practices</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/intermediate/simpleapplication">simpleapplication</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/intermediate/appsettings">appsettings</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/features">features</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/intermediate/optimization">optimization</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/faq">faq</a></li></ul></li><li class="menu__list-item menu__list-item--collapsed"><a class="menu__link menu__link--sublist" href="#!">Maths Concepts</a><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/math_for_dummies">math_for_dummies</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/intermediate/math">math</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/math">math</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/rotate">rotate</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/math_video_tutorials">math_video_tutorials</a></li></ul></li><li class="menu__list-item"><a class="menu__link menu__link--sublist menu__link--active" href="#!">3D Graphics Concepts</a><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/intermediate/multi-media_asset_pipeline">multi-media_asset_pipeline</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/scenegraph_for_dummies">scenegraph_for_dummies</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/beginner/hellovector">hellovector</a></li><li class="menu__list-item"><a aria-current="page" class="menu__link menu__link--active" href="/wikidemo/docs/jme3/terminology">terminology</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/intermediate/how_to_use_materials">how_to_use_materials</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/intermediate/transparency_sorting">transparency_sorting</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/external/blender">blender</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/jme3/external/3dsmax">3dsmax</a></li></ul></li></ul></li></ul></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/logo">Logo</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/multiplayer_template">Multiplayer Template</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/report_bugs">Report Bugs</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/sdk">SDK</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/spidermonkey">SpiderMonkey</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/tasks">Tasks</a></li><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/team">Team</a></li></ul></li><li class="menu__list-item menu__list-item--collapsed"><a class="menu__link menu__link--sublist" href="#!">Wiki</a><ul class="menu__list"><li class="menu__list-item"><a class="menu__link" href="/wikidemo/docs/docusaurus/styleguide">Style Guide</a></li></ul></li></ul></div></div></div><main class="docMainContainer_FFX1"><div class="padding-vert--lg"><div class="container"><div class="row"><div class="col docItemCol_2GOA"><div class="docItemContainer_2cwg"><article><header><h1 class="docTitle_1vWb">terminology</h1></header><div class="markdown"><p>Before you start, make certain you are familiar with the following
+concepts and terminology.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="3d-graphics-and-audio"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#3d-graphics-and-audio" title="Direct link to heading">#</a>3D Graphics and Audio</h1><p><strong>OpenGL</strong> is the Open Graphics Library, a platform-independent
+specification for rendering 2D/3D computer graphics. For Java, there are
+two implementations of OpenGL-based renderers:</p><ol><li><p>Lightweight Java Game Library (LWJGL).</p></li><li><p>Java OpenGL (JOGL)</p></li></ol><p><strong>OpenAL</strong> is the Open Audio Library, a platform-independent 3D audio
+API.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="context-display-renderer"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#context-display-renderer" title="Direct link to heading">#</a>Context, Display, Renderer</h1><p>The <strong>jME Context</strong> makes settings, renderer, timer, input and event
+listeners, display system, accessible to a JME game.</p><ul><li><p>The <strong>jME Display System</strong> is what draws the custom JME window
+(instead of Java Swing).</p></li><li><p>The <strong>Input System</strong> is the component that lets you respond to user
+input: Mouse clicks and movements, keyboard presses, and joystick
+motions.</p></li><li><p>The <strong>Renderer</strong> is what does all the work of calculating how to
+draw the 3D scenegraph to the 2D screen.</p><ul><li>The <strong>Shader</strong> is a programmable part of the rendering pipeline.
+The jME3 game engine uses it to offer advanced customizable
+materials.</li></ul></li></ul><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="geometry"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#geometry" title="Direct link to heading">#</a>Geometry</h1><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="polygon-mesh-vertex"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#polygon-mesh-vertex" title="Direct link to heading">#</a>Polygon, Mesh, Vertex</h2><p><img src="../jme3/dolphin-mesh.png" alt="Models (here a dolphin) are made up of polygon
+meshes"></p><p>Most visible objects in a 3D scene are made up of polygon meshes --
+characters, terrains, buildings, etc. A mesh is a grid-like structure
+that represents a complex shape. The advantage of a mesh is that it is
+mathematically simple enough to render in real time, and detailed enough
+to be recognizable.</p><p>Every shape is reduced to a number of connected polygons, usually
+triangles; even round surfaces such as spheres are reduced to a grid of
+triangles. The polygons\&#x27; corner points are called vertices. Every
+vertex is positioned at a coordinate, all vertices together describe the
+outline of the shape.</p><p>You create 3D meshes in tools called mesh editors, e.g in Blender. The
+jMonkeyEngine can load finished meshes (=models) and arrange them to
+scenes, but it cannot edit the mesh itself.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="materials-color-lightingshading"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#materials-color-lightingshading" title="Direct link to heading">#</a>Materials: Color, Lighting/Shading</h1><p>What we call &quot;color&quot; is merely part of an object&#x27;s light reflection. The
+onlooker&#x27;s brain uses shading and reflecting properties to infer an
+object&#x27;s shape and material. Factors like these make all the difference
+between chalk vs milk, skin vs paper, water vs plastic, etc!</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="color"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#color" title="Direct link to heading">#</a>Color</h2><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="ambient-color"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#ambient-color" title="Direct link to heading">#</a>Ambient color</h3><ul><li><p>The uniform base color of the mesh -- what it looks like when not
+influenced by any light source.</p></li><li><p>Usually similar to the Diffuse color.</p></li><li><p>This is the minimum color you need for an object to be visible.</p></li></ul><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="diffuse-color"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#diffuse-color" title="Direct link to heading">#</a>Diffuse color</h3><ul><li><p>The base color of the mesh plus shattered light and shadows that are
+caused by a light source.</p></li><li><p>Usually similar to the Ambient color.</p></li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="light-sources"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#light-sources" title="Direct link to heading">#</a>Light Sources</h2><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="emissive-color"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#emissive-color" title="Direct link to heading">#</a>Emissive color</h3><ul><li><p>The color of light emitted by a light source or glowing material.</p></li><li><p>Only glowing materials such as lights have an emissive color, normal
+objects don&#x27;t have this property.</p></li><li><p>Often white (sun light).</p></li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="reflections"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#reflections" title="Direct link to heading">#</a>Reflections</h2><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="shininess"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#shininess" title="Direct link to heading">#</a>Shininess</h3><ul><li><p>Degree of shininess of a surface (1-128).</p></li><li><p>Shiny objects have small, clearly outlined specular highlights.
+(E.g. glass, water, silver)</p></li><li><p>Normal objects have wide, blurry specular highlights. (E.g. metal,
+plastic, stone, polished materials)</p></li><li><p>Uneven objects are not shiny and have no specular highlights. (E.g.
+cloth, paper, wood, snow)\
+Set the Specular color to ColorRGBA.Black to switch off shininess.</p></li></ul><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="specular-color"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#specular-color" title="Direct link to heading">#</a>Specular Color</h3><ul><li><p>If the material is shiny, then the Specular Color is the color of
+the reflected highlights.</p></li><li><p>Usually the same as the emissive color of the light source (e.g.
+white).</p></li><li><p>You can use colors to achieve special specular effects, such as
+metallic or iridescent reflections.</p></li><li><p>Non-shiny objects have a black specular color.</p></li></ul><p><img src="../jme3/tanlglow2.png" alt="tanlglow2.png"></p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="materials-textures"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#materials-textures" title="Direct link to heading">#</a>Materials: Textures</h1><p>Textures are part of Materials. In the simplest case, an object could
+have just one texture, the Color Map, loaded from one image file. When
+you think back of old computer games you&#x27;ll remember this looks quite
+plain.</p><p>The more information you (the game designer) provide additionally to the
+Color Map, the higher the degree of detail and realism. Whether you want
+photo-realistic rendering or &quot;toon&quot; rendering (Cel Shading), everything
+depends on the quality of your materials and textures. Modern 3D
+graphics use several layers of information to describe one material,
+each mapped layer is a texture.</p><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>Got no textures? <a href="http://opengameart.org">Download free textures from
+opengameart.org</a>. Remember to keep the copyright
+notice together with the textures!</p></div></div><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="texture-mapping"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#texture-mapping" title="Direct link to heading">#</a>Texture Mapping</h2><p><img src="https://raw.githubusercontent.com/jMonkeyEngine/jmonkeyengine/master/jme3-testdata/src/main/resources/Models/HoverTank/tank_diffuse.jpg" alt="tank_diffuse.jpg"></p><ul><li><p><strong>Color Map / Diffuse Map</strong></p><ul><li><p>A plain image file or a procedural texture that describes an
+object&#x27;s visible surface.</p></li><li><p>The image can have alpha channels for transparency.</p></li><li><p><strong>A Color Map is the minimum texture.</strong> You can map more
+textures as optional improvements.</p></li><li><p>Color Maps are unshaded. The same is called Diffuse Map in a
+Phong-illuminated material, because this texture defines the
+basic colors of light that are <em>diffused</em> by this object.</p></li></ul></li><li><p><strong>Bump Map</strong></p><p>Bump maps are used to describe detailed shapes that would be too
+hard or simply too inefficient to sculpt in a mesh editor.</p><p>There are two types:</p><ul><li><p>You use Normal Maps to model tiny details such as cracks in
+walls, rust, skin texture, or a canvas weave ( (<a href="http://en.wikipedia.org/wiki/Bump_mapping">More on
+BumpMaps</a>).</p></li><li><p>You use Height Maps to model large terrains with valleys and
+mountains.</p></li></ul><p><img src="../jme3/beginner/mountains512.png" alt="mountains512.png"></p></li><li><p><strong>Height Map</strong></p><ul><li><p>A height map is a grayscale image looking similar to a terrain
+map used in topography. Brighter grays represent higher areas
+and darker grays lower areas.</p></li><li><p>A heightmap can represent 256 height levels and is mostly used
+to roughly outline terrains.</p></li><li><p>You can draw a heightmap by hand in any image editor.</p></li></ul></li></ul><p><img src="https://raw.githubusercontent.com/jMonkeyEngine/jmonkeyengine/master/jme3-testdata/src/main/resources/Models/HoverTank/tank_normals.png" alt="tank_normals.png"></p><ul><li><p><strong>Normal Map</strong></p><ul><li><p>A well-done Normal Map makes a shape more detailed -- without
+the need to add costly polygons to the mesh. It contains shading
+information that makes the object appear smoother and more
+fine-grained.</p></li><li><p>When you open a Normal Map in an image editor, it looks like a
+false-color version of the Color Map. Normal maps however are
+never used for coloring, instead, each the color values encode
+displacement data of bumps and cracks on the surface.
+Displacement data is represented by the Surface Normals of the
+slopes, hence the name.</p></li><li><p>You cannot draw or edit normal maps by hand, professional
+designers use software to calculate them off high-quality 3D
+models. You can either buy a professional texture set, or find
+free collections that include Normal Maps.</p></li></ul></li></ul><p><img src="https://raw.githubusercontent.com/jMonkeyEngine/jmonkeyengine/master/jme3-testdata/src/main/resources/Models/HoverTank/tank_specular.jpg" alt="tank_specular.jpg"></p><ul><li><p><strong>Specular Map</strong></p><ul><li><p>A Specular Map further improves the realism of an object&#x27;s
+surface: It contains extra information about shininess and makes
+the shape appear more realistically illumated.</p></li><li><p>Start out with a copy of the Diffuse Map in a medium gray that
+corresponds to the average shininess/dullness of this material.
+Then add ligher grays for smoother, shinier, more reflective
+areas; and darker grays for duller, rougher, worn-out areas. The
+resulting image file looks similar to a grayscale version of the
+Diffuse Map.</p></li><li><p>You can use colors in a Specular map to create certain
+reflective effects (fake iridiscence, metallic effect).</p></li></ul></li></ul><p><img src="https://raw.githubusercontent.com/jMonkeyEngine/jmonkeyengine/master/jme3-testdata/src/main/resources/Textures/Terrain/BrickWall/BrickWall.jpg" alt="BrickWall.jpg"></p><ul><li><p><strong>Seamless Tiled Textures</strong></p><p>Tiles are a very simple, commonly used type of texture. When
+texturing a wide area (e.g. walls, floors), you don&#x27;t create one
+huge texture -- instead you tile a small texture repeatedly to fill
+the area.</p><p>A seamless texture is an image file that has been designed or
+modified so that it can be used as tiles: The right edge matches the
+left edge, and the top edge matches the bottom edge. The onlooker
+cannot easily tell where one starts and the next one ends, thus
+creating an illusion of a huge texture. The downside is that the
+tiling becomes painfully obvious when the area is viewed from a
+distance. Also you cannot use it on more complex models such as
+characters.</p><p>See also this tutorial on <a href="http://www.photoshoptextures.com/texture-tutorials/seamless-textures.htm">How to make seamless textures in
+Photoshop</a>.</p></li></ul><p><img src="https://raw.githubusercontent.com/jMonkeyEngine/jmonkeyengine/master/jme3-testdata/src/main/resources/Models/Ferrari/Car.jpg" alt="Car.jpg"></p><ul><li><p><strong>UV Maps / Texture Atlas</strong></p><p>Creating a texture for a cube is easy -- but what about a character
+with a face and extremities? For more complex objects, you design
+the texture in the same ways as a flat sewing pattern: One image
+file contains the outline of the front, back, and side of the
+object, next to one another. Specific areas of the flat texture (UV
+coordinates) map onto certain areas of your 3D model (XYZ
+coordinates), hence the name UV map. Using UV Maps (also known as
+Texture Atlas), one model can have different textures on each side.
+You create one corresponding UV map for each texture.</p><p>Getting the seams and mappings right is crucial: You must use a
+graphic tool like Blender to create UV Maps (Texture Atlas) and
+store the coordinates correctly. It&#x27;s worth the while to learn this,
+UV mapped models look a lot more professional.</p></li><li><p><strong>Albedo Maps</strong></p><p>Albedo maps are similar to Diffuse maps with the exceptions that
+they don&#x27;t have shadows or highlights. They are used as the base
+color of a PBR material.</p></li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="environment-mapping"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#environment-mapping" title="Direct link to heading">#</a>Environment Mapping</h2><p><img src="../wp-uploads/glass-teapot1.png" alt="glass-teapot1.png"></p><p>Environment Mapping or Reflection Mapping is used to create the
+impression of reflections and refractions in real time. It&#x27;s faster (but
+less accurate) than the raytracing methods used in offline rendering
+applications.</p><p>You create a Cube Map to represent your environment; Sphere Maps are
+also possible, but often look distorted. Basically you give the
+environment map a set of images showing a &quot;360°&quot; view of the background
+scene -- very similar to a skybox. The renderer maps the environment on
+the texture of the reflective surface, which results in an acceptable
+&quot;glass/mirror/water&quot; effect. Just like a skybox, the reflection map is
+static, so dynamic things (such as the player walking) are not part of
+the reflection. (!)</p><p>See also: <a href="/wikidemo/docs/jme3/advanced/water">Water</a>.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="mip-map-texture"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#mip-map-texture" title="Direct link to heading">#</a>MIP Map Texture</h2><p>MIP Map means that you provide one texture in two or three resolutions
+in one file (MIP = &quot;multum&quot; in parvo = &quot;many&quot; in one). Depending on how
+close (or far) the camera is, the engine automatically renders a more
+(or less) detailed texture for the object. Thus objects look detailed at
+close up, but also look good when viewed from far away. Good for
+everything, but requires more time to create and more space to store
+textures. If you don&#x27;t provide custom ones, the jMonkeyEngine creates
+basic MIP maps automatically as an optimization.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="procedural-textures"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#procedural-textures" title="Direct link to heading">#</a>Procedural Textures</h2><p>A procedural texture is generated from repeating one small image, plus
+some pseudo-random, gradient variations (called Perlin noise).
+Procedural textures look more natural than static rectangular textures,
+and they look less distorted on spheres. On big meshes, their
+repetitiveness is much less noticable than with tiled seamless textures.
+Procedural textures are ideal for irregular large-area textures like
+grass, soil, rock, rust, and walls. Use the <a href="/wikidemo/docs/sdk/neotexture">jMonkeyEngine SDK
+NeoTexture plugin</a> to create them.</p><p><img src="../wp-uploads/neotexture-2.jpg" alt="neotexture-2.jpg"></p><p>See also: <a href="http://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro/Every_Material_Known_to_Man">Blender: Every Material Known to
+Man</a></p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="physically-based-rendering-textures-pbr"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#physically-based-rendering-textures-pbr" title="Direct link to heading">#</a>Physically Based Rendering Textures (PBR)</h2><blockquote><p>Physically based rendering is an approach in computer graphics that
+seeks to render graphics in a way that more accurately models the flow
+of light in the real world.</p><p>---  Wikipedia</p></blockquote><p>To simplify, PBR attempts to deliver photo realistic images based off
+the texture of a material and how light becomes more reflective the more
+you view it at an angle. In other words, it&#x27;s based on real physics.
+Everything has a reflection but accurately representing that reflection
+in video graphics has been mostly done with tricks prior to the
+introduction of PBR. Tricks as in using different lighting images
+(specular maps) overlaying color images (diffuse maps) to simulate
+shininess.</p><p>With PBR, a materials &quot;Metalness&quot; (conductive) or \&quot;Dielectric\&quot;
+(insulator) and \&quot;Roughness\&quot; or lack thereof will determine how light
+gets reflected. For example, metal (Metalness) is smoother than dirt
+(dielectric) so has a higher reflection whereas the dirt would tend to
+absorb the light, just as in real world conditions.</p><p>The technique described above is known as the &quot;Metalness Workflow&quot;.
+Where you are deciding whether the texture is metallic or dielectric and
+defining the amount of roughness for the texture.</p><p>There is another workflow known as the &quot;Specular Workflow&quot;. In the
+metalness workflow the albedo map is used for both diffuse color and
+specular color. &quot;Specular Workflow&quot; uses a specular color map instead.
+In this workflow, the albedo map is the diffuse color, the specular map
+is the specular color, and you have a gray scale gloss map that is the
+same as the roughness map. The workflow is very similar to the old
+techniques used for making materials.</p><p>This has been a brief introduction to PBR. In reality, it requires a
+significant amount of learning to implement correctly. Read the three
+part series of articles called, Physically Based Rendering, that can be
+found under the <a href="../jme3.xml#materials-light-shadow">Materials, light,
+Shadow</a> topic for a more in depth
+explanation of PBR textures. This is a must read for any serious jME
+developer.</p><p>See also: <a href="https://www.chaosgroup.com/blog/understanding-metalness">Understanding
+Metalness</a>.</p><p>You should also conduct many searches on the subject, especially ones
+related to your modeling tool of choice.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="animation"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#animation" title="Direct link to heading">#</a>Animation</h1><p>In 3D games, Skeletal Animation is used for animated characters, but in
+principle the skeleton approach can be extended to any 3D mesh (for
+example, an opening crate&#x27;s hinge can be considered a primitive joint).</p><p>Unless you animate a 3D cartoon, realism of animated characters is
+generally a problem: Movement can look alien-like mechanical or broken,
+the character appears hollow, or as if floating. Professional game
+designers invest a lot of effort to make characters animate in a natural
+way, including <a href="http://en.wikipedia.org/wiki/Motion_capture">motion
+capture</a>.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="rigging-and-skinning"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#rigging-and-skinning" title="Direct link to heading">#</a>Rigging and Skinning</h2><p><img src="../wp-uploads/blenderswordsman.png" alt="blenderswordsman.png"></p><p>An animated character has an armature: An internal skeleton (Bones) and
+an external surface (Skin). The Skin is the visible outside of the
+character and it includes clothing. The Bones are not visible and are
+used to interpolate (calculate) the morphing steps of the skin.</p><p>JME3, the game engine, only loads and plays your recorded animations.
+You must use a tool (such as Blender) to set up (rig, skin, and animate)
+a character.</p><ol><li><p><strong>Rigging:</strong> The Construction of a character&#x27;s skeleton.</p><ul><li><p>Create as few Bones as possible to decrease complexity.</p></li><li><p>Bones are connected in a parent-child hierarchy: Moving one bone
+can pull another bone with it (e.g. arm pulls hand).</p></li><li><p>Bones follow a certain naming scheme so the 3D engines know
+what&#x27;s what.</p></li></ul></li><li><p><strong>Skinning:</strong> The association of individual bones with the
+corresponding skin sections.</p><ul><li><p>Each Bone is connected to a part of the Skin. Animating the
+(invisible) Bone pulls the (visible) Skin with it.\
+E.g. the thigh Bone is connected to the upper leg Skin.</p></li><li><p>One part of the Skin can be affected by more than one bone (e.g.
+knee, elbow).</p></li><li><p>The connection between bones and skin sections is gradual: You
+assign weights how much each skin polygon is affected by any
+bone&#x27;s motion.\
+E.g. when the thigh bone moves, the leg is fully affected, the
+hips joints less so, and the head not at all.</p></li><li><p>jMonkeyEngine supports hardware skinning (on the GPU, not on the
+CPU).</p></li></ul></li><li><p><strong>Keyframe Animation:</strong> A keyframe is one recorded snapshot of a
+motion sequence.</p><ul><li><p>A series of keyframes makes up one animation.</p></li><li><p>Each model can have several animations. Each animation has a
+name to identify it (e.g. &quot;walk&quot;, &quot;attack&quot;, &quot;jump&quot;).</p></li><li><p>You specify in your game code which keyframe animation to load,
+and when to play it.</p></li></ul></li></ol><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>What is the difference between animation (rigging, skinning, keyframes)
+and transformation (rotation, scaling, moving, &quot;slerp&quot;)?</p><ul><li><p>Transformation is simpler than animation. Sometimes, transforming a
+geometry already makes it look like it is animated: For example, a
+spinning windmill, a pulsating alien ball of energy, moving rods of
+a machine. Transformations can be easily done with JME3 methods.</p></li><li><p>Animations however are more complex and are encoded in a special
+format (keyframes). They distort the skin of the mesh, and complex
+series of motions be &quot;recorded&quot; (in external tools) and played (in
+JME3).</p></li></ul></div></div><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="kinematics"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#kinematics" title="Direct link to heading">#</a>Kinematics</h2><ul><li><p>Forward kinematics: &quot;Given&quot; the angles of all the character&#x27;s
+joints, what is the position of the character&#x27;s hand?</p></li><li><p>Inverse kinematics: &quot;Given&quot; the position of the character&#x27;s hand,
+what are the angles of all the character&#x27;s joints?</p></li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="controller-and-channel"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#controller-and-channel" title="Direct link to heading">#</a>Controller and Channel</h2><p>In the JME3 application, you register animated models to the Animation
+Controller. The controller object gives you access to the available
+animation sequences. The controller has several channels, each channel
+can run one animation sequence at a time. To run several sequences, you
+create several channels, and run them in parallel.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="artificial-intelligence-ai"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#artificial-intelligence-ai" title="Direct link to heading">#</a>Artificial Intelligence (AI)</h1><p>Non-player (computer-controlled) characters (NPCs) are only fun in a
+game if they do not stupidly bump into walls, or blindly run into the
+line of fire. You want to make NPCs &quot;aware&quot; of their surroundings and
+let them make decisions based on the game state -- otherwise the player
+can just ignore them. The most common use case is that you want to make
+enemies interact in a way so they offer a more interesting challenge for
+the player.</p><p>&quot;Smart&quot; game elements are called artificially intelligent agents (AI
+agents). An AI agent can be used to implement enemy NPCs as well as
+trained pets; you also use them to create automatic alarm systems that
+lock doors and &quot;call&quot; the guards after the player triggers an intruder
+alert.</p><p>The domain of artificial intelligence deals, among other things, with:</p><ul><li><p><strong>Knowledge</strong> -- Knowledge is <em>the data</em> to which the AI agent has
+access, and on which the AI bases its decisions. Realistic agents
+only &quot;know&quot; what they &quot;see and hear&quot;. This implies that information
+can be hidden from the AI to keep the game fair. You can have an
+all-knowing AI, or you can let only some AI agents share
+information, or you let only AI agents who are close know the
+current state.\
+Example: After the player trips the wire, only a few AI guards with
+two-way radios start moving towards the player&#x27;s position, while
+many other guards don&#x27;t suspect anything yet.</p></li><li><p><strong>Goal Planning</strong> -- Planning is about how an AI agent <em>takes
+action</em>. Each agent has the priority to achieve a specific goal, to
+reach a future state. When programming, you split the agent&#x27;s goal
+into several subgoals. The agent consults its knowledge about the
+current state, chooses from available tactics and strategies, and
+prioritizes them. The agent repeatedly tests whether the current
+state is closer to its goal. If unsuccessful, the agent must discard
+the current tactics/strategy and try another one.\
+Example: An agent searches the best path to reach the player base in
+a changing environment, avoiding traps. An agent chases the player
+with the goal of eliminating him. An agent hides from the player
+with the goal of murdering a VIP.</p></li><li><p><strong>Problem Solving</strong> -- Problem solving is about how the agent
+<em>reacts to interruptions</em>, obstacles that stand between it and its
+goal. The agent uses a given set of facts and rules to deduct what
+state it is in -- triggered by perceptions similar to pain, agony,
+boredom, or being trapped. In each state, only a specific subset of
+reactions makes sense. The actual reaction also depends on the
+agent&#x27;s, goal since the agent&#x27;s reaction must not block its own
+goal!\
+Examples: If player approaches, does the agent attack or conceal
+himself or raise alarm? While agent is idle, does he lay traps or
+heal self or recharge magic runes? If danger to own life, does the
+agent try to escape or kamikaze?</p></li></ul><p>More advanced AIs can also learn, for example using neural networks.</p><p>There are lots of resources explaining interesting AI algorithms:</p><ul><li><p><a href="http://www.policyalmanac.org/games/aStarTutorial.htm">A* (A-Star) pathfinding for
+beginners</a></p></li><li><p><a href="http://theory.stanford.edu/~amitp/GameProgramming/">A* (A-star) pathfinding
+theory</a></p></li><li><p><a href="http://hem.fyristorg.com/dawnbringer/z-path.html">\&quot;Z-Path\&quot;
+algorithm</a>
+(backwards pathfinding)</p></li><li><p><a href="http://web.media.mit.edu/~jorkin/goap.html">GOAP --- Goal-Oriented Action
+Planning</a></p></li><li><p><a href="http://neuroph.sourceforge.net/">Neuroph --- Java Neural Networks</a></p></li></ul><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="math"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#math" title="Direct link to heading">#</a>Math</h1><p><img src="../jme3/intermediate/coordinate-system.png" alt="coordinate-system.png"></p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="coordinates"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#coordinates" title="Direct link to heading">#</a>Coordinates</h2><p>Coordinates represent a location in a coordinate system. Coordinates are
+relative to the origin at (0,0,0). In 3D space, you need to specify
+three coordinate values to locate a point: X (right), Y (up), Z (towards
+you). Similarly, -X (left), -Y (down), -Z (away from you). In contrast
+to a vector (which looks similar), a coordinate is a location, not a
+direction.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="the-origin"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#the-origin" title="Direct link to heading">#</a>The Origin</h3><p>The origin is the central point in the 3D world, where the three axes
+meet. It&#x27;s always at the coordinates (0,0,0).</p><p><strong>Example:</strong> <code>Vector3f origin = new Vector3f( Vector3f.ZERO );</code></p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="vectors"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#vectors" title="Direct link to heading">#</a>Vectors</h2><p>A vector has a length and a direction, like an arrow in 3D space. A
+vector starts at a coordinate (x1,y1,z1) or at the origin, and ends at
+the target coordinate (x2,y2,z2). Backwards directions are expressed
+with negative values.</p><p><strong>Example:</strong></p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token class-name">Vector3f</span><span class="token plain"> v </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">new</span><span class="token plain"> </span><span class="token class-name">Vector3f</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">17f</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">-</span><span class="token number" style="color:#36acaa">4f</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0f</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> </span><span class="token comment" style="color:#999988;font-style:italic">// starts at (0/0/0)</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token class-name">Vector3f</span><span class="token plain"> v </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">new</span><span class="token plain"> </span><span class="token class-name">Vector3f</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">8f</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0f</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">33f</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">add</span><span class="token punctuation" style="color:#393A34">(</span><span class="token keyword" style="color:#00009f">new</span><span class="token plain"> </span><span class="token class-name">Vector3f</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">0f</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">-</span><span class="token number" style="color:#36acaa">2f</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token operator" style="color:#393A34">-</span><span class="token number" style="color:#36acaa">2f</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> </span><span class="token comment" style="color:#999988;font-style:italic">// starts at (8,-2,31)</span></div></div></div></div></div><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="unit-vectors"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#unit-vectors" title="Direct link to heading">#</a>Unit Vectors</h3><p>A <em>unit vector</em> is a basic vector with a length of 1 world unit. Since
+its length is fixed (and it thus can only point at one location anyway),
+the only interesting thing about this vector is its direction.</p><ul><li><p><code>Vector3f.UNIT_X</code> = ( 1, 0, 0) = right</p></li><li><p><code>Vector3f.UNIT_Y</code> = ( 0, 1, 0) = up</p></li><li><p><code>Vector3f.UNIT_Z</code> = ( 0, 0, 1) = forwards</p></li><li><p><code>Vector3f.UNIT_XYZ</code> = 1 wu diagonal right-up-forewards</p></li></ul><p>Negate the components of the vector to turn its direction, e.g. negating
+right (1,0,0) results in left (-1,0,0).</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="normalized-vectors"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#normalized-vectors" title="Direct link to heading">#</a>Normalized Vectors</h3><p>A <em>normalized vector</em> is a custom <em>unit vector</em>. A normalized vector is
+not the same as a <em>(surface) normal vector</em>. When you normalize a
+vector, it still has the same direction, but you lose the information
+where the vector originally pointed.</p><p><strong>Example:</strong> You normalize vectors before calculating angles.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="surface-normal-vectors"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#surface-normal-vectors" title="Direct link to heading">#</a>Surface Normal Vectors</h3><p><img src="../jme3/300px-surface_normal.png" alt="300px-surface_normal.png"></p><p>A surface normal is a vector that is perpendicular (orthogonal) to a
+plane. You calculate the Surface Normal by calculating the cross
+product.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="cross-product"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#cross-product" title="Direct link to heading">#</a>Cross Product</h3><p>The cross product is a calculation that you use to find a perpendicular
+vector (an orthogonal, a &quot;right&quot; angle at 90°). In 3D space, speaking of
+an orthogonal only makes sense with respect to a plane. You need two
+vectors to uniquely define a plane. The cross product of the two
+vectors, <code>v1 × v2</code>, is a new vector that is perpendicular to this plane.
+A vector perpendicular to a plane is a called <em>Surface Normal</em>.</p><p><strong>Example:</strong> The x unit vector and the y unit vector together define the
+x/y plane. The vector perpendicular to them is the z axis. JME can
+calculate that this equation is true:\
+<code>( Vector3f.UNIT_X.cross( Vector3f.UNIT_Y ) ).equals( Vector3f.UNIT_Z )</code>
+== true</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="transformation"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#transformation" title="Direct link to heading">#</a>Transformation</h3><p>Transformation means rotating (turning), scaling (resizing), or
+translating (moving) objects in 3D scenes. 3D engines offer simple
+methods so you can write code that transforms nodes.</p><p>Examples: Falling and rotating bricks in 3D Tetris.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="slerp"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#slerp" title="Direct link to heading">#</a>Slerp</h3><p>Slerp is how we pronounce spherical linear interpolation when we are in
+a hurry. A slerp is an interpolated transformation that is used as a
+simple &quot;animation&quot; in 3D engines. You define a start and end state, and
+the slerp interpolates a constant-speed transition from one state to the
+other. You can play the motion, pause it at various percentages (values
+between 0.0 and 1.0), and play it backwards and forwards. <a href="%7Blink-javadoc%7D/com/jme3/math/Quaternion.html#slerp-com.jme3.math.Quaternion-com.jme3.math.Quaternion-float-">JavaDoc:
+slerp()</a></p><p>Example: A burning meteorite Geometry slerps from &quot;position p1, rotation
+r1, scale s1&quot; in the sky down to &quot;p2, r2, s2&quot; into a crater.</p><p><a href="/wikidemo/docs/jme3/math">Learn more about 3D maths here.</a></p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="game-developer-jargon"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#game-developer-jargon" title="Direct link to heading">#</a>Game Developer Jargon</h1><ul><li><a href="http://www.gamasutra.com/view/feature/6504/a_game_studio_culture_dictionary.php?print=1">A Game Studio Culture
+Dictionary</a></li></ul><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="3d-graphics-terminology-wiki-book"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#3d-graphics-terminology-wiki-book" title="Direct link to heading">#</a>3D graphics Terminology Wiki book</h1><ul><li><a href="http://en.wikipedia.org/wiki/User:Jreynaga/Books/3D_Graphics_Terms">http://en.wikipedia.org/wiki/User:Jreynaga/Books/3D_Graphics_Terms</a></li></ul></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/8keep/wikidemo/edit/master/docs/jme3/terminology.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/wikidemo/docs/jme3/beginner/hellovector"><div class="pagination-nav__link--sublabel">Previous</div><div class="pagination-nav__link--label">« hellovector</div></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/wikidemo/docs/jme3/intermediate/how_to_use_materials"><div class="pagination-nav__link--sublabel">Next</div><div class="pagination-nav__link--label">how_to_use_materials »</div></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#polygon-mesh-vertex" class="contents__link">Polygon, Mesh, Vertex</a></li><li><a href="#color" class="contents__link">Color</a><ul><li><a href="#ambient-color" class="contents__link">Ambient color</a></li><li><a href="#diffuse-color" class="contents__link">Diffuse color</a></li></ul></li><li><a href="#light-sources" class="contents__link">Light Sources</a><ul><li><a href="#emissive-color" class="contents__link">Emissive color</a></li></ul></li><li><a href="#reflections" class="contents__link">Reflections</a><ul><li><a href="#shininess" class="contents__link">Shininess</a></li><li><a href="#specular-color" class="contents__link">Specular Color</a></li></ul></li><li><a href="#texture-mapping" class="contents__link">Texture Mapping</a></li><li><a href="#environment-mapping" class="contents__link">Environment Mapping</a></li><li><a href="#mip-map-texture" class="contents__link">MIP Map Texture</a></li><li><a href="#procedural-textures" class="contents__link">Procedural Textures</a></li><li><a href="#physically-based-rendering-textures-pbr" class="contents__link">Physically Based Rendering Textures (PBR)</a></li><li><a href="#rigging-and-skinning" class="contents__link">Rigging and Skinning</a></li><li><a href="#kinematics" class="contents__link">Kinematics</a></li><li><a href="#controller-and-channel" class="contents__link">Controller and Channel</a></li><li><a href="#coordinates" class="contents__link">Coordinates</a><ul><li><a href="#the-origin" class="contents__link">The Origin</a></li></ul></li><li><a href="#vectors" class="contents__link">Vectors</a><ul><li><a href="#unit-vectors" class="contents__link">Unit Vectors</a></li><li><a href="#normalized-vectors" class="contents__link">Normalized Vectors</a></li><li><a href="#surface-normal-vectors" class="contents__link">Surface Normal Vectors</a></li><li><a href="#cross-product" class="contents__link">Cross Product</a></li><li><a href="#transformation" class="contents__link">Transformation</a></li><li><a href="#slerp" class="contents__link">Slerp</a></li></ul></li></ul></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div>Copyright © 2020 jMonkeyEngine.</div></div></div></footer>
+</div>
+
+<script src="/wikidemo/styles.08ff7081.js"></script>
+
+<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+
+<script src="/wikidemo/main.1b6aa70f.js"></script>
+
+<script src="/wikidemo/1.e501629b.js"></script>
+
+<script src="/wikidemo/2.c824d386.js"></script>
+
+<script src="/wikidemo/302.1d1a2997.js"></script>
+
+<script src="/wikidemo/394d525a.30c299b8.js"></script>
+
+<script src="/wikidemo/17896441.d065d5f5.js"></script>
+
+<script src="/wikidemo/b16a4528.29fe2775.js"></script>
+
+
+</body>
+</html>

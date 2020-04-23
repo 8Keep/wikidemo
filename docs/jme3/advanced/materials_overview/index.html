@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Docusaurus v2.0.0-alpha.50">
+<script src="/js/dark_default.js"></script>
+
+<title data-react-helmet="true">materials_overview | jMonkeyEngine Documentation</title>
+
+<meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="materials_overview | jMonkeyEngine Documentation"><meta data-react-helmet="true" name="description" content="In jMonkeyEngine 3, colors and textures are represented as Material"><meta data-react-helmet="true" property="og:description" content="In jMonkeyEngine 3, colors and textures are represented as Material"><meta data-react-helmet="true" property="og:url" content="https://8keep.github.io/wikidemo/docs/jme3/advanced/materials_overview">
+
+<link data-react-helmet="true" rel="shortcut icon" href="/wikidemo/img/favicon.ico">
+
+
+<link rel="stylesheet" href="/wikidemo/styles.7d008dc0.css">
+
+
+<link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
+
+<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+
+<link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
+
+<link rel="preload" href="/wikidemo/1.e501629b.js" as="script">
+
+<link rel="preload" href="/wikidemo/2.c824d386.js" as="script">
+
+<link rel="preload" href="/wikidemo/302.1d1a2997.js" as="script">
+
+<link rel="preload" href="/wikidemo/394d525a.30c299b8.js" as="script">
+
+<link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
+
+<link rel="preload" href="/wikidemo/82638416.c2c18c5b.js" as="script">
+
+</head>
+<body>
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=window.matchMedia("(prefers-color-scheme: dark)"),n=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();null!==n?t(n):e.matches&&t("dark")}()</script>
+<div id="__docusaurus">
+<nav class="navbar navbar--light navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><div aria-label="Navigation bar toggle" class="navbar__toggle" role="button" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></div><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></div><div class="navbar__items navbar__items--right"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="navbar__item navbar__link">GitHub</a><div class="react-toggle react-toggle--disabled displayOnlyInLargeViewport_1gtM"><div class="react-toggle-track"><div class="react-toggle-track-check"><span class="toggle_keGJ moon_1gwN"></span></div><div class="react-toggle-track-x"><span class="toggle_keGJ sun_3CPA"></span></div></div><div class="react-toggle-thumb"></div><input type="checkbox" disabled="" aria-label="Dark mode toggle" class="react-toggle-screenreader-only"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div><div class="navbar-sidebar"><div class="navbar-sidebar__brand"><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a></div><div class="navbar-sidebar__items"><div class="menu"><ul class="menu__list"><li class="menu__list-item"><a aria-current="page" class="menu__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></li><li class="menu__list-item"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="menu__link">GitHub</a></li></ul></div></div></div></nav><div class="main-wrapper"><div class="docPage_1kjD"><main class="docMainContainer_FFX1"><div class="padding-vert--lg"><div class="container"><div class="row"><div class="col docItemCol_2GOA"><div class="docItemContainer_2cwg"><article><header><h1 class="docTitle_1vWb">materials_overview</h1></header><div class="markdown"><p>In jMonkeyEngine 3, colors and textures are represented as Material
+objects.</p><ul><li><p>All Geometries must have Materials. To improve performance, reuse
+Materials for similar models, don&#x27;t create a new Material object for
+every Geometry. (E.g. use one bark Material for several tree
+models.)</p></li><li><p>Each Material is based on one of jme3&#x27;s default Material Definitions
+(.j3md files) that are included in the engine. Advanced users can
+create additional custom Material Definitions (see how it&#x27;s done in
+the <a href="/wikidemo/docs/jme3/build_from_sources">jme3 sources</a>).</p></li></ul><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>Find out quickly <a href="/wikidemo/docs/jme3/intermediate/how_to_use_materials">How to Use
+Materials</a>, including
+the most commonly used code samples and RenderStates.\
+Or find more background info on <a href="/wikidemo/docs/jme3/advanced/material_definitions">How to use Material
+Definitions</a>.</p></div></div><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="all-materials-definition-properties"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#all-materials-definition-properties" title="Direct link to heading">#</a>All Materials Definition Properties</h1><p>The following Materials table shows the Material Definitions that
+jMonkeyEngine 3 supports.</p><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>Looks confusing?\
+1) Start learning about <code>Unshaded.j3md</code> and <code>Lighting.j3md</code>, they cover
+90% of the cases.\
+2) Use <a href="/wikidemo/docs/sdk/material_editing">the SDK&#x27;s visual material
+editor</a> to try out and save material
+settings easily.\
+3) The <a href="/wikidemo/docs/sdk/code_editor">SDK&#x27;s Palette</a> contains drag&amp;drop
+code snippets for loading materials.</p></div></div><p>Most Material parameters are optional. For example, it is okay to
+specify solely the <code>DiffuseMap</code> and <code>NormalMap</code> when using
+<code>Lighting.j3md</code>, and leave the other texture maps empty. In this case,
+you are only using a subset of the possible features, but that&#x27;s fine if
+it already makes in the material look the way that you want. You can
+always add more texture maps later.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="unshaded-coloring-and-textures"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#unshaded-coloring-and-textures" title="Direct link to heading">#</a>Unshaded Coloring and Textures</h2><p>jMonkeyEngine supports illuminated and unshaded Material Definitions.</p><ul><li><p>Phong Illuminated materials look more naturalistic.</p></li><li><p>Unshaded materials look more abstract.</p></li></ul><p>&quot;Unshaded&quot; materials look somewhat abstract because they ignore lighting
+and shading. Unshaded Materials work even if the scene does not include
+a light source. These Materials can be single-colored or textured. For
+example, they are used for cards and tiles, for the sky, billboards and
+UI elements, for toon-style games, or for testing.</p><p>+-------------+--------------------+-----------------------------------+
+| Material    | Usage              | Material Parameters               |
+| Definition  |                    |                                   |
++=============+====================+===================================+
+| Common/Mat  | Standard,          | <strong>Texture Maps</strong>\                 |
+| Defs/Misc/\ | non-illuminated    | setTexture(&quot;ColorMap&quot;,            |
+| Un          | Materials.         | as                                |
+| shaded.j3md |                    | setManager.loadTexture(&quot;name&quot;));\ |
+|             | Use this for       | setB                              |
+|             | simple coloring,   | oolean(&quot;SeparateTexCoord&quot;,true);\ |
+|             | texturing, glow,   | setTexture(&quot;LightMap&quot;,            |
+|             | and transparency.  | as                                |
+|             |                    | setManager.loadTexture(&quot;name&quot;));\ |
+|             | See also: [Hello   | <strong>Colors</strong>\                       |
+|             | Material](../      | setColor(&quot;Color&quot;,                 |
+|             | ../jme3/beginner/h | ColorRGBA.White);\                |
+|             | ello_material) | setBoolean(&quot;VertexColor&quot;,true);\  |
+|             |                    | <strong>Glow</strong>\                         |
+|             |                    | setTexture(&quot;GlowMap&quot;,             |
+|             |                    | as                                |
+|             |                    | setManager.loadTexture(&quot;name&quot;));\ |
+|             |                    | setColor(&quot;GlowColor&quot;,             |
+|             |                    | ColorRGBA.White);                 |
++-------------+--------------------+-----------------------------------+</p><p>: Standard Unshaded</p><p>Other useful, but less commonly used material definitions:</p><p>+-------------+-----------------+--------------------------------------+
+| Material    | Usage           | Material Parameters                  |
+| Definition  |                 |                                      |
++=============+=================+======================================+
+| Common/Mat  | A solid sky     | setTexture(&quot;Texture&quot;,                |
+| Defs/Misc/\ | blue, or use    | assetManager.loadTexture(&quot;name&quot;));\  |
+| Sky.j3md    | with a custom   | setBoolean(&quot;SphereMap&quot;,true);\       |
+|             | SkyDome         | setVector3(&quot;NormalScale&quot;, new        |
+|             | texture.        | Vector3f(0,0,0));                    |
+|             |                 |                                      |
+|             | See also:       |                                      |
+|             | [Sky            |                                      |
+|             | ](../../jme3/ad |                                      |
+|             | vanced/sky) |                                      |
++-------------+-----------------+--------------------------------------+
+| Co          | Splat textures  | setTexture(&quot;Tex1&quot;,                   |
+| mmon/MatDef | for, e.g.       | assetManager.loadTexture(&quot;name&quot;));\  |
+| s/Terrain/\ | terrains.       | (red)\                               |
+| T           |                 | setFloat(&quot;Tex1Scale&quot;,1f);\           |
+| errain.j3md | See also:       | setTexture(&quot;Tex2&quot;,                   |
+|             | [Hello          | assetManager.loadTexture(&quot;name&quot;));\  |
+|             | Te              | (green)\                             |
+|             | rrain](../../jm | setFloat(&quot;Tex2Scale&quot;,1f);\           |
+|             | e3/beginner/hel | setTexture(&quot;Tex3&quot;,                   |
+|             | lo_terrain) | assetManager.loadTexture(&quot;name&quot;));\  |
+|             |                 | (blue)\                              |
+|             |                 | setFloat(&quot;Tex3Scale&quot;,1f);\           |
+|             |                 | setTexture(&quot;Alpha&quot;,                  |
+|             |                 | assetManager.loadTexture(&quot;name&quot;));   |
++-------------+-----------------+--------------------------------------+
+| Co          | A multi-layered | setFloat(&quot;terrainSize&quot;,512f);\       |
+| mmon/MatDef | texture for     | setTexture(&quot;region1ColorMap&quot;,        |
+| s/Terrain/\ | terrains.       | assetManager.loadTexture(&quot;name&quot;));\  |
+| H           |                 | setTexture(&quot;region2ColorMap&quot;,        |
+| eightBasedT | Specify four    | assetManager.loadTexture(&quot;name&quot;));\  |
+| errain.j3md | textures and a  | setTexture(&quot;region3ColorMap&quot;,        |
+|             | Vector3f        | assetManager.loadTexture(&quot;name&quot;));\  |
+|             | describing the  | setTexture(&quot;region4ColorMap&quot;,        |
+|             | region in which | assetManager.loadTexture(&quot;name&quot;));\  |
+|             | each texture    | setVector3(&quot;region1&quot;, new            |
+|             | should appear:  | Vector3f(0,0,0));\                   |
+|             |                 | setVector3(&quot;region2&quot;, new            |
+|             | X = start       | Vector3f(0,0,0));\                   |
+|             | height,\        | setVector3(&quot;region3&quot;, new            |
+|             | Y = end         | Vector3f(0,0,0));\                   |
+|             | height,\        | setVector3(&quot;region4&quot;, new            |
+|             | Z = texture     | Vector3f(0,0,0));\                   |
+|             | scale.          | <strong>Settings for steep areas:</strong>\       |
+|             |                 | setTexture(&quot;slopeColorMap&quot;,          |
+|             | Texture regions | assetManager.loadTexture(&quot;name&quot;));\  |
+|             | can overlap.    | setFloat(&quot;slopeTileFactor&quot;,1f);      |
+|             |                 |                                      |
+|             | For example:    |                                      |
+|             |                 |                                      |
+|             | Specify a       |                                      |
+|             | seafloor        |                                      |
+|             | texture for the |                                      |
+|             | lowest areas.   |                                      |
+|             |                 |                                      |
+|             | A sandy texture |                                      |
+|             | for the         |                                      |
+|             | beaches.        |                                      |
+|             |                 |                                      |
+|             | A grassy        |                                      |
+|             | texture for     |                                      |
+|             | inland areas.   |                                      |
+|             |                 |                                      |
+|             | A rocky texture |                                      |
+|             | for mountain    |                                      |
+|             | tops.           |                                      |
++-------------+-----------------+--------------------------------------+
+| Common/Mat  | Used with       | setTexture(&quot;Texture&quot;,                |
+| Defs/Misc/\ | texture masks   | assetManager.loadTexture(&quot;name&quot;));\  |
+| Pa          | for particle    | setTexture(&quot;GlowMap&quot;,                |
+| rticle.j3md | effects, or for | assetManager.loadTexture(&quot;name&quot;));\  |
+|             | point sprites.  | setColor(&quot;GlowColor&quot;,                |
+|             |                 | ColorRGBA.White);\                   |
+|             | The Quadratic   | setFloat(&quot;Quadratic&quot;,1f);\           |
+|             | value scales    | setBoolean(&quot;PointSprite&quot;,true);      |
+|             | the particle    |                                      |
+|             | for perspective |                                      |
+|             | view.           |                                      |
+|             | ([formula](h    |                                      |
+|             | ttps://github.c |                                      |
+|             | om/jMonkeyEngin |                                      |
+|             | e/jmonkeyengine |                                      |
+|             | /blob/master/jm |                                      |
+|             | e3-core/src/mai |                                      |
+|             | n/java/com/jme3 |                                      |
+|             | /effect/Particl |                                      |
+|             | eEmitter.java)) |                                      |
+|             |                 |                                      |
+|             | Does support an |                                      |
+|             | optional        |                                      |
+|             | colored glow    |                                      |
+|             | effect.         |                                      |
+|             |                 |                                      |
+|             | See also:       |                                      |
+|             | [Hello          |                                      |
+|             | Ef              |                                      |
+|             | fects](../../jm |                                      |
+|             | e3/beginner/hel |                                      |
+|             | lo_effects) |                                      |
++-------------+-----------------+--------------------------------------+</p><p>: Special Unshaded</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="phong-illuminated"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#phong-illuminated" title="Direct link to heading">#</a>Phong Illuminated</h2><p>jMonkeyEngine supports illuminated and unshaded Material Definitions.</p><ul><li><p>Phong Illuminated materials look more naturalistic.</p></li><li><p>Unshaded materials look more abstract.</p></li></ul><p>Illuminated materials require a <a href="/wikidemo/docs/jme3/advanced/light_and_shadow">light
+source</a> added to at least one
+of their parent nodes! (e.g. rootNode.) Illuminated materials are darker
+on the sides facing away from light sources. They use Phong illumination
+model (default), or the Ward isotropic gaussian specular shader
+(WardIso) which looks more like plastic. They do not cast <a href="/wikidemo/docs/jme3/advanced/light_and_shadow">drop
+shadows</a> unless you use a
+FilterPostProcessor.</p><p>+-------------+--------------------+-----------------------------------+
+| Material    | Usage              | Material Parameters               |
+| Definition  |                    |                                   |
++=============+====================+===================================+
+| Common/MatD | Commonly used      | <strong>Texture Maps</strong>\                 |
+| efs/Light/\ | Material with      | setTexture(&quot;DiffuseMap&quot;,          |
+| Li          | Phong              | as                                |
+| ghting.j3md | illumination.      | setManager.loadTexture(&quot;name&quot;));\ |
+|             |                    | setBoolean(&quot;UseAlpha&quot;,true);      |
+|             | Use this material  | <sup id="fnref-1"><a aria-current="page" class="footnote-ref active" href="/wikidemo/docs/jme3/advanced/materials_overview#fn-1">1</a></sup>\                             |
+|             | together with      | setTexture(&quot;NormalMap&quot;,           |
+|             | DiffuseMap,        | as                                |
+|             | SpecularMap,       | setManager.loadTexture(&quot;name&quot;));\ |
+|             | BumpMap            | setBoolean(&quot;LATC&quot;,true); <sup id="fnref-2"><a aria-current="page" class="footnote-ref active" href="/wikidemo/docs/jme3/advanced/materials_overview#fn-2">2</a></sup>\    |
+|             | (NormalMaps,       | setTexture(&quot;SpecularMap&quot;,         |
+|             | ParalaxMap)        | as                                |
+|             | textures.          | setManager.loadTexture(&quot;name&quot;));\ |
+|             |                    | setFloat(&quot;Shininess&quot;,64f);\       |
+|             | Supports           | setTexture(&quot;ParallaxMap&quot;,         |
+|             | shininess,         | as                                |
+|             | transparency, and  | setManager.loadTexture(&quot;name&quot;));\ |
+|             | plain material     | setTexture(&quot;AlphaMap&quot;,            |
+|             | colors (Diffuse,   | as                                |
+|             | Ambient,           | setManager.loadTexture(&quot;name&quot;));\ |
+|             | Specular).         | setFl                             |
+|             |                    | oat(&quot;AlphaDiscardThreshold&quot;,1f);\ |
+|             | See also: [Hello   | setTexture(&quot;ColorRamp&quot;,           |
+|             | Material](../      | as                                |
+|             | ../jme3/beginner/h | setManager.loadTexture(&quot;name&quot;));\ |
+|             | ello_material) | <strong>Glow</strong>\                         |
+|             |                    | setTexture(&quot;GlowMap&quot;,             |
+|             |                    | as                                |
+|             |                    | setManager.loadTexture(&quot;name&quot;));\ |
+|             |                    | setColor(&quot;GlowColor&quot;,             |
+|             |                    | ColorRGBA.White);\                |
+|             |                    | <strong>Performance and quality</strong>\      |
+|             |                    | se                                |
+|             |                    | tBoolean(&quot;VertexLighting&quot;,true);\ |
+|             |                    | se                                |
+|             |                    | tBoolean(&quot;UseVertexColor&quot;,true);\ |
+|             |                    | setBoolean(&quot;LowQuality&quot;,true);\   |
+|             |                    | setBoolean(&quot;HighQuality&quot;,true);\  |
+|             |                    | <strong>Material Colors</strong>\              |
+|             |                    | setBo                             |
+|             |                    | olean(&quot;UseMaterialColors&quot;,true);\ |
+|             |                    | setColor(&quot;Diffuse&quot;,               |
+|             |                    | ColorRGBA.White);\                |
+|             |                    | setColor(&quot;Ambient&quot;,               |
+|             |                    | ColorRGBA.White);\                |
+|             |                    | setColor(&quot;Specular&quot;,              |
+|             |                    | ColorRGBA.White);\                |
+|             |                    | <strong>Tangent shading:</strong>\             |
+|             |                    | setBoolean(&quot;VTangent&quot;,true);\     |
+|             |                    | setBoolean(&quot;Minnaert&quot;,true);      |
+|             |                    | <sup id="fnref-3"><a aria-current="page" class="footnote-ref active" href="/wikidemo/docs/jme3/advanced/materials_overview#fn-3">3</a></sup>\                             |
+|             |                    | setBoolean(&quot;WardIso&quot;,true); <sup id="fnref-4"><a aria-current="page" class="footnote-ref active" href="/wikidemo/docs/jme3/advanced/materials_overview#fn-4">4</a></sup>  |
++-------------+--------------------+-----------------------------------+</p><p>: Standard Illuminated</p><p>+-------------+--------------------+-----------------------------------+
+| Material    | Usage              | Material Parameters               |
+| Definitions |                    |                                   |
++=============+====================+===================================+
+| Co          | Same kind of       | <strong>Texture Splat Maps</strong>\           |
+| mmon/MatDef | multi-layered      | setTexture(&quot;DiffuseMap&quot;,          |
+| s/Terrain/\ | splat texture as   | as                                |
+| TerrainLi   | Terrain.j3md, but  | setManager.loadTexture(&quot;name&quot;));\ |
+| ghting.j3md | with illumination  | setF                              |
+|             | and shading.       | loat(&quot;DiffuseMap_0_scale&quot;,1f);\ |
+|             |                    | setTexture(&quot;NormalMap&quot;,           |
+|             | Typically used for | as                                |
+|             | terrains, but      | setManager.loadTexture(&quot;name&quot;));\ |
+|             | works on any mesh. | setTexture(&quot;DiffuseMap_1&quot;,       |
+|             |                    | as                                |
+|             | For every three    | setManager.loadTexture(&quot;name&quot;));\ |
+|             | splat textures,    | setF                              |
+|             | you need one alpha | loat(&quot;DiffuseMap_1_scale&quot;,1f);\ |
+|             | map.               | setTexture(&quot;NormalMap_1&quot;,        |
+|             |                    | as                                |
+|             | You can use a      | setManager.loadTexture(&quot;name&quot;));\ |
+|             | total of 11        | setTexture(&quot;DiffuseMap_2&quot;,       |
+|             | texture maps in    | as                                |
+|             | the terrain&#x27;s      | setManager.loadTexture(&quot;name&quot;));\ |
+|             | splat texture:     | setF                              |
+|             |                    | loat(&quot;DiffuseMap_2_scale&quot;,1f);\ |
+|             | Note that diffuse  | setTexture(&quot;NormalMap_2&quot;,        |
+|             | and normal maps    | as                                |
+|             | all count against  | setManager.loadTexture(&quot;name&quot;));\ |
+|             | that.              | setTexture(&quot;DiffuseMap_3&quot;,       |
+|             |                    | as                                |
+|             | For example:       | setManager.loadTexture(&quot;name&quot;));\ |
+|             |                    | setF                              |
+|             | You can use a      | loat(&quot;DiffuseMap_3_scale&quot;,1f);\ |
+|             | maximum of nine    | setTexture(&quot;NormalMap_3&quot;,        |
+|             | diffuse textures,  | as                                |
+|             | two of which can   | setManager.loadTexture(&quot;name&quot;));\ |
+|             | have normal maps;  | etc, up to 11.\                   |
+|             | or, five textures  | <strong>Alpha Maps</strong>\                   |
+|             | with both diffuse  | setTexture(&quot;AlphaMap&quot;,            |
+|             | and normal maps.   | asse                              |
+|             |                    | tManager.loadTexture(\&quot;name\&quot;));\ |
+|             |                    | setTexture(&quot;AlphaMap_1&quot;,         |
+|             |                    | as                                |
+|             |                    | setManager.loadTexture(&quot;name&quot;));\ |
+|             |                    | setTexture(&quot;AlphaMap_2&quot;,         |
+|             |                    | as                                |
+|             |                    | setManager.loadTexture(&quot;name&quot;));\ |
+|             |                    | <strong>Glowing</strong>\                      |
+|             |                    | setTexture(&quot;GlowMap&quot;,             |
+|             |                    | as                                |
+|             |                    | setManager.loadTexture(&quot;name&quot;));\ |
+|             |                    | setColor(&quot;GlowColor&quot;,             |
+|             |                    | ColorRGBA.White);\                |
+|             |                    | <strong>Miscellaneous</strong>\                |
+|             |                    | setColor(&quot;Diffuse&quot;,               |
+|             |                    | ColorRGBA.White);\                |
+|             |                    | setColor(&quot;Ambient&quot;,               |
+|             |                    | ColorRGBA.White);\                |
+|             |                    | setFloat(&quot;Shininess&quot;,64f);\       |
+|             |                    | setColor(&quot;Specular&quot;,              |
+|             |                    | ColorRGBA.White);\                |
+|             |                    | setTexture(&quot;SpecularMap&quot;,         |
+|             |                    | as                                |
+|             |                    | setManager.loadTexture(&quot;name&quot;));\ |
+|             |                    | setBoolean(&quot;WardIso&quot;,true);\      |
+|             |                    | setBool                           |
+|             |                    | ean(&quot;useTriPlanarMapping&quot;,true);\ |
+|             |                    | setBoolean(&quot;isTerrainGrid&quot;,true); |
++-------------+--------------------+-----------------------------------+
+| Common/MatD | Reflective glass   | setTexture(&quot;Texture&quot;,             |
+| efs/Light/\ | material with      | as                                |
+| r           | environment map    | setManager.loadTexture(&quot;name&quot;));\ |
+| eflect.j3md | (C                 | setBoolean(&quot;SphereMap&quot;,true);     |
+|             | ubeMap/SphereMap). |                                   |
++-------------+--------------------+-----------------------------------+</p><p>: Special Illuminated</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="other-test-and-debug"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#other-test-and-debug" title="Direct link to heading">#</a>Other: Test and Debug</h2><p>+-------------+--------------------------------------------------------+
+| Material    | Usage                                                  |
+| Definition  |                                                        |
++=============+========================================================+
+| Common/Mat  | A color gradient calculated from the model&#x27;s surface   |
+| Defs/Misc/\ | normal&#x27;s. You can use this built-in material to debug  |
+| ShowN       | the generation of normal&#x27;s in meshes, to preview       |
+| ormals.j3md | models that have no material and no lights, or as      |
+|             | fall-back default material. This built-in material has |
+|             | no parameters.                                         |
++-------------+--------------------------------------------------------+</p><p>: Testing</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="renderstates"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#renderstates" title="Direct link to heading">#</a>RenderStates</h1><p>+----------------------+----------------------+-----------------------+
+| Material Option      | Description          | Example               |
++======================+======================+=======================+
+| getAddit             | This is the default, | Use for all opaque    |
+| ionalRenderState().\ | no transparency.     | objects like walls,   |
+| setBlend             |                      | floors, people...     |
+| Mode(BlendMode.Off); |                      |                       |
++----------------------+----------------------+-----------------------+
+| getAddi              | Interpolates the     | Use this for normal   |
+| tionalRenderState()\ | background pixel     | every-day             |
+| .setBlendMo          | with the current     | translucency: Frosted |
+| de(BlendMode.Alpha); | pixel by using the   | window panes, ice,    |
+|                      | current pixel&#x27;s      | glass, alpha-blended  |
+|                      | alpha.               | vegetation            |
+|                      |                      | textures...           |
++----------------------+----------------------+-----------------------+
+| getAddi              | Disables writing of  | Use this on Materials |
+| tionalRenderState()\ | the pixel&#x27;s depth    | if you have several   |
+| .s                   | value to the depth   | tr                    |
+| etDepthWrite(false); | buffer.              | ansparent/translucent |
+|                      |                      | objects obscuring one |
+|                      |                      | another, but you want |
+|                      |                      | to see through both.  |
++----------------------+----------------------+-----------------------+
+| getAddi              | Enables Alpha        | Activate Alpha        |
+| tionalRenderState()\ | Testing with a       | Testing for           |
+| .se                  | &quot;Al                  | (partially)           |
+| tAlphaFallOff(0.5f); | phaDiscardThreshold&quot; | <strong>transparent</strong>       |
+|                      | in the AlphaMap.     | objects such as       |
+| getAddi              |                      | foliage, hair, etc.   |
+| tionalRenderState()\ |                      |                       |
+| .setAlphaTest(true)  |                      | Deactivate Alpha      |
+|                      |                      | Testing for gradually |
+|                      |                      | <strong>translucent</strong>       |
+|                      |                      | objects, such as      |
+|                      |                      | colored glass, smoked |
+|                      |                      | glass, ghosts.        |
++----------------------+----------------------+-----------------------+
+| getAddi              | Additive alpha       | This is the default   |
+| tionalRenderState()\ | blending adds colors | for                   |
+| .setBlendMode(       | in a commutative     | Particle.j3md-based   |
+| BlendMode.Additive); | way, i.e. the result | textures that have a  |
+|                      | does not depend on   | black color           |
+|                      | the order of         | background.           |
+|                      | transparent layers   |                       |
+|                      | since it adds the    |                       |
+|                      | scene&#x27;s background   |                       |
+|                      | pixel color to the   |                       |
+|                      | current pixel color. |                       |
+|                      | This is useful if    |                       |
+|                      | you have many        |                       |
+|                      | transparent textures |                       |
+|                      | overlapping and      |                       |
+|                      | don&#x27;t care about the |                       |
+|                      | order.               |                       |
+|                      |                      |                       |
+|                      | <strong>Note:</strong> Viewed in  |                       |
+|                      | front of a white     |                       |
+|                      | background, Additive |                       |
+|                      | textures become      |                       |
+|                      | fully transparent!   |                       |
++----------------------+----------------------+-----------------------+
+| getAddi              | Same as &quot;Additive&quot;,  | This can be used for  |
+| tionalRenderState()\ | except first it      | particle effects that |
+| .setBlendMode(Blend  | multiplies the       | have alpha as         |
+| Mode.AlphaAdditive); | current pixel color  | background.           |
+|                      | by the pixel alpha.  |                       |
++----------------------+----------------------+-----------------------+
+| getAddi              | Blends by color.     | Generally useless.    |
+| tionalRenderState()\ |                      |                       |
+| .setBlendMo          |                      |                       |
+| de(BlendMode.Color); |                      |                       |
++----------------------+----------------------+-----------------------+
+| getAddi              | Multiplies the       | ?                     |
+| tionalRenderState()\ | background pixel by  |                       |
+| .setBlendMode(       | the current pixel.   |                       |
+| BlendMode.Modulate); |                      |                       |
++----------------------+----------------------+-----------------------+
+| getAddi              | Same as &quot;Modulate&quot;,  | ?                     |
+| tionalRenderState()\ | except the result is |                       |
+| .setBlendMode(Bl     | doubled.             |                       |
+| endMode.ModulateX2); |                      |                       |
++----------------------+----------------------+-----------------------+
+| getAddi              | Pre-multiplied alpha | For use with Premult  |
+| tionalRenderState()\ | blending. E.g. if    | Alpha textures.       |
+| .setBlendMode(Blen   | the color of the     |                       |
+| dMode.PremultAlpha); | object has already   |                       |
+|                      | been multiplied by   |                       |
+|                      | its alpha, this is   |                       |
+|                      | used instead of      |                       |
+|                      | &quot;Alpha&quot; blend mode.  |                       |
++----------------------+----------------------+-----------------------+</p><p>: Transparancy</p><p>If the DiffuseMap has an alpha channel, use:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">mat</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">setBoolean</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;UseAlpha&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token boolean" style="color:#36acaa">true</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><p>Later, put the Geometry (not the Material!) in the appropriate render
+queue.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">geo</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">setQueueBucket</span><span class="token punctuation" style="color:#393A34">(</span><span class="token class-name">Bucket</span><span class="token punctuation" style="color:#393A34">.</span><span class="token class-name">Translucent</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><p>or</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">geo</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">setQueueBucket</span><span class="token punctuation" style="color:#393A34">(</span><span class="token class-name">Bucket</span><span class="token punctuation" style="color:#393A34">.</span><span class="token class-name">Transparent</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><p>+----------------------+----------------------+-----------------------+
+| Material Option      | Usage                | Example               |
++======================+======================+=======================+
+| getAddi              | Activates back-face  | The invisible         |
+| tionalRenderState()\ | culling. Mesh faces  | backsides and insides |
+| .setFaceCullMode     | that are facing away | of models are not     |
+| (FaceCullMode.Back); | from the camera are  | calculated.           |
+|                      | not rendered, which  |                       |
+|                      | saves time.          |                       |
+|                      |                      |                       |
+|                      | <strong>Backface culling   |                       |
+|                      | is activated by      |                       |
+|                      | default as a major   |                       |
+|                      | optimization.</strong>      |                       |
++----------------------+----------------------+-----------------------+
+| getAddi              | No meshes are        | Sometimes used to     |
+| tionalRenderState()\ | culled. Both mesh    | debug custom meshes   |
+| .setFaceCullMod      | faces are rendered,  | if you messed up some |
+| e(FaceCullMode.Off); | even if they face    | of the polygon sides, |
+|                      | away from the        | or for special shadow |
+|                      | camera. Slow.        | effects.              |
++----------------------+----------------------+-----------------------+
+| getAddi              | Activates front-face | No example --         |
+| tionalRenderState()\ | culling. Mesh faces  | Typically not used    |
+| .setFaceCullMode(    | facing the camera    | because you wouldn&#x27;t  |
+| FaceCullMode.Front); | are not rendered.    | see anything          |
+|                      |                      | meaningful.           |
++----------------------+----------------------+-----------------------+
+| getAddi              | Culls both backfaces | Use this as an        |
+| tionalRenderState()\ | and frontfaces.      | efficient way to make |
+| .se                  |                      | an object temporarily |
+| tFaceCullMode(FaceCu |                      | invisible, while      |
+| llMode.FrontAndBack) |                      | keeping all its other |
+|                      |                      | in-game properties    |
+|                      |                      | (such as node         |
+|                      |                      | attachment, collision |
+|                      |                      | shapes, interactions, |
+|                      |                      | etc.) active.         |
++----------------------+----------------------+-----------------------+</p><p>: Culling</p><p>+----------------------+----------------------+-----------------------+
+| Material Option      | Useage               | Example               |
++======================+======================+=======================+
+| getAddi              | Disable writing the  | Use this together     |
+| tionalRenderState()\ | color of pixels.     | with                  |
+| .s                   |                      | setDepthWrite(true)   |
+| etColorWrite(false); |                      | to write pixels only  |
+|                      |                      | to the depth buffer,  |
+|                      |                      | for example.          |
++----------------------+----------------------+-----------------------+
+| getAddi              | Enables point-sprite | Point sprites are     |
+| tionalRenderState()\ | mode, e.g. meshes    | used internally for   |
+| .s                   | with &quot;Mode&quot;.Points   | hardware accelerated  |
+| etPointSprite(true); | will be rendered as  | particle effects.     |
+|                      | textured sprites.    |                       |
+|                      |                      |                       |
+|                      | Note that            |                       |
+|                      | gl_PointCoord must  |                       |
+|                      | be set in the        |                       |
+|                      | shader.              |                       |
++----------------------+----------------------+-----------------------+
+| getAddi              | Enable polygon       | Use this when you     |
+| tionalRenderState()\ | offset.              | have meshes that have |
+| .setPolyOffset();    |                      | triangles really      |
+|                      |                      | close to each over    |
+|                      |                      | (e.g.                 |
+|                      |                      | [Coplanar](h          |
+|                      |                      | ttp://en.wikipedia.or |
+|                      |                      | g/wiki/Coplanarity)), |
+|                      |                      | it will shift the     |
+|                      |                      | depth values to       |
+|                      |                      | prevent               |
+|                      |                      | [Z-fighting]          |
+|                      |                      | (<a href="http://en.wikipedia.">http://en.wikipedia.</a> |
+|                      |                      | org/wiki/Z-fighting). |
++----------------------+----------------------+-----------------------+</p><p>: Miscellaneous</p><p><strong>Related Links</strong></p><ul><li><a href="/wikidemo/docs/jme3/advanced/material_specification">Developer specification of the jME3 material system
+(.j3md,.j3m)</a></li></ul><div class="footnotes"><hr><ol><li id="fn-1">UseAlpha specifies whether DiffuseMap uses the alpha channel<a aria-current="page" class="footnote-backref active" href="/wikidemo/docs/jme3/advanced/materials_overview#fnref-1">↩</a></li><li id="fn-2">LATC Specifies whether NormalMap is BC5/ATI2n/LATC/3Dc-compressed<a aria-current="page" class="footnote-backref active" href="/wikidemo/docs/jme3/advanced/materials_overview#fnref-2">↩</a></li><li id="fn-3">Minnaert is a shader type.<a aria-current="page" class="footnote-backref active" href="/wikidemo/docs/jme3/advanced/materials_overview#fnref-3">↩</a></li><li id="fn-4">WardIso is a shader type.<a aria-current="page" class="footnote-backref active" href="/wikidemo/docs/jme3/advanced/materials_overview#fnref-4">↩</a></li></ol></div></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/8keep/wikidemo/edit/master/docs/jme3/advanced/materials_overview.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#unshaded-coloring-and-textures" class="contents__link">Unshaded Coloring and Textures</a></li><li><a href="#phong-illuminated" class="contents__link">Phong Illuminated</a></li><li><a href="#other-test-and-debug" class="contents__link">Other: Test and Debug</a></li></ul></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div>Copyright © 2020 jMonkeyEngine.</div></div></div></footer>
+</div>
+
+<script src="/wikidemo/styles.08ff7081.js"></script>
+
+<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+
+<script src="/wikidemo/main.1b6aa70f.js"></script>
+
+<script src="/wikidemo/1.e501629b.js"></script>
+
+<script src="/wikidemo/2.c824d386.js"></script>
+
+<script src="/wikidemo/302.1d1a2997.js"></script>
+
+<script src="/wikidemo/394d525a.30c299b8.js"></script>
+
+<script src="/wikidemo/17896441.d065d5f5.js"></script>
+
+<script src="/wikidemo/82638416.c2c18c5b.js"></script>
+
+
+</body>
+</html>

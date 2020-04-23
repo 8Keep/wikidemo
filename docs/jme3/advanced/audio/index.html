@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Docusaurus v2.0.0-alpha.50">
+<script src="/js/dark_default.js"></script>
+
+<title data-react-helmet="true">audio | jMonkeyEngine Documentation</title>
+
+<meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="audio | jMonkeyEngine Documentation"><meta data-react-helmet="true" name="description" content="Place audio files in the `assets/Sound/` directory of your project. jME3"><meta data-react-helmet="true" property="og:description" content="Place audio files in the `assets/Sound/` directory of your project. jME3"><meta data-react-helmet="true" property="og:url" content="https://8keep.github.io/wikidemo/docs/jme3/advanced/audio">
+
+<link data-react-helmet="true" rel="shortcut icon" href="/wikidemo/img/favicon.ico">
+
+
+<link rel="stylesheet" href="/wikidemo/styles.7d008dc0.css">
+
+
+<link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
+
+<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+
+<link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
+
+<link rel="preload" href="/wikidemo/1.e501629b.js" as="script">
+
+<link rel="preload" href="/wikidemo/2.c824d386.js" as="script">
+
+<link rel="preload" href="/wikidemo/302.1d1a2997.js" as="script">
+
+<link rel="preload" href="/wikidemo/394d525a.30c299b8.js" as="script">
+
+<link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
+
+<link rel="preload" href="/wikidemo/3e73a88b.91b20b82.js" as="script">
+
+</head>
+<body>
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=window.matchMedia("(prefers-color-scheme: dark)"),n=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();null!==n?t(n):e.matches&&t("dark")}()</script>
+<div id="__docusaurus">
+<nav class="navbar navbar--light navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><div aria-label="Navigation bar toggle" class="navbar__toggle" role="button" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></div><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></div><div class="navbar__items navbar__items--right"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="navbar__item navbar__link">GitHub</a><div class="react-toggle react-toggle--disabled displayOnlyInLargeViewport_1gtM"><div class="react-toggle-track"><div class="react-toggle-track-check"><span class="toggle_keGJ moon_1gwN"></span></div><div class="react-toggle-track-x"><span class="toggle_keGJ sun_3CPA"></span></div></div><div class="react-toggle-thumb"></div><input type="checkbox" disabled="" aria-label="Dark mode toggle" class="react-toggle-screenreader-only"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div><div class="navbar-sidebar"><div class="navbar-sidebar__brand"><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a></div><div class="navbar-sidebar__items"><div class="menu"><ul class="menu__list"><li class="menu__list-item"><a aria-current="page" class="menu__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></li><li class="menu__list-item"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="menu__link">GitHub</a></li></ul></div></div></div></nav><div class="main-wrapper"><div class="docPage_1kjD"><main class="docMainContainer_FFX1"><div class="padding-vert--lg"><div class="container"><div class="row"><div class="col docItemCol_2GOA"><div class="docItemContainer_2cwg"><article><header><h1 class="docTitle_1vWb">audio</h1></header><div class="markdown"><p>Place audio files in the <code>assets/Sound/</code> directory of your project. jME3
+supports Ogg Vorbis audio compression (.ogg) and uncompressed PCM Wave
+(.wav) formats. You can use for example
+<a href="http://audacity.sourceforge.net/">Audacity</a> to convert from other
+formats.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="audio-terminology"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#audio-terminology" title="Direct link to heading">#</a>Audio Terminology</h1><ul><li><p><strong>Streaming:</strong> There are two ways to load audio data: Short audio
+files are to be stored entirely in memory (prebuffered), while long
+audio files, such as music, are streamed from the hard drive as it
+is played.</p></li><li><p><strong>Looping:</strong> You can play a sound either once and then stop, or
+repeatedly (continuously) in a loop.\
+You cannot loop streamed sounds.</p></li><li><p><strong>Instance:</strong> If you play the same audio twice, the playing is
+queued up and jME plays one after the other. If you play instances
+of sounds, several instances of the same sound can play at the same
+time.</p></li></ul><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="creating-audio-nodes-streamed-or-buffered"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#creating-audio-nodes-streamed-or-buffered" title="Direct link to heading">#</a>Creating Audio Nodes: Streamed or Buffered</h1><p>The main jME audio class to look at is <code>com.jme3.audio.AudioNode</code>. When
+creating a new audio node you need to declare whether how you want to
+load this sound:</p><ul><li><strong>Buffered:</strong> By default, a new audio node is buffered. This means
+jME3 loads the whole file into memory before playing. Use this for
+short sounds. You create a buffered sound by setting
+DataType.Buffer, or using no DataType at all:</li></ul><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-{=html} codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">&lt;!-- --&gt;</span></div></div></div></div></div><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">AudioNode boom = new AudioNode(assetManager, &quot;Sound/boom.wav&quot;);</span></div><div class="token-line" style="color:#393A34"><span class="token plain">AudioNode boom = new AudioNode(assetManager, &quot;Sound/boom.wav&quot;, DataType.Buffer);</span></div></div></div></div></div><ul><li><strong>Streamed:</strong> If it is a long file such as music or a dialog, you
+stream the audio. Streaming means, you load and play in parallel
+until the sound is done. You cannot loop streams. You create a
+streamed sound by setting the boolean to true:</li></ul><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-{=html} codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">&lt;!-- --&gt;</span></div></div></div></div></div><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">AudioNode music = new AudioNode(assetManager, &quot;Sound/music.wav&quot;, DataType.Stream);</span></div></div></div></div></div><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="getting-audionode-properties"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#getting-audionode-properties" title="Direct link to heading">#</a>Getting AudioNode Properties</h1><p>+-----------------------------------+-----------------------------------+
+| AudioNode Method                  | Usage                             |
++===================================+===================================+
+| getStatus()                       | Returns either                    |
+|                                   | AudioSource.Status.Playing,       |
+|                                   | AudioSource.Status.Stopped, or    |
+|                                   | AudioSource.Status.Paused.        |
++-----------------------------------+-----------------------------------+
+| getVolume()                       | Returns the volume.               |
++-----------------------------------+-----------------------------------+
+| getPitch()                        | Returns the pitch.                |
++-----------------------------------+-----------------------------------+</p><p>::: {.note}
+There are other obvious getters to poll the status of all corresponding
+setters listed here.
+:::</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="setting-audionode-properties"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#setting-audionode-properties" title="Direct link to heading">#</a>Setting AudioNode Properties</h1><p>+-----------------------------------+-----------------------------------+
+| AudioNode Method                  | Usage                             |
++===================================+===================================+
+| setTimeOffset(0.5f)               | Play the sound starting at a 0.5  |
+|                                   | second offset from the beginning. |
+|                                   | Default is 0.                     |
++-----------------------------------+-----------------------------------+
+| setPitch(1)                       | Makes the sound play in a higher  |
+|                                   | or lower pitch. Default is 1. 2   |
+|                                   | is twice as high, .5f is half as  |
+|                                   | high.                             |
++-----------------------------------+-----------------------------------+
+| setVolume(1)                      | Sets the volume gain. 1 is the    |
+|                                   | default volume, 2 is twice as     |
+|                                   | loud, etc. 0 is silent/mute.      |
++-----------------------------------+-----------------------------------+
+| setRefDistance(50f)               | The reference distance controls   |
+|                                   | how far a sound can still be      |
+|                                   | heard at 50% of its original      |
+|                                   | volume (<em>this is assuming an      |
+|                                   | exponential fall-off!</em>). A sound  |
+|                                   | with a high RefDist can be heard  |
+|                                   | loud over wide distances; a sound |
+|                                   | with a low refDist can only be    |
+|                                   | heard when the listener is close  |
+|                                   | by. Default is 10 world units.    |
++-----------------------------------+-----------------------------------+
+| setMaxDistance(100f)              | The \&#x27;maximum attenuation         |
+|                                   | distance\&#x27; specifies how far from |
+|                                   | the source the sound stops        |
+|                                   | growing more quiet (sounds in     |
+|                                   | nature don&#x27;t do that). Set this   |
+|                                   | to a smaller value to keep the    |
+|                                   | sound loud even at a distance;    |
+|                                   | set this to higher value to let   |
+|                                   | the sound fade out quickly.       |
+|                                   | Default is 20 world units.        |
++-----------------------------------+-----------------------------------+
+| setLooping(false)                 | Configures the sound so that, if  |
+|                                   | it is played, it plays once and   |
+|                                   | stops. No looping is the default. |
++-----------------------------------+-----------------------------------+</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="looping--ambient-sounds"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#looping--ambient-sounds" title="Direct link to heading">#</a>Looping &amp; Ambient Sounds</h2><p>+-----------------------------------+-----------------------------------+
+| AudioNode Method                  | Usage                             |
++===================================+===================================+
+| setPositional(false)\             | All 3D effects switched off. This |
+| setDirectional(false)             | sound is global and plays in      |
+|                                   | headspace (it appears to come     |
+|                                   | from everywhere). Good for        |
+|                                   | environmental ambient sounds and  |
+|                                   | background music.                 |
++-----------------------------------+-----------------------------------+
+| setLooping(true)                  | Configures the sound to be a      |
+|                                   | loop: After the sound plays, it   |
+|                                   | repeats from the beginning, until |
+|                                   | you call stop() or pause(). Good  |
+|                                   | for music and ambient background  |
+|                                   | noises.\                          |
+|                                   | <strong>Before 3.1-alpha2, Looping does |
+|                                   | not work on streamed sounds.</strong>    |
++-----------------------------------+-----------------------------------+</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="positional-3d-sounds"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#positional-3d-sounds" title="Direct link to heading">#</a>Positional 3D Sounds</h2><p>+-----------------------------------+-----------------------------------+
+| AudioNode Method                  | Usage                             |
++===================================+===================================+
+| setPositional(true)\              | Activates 3D audio: The sound     |
+| setLocalTranslation(...)          | appears to come from a certain    |
+|                                   | position, where it is loudest.    |
+|                                   | Position the AudioNode in the 3D  |
+|                                   | scene, or move it with mobile     |
+|                                   | players or NPCs.                  |
++-----------------------------------+-----------------------------------+
+| setReverbEnabled(true)            | Reverb is a 3D echo effect that   |
+|                                   | only makes sense with positional  |
+|                                   | AudioNodes. Use Audio             |
+|                                   | Environments to make scenes sound |
+|                                   | as if they were &quot;outdoors&quot;, or    |
+|                                   | &quot;indoors&quot; in a large or small     |
+|                                   | room, etc. The reverb effect is   |
+|                                   | defined by the                    |
+|                                   | <code>com.jme3.audio.Environment</code> that |
+|                                   | the <code>audioRenderer</code> is in. See    |
+|                                   | &quot;Setting Audio Environment        |
+|                                   | Properties&quot; below.                |
++-----------------------------------+-----------------------------------+</p><p>::: {.important}
+Positional 3D sounds require an <code>AudioListener</code> object in the scene
+(representing the player&#x27;s ears).
+:::</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="directional-3d-sounds"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#directional-3d-sounds" title="Direct link to heading">#</a>Directional 3D Sounds</h2><p>+-----------------------------------+-----------------------------------+
+| AudioNode Method                  | Usage                             |
++===================================+===================================+
+| setDirectional(true)\             | Activates 3D audio: This sound    |
+| setDirection(...)                 | can only be heard from a certain  |
+|                                   | direction. Specify the direction  |
+|                                   | and angle in the 3D scene if you  |
+|                                   | have setDirectional() true. Use   |
+|                                   | this to restrict noises that      |
+|                                   | should not be heard, for example, |
+|                                   | through a wall.                   |
++-----------------------------------+-----------------------------------+
+| setInnerAngle()\                  | Set the angle in degrees for the  |
+| setOuterAngle()                   | directional audio. The angle is   |
+|                                   | relative to the direction. Note:  |
+|                                   | By default, both angles are 360°  |
+|                                   | and the sound can be heard from   |
+|                                   | all directions!                   |
++-----------------------------------+-----------------------------------+</p><p>::: {.important}
+Directional 3D sounds require an AudioListener object in the scene
+(representing the player&#x27;s ears).
+:::</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="play-pause-stop"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#play-pause-stop" title="Direct link to heading">#</a>Play, Pause, Stop</h1><p>You play, pause, and stop a node called myAudioNode by using the
+respective of the following three methods:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">myAudioNode</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">play</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">myAudioNode</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">pause</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">myAudioNode</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">stop</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><p>::: {.note}
+Whether an Audio Node plays continuously or only once, depends on the
+Loop properties you have set above!
+:::</p><p>You can also start playing instances of an AudioNode. Use the
+<code>playInstance()</code> method if you need to play the same AudioNode multiple
+times, possibly simulatenously. Note that changes to the parameters of
+the original AudioNode do not affect the instances that are already
+playing!</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">myAudioNode</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">playInstance</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="the-audio-listener"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#the-audio-listener" title="Direct link to heading">#</a>The Audio Listener</h1><p>The default AudioListener object <code>listener</code> in <code>SimpleApplication</code> is
+the user&#x27;s ear in the scene. If you use 3D audio (positional or
+directional sounds), you must move the AudioListener with the player:
+For example, for a first-person player, you move the listener with the
+camera. For a third-person player, you move the listener with the player
+avatar Geometry.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token annotation punctuation" style="color:#393A34">@Override</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token keyword" style="color:#00009f">public</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">void</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">simpleUpdate</span><span class="token punctuation" style="color:#393A34">(</span><span class="token keyword" style="color:#00009f">float</span><span class="token plain"> tpf</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token comment" style="color:#999988;font-style:italic">// first-person: keep the audio listener moving with the camera</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">    listener</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">setLocation</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">cam</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">getLocation</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">    listener</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">setRotation</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">cam</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">getRotation</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token punctuation" style="color:#393A34">}</span></div></div></div></div></div><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="setting-audio-environment-properties"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#setting-audio-environment-properties" title="Direct link to heading">#</a>Setting Audio Environment Properties</h1><p>Optionally, You can choose from the following environmental presets from
+<code>com.jme3.audio.Environment</code>. This presets influence subtle echo effects
+(reverb) that evoke associations of different environments in your
+users. That is, it makes you scene sound &quot;indoors&quot; or &quot;outdoors&quot; etc.
+You use Audio Environments together with <code>setReverbEnabled(true)</code> on
+positional AudioNodes (see above).</p><table><thead><tr><th>Environment</th><th>density</th><th>diffusion</th><th>gain</th><th>gainHf</th><th>decayTime</th><th>decayHf</th><th>reflGain</th><th>reflDelay</th><th>lateGain</th><th>lateDelay</th></tr></thead><tbody><tr><td>Garage</td><td>1.00f</td><td>1.0f</td><td>1.0f</td><td>1.00f</td><td>0.90f</td><td>0.5f</td><td>0.751f</td><td>0.0039f</td><td>0.661f</td><td>0.0137f</td></tr><tr><td>Dungeon</td><td>0.75f</td><td>1.0f</td><td>1.0f</td><td>0.75f</td><td>1.60f</td><td>1.0f</td><td>0.950f</td><td>0.0026f</td><td>0.930f</td><td>0.0103f</td></tr><tr><td>Cavern</td><td>0.50f</td><td>1.0f</td><td>1.0f</td><td>0.50f</td><td>2.25f</td><td>1.0f</td><td>0.908f</td><td>0.0103f</td><td>0.930f</td><td>0.0410f</td></tr><tr><td>AcousticLab</td><td>0.50f</td><td>1.0f</td><td>1.0f</td><td>1.00f</td><td>0.28f</td><td>1.0f</td><td>0.870f</td><td>0.0020f</td><td>0.810f</td><td>0.0080f</td></tr><tr><td>Closet</td><td>1.00f</td><td>1.0f</td><td>1.0f</td><td>1.00f</td><td>0.15f</td><td>1.0f</td><td>0.600f</td><td>0.0025f</td><td>0.500f</td><td>0.0006f</td></tr></tbody></table><ol><li><p>Activate a Environment preset</p><ul><li><p>Either use a default, e.g. make you scene sounds like a dungeon
+environment:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">audioRenderer</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">setEnvironment</span><span class="token punctuation" style="color:#393A34">(</span><span class="token keyword" style="color:#00009f">new</span><span class="token plain"> </span><span class="token class-name">Environment</span><span class="token punctuation" style="color:#393A34">(</span><span class="token class-name">Environment</span><span class="token punctuation" style="color:#393A34">.</span><span class="token class-name">Dungeon</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div></li><li><p>Or activate <a href="/wikidemo/docs/jme3/advanced/audio_environment_presets">custom environment
+settings</a> in
+the Environment constructor:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">audioRenderer</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">setEnvironment</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">        </span><span class="token keyword" style="color:#00009f">new</span><span class="token plain"> </span><span class="token class-name">Environment</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain"> density</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> diffusion</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> gain</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> gainHf</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> decayTime</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> decayHf</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">                reflGain</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> reflDelay</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> lateGain</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> lateDelay </span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div></li></ul></li><li><p>Activate 3D audio for certain sounds:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">footstepsAudio</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">setPositional</span><span class="token punctuation" style="color:#393A34">(</span><span class="token boolean" style="color:#36acaa">true</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">footstepsAudio</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">setReverbEnabled</span><span class="token punctuation" style="color:#393A34">(</span><span class="token boolean" style="color:#36acaa">true</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div></li></ol><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>A sound engineer can create a custom <code>com.​jme3.​audio.Environment</code>
+object and specify custom environment values such as density, diffusion,
+gain, decay, delay... You can find many <a href="/wikidemo/docs/jme3/advanced/audio_environment_presets">examples of custom audio
+environment presets</a>
+here.</p></div></div><p>Advanced users find more info about OpenAL and its features here:
+<a href="http://web.archive.org/web/20130327063429/http://connect.creativelabs.com/openal/Documentation/OpenAL_Programmers_Guide.pdf">OpenAL 1.1
+Specification</a>.</p><p>::: {.important}
+It depends on the hardware whether audio effects are supported (if not,
+you get the message
+<code>OpenAL EFX not available! Audio effects won’t work.</code>)
+:::</p></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/8keep/wikidemo/edit/master/docs/jme3/advanced/audio.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#looping--ambient-sounds" class="contents__link">Looping &amp; Ambient Sounds</a></li><li><a href="#positional-3d-sounds" class="contents__link">Positional 3D Sounds</a></li><li><a href="#directional-3d-sounds" class="contents__link">Directional 3D Sounds</a></li></ul></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div>Copyright © 2020 jMonkeyEngine.</div></div></div></footer>
+</div>
+
+<script src="/wikidemo/styles.08ff7081.js"></script>
+
+<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+
+<script src="/wikidemo/main.1b6aa70f.js"></script>
+
+<script src="/wikidemo/1.e501629b.js"></script>
+
+<script src="/wikidemo/2.c824d386.js"></script>
+
+<script src="/wikidemo/302.1d1a2997.js"></script>
+
+<script src="/wikidemo/394d525a.30c299b8.js"></script>
+
+<script src="/wikidemo/17896441.d065d5f5.js"></script>
+
+<script src="/wikidemo/3e73a88b.91b20b82.js"></script>
+
+
+</body>
+</html>

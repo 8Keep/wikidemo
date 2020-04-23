@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Docusaurus v2.0.0-alpha.50">
+<script src="/js/dark_default.js"></script>
+
+<title data-react-helmet="true">free_skymaps | jMonkeyEngine Documentation</title>
+
+<meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="free_skymaps | jMonkeyEngine Documentation"><meta data-react-helmet="true" name="description" content="There are a plethora of ways to create skymaps with varying levels of"><meta data-react-helmet="true" property="og:description" content="There are a plethora of ways to create skymaps with varying levels of"><meta data-react-helmet="true" property="og:url" content="https://8keep.github.io/wikidemo/docs/jme3/advanced/free_skymaps">
+
+<link data-react-helmet="true" rel="shortcut icon" href="/wikidemo/img/favicon.ico">
+
+
+<link rel="stylesheet" href="/wikidemo/styles.7d008dc0.css">
+
+
+<link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
+
+<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+
+<link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
+
+<link rel="preload" href="/wikidemo/1.e501629b.js" as="script">
+
+<link rel="preload" href="/wikidemo/2.c824d386.js" as="script">
+
+<link rel="preload" href="/wikidemo/302.1d1a2997.js" as="script">
+
+<link rel="preload" href="/wikidemo/394d525a.30c299b8.js" as="script">
+
+<link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
+
+<link rel="preload" href="/wikidemo/cabc94d2.24269ebf.js" as="script">
+
+</head>
+<body>
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=window.matchMedia("(prefers-color-scheme: dark)"),n=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();null!==n?t(n):e.matches&&t("dark")}()</script>
+<div id="__docusaurus">
+<nav class="navbar navbar--light navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><div aria-label="Navigation bar toggle" class="navbar__toggle" role="button" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></div><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></div><div class="navbar__items navbar__items--right"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="navbar__item navbar__link">GitHub</a><div class="react-toggle react-toggle--disabled displayOnlyInLargeViewport_1gtM"><div class="react-toggle-track"><div class="react-toggle-track-check"><span class="toggle_keGJ moon_1gwN"></span></div><div class="react-toggle-track-x"><span class="toggle_keGJ sun_3CPA"></span></div></div><div class="react-toggle-thumb"></div><input type="checkbox" disabled="" aria-label="Dark mode toggle" class="react-toggle-screenreader-only"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div><div class="navbar-sidebar"><div class="navbar-sidebar__brand"><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a></div><div class="navbar-sidebar__items"><div class="menu"><ul class="menu__list"><li class="menu__list-item"><a aria-current="page" class="menu__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></li><li class="menu__list-item"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="menu__link">GitHub</a></li></ul></div></div></div></nav><div class="main-wrapper"><div class="docPage_1kjD"><main class="docMainContainer_FFX1"><div class="padding-vert--lg"><div class="container"><div class="row"><div class="col docItemCol_2GOA"><div class="docItemContainer_2cwg"><article><header><h1 class="docTitle_1vWb">free_skymaps</h1></header><div class="markdown"><p>There are a plethora of ways to create skymaps with varying levels of
+difficulty and expense. The <a href="http://planetside.co.uk/">Terragen</a> program
+has been mentioned as one way to do so but it is now limited in its use
+and for commercial purposes is not free. Another program,
+<a href="https://www.daz3d.com/bryce-7-pro">Bryce</a>, is also not free and seems
+to of stalled in development based off there only being a 32bit version
+available. Maybe they are doing things behind the scenes but its still
+not a free program. This articles intent is to give the JME3 user other
+options for the creation of skymaps using the free programs Blender and
+Gimp. It is not the be all, end all of skymap creation. If you know of
+better methods or tools please feel free to share your wisdom on the
+<a href="https://hub.jmonkeyengine.org/">forums</a>.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="blender"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#blender" title="Direct link to heading">#</a>Blender</h1><p>Using Blender you can create your skymaps for free. Once
+<a href="https://www.blender.org/">Blender</a> is setup, your skymaps creation can
+be done easily. For this article I will go into detail on how to setup
+Blender to create Angular maps based off a video produced by jMonkey
+contributor glaucomardano and mentioned in this <a href="https://hub.jmonkeyengine.org/t/jmonkeyengine-tutorial-how-to-create-skymaps-using-blender/19313">forum
+post</a>.
+Contributor glaucomardano did a good job on the video but it requires
+previous knowledge of Blender to be able to easily follow along. As
+such, I will translate it to paper for you. You can view his video by
+following this link: <a href="https://youtu.be/z38Aikz5nE8">jMonkeyEngine Tutorial - How to create skymaps
+using blender</a>.</p><p>::: {.note}
+This tutorial is an adaptation of contributor glaucomardanos production,
+not an exact duplicate.\
+These steps assume you&#x27;re using the default blender setup and apply to
+vers 2.78c+.\
+The tutorial is in checklist format so you can mark items as you go to
+keep your place.
+:::</p><ul><li><p>❏ Start with a new file in blender.</p></li><li><p>❏ Select the lamp and the default cube in the 3d view or in the
+Outliner panel (top-right panel) and delete them: X. They are not
+needed for this procedure.</p></li><li><p>❏ Select the camera object in the 3d view or in the Outliner panel
+then clear its location and rotation by using keyboard shortcuts
+Alt+G and Alt+R.</p></li><li><p>❏ In the properties panel (lower-right panel) select the Object tab
+(orange box). This will give you a visual perspective of the camera
+changes you are about to make.</p></li><li><p>❏ Rename the Camera to Camera-north.</p></li><li><p>❏ With your cursor inside the 3d view, change to top-ortho view by
+pressing NumPad 7 followed by NumPad 5.</p></li><li><p>❏ With the camera still selected, press R immediately followed by X
+immediately followed by 90 immediately followed by Enter to rotate
+the camera 90 degrees around the X axis.</p></li><li><p>❏ With the camera still selected, press Shift+D. This will duplicate
+the camera. Next press Enter to set the selection.</p></li><li><p>❏ Press R immediately followed by 180 immediately followed by Enter.
+This will rotate the camera 180 degrees around the Z axis. Rename
+this camera to Camera-south. - [ ] With the camera still selected,
+press Shift+D. This will duplicate the camera. Next press Enter to
+set the selection.</p></li><li><p>❏ With the camera still selected, press R immediately followed by 90
+immediately followed by Enter. This will rotate the camera another
+90 degrees around the Z axis. Rename this camera to Camera-west.</p></li><li><p>❏ With the camera still selected, press Shift+D. This will duplicate
+the camera. Next press Enter to set the selection.  </p></li><li><p>❏ With the camera still selected, press R immediately followed by
+-180 immediately followed by Enter. This will rotate the camera -180
+degrees around the Z axis. Rename this camera to Camera-east.</p></li><li><p>❏ With your mouse inside the 3d view change your view to right-ortho
+by entering NumPad 3.</p></li><li><p>❏ Select Camera-south in 3d view or in the Outliner panel (top-right
+panel) and press Shift+D. This will duplicate the camera. Next press
+Enter to set the selection.</p></li><li><p>❏ With the camera still selected, press R immediately followed by 90
+immediately followed by Enter. This will rotate the camera 90
+degrees around the X axis. The camera should now be pointing up.
+Rename this camera to Camera-up.</p></li><li><p>❏ With the camera still selected, press Shift+D. This will duplicate
+the camera. Next press Enter to set the selection.</p></li><li><p>❏ With the camera still selected, press R immediately followed by
+180 immediately followed by Enter. This will rotate the camera 180
+degrees along the X axis. The camera should now be facing down.
+Rename this camera to Camera-down.</p></li><li><p>❏ Save your file.</p></li></ul><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-{=html} codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">&lt;!-- --&gt;</span></div></div></div></div></div><ul><li><p>❏ Open up a web browser and search for \&quot;free high res skymap\&quot; and
+select a Angular map of your choice or you can find some here at
+<a href="https://blenderartists.org/forum/showthread.php?24038-Free-high-res-skymaps-%2528Massive-07-update!%2529">https://blenderartists.org/forum/showthread.php?24038-Free-high-res-skymaps-%2528Massive-07-update!%2529</a>
+instead. Remember to select an <strong>ANGULAR</strong> map.</p></li><li><p>❏ Save a map to your pc in a place you can easily locate it from
+later in blender.</p></li></ul><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-{=html} codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">&lt;!-- --&gt;</span></div></div></div></div></div><ul><li><p>❏ From the properties panel (bottom-right panel) select the Textures
+tab (red-white checkerboard) then press the new button to create a
+new texture. Rename this texture to AngMap.</p></li><li><p>❏ Under the Image panel select open and navigate to the file you
+saved earlier.</p></li><li><p>❏ In the Mapping panel select AngMap from the drop down box.</p></li><li><p>❏ In the Influence panel de-select blend (ble) and select horizon
+(hor).</p></li></ul><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-{=html} codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">&lt;!-- --&gt;</span></div></div></div></div></div><ul><li><p>❏ From the properties panel select the Data tab (reel to reel
+camera).</p></li><li><p>❏ In the lens panel change the Focal Lens value from 35 to 16. Do
+this for every camera.</p></li></ul><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-{=html} codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">&lt;!-- --&gt;</span></div></div></div></div></div><ul><li><p>❏ From the properties panel select the Render tab (normal looking
+camera).</p></li><li><p>❏ In the Dimensions panel set the resolution to any number that is a
+power of 2. For this example 1024 x 1024.</p></li><li><p>❏ Slide the resolution scale to 100%.</p></li><li><p>❏ In the Output panel change the image type to JPEG. I have found
+out by trial and error that using a JPEG file has the same image
+quality as a PNG or DDS file but with a huge difference in image
+size. A single PNG image will clock in at over 8mb to the JPEG size
+of 325kb. Even converting to a DDS file comes in at over 3mb for
+comparison (using RGB888 as is recommended by Momoko_Fan/Core
+Developer in this <a href="https://hub.jmonkeyengine.org/t/best-dds-format-for-skyfactory/17668/2">forum
+post</a>)
+with no gain in image quality that I could see. Your welcome to
+experiment on your own if you wish.</p></li><li><p>❏ Set the image format to RGB.</p></li><li><p>❏ Setting the quality slider has the effect of reducing the image
+size where 0 is maximum compression and 100 is no compression. In
+this example, setting it to 0 reduced the image sizes to less than
+125kb, once again with no discernable image degradation that I could
+see.</p></li></ul><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-{=html} codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">&lt;!-- --&gt;</span></div></div></div></div></div><ul><li><p>❏ In the properties panel select the World tab.</p></li><li><p>❏ Check the Real Sky toggle.</p></li></ul><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-{=html} codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">&lt;!-- --&gt;</span></div></div></div></div></div><ul><li><p>❏ From the header at the top of the 3d view click the Choose Screen
+Layout button next to the word <code>Default</code> and select
+<code>Split Verticle F/R</code>.</p></li><li><p>❏ Click the <code>+</code> sign to create a new layout.</p></li><li><p>❏ Rename this new layout Angular Map Generator or a name of your
+choosing.</p></li><li><p>❏ In the left side 3d view, at the bottom, next to the word view, is
+the Current Editor Type button. Click it and change it to
+<code>UV/Image Editor</code>.</p></li><li><p>❏ Place your mouse inside the right side 3d view and press NumPad 5
+to toggle ortho view. You&#x27;re now setup to render your Angular map.</p></li><li><p>❏ Save your file.</p></li></ul><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-{=html} codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">&lt;!-- --&gt;</span></div></div></div></div></div><ul><li><p>❏ With your first camera selected (in this case Camera-down) and
+your mouse inside the right side 3d view, press Ctrl+NumPad 0 to set
+your selected camera to be the active camera. </p></li><li><p>❏ Press F12 to render the scene. A image will appear in the left
+side UV/Image Editor.</p></li><li><p>❏ With your mouse inside the left side UV/Image Editor you can
+scroll in or out to center the view.</p></li><li><p>❏ With your mouse inside the left side UV/Image Editor press F3 to
+save your image. Rename the image (down.jpg in this case).</p></li></ul><p>Follow this same procedure for the remaining cameras. Rendering,
+renaming and saving each. After you have rendered all your images you
+can copy and paste them into your asset folder for JME3. Usually under
+the <code>Assets/Texture</code> directory.</p><p>To use your images in your code, in simpleInitApp(), load the Textures
+and use the SkyFactory to create your sky.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token class-name">Texture</span><span class="token plain"> west </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">getAssetManager</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">loadTexture</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;Textures/Sky/west.jpg&quot;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token class-name">Texture</span><span class="token plain"> east </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">getAssetManager</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">loadTexture</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;Textures/Sky/east.jpg&quot;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token class-name">Texture</span><span class="token plain"> north </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">getAssetManager</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">loadTexture</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;Textures/Sky/north.jpg&quot;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token class-name">Texture</span><span class="token plain"> south </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">getAssetManager</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">loadTexture</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;Textures/Sky/south.jpg&quot;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token class-name">Texture</span><span class="token plain"> up </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">getAssetManager</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">loadTexture</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;Textures/Sky/up.jpg&quot;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token class-name">Texture</span><span class="token plain"> down </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">getAssetManager</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">loadTexture</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;Textures/Sky/down.jpg&quot;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token function" style="color:#d73a49">getRootNode</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">attachChild</span><span class="token punctuation" style="color:#393A34">(</span><span class="token class-name">SkyFactory</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">createSky</span><span class="token punctuation" style="color:#393A34">(</span><span class="token function" style="color:#d73a49">getAssetManager</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> west</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> east</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> north</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> south</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> up</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> down</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><p>Many thanks go out to contributor glaucomardano for his video. He has
+excellent taste in music.</p><p>Listed below are other Blender tutorials JME3 users may find valuable.</p><ul><li><p><a href="https://www.katsbits.com/tutorials/blender/cycles-skybox.php">Render a Skybox using
+Cycles</a></p></li><li><p><a href="https://www.katsbits.com/tutorials/blender/render-skybox.php">Render a Skybox Environment
+Map</a></p></li></ul><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="gimp"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#gimp" title="Direct link to heading">#</a>Gimp</h1><p>You can use <a href="https://www.gimp.org/">Gimp</a> to create SkyMaps from a
+single image with the addition of 2 scripts.</p><ul><li><p><a href="https://code.google.com/archive/p/gimp-dds/">Gimp-dds</a></p></li><li><p><a href="http://registry.gimp.org/node/25532">Cubemap Layers Generator</a></p></li></ul><p>After installing the scripts you open a image in gimp. This script works
+by slicing up the image into 6 layers of equal size, each by the power
+of 2.</p><ol><li><p>After you open the image you select
+<code>Filters Generic Cubemap Layers Generator</code>.</p></li><li><p>Fill in the details as follows.</p><ul><li><p>Source: navigate to the image you are slicing. **  Cubemap
+layout: <code>Cross Horizontal</code></p></li><li><p>2 to the power of: <code>10</code> (for 1024 sized Layers)</p></li></ul></li><li><p>Press OK to slice up the image.</p></li><li><p>Select <code>File Export As</code> and change the <code>Name</code> and <code>File Type</code> to
+<code>.dds</code>. Choose your save location, typically <code>Assets/Textures</code>.</p></li><li><p>Press Export.</p></li><li><p>A DDS panel will open. Apply the following settings:</p><ul><li><p>Compression: <code>None</code></p></li><li><p>Format: <code>RGB8</code></p></li><li><p>Save: <code>As cube map</code></p></li><li><p>MipMaps: <code>No mipmaps</code></p></li></ul></li><li><p>Press OK to export.</p></li></ol><p>You attach the exported image to your scene as is explained in the <a href="/wikidemo/docs/jme3/advanced/sky">How
+to add a Sky to your Scene</a> tutorial.</p></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/8keep/wikidemo/edit/master/docs/jme3/advanced/free_skymaps.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div>Copyright © 2020 jMonkeyEngine.</div></div></div></footer>
+</div>
+
+<script src="/wikidemo/styles.08ff7081.js"></script>
+
+<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+
+<script src="/wikidemo/main.1b6aa70f.js"></script>
+
+<script src="/wikidemo/1.e501629b.js"></script>
+
+<script src="/wikidemo/2.c824d386.js"></script>
+
+<script src="/wikidemo/302.1d1a2997.js"></script>
+
+<script src="/wikidemo/394d525a.30c299b8.js"></script>
+
+<script src="/wikidemo/17896441.d065d5f5.js"></script>
+
+<script src="/wikidemo/cabc94d2.24269ebf.js"></script>
+
+
+</body>
+</html>

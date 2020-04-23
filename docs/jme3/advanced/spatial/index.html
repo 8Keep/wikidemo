@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Docusaurus v2.0.0-alpha.50">
+<script src="/js/dark_default.js"></script>
+
+<title data-react-helmet="true">spatial | jMonkeyEngine Documentation</title>
+
+<meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="spatial | jMonkeyEngine Documentation"><meta data-react-helmet="true" name="description" content="This is an introduction to the concept of Spatials, the elements of the"><meta data-react-helmet="true" property="og:description" content="This is an introduction to the concept of Spatials, the elements of the"><meta data-react-helmet="true" property="og:url" content="https://8keep.github.io/wikidemo/docs/jme3/advanced/spatial">
+
+<link data-react-helmet="true" rel="shortcut icon" href="/wikidemo/img/favicon.ico">
+
+
+<link rel="stylesheet" href="/wikidemo/styles.7d008dc0.css">
+
+
+<link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
+
+<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+
+<link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
+
+<link rel="preload" href="/wikidemo/1.e501629b.js" as="script">
+
+<link rel="preload" href="/wikidemo/2.c824d386.js" as="script">
+
+<link rel="preload" href="/wikidemo/302.1d1a2997.js" as="script">
+
+<link rel="preload" href="/wikidemo/394d525a.30c299b8.js" as="script">
+
+<link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
+
+<link rel="preload" href="/wikidemo/af3b1ffc.928b99a6.js" as="script">
+
+</head>
+<body>
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=window.matchMedia("(prefers-color-scheme: dark)"),n=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();null!==n?t(n):e.matches&&t("dark")}()</script>
+<div id="__docusaurus">
+<nav class="navbar navbar--light navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><div aria-label="Navigation bar toggle" class="navbar__toggle" role="button" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></div><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></div><div class="navbar__items navbar__items--right"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="navbar__item navbar__link">GitHub</a><div class="react-toggle react-toggle--disabled displayOnlyInLargeViewport_1gtM"><div class="react-toggle-track"><div class="react-toggle-track-check"><span class="toggle_keGJ moon_1gwN"></span></div><div class="react-toggle-track-x"><span class="toggle_keGJ sun_3CPA"></span></div></div><div class="react-toggle-thumb"></div><input type="checkbox" disabled="" aria-label="Dark mode toggle" class="react-toggle-screenreader-only"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div><div class="navbar-sidebar"><div class="navbar-sidebar__brand"><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a></div><div class="navbar-sidebar__items"><div class="menu"><ul class="menu__list"><li class="menu__list-item"><a aria-current="page" class="menu__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></li><li class="menu__list-item"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="menu__link">GitHub</a></li></ul></div></div></div></nav><div class="main-wrapper"><div class="docPage_1kjD"><main class="docMainContainer_FFX1"><div class="padding-vert--lg"><div class="container"><div class="row"><div class="col docItemCol_2GOA"><div class="docItemContainer_2cwg"><article><header><h1 class="docTitle_1vWb">spatial</h1></header><div class="markdown"><p>This is an introduction to the concept of Spatials, the elements of the
+3D scene graph. The scene graph is a data structure that manages all
+objects in your 3D world. For example, the scene graph keeps track of
+the 3D models that you load and position. When you extend a Java class
+from com.jme3.app.SimpleApplication, you automatically inherit the scene
+graph and its rootNode.</p><p>The rootNode is the central element of the scene graph. Even if the
+scene graph is empty, it always contains at least the rootNode. We
+<em>attach</em> Spatials to the rootNode. Attached Spatials are always in a
+<em>parent-child relationship</em>. Every time you attach a Spatial to
+something, it is implicitly detached from its previous parent. A Spatial
+can have only one parent. A Spatial can have several children.</p><p>If you think you need to understand the scene graph concept better,
+please read <a href="/wikidemo/docs/jme3/scenegraph_for_dummies">Scenegraph for
+dummies</a> first.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="node-versus-geometry"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#node-versus-geometry" title="Direct link to heading">#</a>Node versus Geometry</h1><p>In your Java code, a Spatial is either an instance of
+<code>com.jme3.scene.Node</code> or a <code>com.jme3.scene.Geometry</code> instance. You use
+the two types of Spatials for different purposes:</p><p><img src="/images/jme3/intermediate/scene-graph.png" alt="scene-graph.png"></p><p>+------+-------------------------------+-------------------------------+
+|      | com.jme3.scene.Spatial        |                               |
++======+===============================+===============================+
+| Purp | A Spatial is an abstract data |                               |
+| ose: | structure that stores user    |                               |
+|      | data and transformations (=   |                               |
+|      | translation, rotation, scale) |                               |
+|      | of elements of the 3D scene   |                               |
+|      | graph. Spatials can be saved  |                               |
+|      | and loaded using the [Asset   |                               |
+|      | Manager](../../jme3           |                               |
+|      | /advanced/asset_manager). |                               |
++------+-------------------------------+-------------------------------+
+|      | com.jme3.scene.Geometry       | com.jme3.scene.Node           |
++------+-------------------------------+-------------------------------+
+| Vis  | A Geometry represents a       | A Node is an <strong>invisible      |
+| ibil | </strong>visible<strong> 3D object in the  | &quot;handle</strong> for a group of      |
+| ity: | scene graph.                  | Spatials in the scene graph.  |
++------+-------------------------------+-------------------------------+
+| Purp | Use Geometries to represent   | Use Nodes to <strong>structure and  |
+| ose: | an object&#x27;s </strong>look<strong>: Every   | group</strong> Geometries and other  |
+|      | Geometry contains a polygon   | Nodes. Every Node is attached |
+|      | mesh and a material,          | to one parent node, and each  |
+|      | specifying its shape, color,  | node can have zero or more    |
+|      | texture, and                  | children (Nodes or            |
+|      | opacity/transparency.\        | Geometries) attached to       |
+|      | You attach Geometries to      | itself.\                      |
+|      | Nodes.                        | <strong>When you transform (move,   |
+|      |                               | rotate, etc) a parent node,   |
+|      |                               | all its children are          |
+|      |                               | transformed (moved, rotated,  |
+|      |                               | etc).</strong>                       |
++------+-------------------------------+-------------------------------+
+| Cont | Transformations; custom user  | Transformations; custom user  |
+| ent: | data;\                        | data;\                        |
+|      | mesh and material;            | no mesh, no material.         |
++------+-------------------------------+-------------------------------+
+| E    | Box, sphere, player,          | rootNode, guiNode, audioNode, |
+| xamp | building, terrain, vehicle,   | a custom grouping node such   |
+| les: | missiles, NPCs, etc...        | as vehicleNode or shipNode    |
+|      |                               | with passengers attached,     |
+|      |                               | etc.                          |
++------+-------------------------------+-------------------------------+</p><p>::: {.important}
+You never create a Spatial with <code>Spatial s = new Spatial();</code>! A Spatial
+is an abstract concept, like a mammal (there is no actual creature
+called &quot;mammal walking around here). You create either a
+com.jme3.scene.Node or com.jme3.scene.Geometry instance. Some methods,
+however, require a <code>Spatial</code> type as argument: This is because they are
+able to accept both Nodes and Geometries as arguments. In this case, you
+simply <em>cast</em> a Node or Geometry to Spatial.
+:::</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="mesh"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#mesh" title="Direct link to heading">#</a>Mesh</h2><p>The polygon <a href="/wikidemo/docs/jme3/advanced/mesh">Mesh</a> inside a Geometry can
+be one of three things:</p><ul><li><p><strong>Shapes:</strong> The simplest type of Meshes are jME&#x27;s default
+<a href="/wikidemo/docs/jme3/advanced/shape">Shape</a>s such as cubes and spheres.
+You can use several Shapes to build complex Geometries. Shapes are
+built-in and can be created without using the AssetManager.</p></li><li><p><strong>3D Models:</strong> <a href="/wikidemo/docs/jme3/advanced/3d_models">3D models and
+scenes</a> are also made up of
+meshes, but are more complex than Shapes. You create Models and
+Scenes in external 3D Mesh Editors and export them as Ogre XML or
+Wavefront OBJ. Use the <a href="/wikidemo/docs/jme3/advanced/asset_manager">Asset
+Manager</a> to load models into
+a your jME3 game.</p></li><li><p><strong>Custom Meshes:</strong> Advanced users can create <a href="/wikidemo/docs/jme3/advanced/custom_meshes">Custom
+Meshes</a> programmatically.</p></li></ul><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="what-is-a-clone"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#what-is-a-clone" title="Direct link to heading">#</a>What is a Clone?</h1><p>Cloned spatials share the same mesh, while each cloned spatial can have
+its own local transformation (translation, rotation, and scale) in the
+scene. This means you only use <code>clone()</code> on spatials whose meshes never
+change. The most common use case for cloning is when you use several
+Spatials that are based on the same
+<a href="/wikidemo/docs/jme3/advanced/shape">Shape</a>s (e.g. trees, crates).</p><p>The second use case is: When you load a model using <code>loadModel()</code> from
+the AssetManager, you may automatically get a `clone()`ed object. In
+particular:</p><ul><li><p>If the model is not animated (it has no <code>AnimControl</code>), jME loads a
+clone. All clones share one mesh object in order to use less memory.</p></li><li><p>If the model is animated (it has a <code>AnimControl</code>), then
+<code>loadModel()</code> duplicates the mesh for each loaded instance. (Uses
+more memory, but can animate.)</p></li></ul><p>Usually there is no need to manually use any of the <code>clone()</code> methods on
+models. Using the <a href="/wikidemo/docs/jme3/advanced/asset_manager">Asset
+Manager</a>\&#x27;s <code>loadModel()</code> method
+will automatically do the right thing for your models.</p><p>::: {.note}
+&quot;Box worlds are not made up of statically cloned <code>Box()</code> shapes, this
+would still be too slow for large worlds. To learn how to make real fast
+box worlds, search the web for <em>voxelization</em> techniques.
+:::</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="how-to-add-fields-and-methods-to-a-spatial"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#how-to-add-fields-and-methods-to-a-spatial" title="Direct link to heading">#</a>How to Add Fields and Methods to a Spatial</h1><p>You can include custom user data --that is, custom Java objects and
+methods-- in Nodes and Geometries. This is very useful for maintaining
+information about a game element, such as health, budget, ammunition,
+inventory, equipment, etc for players, or landmark locations for
+terrains, and much more.</p><p>::: {.important}
+You want to add custom accessor methods to a spatial? Do not extend
+<code>Node</code> or <code>Geometry</code>, use <a href="/wikidemo/docs/jme3/advanced/custom_controls">Custom
+Controls</a> instead. You want to
+add custom fields to a spatial? Do not extend <code>Node</code> or <code>Geometry</code>, use
+the built-in <code>setUserData()</code> method instead. Where ever the Spatial is
+accessible, you can easily access the object&#x27;s class fields (user data)
+and accessors (control methods) this way.
+:::</p><p>This first example adds an integer field named <code>health</code> to the Spatial
+<code>playerNode</code>, and initializes it to 100.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">playerNode</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">setUserData</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;health&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">100</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><p>The second example adds a set of custom accessor methods to the player
+object. You create a <a href="/wikidemo/docs/jme3/advanced/custom_controls">custom PlayerControl()
+class</a> and you add this control
+to the Spatial:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">playerNode</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">addControl</span><span class="token punctuation" style="color:#393A34">(</span><span class="token keyword" style="color:#00009f">new</span><span class="token plain"> </span><span class="token class-name">PlayerControl</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><p>In your PlayerControl() class, you define custom methods that set and
+get your user data in the <code>spatial</code> object. For example, the control
+could add accessors that set and get the player&#x27;s health:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">public</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">int</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">getHealth</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  </span><span class="token keyword" style="color:#00009f">return</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token class-name">Integer</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain">spatial</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">getUserData</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;health&quot;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token keyword" style="color:#00009f">public</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">void</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">setHealth</span><span class="token punctuation" style="color:#393A34">(</span><span class="token keyword" style="color:#00009f">int</span><span class="token plain"> h</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">  spatial</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">setUserData</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;health&quot;</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain">h</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span></div></div></div></div></div><p>Elsewhere in your code, you can access this data wherever you have
+access to the Spatial <code>playerNode</code>.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">health </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> playerNode</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">getControl</span><span class="token punctuation" style="color:#393A34">(</span><span class="token class-name">PlayerControl</span><span class="token punctuation" style="color:#393A34">.</span><span class="token keyword" style="color:#00009f">class</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">getHealth</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">playerNode</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">getControl</span><span class="token punctuation" style="color:#393A34">(</span><span class="token class-name">PlayerControl</span><span class="token punctuation" style="color:#393A34">.</span><span class="token keyword" style="color:#00009f">class</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">setHealth</span><span class="token punctuation" style="color:#393A34">(</span><span class="token number" style="color:#36acaa">99</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><ul><li><p>You can add as many data objects (of String, Boolean, Integer,
+Float, Array types) to a Spatial as you want. Just make sure to
+label them with unique case-sensitive strings (<code>health</code>,
+<code>Inventory</code>, <code>equipment</code>, etc).</p></li><li><p>The saved data can even be a custom Java object if you make the
+custom Java class <a href="../../jme3/advanced/save_and_load.xml#custom_savable_class">implement the Savable
+interface</a>!</p></li><li><p>When you save a Spatial as a .j3o file, the custom data is saved,
+too, and all Savables are restored the next time you load the .j3o!</p></li></ul><p>This is how you list all data keys that are already defined for one
+Spatial:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token keyword" style="color:#00009f">for</span><span class="token punctuation" style="color:#393A34">(</span><span class="token class-name">String</span><span class="token plain"> key </span><span class="token operator" style="color:#393A34">:</span><span class="token plain"> spatial</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">getUserDataKeys</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">{</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain">    </span><span class="token class-name">System</span><span class="token punctuation" style="color:#393A34">.</span><span class="token plain">out</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">println</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">spatial</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">getName</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token operator" style="color:#393A34">+</span><span class="token string" style="color:#e3116c">&quot;&#x27;s keys: &quot;</span><span class="token operator" style="color:#393A34">+</span><span class="token plain">key</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"></span></div><div class="token-line" style="color:#393A34"><span class="token plain"></span><span class="token punctuation" style="color:#393A34">}</span></div></div></div></div></div><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="how-to-access-a-named-sub-mesh"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#how-to-access-a-named-sub-mesh" title="Direct link to heading">#</a>How to Access a Named Sub-Mesh</h1><p>Often after you load a scene or model, you need to access a part of it
+as an individual Geometry in the scene graph. Maybe you want to swap a
+character&#x27;s weapon, or you want to play a door-opening animation. First
+you need to know the unique name of the sub-mesh.</p><ol><li><p>Open the model in a 3D mesh editor, or in the jMonkeyEngine SDK&#x27;s
+Scene Composer.</p></li><li><p>Find out the existing names of sub-meshes in the model.</p></li><li><p>Assign unique names to sub-meshes in the model if neccessary.</p></li></ol><p>In the following example, the Node <code>house</code> is the loaded model. The
+sub-meshes in the Node are called its children. The String, here
+<code>door 12</code>, is the name of the mesh that you are searching.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token class-name">Geometry</span><span class="token plain"> submesh </span><span class="token operator" style="color:#393A34">=</span><span class="token plain"> </span><span class="token punctuation" style="color:#393A34">(</span><span class="token class-name">Geometry</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> houseScene</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">getChild</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">&quot;door 12&quot;</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="what-is-culling"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#what-is-culling" title="Direct link to heading">#</a>What is Culling?</h1><p>There are two types of culling: Face culling, and view frustrum culling.</p><p><strong>Face culling</strong> means not drawing certain polygons of a mesh. Face
+culling behaviour is a property of the material.</p><p>Usage: The &quot;inside of a mesh (the so called backface) is typically never
+visible to the player, and as an optimization, the <code>Back</code> mode skips
+calculating all backfaces by default. Activating the <code>Off</code> or <code>Front</code>
+modes can be useful when you are debugging <a href="/wikidemo/docs/jme3/advanced/custom_meshes">custom
+meshes</a> and try to identify
+accidental inside-out faces.</p><p>You can switch the com.jme3.material.RenderState.FaceCullMode to either:</p><ul><li><p><code>FaceCullMode.Back</code> (default) -- Only the frontsides of a mesh are
+drawn. Backface culling is the default behaviour.</p></li><li><p><code>FaceCullMode.Front</code> -- Only the backsides of a mesh are drawn. A
+mesh with frontface culling will most likely be invisible. Used for
+debugging &quot;inside-out custom meshes.</p></li><li><p><code>FaceCullMode.FrontAndBack</code> -- Use this to make a mesh temporarily
+invisible.</p></li><li><p><code>FaceCullMode.Off</code> -- Every side of the mesh is drawn. Looks normal,
+but slows down large scenes.</p></li></ul><p>Example:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">material</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">getAdditionalRenderState</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">setFaceCullMode</span><span class="token punctuation" style="color:#393A34">(</span><span class="token class-name">FaceCullMode</span><span class="token punctuation" style="color:#393A34">.</span><span class="token class-name">FrontAndBack</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><p><strong>View frustum culling</strong> refers to not drawing (and not even
+calculating) certain whole models in the scene. At any given moment,
+half of the scene is behind the player and out of sight anyway. View
+frustum culling is an optimization to not calculate scene elements that
+are not visible -- elements that are &quot;outside the view frustrum.</p><p>The decision what is visible and what not, is done automatically by the
+engine (<code>CullHint.Dynamic</code>). Optionally, you can manually control
+whether the engine culls individual spatials (and children) from the
+scene graph:</p><ul><li><p><code>CullHint.Dynamic</code> -- Default, faster because it doesn&#x27;t waste time
+with objects that are out of view.</p></li><li><p><code>CullHint.Never</code> -- Calculate and draw everything always (even if it
+does not end up on the user&#x27;s screen because it&#x27;s out of sight).
+Slower, but can be used while debugging custom meshes.</p></li><li><p><code>CullHint.Always</code> -- The whole spatial is culled and is not visible.
+A fast way to hide a Spatial temporarily. Culling a Spatial is
+faster then detaching it, but it uses more memory.</p></li><li><p><code>CullHint.Inherit</code> -- Inherit culling behaviour from parent node.</p></li></ul><p>Example:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">spatial</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">setCullHint</span><span class="token punctuation" style="color:#393A34">(</span><span class="token class-name">CullHint</span><span class="token punctuation" style="color:#393A34">.</span><span class="token class-name">Never</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span><span class="token plain"> </span><span class="token comment" style="color:#999988;font-style:italic">// always drawn</span></div></div></div></div></div><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="see-also"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#see-also" title="Direct link to heading">#</a>See also</h1><ul><li><p><a href="/wikidemo/docs/jme3/intermediate/optimization">Optimization</a> -- The
+GeometryBatchFactory class batches several Geometries into meshes
+with each their own texture.</p></li><li><p><a href="/wikidemo/docs/jme3/advanced/traverse_scenegraph">Traverse SceneGraph</a>
+-- Find any Node or Geometry in the scenegraph.</p></li></ul></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/8keep/wikidemo/edit/master/docs/jme3/advanced/spatial.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#mesh" class="contents__link">Mesh</a></li></ul></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div>Copyright © 2020 jMonkeyEngine.</div></div></div></footer>
+</div>
+
+<script src="/wikidemo/styles.08ff7081.js"></script>
+
+<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+
+<script src="/wikidemo/main.1b6aa70f.js"></script>
+
+<script src="/wikidemo/1.e501629b.js"></script>
+
+<script src="/wikidemo/2.c824d386.js"></script>
+
+<script src="/wikidemo/302.1d1a2997.js"></script>
+
+<script src="/wikidemo/394d525a.30c299b8.js"></script>
+
+<script src="/wikidemo/17896441.d065d5f5.js"></script>
+
+<script src="/wikidemo/af3b1ffc.928b99a6.js"></script>
+
+
+</body>
+</html>

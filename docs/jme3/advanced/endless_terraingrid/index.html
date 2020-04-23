@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Docusaurus v2.0.0-alpha.50">
+<script src="/js/dark_default.js"></script>
+
+<title data-react-helmet="true">endless_terraingrid | jMonkeyEngine Documentation</title>
+
+<meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="endless_terraingrid | jMonkeyEngine Documentation"><meta data-react-helmet="true" name="description" content="::: {.note}"><meta data-react-helmet="true" property="og:description" content="::: {.note}"><meta data-react-helmet="true" property="og:url" content="https://8keep.github.io/wikidemo/docs/jme3/advanced/endless_terraingrid">
+
+<link data-react-helmet="true" rel="shortcut icon" href="/wikidemo/img/favicon.ico">
+
+
+<link rel="stylesheet" href="/wikidemo/styles.7d008dc0.css">
+
+
+<link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
+
+<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+
+<link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
+
+<link rel="preload" href="/wikidemo/1.e501629b.js" as="script">
+
+<link rel="preload" href="/wikidemo/2.c824d386.js" as="script">
+
+<link rel="preload" href="/wikidemo/302.1d1a2997.js" as="script">
+
+<link rel="preload" href="/wikidemo/394d525a.30c299b8.js" as="script">
+
+<link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
+
+<link rel="preload" href="/wikidemo/efb999b1.42de3511.js" as="script">
+
+</head>
+<body>
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=window.matchMedia("(prefers-color-scheme: dark)"),n=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();null!==n?t(n):e.matches&&t("dark")}()</script>
+<div id="__docusaurus">
+<nav class="navbar navbar--light navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><div aria-label="Navigation bar toggle" class="navbar__toggle" role="button" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></div><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></div><div class="navbar__items navbar__items--right"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="navbar__item navbar__link">GitHub</a><div class="react-toggle react-toggle--disabled displayOnlyInLargeViewport_1gtM"><div class="react-toggle-track"><div class="react-toggle-track-check"><span class="toggle_keGJ moon_1gwN"></span></div><div class="react-toggle-track-x"><span class="toggle_keGJ sun_3CPA"></span></div></div><div class="react-toggle-thumb"></div><input type="checkbox" disabled="" aria-label="Dark mode toggle" class="react-toggle-screenreader-only"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div><div class="navbar-sidebar"><div class="navbar-sidebar__brand"><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a></div><div class="navbar-sidebar__items"><div class="menu"><ul class="menu__list"><li class="menu__list-item"><a aria-current="page" class="menu__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></li><li class="menu__list-item"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="menu__link">GitHub</a></li></ul></div></div></div></nav><div class="main-wrapper"><div class="docPage_1kjD"><main class="docMainContainer_FFX1"><div class="padding-vert--lg"><div class="container"><div class="row"><div class="col docItemCol_2GOA"><div class="docItemContainer_2cwg"><article><header><h1 class="docTitle_1vWb">endless_terraingrid</h1></header><div class="markdown"><p>::: {.note}
+Deprecated. Look at
+<a href="https://hub.jmonkeyengine.org/t/design-question-terrain/28771">https://hub.jmonkeyengine.org/t/design-question-terrain/28771</a> instead.
+:::</p><p>TerrainGrid is DEPRECATED.</p><p>TerrainGrid is an extension built on top of the TerraMonkey tools like
+TerrainQuad and HeightMap, that provides &quot;infinite Terrain paging
+routines.\
+Thanks to Gábor (\@anthyon) and Brent (\@sploreg) for this contribution!</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="sample-code"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#sample-code" title="Direct link to heading">#</a>Sample Code</h1><p>The classes with source code can be found in the
+org.jme3.terrain.geomipmapping and org.jme3.terrain.heightmap packages.
+Also there are 3 tests prepared in the jme3test.terrain package:</p><ul><li><p><a href="https://github.com/jMonkeyEngine/jmonkeyengine/blob/master/jme3-examples/src/main/java/jme3test/terrain/TerrainGridTest.java">TerrainGridTest.java</a>:
+uses an ImageBasedHeightMapGrid instance to load the tiles</p></li><li><p><a href="https://github.com/jMonkeyEngine/jmonkeyengine/blob/master/jme3-examples/src/main/java/jme3test/terrain/TerrainFractalGridTest.java">TerrainFractalGridTest.java</a>:
+makes use of the FractalHeightMapGrid class, and generates a terrain
+from noise</p></li><li><p><a href="https://github.com/jMonkeyEngine/jmonkeyengine/blob/master/jme3-examples/src/main/java/jme3test/terrain/TerrainGridAlphaMapTest.java">TerrainGridAlphaMapTest.java</a>:
+shows how to use TerrainGridListener to change the material of the
+tiles</p></li></ul><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="specification"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#specification" title="Direct link to heading">#</a>Specification</h1><p>TerrainGrid is made up of the TerrainGrid class, and the HeightMapGrid
+and TerrainGridListener interfaces.</p><ul><li><p>TerrainGrid is the central class of the system. It takes care for
+handling camera movement in LODUpdate, loading and unloading terrain
+tiles on demand, and notifying any registered listeners of changes.</p></li><li><p>TerrainGridListener defines two events to listen to:</p><ul><li><p>gridMoved(Vector3f): gets the new center as parameter after
+terrain update, so any objects can be added or removed as
+needed.</p></li><li><p>Material tileLoaded(Material material, Vector3f cell): notifies
+the system about a tile being loaded. Parameters are a cloned
+value of the material added to the TerrainGrid, and the cell of
+the new tile. The system can change the material according to
+this information (eg. load required alphamaps, etc).</p></li></ul></li></ul><p>Multiple listeners can be added to the TerrainGrid, they will be called
+in the order of addition, so it&#x27;s possible to have multiple changes to
+the material before completing the load of the tile.</p><p>HeightMapGrid adds the possibility of loading terrain tiles on demand
+instead of having a simple height array. There&#x27;s no predefined way of
+how to store these tiles, it only takes care of loading one HeightMap
+object at given location at a time.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="motivation"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#motivation" title="Direct link to heading">#</a>Motivation</h1><p>After playing around with the terrain in jME3, soon comes the
+requirement of having larger explorable lands. Increasing the size of
+one TerrainQuad leads to more memory usage, while it will still be easy
+to reach the worlds boundaries. That&#x27;s why TerrainGrid was designed. It
+extends the TerraindQuad class and uses 4 HeightMaps (dark blue) as the
+four sub-quad. This means that a terrain of size 513 will use tiles of
+257. Also an LRUCache is built into the terrain package, so surrounding
+tiles (green) can be pre-cached on a different thread, lowering the
+loading time. The quads are updated as the camera approaches the
+boundary of the light blue section.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="rationale"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#rationale" title="Direct link to heading">#</a>Rationale</h1><p>The design of the TerrainGrid system was chosen carefully, so that
+minimal effort needs to be taken to switch from previous TerrainQuad
+uses. It has the same constructors with the small exception that instead
+of an array of heightmap it takes a HeightMapGrid instance. All other
+parameters are forwarded down to the underlying TerrainQuad system.
+There exist also two basic HeightMapGrid implementations:</p><ul><li><p>ImageBasedHeightMapGrid: uses a sequentially numbered, 16 bit
+grayscale heightmaps. The physical filename of these files can be
+generated through the Namer interface. When a tile cannot be found
+by the assetManager, an empty (all-zero) heightmap is created, and a
+warning is added to the log.</p></li><li><p>FractalHeightMapGrid: uses a noise library to create a landscape on
+the fly. The shape of the terrain can be controlled by the various
+parameters and postfilters of the fractals. With the help of this
+grid implementation there&#x27;s no limitation -- above of floating point
+precision limits -- how far the camera can get. The tiles generated
+this way can be cached to the filesystem, for later modification.
+The FractalHeightMapGrid will always load from cache if a tile
+exists there!</p></li></ul><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="usage"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#usage" title="Direct link to heading">#</a>Usage</h1><ol><li><p>instantiate a TerrainGrid object</p></li><li><p>set material, listeners, translation, scale, etc.</p></li><li><p>add a LODControl instance to the object</p></li><li><p>call initialize with the camera location</p></li><li><p>(optional) add it to the physicsSpace as you would a TerrainQuad</p></li></ol><p>Further information about terrain and TerrainQuad can be found in the
+wiki at:</p><ul><li><p><a href="/wikidemo/docs/jme3/beginner/hello_terrain">jme3🔰hello_terrain</a></p></li><li><p><a href="/wikidemo/docs/jme3/advanced/terrain">jme3:advanced:terrain</a></p></li></ul></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/8keep/wikidemo/edit/master/docs/jme3/advanced/endless_terraingrid.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div>Copyright © 2020 jMonkeyEngine.</div></div></div></footer>
+</div>
+
+<script src="/wikidemo/styles.08ff7081.js"></script>
+
+<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+
+<script src="/wikidemo/main.1b6aa70f.js"></script>
+
+<script src="/wikidemo/1.e501629b.js"></script>
+
+<script src="/wikidemo/2.c824d386.js"></script>
+
+<script src="/wikidemo/302.1d1a2997.js"></script>
+
+<script src="/wikidemo/394d525a.30c299b8.js"></script>
+
+<script src="/wikidemo/17896441.d065d5f5.js"></script>
+
+<script src="/wikidemo/efb999b1.42de3511.js"></script>
+
+
+</body>
+</html>

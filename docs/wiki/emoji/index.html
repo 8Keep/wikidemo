@@ -1,0 +1,781 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Docusaurus v2.0.0-alpha.50">
+<script src="/js/dark_default.js"></script>
+
+<title data-react-helmet="true">emoji | jMonkeyEngine Documentation</title>
+
+<meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="emoji | jMonkeyEngine Documentation"><meta data-react-helmet="true" name="description" content="How to use icons in the wiki"><meta data-react-helmet="true" property="og:description" content="How to use icons in the wiki"><meta data-react-helmet="true" property="og:url" content="https://8keep.github.io/wikidemo/docs/wiki/emoji">
+
+<link data-react-helmet="true" rel="shortcut icon" href="/wikidemo/img/favicon.ico">
+
+
+<link rel="stylesheet" href="/wikidemo/styles.7d008dc0.css">
+
+
+<link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
+
+<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+
+<link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
+
+<link rel="preload" href="/wikidemo/1.e501629b.js" as="script">
+
+<link rel="preload" href="/wikidemo/2.c824d386.js" as="script">
+
+<link rel="preload" href="/wikidemo/302.1d1a2997.js" as="script">
+
+<link rel="preload" href="/wikidemo/394d525a.30c299b8.js" as="script">
+
+<link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
+
+<link rel="preload" href="/wikidemo/1b095a6f.d8b2ce04.js" as="script">
+
+</head>
+<body>
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=window.matchMedia("(prefers-color-scheme: dark)"),n=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();null!==n?t(n):e.matches&&t("dark")}()</script>
+<div id="__docusaurus">
+<nav class="navbar navbar--light navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><div aria-label="Navigation bar toggle" class="navbar__toggle" role="button" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></div><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></div><div class="navbar__items navbar__items--right"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="navbar__item navbar__link">GitHub</a><div class="react-toggle react-toggle--disabled displayOnlyInLargeViewport_1gtM"><div class="react-toggle-track"><div class="react-toggle-track-check"><span class="toggle_keGJ moon_1gwN"></span></div><div class="react-toggle-track-x"><span class="toggle_keGJ sun_3CPA"></span></div></div><div class="react-toggle-thumb"></div><input type="checkbox" disabled="" aria-label="Dark mode toggle" class="react-toggle-screenreader-only"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div><div class="navbar-sidebar"><div class="navbar-sidebar__brand"><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a></div><div class="navbar-sidebar__items"><div class="menu"><ul class="menu__list"><li class="menu__list-item"><a aria-current="page" class="menu__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></li><li class="menu__list-item"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="menu__link">GitHub</a></li></ul></div></div></div></nav><div class="main-wrapper"><div class="docPage_1kjD"><main class="docMainContainer_FFX1"><div class="padding-vert--lg"><div class="container"><div class="row"><div class="col docItemCol_2GOA"><div class="docItemContainer_2cwg"><article><header><h1 class="docTitle_1vWb">emoji</h1></header><div class="markdown"><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="how-to-use-icons-in-the-wiki"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#how-to-use-icons-in-the-wiki" title="Direct link to heading">#</a>How to use icons in the wiki</h1><p>You can use any font awesome icon listed at
+<a href="https://fontawesome.com/v4.7.0/icons/">https://fontawesome.com/v4.7.0/icons/</a> in your wiki documents by use of
+the icon macro.</p><p><strong>Syntax for inserting icons.</strong></p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">icon:thumbs-up []</span></div><div class="token-line" style="color:#393A34"><span class="token plain">icon:database[role=green] // change color by use of the role syntax</span></div><div class="token-line" style="color:#393A34"><span class="token plain">icon:heart[2x] // icons can be sized</span></div><div class="token-line" style="color:#393A34"><span class="token plain">icon:shield[rotate=90, flip=vertical] // rotate and flip</span></div></div></div></div></div><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>When setting the icons name, you do not have to preface it with <code>fa-</code>,
+asciidoctor will accept the font name.</p></div></div><p>The icon macro has three attributes you can set, they are size, rotate,
+and flip.</p><ul><li><p>size\</p><ul><li><p>The first positional attribute found, scales the icon; values
+are: <code>1x</code> (default), <code>2x</code>, <code>3x</code>, <code>4x</code>, <code>5x</code>, <code>lg</code>, <code>fw</code></p></li><li><p>You can fix the width of the icon by use of the <code>fw</code> attribute.
+This helps when trying to align with other elements by giving
+the icon a fixed width.</p></li></ul></li><li><p>rotate</p><ul><li>Rotates the icon; values are: <code>90</code>, <code>180</code>, <code>270</code></li></ul></li><li><p>flip</p><ul><li>Flips the icon; values are: <code>horizontal</code>, <code>vertical</code></li></ul></li></ul><p>The first unnamed attribute is assumed to be the size. For instance, to
+make the icon twice the size as the default, simply add 2x inside the
+square brackets.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">icon:heart[2x]</span></div></div></div></div></div><p>Results:</p><p><img src="./images/icons/heart.png" alt="heart"> 2x <img src="./images/icons/heart.png" alt="heart"></p><p>To rotate and flip the icon:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">icon:shield[rotate=270, flip=vertical]</span></div></div></div></div></div><p>Results:</p><p><img src="./images/icons/shield.png" alt="shield"> rotated 90, and flipped vertical
+<img src="./images/icons/shield.png" alt="shield"></p><p>You can also link to icons.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">icon:download[link=&quot;https://rubygems.org/downloads/asciidoctor-1.5.2.gem&quot;]</span></div></div></div></div></div><p>Results:</p><p><img src="./images/icons/download.png" alt="download"></p><p>Lastly, you can color your icons using the role syntax.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">icon:database[role=green]</span></div></div></div></div></div><p>Results:</p><p><img src="./images/icons/database.png" alt="database"> colored green
+<img src="./images/icons/database.png" alt="database"></p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="how-to-use-emoji-in-the-wiki"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#how-to-use-emoji-in-the-wiki" title="Direct link to heading">#</a>How to use emoji in the wiki</h1><p>Using emoji in wiki docs currently requires the setting of the
+<code>:stylesheet:</code> attribute in the header of the wiki document.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">:stylesheet: twemoji-awesome.css</span></div></div></div></div></div><p>The <a href="/wikidemo/docs/wiki/wiki/wiki_header">Anatomy of a Wiki Header</a> document explains
+setting of this and other header attributes.</p><p>Once the header attribute is set, you can add the emoji using the
+following syntax.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">emoji:heart[2x] // the &quot;[2x]&quot; is a size modifier</span></div><div class="token-line" style="color:#393A34"><span class="token plain">emoji:rage[]</span></div></div></div></div></div><p>::: {.note}
+You can change the icon size with the size modifier <code>[2x]</code>.</p><p><code>emoji:heart[]</code> emoji:heart[] <code>emoji:heart[2x]</code> emoji:heart[2x]
+:::</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="emoji-and-name-cheet-sheet"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#emoji-and-name-cheet-sheet" title="Direct link to heading">#</a>Emoji and Name Cheet Sheet</h1><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="people"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#people" title="Direct link to heading">#</a>People</h2><p>+----------------------+----------------------+-----------------------+
+| emoji:smile[2x]    | emoji:laughing[2x] | emoji:blush[2x]     |
+| <code>smile</code>\             | <code>laughing</code>\          | <code>blush</code>\              |
+| emoji:smiley[2x]   | emoji:relaxed[2x]  | emoji:smirk[2x]     |
+| <code>smiley</code>\            | <code>relaxed</code>\           | <code>smirk</code>\              |
+| em                   | emoji                | emoji:kiss            |
+| oji:heart-eyes[2x] | :kissing-heart[2x] | ing-closed-eyes[2x] |
+| <code>heart-eyes</code>\        | <code>kissing-heart</code>\     | <code>                     |
+| emoji:flushed\[2x\]  | emoji:relieved\[2x\] | kissing-closed-eyes</code>\ |
+| <code>flushed</code>\           | <code>relieved</code>\          | emoji:satisfied[2x] |
+| emoji:grin[2x]     | emoji:wink[2x]     | <code>satisfied</code>\          |
+| <code>grin</code>\              | <code>wink</code>\              | emoji:stuck-out-ton   |
+| emoji:stuck-out-tong | emoji:grinning[2x] | gue-winking-eye[2x] |
+| ue-closed-eyes[2x] | <code>grinning</code>\          | <code>stuck-out            |
+| </code>stuck-out-          | emoji:st             | -tongue-winking-eye<code>\ |
+| tongue-closed-eyes</code>\ | uck-out-tongue[2x] | emoji:kissing[2x]   |
+| emoji:kissin         | <code>stuck-out-tongue</code>\  | <code>kissing</code>\            |
+| g-smiling-eyes[2x] | emoji:frowning[2x] | emoji:sleeping[2x]  |
+| <code>ki                  | </code>frowning<code>\          | </code>sleeping<code>\           |
+| ssing-smiling-eyes</code>\ | e                    | emoji:anguished[2x] |
+| emoji:worried[2x]  | moji:grimacing[2x] | <code>anguished</code>\          |
+| <code>worried</code>\           | <code>grimacing</code>\         | emoji:confused[2x]  |
+| em                   | emoji:               | <code>confused</code>\           |
+| oji:open-mouth[2x] | expressionless[2x] | emoji:unamused[2x]  |
+| <code>open-mouth</code>\        | <code>expressionless</code>\    | <code>unamused</code>\           |
+| emoji:hushed[2x]   | emoji:sweat[2x]    | emoji:weary[2x]     |
+| <code>hushed</code>\            | <code>sweat</code>\             | <code>weary</code>\              |
+| emo                  | emoj                 | e                     |
+| ji:sweat-smile[2x] | i:disappointed[2x] | moji:confounded[2x] |
+| <code>sweat-smile</code>\       | <code>disappointed</code>\      | <code>confounded</code>\         |
+| emoji:pensive[2x]  | em                   | emoji:persevere[2x] |
+| <code>pensive</code>\           | oji:cold-sweat[2x] | <code>persevere</code>\          |
+| emoji:fearful[2x]  | <code>cold-sweat</code>\        | emoji:joy[2x]       |
+| <code>fearful</code>\           | emoji:sob[2x]      | <code>joy</code>\                |
+| emoji:cry[2x]      | <code>sob</code>\               | e                     |
+| <code>cry</code>\               | emoji:scream[2x]   | moji:tired-face[2x] |
+| em                   | <code>scream</code>\            | <code>tired-face</code>\         |
+| oji:astonished[2x] | emoji:rage[2x]     | emoji:triumph[2x]   |
+| <code>astonished</code>\        | <code>rage</code>\              | <code>triumph</code>\            |
+| emoji:angry[2x]    | emoji:yum[2x]      | emoji:mask[2x]      |
+| <code>angry</code>\             | <code>yum</code>\               | <code>mask</code>\               |
+| emoji:sleepy[2x]   | em                   | emoji:imp[2x]       |
+| <code>sleepy</code>\            | oji:dizzy-face[2x] | <code>imp</code>\                |
+| em                   | <code>dizzy-face</code>\        | emoji:no-mouth[2x]  |
+| oji:sunglasses[2x] | emoj                 | <code>no-mouth</code>\           |
+| <code>sunglasses</code>\        | i:neutral-face[2x] | emo                   |
+| emo                  | <code>neutral-face</code>\      | ji:yellow-heart[2x] |
+| ji:smiling-imp[2x] | emoji:alien[2x]    | <code>yellow-heart</code>\       |
+| <code>smiling-imp</code>\       | <code>alien</code>\             | emoji:heart[2x]     |
+| emoji:innocent[2x] | emoj                 | <code>heart</code>\              |
+| <code>innocent</code>\          | i:purple-heart[2x] | emoji:heartbeat[2x] |
+| em                   | <code>purple-heart</code>\      | <code>heartbeat</code>\          |
+| oji:blue-heart[2x] | emoj                 | emoji:r               |
+| <code>blue-heart</code>\        | i:broken-heart[2x] | evolving-hearts[2x] |
+| emo                  | <code>broken-heart</code>\      | <code>revolving-hearts</code>\   |
+| ji:green-heart[2x] | em                   | emoji:sparkles[2x]  |
+| <code>green-heart</code>\       | oji:two-hearts[2x] | <code>sparkles</code>\           |
+| em                   | <code>two-hearts</code>\        | emoji:dizzy[2x]     |
+| oji:heartpulse[2x] | emoji:s              | <code>dizzy</code>\              |
+| <code>heartpulse</code>\        | parkling-heart[2x] | em                    |
+| emoji:cupid[2x]    | <code>sparkling-heart</code>\   | oji:exclamation[2x] |
+| <code>cupid</code>\             | emoji:star2[2x]    | <code>exclamation</code>\        |
+| emoji:star[2x]     | <code>star2</code>\             | emoj                  |
+| <code>star</code>\              | emoji:anger[2x]    | i:grey-question[2x] |
+| emoji:boom[2x]     | <code>anger</code>\             | <code>grey-question</code>\      |
+| <code>boom</code>\              | emoji:gr             | em                    |
+| emoji:question[2x] | ey-exclamation[2x] | oji:sweat-drops[2x] |
+| <code>question</code>\          | <code>grey-exclamation</code>\  | <code>sweat-drops</code>\        |
+| emoji:zzz[2x]      | emoji:dash[2x]     | emoji:fire[2x]      |
+| <code>zzz</code>\               | <code>dash</code>\              | <code>fire</code>\               |
+| emoji:notes[2x]    | emoj                 | e                     |
+| <code>notes</code>\             | i:musical-note[2x] | moji:thumbsdown[2x] |
+| emoji:poop[2x]     | <code>musical-note</code>\      | <code>thumbsdown</code>\         |
+| <code>poop</code>\              | emoji:thumbsup[2x] | emoji:fist[2x]      |
+| emoji:ok-hand[2x]  | <code>thumbsup</code>\          | <code>fist</code>\               |
+| <code>ok-hand</code>\           | emoji:punch[2x]    | emoji:hand[2x]      |
+| emoji:v[2x] <code>v</code>\   | <code>punch</code>\             | <code>hand</code>\               |
+| em                   | emoji:wave[2x]     | e                     |
+| oji:open-hands[2x] | <code>wave</code>\              | moji:point-down[2x] |
+| <code>open-hands</code>\        | emoji:point-up[2x] | <code>point-down</code>\         |
+| em                   | <code>point-up</code>\          | emo                   |
+| oji:point-left[2x] | emo                  | ji:raised-hands[2x] |
+| <code>point-left</code>\        | ji:point-right[2x] | <code>raised-hands</code>\       |
+| emoji:pray[2x]     | <code>point-right</code>\       | emoji:clap[2x]      |
+| <code>pray</code>\              | em                   | <code>clap</code>\               |
+| emoji:muscle[2x]   | oji:point-up-2[2x] | emoji:runner[2x]    |
+| <code>muscle</code>\            | <code>point-up-2</code>\        | <code>runner</code>\             |
+| emoji:couple[2x]   | emoji:walking[2x]  | emoji:dancer[2x]    |
+| <code>couple</code>\            | <code>walking</code>\           | <code>dancer</code>\             |
+| emoji:dancers[2x]  | emoji:family[2x]   | emoji:no-good[2x]   |
+| <code>dancers</code>\           | <code>family</code>\            | <code>no-good</code>\            |
+| emoji:informati      | emoji:ok-woman[2x] | emoji:                |
+| on-desk-person[2x] | <code>ok-woman</code>\          | bride-with-veil[2x] |
+| <code>infor               | emo                  | </code>bride-with-veil<code>\    |
+| mation-desk-person</code>\ | ji:raised-hand[2x] | emoji:bow[2x]       |
+| emoji:person-wit     | <code>raised-hand</code>\       | <code>bow</code>\                |
+| h-pouting-face[2x] | emoji:p              | emoji:massage[2x]   |
+| <code>person              | erson-frowning\[2x\] | </code>massage<code>\            |
+| -with-pouting-face</code>\ | <code>person-frowning</code>\   | emoji:boy[2x]       |
+| em                   | emoji:cou            | <code>boy</code>\                |
+| oji:couplekiss[2x] | ple-with-heart[2x] | emoji:man[2x]       |
+| <code>couplekiss</code>\        | <code>couple-with-heart</code>\ | <code>man</code>\                |
+| emoji:haircut[2x]  | e                    | emoji:older-man[2x] |
+| <code>haircut</code>\           | moji:nail-care[2x] | <code>older-man</code>\          |
+| emoji:girl[2x]     | <code>nail-care</code>\         | emoji:                |
+| <code>girl</code>\              | emoji:woman[2x]    | man-with-turban[2x] |
+| emoji:baby[2x]     | <code>woman</code>\             | <code>man-with-turban</code>\    |
+| <code>baby</code>\              | emo                  | emoji:angel[2x]     |
+| emoji:person-w       | ji:older-woman[2x] | <code>angel</code>\              |
+| ith-blond-hair[2x] | <code>older-woman</code>\       | emoji:smile-cat[2x] |
+| <code>pers                | emoji:man-w          | </code>smile-cat<code>\          |
+| on-with-blond-hair</code>\ | ith-gua-pi-mao[2x] | emoji:smirk-cat[2x] |
+| emoji:const          | <code>m                   | </code>smirk-cat<code>\          |
+| ruction-worker\[2x\] | an-with-gua-pi-mao</code>\ | emoji:joy-cat[2x]   |
+| <code>c                   | emoji:cop\[2x\]      | </code>joy-cat<code>\            |
+| onstruction-worker</code>\ | <code>cop</code>\               | emoji:                |
+| emoji:princess[2x] | em                   | japanese-goblin[2x] |
+| <code>princess</code>\          | oji:smiley-cat[2x] | <code>japanese-goblin</code>\    |
+| emoji:               | <code>smiley-cat</code>\        | emoj                  |
+| heart-eyes-cat[2x] | emo                  | i:speak-no-evil[2x] |
+| <code>heart-eyes-cat</code>\    | ji:kissing-cat[2x] | <code>speak-no-evil</code>\      |
+| em                   | <code>kissing-cat</code>\       | emoji:feet[2x]      |
+| oji:scream-cat[2x] | emoji:c              | <code>feet</code>\               |
+| <code>scream-cat</code>\        | rying-cat-face[2x] | emoji:droplet[2x]   |
+| emo                  | <code>crying-cat-face</code>\   | <code>droplet</code>\            |
+| ji:pouting-cat[2x] | emoji                | emoji:nose[2x]      |
+| <code>pouting-cat</code>\       | :japanese-ogre[2x] | <code>nose</code>\               |
+| emo                  | <code>japanese-ogre</code>\     | emoji:bus             |
+| ji:see-no-evil[2x] | emoj                 | t-in-silhouette[2x] |
+| <code>see-no-evil</code>\       | i:hear-no-evil[2x] | <code>bust-in-silhouette</code>\ |
+| e                    | <code>hear-no-evil</code>\      | emoji:                |
+| moji:guardsman[2x] | emoji:skull[2x]    | thought-balloon[2x] |
+| <code>guardsman</code>\         | <code>skull</code>\             | <code>thought-balloon</code>\    |
+| emoji:lips[2x]     | emoji:kiss[2x]     |                       |
+| <code>lips</code>\              | <code>kiss</code>\              |                       |
+| emoji:ear[2x]      | emoji:eyes[2x]     |                       |
+| <code>ear</code>\               | <code>eyes</code>\              |                       |
+| emoji:tongue[2x]   | emo                  |                       |
+| <code>tongue</code>\            | ji:love-letter[2x] |                       |
+| emoji:busts          | <code>love-letter</code>\       |                       |
+| -in-silhouette[2x] | emoji:               |                       |
+| <code>b                   | speech-balloon\[2x\] |                       |
+| usts-in-silhouette</code>\ | <code>speech-balloon</code>\    |                       |
++----------------------+----------------------+-----------------------+</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="nature"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#nature" title="Direct link to heading">#</a>Nature</h2><p>+----------------------+----------------------+-----------------------+
+| emoji:sunny[2x]    | emoji:umbrella[2x] | emoji:cloud[2x]     |
+| <code>sunny</code>\             | <code>umbrella</code>\          | <code>cloud</code>\              |
+| e                    | emoji:snowman[2x]  | emoji:zap[2x]       |
+| moji:snowflake[2x] | <code>snowman</code>\           | <code>zap</code>\                |
+| <code>snowflake</code>\         | emoji:foggy[2x]    | emoji:ocean[2x]     |
+| emoji:cyclone[2x]  | <code>foggy</code>\             | <code>ocean</code>\              |
+| <code>cyclone</code>\           | emoji:dog[2x]      | emoji:mouse[2x]     |
+| emoji:cat[2x]      | <code>dog</code>\               | <code>mouse</code>\              |
+| <code>cat</code>\               | emoji:rabbit[2x]   | emoji:wolf[2x]      |
+| emoji:hamster[2x]  | <code>rabbit</code>\            | <code>wolf</code>\               |
+| <code>hamster</code>\           | emoji:tiger[2x]    | emoji:koala[2x]     |
+| emoji:frog[2x]     | <code>tiger</code>\             | <code>koala</code>\              |
+| <code>frog</code>\              | emoji:pig[2x]      | emoji:pig-nose[2x]  |
+| emoji:bear[2x]     | <code>pig</code>\               | <code>pig-nose</code>\           |
+| <code>bear</code>\              | emoji:boar[2x]     | em                    |
+| emoji:cow[2x]      | <code>boar</code>\              | oji:monkey-face[2x] |
+| <code>cow</code>\               | emoji:horse[2x]    | <code>monkey-face</code>\        |
+| emoji:monkey[2x]   | <code>horse</code>\             | emoji:racehorse[2x] |
+| <code>monkey</code>\            | emoji:sheep[2x]    | <code>racehorse</code>\          |
+| emoji:camel[2x]    | <code>sheep</code>\             | emoji:elephant[2x]  |
+| <code>camel</code>\             | emoji:snake[2x]    | <code>elephant</code>\           |
+| em                   | <code>snake</code>\             | emoji:bird[2x]      |
+| oji:panda-face[2x] | emoji                | <code>bird</code>\               |
+| <code>panda-face</code>\        | :hatched-chick[2x] | emoji                 |
+| em                   | <code>hatched-chick</code>\     | :hatching-chick[2x] |
+| oji:baby-chick[2x] | emoji:penguin[2x]  | <code>hatching-chick</code>\     |
+| <code>baby-chick</code>\        | <code>penguin</code>\           | emoji:turtle[2x]    |
+| emoji:chicken[2x]  | emoji:honeybee[2x] | <code>turtle</code>\             |
+| <code>chicken</code>\           | <code>honeybee</code>\          | emoji:ant[2x]       |
+| emoji:bug[2x]      | emoji:snail[2x]    | <code>ant</code>\                |
+| <code>bug</code>\               | <code>snail</code>\             | emoji:octopus[2x]   |
+| emoji:beetle[2x]   | emoji:fish[2x]     | <code>octopus</code>\            |
+| <code>beetle</code>\            | <code>fish</code>\              | emoji:whale[2x]     |
+| emoji                | emoji:dolphin[2x]  | <code>whale</code>\              |
+| :tropical-fish[2x] | <code>dolphin</code>\           | emoji:cow2[2x]      |
+| <code>tropical-fish</code>\     | emoji:rat[2x]      | <code>cow2</code>\               |
+| emoji:whale2[2x]   | <code>rat</code>\               | emoj                  |
+| <code>whale2</code>\            | emoji:rabbit2[2x]  | i:water-buffalo[2x] |
+| emoji:ram[2x]      | <code>rabbit2</code>\           | <code>water-buffalo</code>\      |
+| <code>ram</code>\               | emoji:rooster[2x]  | emoji:dragon[2x]    |
+| emoji:tiger2[2x]   | <code>rooster</code>\           | <code>dragon</code>\             |
+| <code>tiger2</code>\            | emoji:mouse2[2x]   | emoji:dog2[2x]      |
+| emoji:goat[2x]     | <code>mouse2</code>\            | <code>dog2</code>\               |
+| <code>goat</code>\              | emoji:blowfish[2x] | emoji:ox[2x] <code>ox</code>\  |
+| emoji:pig2[2x]     | <code>blowfish</code>\          | emoji:crocodile[2x] |
+| <code>pig2</code>\              | emoji:leopard[2x]  | <code>crocodile</code>\          |
+| emo                  | <code>leopard</code>\           | emoji:cat2[2x]      |
+| ji:dragon-face[2x] | em                   | <code>cat2</code>\               |
+| <code>dragon-face</code>\       | oji:paw-prints[2x] | emoji:bouquet[2x]   |
+| emoji:d              | <code>paw-prints</code>\        | <code>bouquet</code>\            |
+| romedary-camel[2x] | emoji:tulip[2x]    | emoji:f               |
+| <code>dromedary-camel</code>\   | <code>tulip</code>\             | our-leaf-clover[2x] |
+| emoji:poodle[2x]   | e                    | <code>four-leaf-clover</code>\   |
+| <code>poodle</code>\            | moji:sunflower[2x] | emoji:hibiscus[2x]  |
+| emoji:               | <code>sunflower</code>\         | <code>hibiscus</code>\           |
+| cherry-blossom[2x] | emoji:leaves[2x]   | em                    |
+| <code>cherry-blossom</code>\    | <code>leaves</code>\            | oji:fallen-leaf[2x] |
+| emoji:rose[2x]     | emoji:mushroom[2x] | <code>fallen-leaf</code>\        |
+| <code>rose</code>\              | <code>mushroom</code>\          | emoji:cactus[2x]    |
+| em                   | emoji:               | <code>cactus</code>\             |
+| oji:maple-leaf[2x] | evergreen-tree[2x] | emoji                 |
+| <code>maple-leaf</code>\        | <code>evergreen-tree</code>\    | :deciduous-tree[2x] |
+| emoji:herb[2x]     | emoji:seedling[2x] | <code>deciduous-tree</code>\     |
+| <code>herb</code>\              | <code>seedling</code>\          | emoji:blossom[2x]   |
+| e                    | emoji:shell[2x]    | <code>blossom</code>\            |
+| moji:palm-tree[2x] | <code>shell</code>\             | emoji:globe           |
+| <code>palm-tree</code>\         | emoji:full-          | -with-meridians[2x] |
+| emoji:chestnut[2x] | moon-with-face[2x] | <code>g                    |
+| </code>chestnut<code>\          | </code>f                   | lobe-with-meridians<code>\ |
+| emo                  | ull-moon-with-face</code>\ | emoji:new             |
+| ji:ear-of-rice[2x] | emoji:waxing         | -moon-with-face[2x] |
+| <code>ear-of-rice</code>\       | -crescent-moon[2x] | <code>new-moon-with-face</code>\ |
+| emoji                | <code>wa                  | emoji:fir             |
+| :sun-with-face\[2x\] | xing-crescent-moon</code>\ | st-quarter-moon[2x] |
+| <code>sun-with-face</code>\     | e                    | <code>first-quarter-moon</code>\ |
+| emoji:new-moon[2x] | moji:full-moon[2x] | emoji:wani            |
+| <code>new-moon</code>\          | <code>full-moon</code>\         | ng-gibbous-moon[2x] |
+| emoji:waxin          | emoji:waning         | <code>                     |
+| g-gibbous-moon\[2x\] | -crescent-moon\[2x\] | waning-gibbous-moon</code>\ |
+| <code>w                   | </code>wa                  | emoji:last-quarter    |
+| axing-gibbous-moon<code>\ | ning-crescent-moon</code>\ | -moon-with-face[2x] |
+| emoji:las            | emoji:moon[2x]     | <code>last-qua             |
+| t-quarter-moon\[2x\] | </code>moon<code>\              | rter-moon-with-face</code>\ |
+| <code>last-quarter-moon</code>\ | em                   | emo                   |
+| emoji:first-quarter- | oji:earth-asia[2x] | ji:earth-africa[2x] |
+| moon-with-face[2x] | <code>earth-asia</code>\        | <code>earth-africa</code>\       |
+| <code>first-quar          | emoj                 | emoji:volcano\[2x\]   |
+| ter-moon-with-face</code>\ | i:partly-sunny[2x] | <code>volcano</code>\            |
+| emoji:               | <code>partly-sunny</code>\      |                       |
+| earth-americas[2x] |                      |                       |
+| <code>earth-americas</code>\    |                      |                       |
+| e                    |                      |                       |
+| moji:milky-way[2x] |                      |                       |
+| <code>milky-way</code>\         |                      |                       |
++----------------------+----------------------+-----------------------+</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="objects"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#objects" title="Direct link to heading">#</a>Objects</h2><p>+----------------------+----------------------+-----------------------+
+| emoji:bamboo[2x]   | em                   | emoji:dolls[2x]     |
+| <code>bamboo</code>\            | oji:gift-heart[2x] | <code>dolls</code>\              |
+| emoji:               | <code>gift-heart</code>\        | emoji:flags[2x]     |
+| school-satchel[2x] | emoj                 | <code>flags</code>\              |
+| <code>school-satchel</code>\    | i:mortar-board[2x] | e                     |
+| e                    | <code>mortar-board</code>\      | moji:wind-chime[2x] |
+| moji:fireworks[2x] | emoji:sparkler[2x] | <code>wind-chime</code>\         |
+| <code>fireworks</code>\         | <code>sparkler</code>\          | emoji:ghost[2x]     |
+| em                   | emoji:               | <code>ghost</code>\              |
+| oji:rice-scene[2x] | jack-o-lantern[2x] | em                    |
+| <code>rice-scene</code>\        | <code>jack-o-lantern</code>\    | oji:alarm-clock[2x] |
+| emoji:santa[2x]    | emoji:8ball[2x]    | <code>alarm-clock</code>\        |
+| <code>santa</code>\             | <code>8ball</code>\             | em                    |
+| emoji:apple[2x]    | emoji:art[2x]      | oji:baby-bottle[2x] |
+| <code>apple</code>\             | <code>art</code>\               | <code>baby-bottle</code>\        |
+| emoji:balloon[2x]  | emoji:banana[2x]   | emoji:bar-chart[2x] |
+| <code>balloon</code>\           | <code>banana</code>\            | <code>bar-chart</code>\          |
+| emoji:baseball[2x] | em                   | emoji:bath[2x]      |
+| <code>baseball</code>\          | oji:basketball[2x] | <code>bath</code>\               |
+| emoji:bathtub[2x]  | <code>basketball</code>\        | emoji:beer[2x]      |
+| <code>bathtub</code>\           | emoji:battery[2x]  | <code>beer</code>\               |
+| emoji:beers[2x]    | <code>battery</code>\           | emoji:bento[2x]     |
+| <code>beers</code>\             | emoji:bell[2x]     | <code>bento</code>\              |
+| e                    | <code>bell</code>\              | emoji:birthday[2x]  |
+| moji:bicyclist[2x] | emoji:bikini[2x]   | <code>birthday</code>\           |
+| <code>bicyclist</code>\         | <code>bikini</code>\            | emoji:blue-book[2x] |
+| emo                  | e                    | <code>blue-book</code>\          |
+| ji:black-joker[2x] | moji:black-nib[2x] | emoj                  |
+| <code>black-joker</code>\       | <code>black-nib</code>\         | i:bookmark-tabs[2x] |
+| emoji:bomb[2x]     | emoji:bookmark[2x] | <code>bookmark-tabs</code>\      |
+| <code>bomb</code>\              | <code>bookmark</code>\          | emoji:bowling[2x]   |
+| emoji:books[2x]    | emoji:boot[2x]     | <code>bowling</code>\            |
+| <code>books</code>\             | <code>boot</code>\              | emoji:bulb[2x]      |
+| emoji:bread[2x]    | e                    | <code>bulb</code>\               |
+| <code>bread</code>\             | moji:briefcase[2x] | emoji:calling[2x]   |
+| emoji:cake[2x]     | <code>briefcase</code>\         | <code>calling</code>\            |
+| <code>cake</code>\              | emoji:calendar[2x] | e                     |
+| emoji:camera[2x]   | <code>calendar</code>\          | moji:card-index[2x] |
+| <code>camera</code>\            | emoji:candy[2x]    | <code>card-index</code>\         |
+| emoji:cd[2x] <code>cd</code>\ | <code>candy</code>\             | emoji:chart-wit       |
+| emoji:cherries[2x] | emoji:chart-with-d   | h-upwards-trend[2x] |
+| <code>cherries</code>\          | ownwards-trend[2x] | <code>chart                |
+| emoji:clapper\[2x\]  | </code>chart-wi            | -with-upwards-trend<code>\ |
+| </code>clapper<code>\           | th-downwards-trend</code>\ | emoji                 |
+| emoji:closed         | emoji                | :christmas-tree[2x] |
+| -lock-with-key[2x] | :chocolate-bar[2x] | <code>christmas-tree</code>\     |
+| <code>cl                  | </code>chocolate-bar<code>\     | em                    |
+| osed-lock-with-key</code>\ | e                    | oji:closed-book[2x] |
+| emoji:cocktail[2x] | moji:clipboard[2x] | <code>closed-book</code>\        |
+| <code>cocktail</code>\          | <code>clipboard</code>\         | emoji:clubs[2x]     |
+| emoji                | emoji:c              | <code>clubs</code>\              |
+| :confetti-ball[2x] | losed-umbrella[2x] | emoji:computer[2x]  |
+| <code>confetti-ball</code>\     | <code>closed-umbrella</code>\   | <code>computer</code>\           |
+| emo                  | emoji:coffee[2x]   | emoji:corn[2x]      |
+| ji:credit-card[2x] | <code>coffee</code>\            | <code>corn</code>\               |
+| <code>credit-card</code>\       | emoji:cookie[2x]   | emo                   |
+| emoji:curry[2x]    | <code>cookie</code>\            | ji:crystal-ball[2x] |
+| <code>curry</code>\             | emoji:crown[2x]    | <code>crystal-ball</code>\       |
+| emoji:dart[2x]     | <code>crown</code>\             | emoji:dango[2x]     |
+| <code>dart</code>\              | emoji:custard[2x]  | <code>dango</code>\              |
+| emoji:dollar[2x]   | <code>custard</code>\           | emoji:diamonds[2x]  |
+| <code>dollar</code>\            | emoji:date[2x]     | <code>diamonds</code>\           |
+| emoji:dress[2x]    | <code>date</code>\              | emoji:doughnut[2x]  |
+| <code>dress</code>\             | emoji:door[2x]     | <code>doughnut</code>\           |
+| emoji:egg[2x]      | <code>door</code>\              | emoji:e-mail[2x]    |
+| <code>egg</code>\               | emoji:dvd[2x]      | <code>e-mail</code>\             |
+| emoji:email[2x]    | <code>dvd</code>\               | emoj                  |
+| <code>email</code>\             | emoji:eggplant[2x] | i:electric-plug[2x] |
+| emoji:fax[2x]      | <code>eggplant</code>\          | <code>electric-plug</code>\      |
+| <code>fax</code>\               | emoji:euro[2x]     | e                     |
+| emoji:fishing        | <code>euro</code>\              | moji:eyeglasses[2x] |
+| -pole-and-fish[2x] | emo                  | <code>eyeglasses</code>\         |
+| <code>fis                 | ji:file-folder\[2x\] | emoji:fish-cake\[2x\] |
+| hing-pole-and-fish</code>\ | <code>file-folder</code>\       | <code>fish-cake</code>\          |
+| emoji:flower         | em                   | em                    |
+| -playing-cards[2x] | oji:flashlight[2x] | oji:floppy-disk[2x] |
+| <code>fl                  | </code>flashlight<code>\        | </code>floppy-disk<code>\        |
+| ower-playing-cards</code>\ | emoji:football[2x] | emoji                 |
+| emoj                 | <code>football</code>\          | :fork-and-knife[2x] |
+| i:fried-shrimp[2x] | emoji:fries[2x]    | <code>fork-and-knife</code>\     |
+| <code>fried-shrimp</code>\      | <code>fries</code>\             | emoji:game-die[2x]  |
+| emoji:gem[2x]      | emoji:gift[2x]     | <code>game-die</code>\           |
+| <code>gem</code>\               | <code>gift</code>\              | emoji:golf[2x]      |
+| emoji:grapes[2x]   | emo                  | <code>golf</code>\               |
+| <code>grapes</code>\            | ji:green-apple[2x] | e                     |
+| emoji:guitar[2x]   | <code>green-apple</code>\       | moji:green-book[2x] |
+| <code>guitar</code>\            | emoji:gun[2x]      | <code>green-book</code>\         |
+| emoji:hammer[2x]   | <code>gun</code>\               | emoji:hamburger[2x] |
+| <code>hammer</code>\            | emoji:handbag[2x]  | <code>hamburger</code>\          |
+| emoji:hearts[2x]   | <code>handbag</code>\           | e                     |
+| <code>hearts</code>\            | emoji:h              | moji:headphones[2x] |
+| emoji:hocho[2x]    | igh-brightness[2x] | <code>headphones</code>\         |
+| <code>hocho</code>\             | <code>high-brightness</code>\   | emoji:high-heel[2x] |
+| e                    | e                    | <code>high-heel</code>\          |
+| moji:hourglass[2x] | moji:honey-pot[2x] | emo                   |
+| <code>hourglass</code>\         | <code>honey-pot</code>\         | ji:horse-racing[2x] |
+| emoji:icecream[2x] | emoji:hourglas       | <code>horse-racing</code>\       |
+| <code>icecream</code>\          | s-flowing-sand[2x] | emoji:ice-cream[2x] |
+| emoji:iphone[2x]   | <code>hour                | </code>ice-cream<code>\          |
+| </code>iphone<code>\            | glass-flowing-sand</code>\ | emoji:in              |
+| emoji:kimono[2x]   | em                   | coming-envelope[2x] |
+| <code>kimono</code>\            | oji:inbox-tray[2x] | <code>incoming-envelope</code>\  |
+| emoji:lipstick[2x] | <code>inbox-tray</code>\        | emoji:key[2x]       |
+| <code>lipstick</code>\          | emoji:jeans[2x]    | <code>key</code>\                |
+| emoji:lollipop[2x] | <code>jeans</code>\             | emoji:lemon[2x]     |
+| <code>lollipop</code>\          | emoji:ledger[2x]   | <code>lemon</code>\              |
+| emoji:               | <code>ledger</code>\            | emoji:lo              |
+| low-brightness[2x] | emoji:lock[2x]     | ck-with-ink-pen[2x] |
+| <code>low-brightness</code>\    | <code>lock</code>\              | <code>lock-with-ink-pen</code>\  |
+| emoji:mahjong[2x]  | emoji:loop[2x]     | em                    |
+| <code>mahjong</code>\           | <code>loop</code>\              | oji:loudspeaker[2x] |
+| emoji:mai            | emoji:mag[2x]      | <code>loudspeaker</code>\        |
+| lbox-with-mail[2x] | <code>mag</code>\               | emoji:mag-right[2x] |
+| <code>mailbox-with-mail</code>\ | emoji:mailbox[2x]  | <code>mag-right</code>\          |
+| emoj                 | <code>mailbox</code>\           | emoji                 |
+| i:meat-on-bone[2x] | emoji:mailbo         | :mailbox-closed[2x] |
+| <code>meat-on-bone</code>\      | x-with-no-mail[2x] | <code>mailbox-closed</code>\     |
+| emoji:memo[2x]     | <code>ma                  | emoji:mans-shoe\[2x\] |
+| </code>memo<code>\              | ilbox-with-no-mail</code>\ | <code>mans-shoe</code>\          |
+| emoji:minidisc[2x] | emoji:mega[2x]     | emoji:melon[2x]     |
+| <code>minidisc</code>\          | <code>mega</code>\              | <code>melon</code>\              |
+| emoji:moun           | em                   | e                     |
+| tain-bicyclist[2x] | oji:microphone[2x] | moji:microscope[2x] |
+| <code>                   |</code>microphone<code>\        | </code>microscope<code>\         |
+| mountain-bicyclist</code>\ | emoji:mo             | emoji:moneybag[2x]  |
+| emoji                | ney-with-wings[2x] | <code>moneybag</code>\           |
+| :musical-score[2x] | <code>money-with-wings</code>\  | emoji:m               |
+| <code>musical-score</code>\     | emoj                 | usical-keyboard[2x] |
+| emoji:necktie[2x]  | i:movie-camera[2x] | <code>musical-keyboard</code>\   |
+| <code>necktie</code>\           | <code>movie-camera</code>\      | e                     |
+| emoji:notebook[2x] | emoji:mute[2x]     | moji:name-badge[2x] |
+| <code>notebook</code>\          | <code>mute</code>\              | <code>name-badge</code>\         |
+| emoji:oden[2x]     | e                    | emoji:no-bell[2x]   |
+| <code>oden</code>\              | moji:newspaper[2x] | <code>no-bell</code>\            |
+| emo                  | <code>newspaper</code>\         | emo                   |
+| ji:outbox-tray[2x] | em                   | ji:nut-and-bolt[2x] |
+| <code>outbox-tray</code>\       | oji:notebook-with-de | <code>nut-and-bolt</code>\       |
+| emoji:pager[2x]    | corative-cover[2x] | em                    |
+| <code>pager</code>\             | <code>notebook-wit        | oji:orange-book\[2x\] |
+| emoji:pear\[2x\]     | h-decorative-cover</code>\ | <code>orange-book</code>\        |
+| <code>pear</code>\              | emoji:op             | emoji                 |
+| emoji:pill[2x]     | en-file-folder[2x] | :page-with-curl[2x] |
+| <code>pill</code>\              | <code>open-file-folder</code>\  | <code>page-with-curl</code>\     |
+| emo                  | emoji:               | emoji:peach[2x]     |
+| ji:postal-horn[2x] | page-facing-up[2x] | <code>peach</code>\              |
+| <code>postal-horn</code>\       | <code>page-facing-up</code>\    | emoji:phone[2x]     |
+| emo                  | e                    | <code>phone</code>\              |
+| ji:poultry-leg[2x] | moji:paperclip[2x] | emoji:pizza[2x]     |
+| <code>poultry-leg</code>\       | <code>paperclip</code>\         | <code>pizza</code>\              |
+| emoji:pushpin[2x]  | emoji:pencil2[2x]  | emoji:pouch[2x]     |
+| <code>pushpin</code>\           | <code>pencil2</code>\           | <code>pouch</code>\              |
+| emoji:ribbon[2x]   | e                    | emoji:purse[2x]     |
+| <code>ribbon</code>\            | moji:pineapple[2x] | <code>purse</code>\              |
+| emoj                 | <code>pineapple</code>\         | emoji:ramen[2x]     |
+| i:rice-cracker[2x] | emoji:postbox[2x]  | <code>ramen</code>\              |
+| <code>rice-cracker</code>\      | <code>postbox</code>\           | emoji:rice-ball[2x] |
+| emoji:running-s      | emoji:pound[2x]    | <code>rice-ball</code>\          |
+| hirt-with-sash[2x] | <code>pound</code>\             | emoji                 |
+| <code>runni               | emoji:radio\[2x\]    | :rugby-football\[2x\] |
+| ng-shirt-with-sash</code>\ | <code>radio</code>\             | <code>rugby-football</code>\     |
+| e                    | emoji:rice[2x]     | emoji:sandal[2x]    |
+| moji:satellite[2x] | <code>rice</code>\              | <code>sandal</code>\             |
+| <code>satellite</code>\         | emoji:ring[2x]     | emoji:scissors[2x]  |
+| emoji:scroll[2x]   | <code>ring</code>\              | <code>scissors</code>\           |
+| <code>scroll</code>\            | emoji:sake[2x]     | e                     |
+| emoji:shirt[2x]    | <code>sake</code>\              | moji:shaved-ice[2x] |
+| <code>shirt</code>\             | e                    | <code>shaved-ice</code>\         |
+| emoji:smoking[2x]  | moji:saxophone[2x] | emoji:ski[2x]       |
+| <code>smoking</code>\           | <code>saxophone</code>\         | <code>ski</code>\                |
+| emoji:sound[2x]    | emoji:seat[2x]     | emoji:soccer[2x]    |
+| <code>sound</code>\             | <code>seat</code>\              | <code>soccer</code>\             |
+| e                    | emoji:shower[2x]   | emoji:spades[2x]    |
+| moji:spaghetti[2x] | <code>shower</code>\            | <code>spades</code>\             |
+| <code>spaghetti</code>\         | emo                  | emoji:stew[2x]      |
+| emoji:               | ji:snowboarder[2x] | <code>stew</code>\               |
+| straight-ruler[2x] | <code>snowboarder</code>\       | emoji:surfer[2x]    |
+| <code>straight-ruler</code>\    | emoji                | <code>surfer</code>\             |
+| emoji:sushi[2x]    | :space-invader[2x] | emoji:swimmer[2x]   |
+| <code>sushi</code>\             | <code>space-invader</code>\     | <code>swimmer</code>\            |
+| emoji:syringe[2x]  | emoji:speaker[2x]  | emoj                  |
+| <code>syringe</code>\           | <code>speaker</code>\           | i:tanabata-tree[2x] |
+| e                    | em                   | <code>tanabata-tree</code>\      |
+| moji:tangerine[2x] | oji:strawberry[2x] | emoji:tel             |
+| <code>tangerine</code>\         | <code>strawberry</code>\        | ephone-receiver[2x] |
+| e                    | emoj                 | <code>telephone-receiver</code>\ |
+| moji:telescope[2x] | i:sweet-potato[2x] | emoji:toilet[2x]    |
+| <code>telescope</code>\         | <code>sweet-potato</code>\      | <code>toilet</code>\             |
+| emoji:tomato[2x]   | emoji:tada[2x]     | emoji:t               |
+| <code>tomato</code>\            | <code>tada</code>\              | riangular-ruler[2x] |
+| emoji:trophy[2x]   | emoji:tea[2x]      | <code>triangular-ruler</code>\   |
+| <code>trophy</code>\            | <code>tea</code>\               | emoji:trumpet[2x]   |
+| emoji:tv[2x] <code>tv</code>\ | emoji:tennis[2x]   | <code>trumpet</code>\            |
+| emoj                 | <code>tennis</code>\            | emoji:vhs[2x]       |
+| i:video-camera[2x] | emoji:tophat[2x]   | <code>vhs</code>\                |
+| <code>video-camera</code>\      | <code>tophat</code>\            | emoji:violin[2x]    |
+| emoji:watch[2x]    | emoji:               | <code>violin</code>\             |
+| <code>watch</code>\             | tropical-drink[2x] | e                     |
+| emoji:               | <code>tropical-drink</code>\    | moji:wine-glass[2x] |
+| womans-clothes[2x] | emoji:unlock[2x]   | <code>wine-glass</code>\         |
+| <code>womans-clothes</code>\    | <code>unlock</code>\            | emoji:wrench[2x]    |
+| emoji:yen[2x]      | em                   | <code>wrench</code>\             |
+| <code>yen</code>\               | oji:video-game[2x] |                       |
+|                      | <code>video-game</code>\        |                       |
+|                      | em                   |                       |
+|                      | oji:watermelon[2x] |                       |
+|                      | <code>watermelon</code>\        |                       |
+|                      | em                   |                       |
+|                      | oji:womans-hat[2x] |                       |
+|                      | <code>womans-hat</code>\        |                       |
++----------------------+----------------------+-----------------------+</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="places"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#places" title="Direct link to heading">#</a>Places</h2><p>+----------------------+----------------------+-----------------------+
+| emoji:               | emoji:airplane[2x] | emoji:ambulance[2x] |
+| aerial-tramway[2x] | <code>airplane</code>\          | <code>ambulance</code>\          |
+| <code>aerial-tramway</code>\    | emoji:art            | emoji:atm[2x]       |
+| emoji:anchor[2x]   | iculated-lorry[2x] | <code>atm</code>\                |
+| <code>anchor</code>\            | <code>articulated-lorry</code>\ | emoji:beginner[2x]  |
+| emoji:bank[2x]     | emoji:barber[2x]   | <code>beginner</code>\           |
+| <code>bank</code>\              | <code>barber</code>\            | emoji:boat[2x]      |
+| emoji:bike[2x]     | emoji:blue-car[2x] | <code>boat</code>\               |
+| <code>bike</code>\              | <code>blue-car</code>\          | emoji:b               |
+| emoji:b              | emoji:bul            | ullettrain-side[2x] |
+| ridge-at-night[2x] | lettrain-front[2x] | <code>bullettrain-side</code>\   |
+| <code>bridge-at-night</code>\   | <code>bullettrain-front</code>\ | emoji:car[2x]       |
+| emoji:bus[2x]      | emoji:busstop[2x]  | <code>car</code>\                |
+| <code>bus</code>\               | <code>busstop</code>\           | emoji:church[2x]    |
+| emoji:               | emoji:               | <code>church</code>\             |
+| carousel-horse[2x] | checkered-flag[2x] | em                    |
+| <code>carousel-horse</code>\    | <code>checkered-flag</code>\    | oji:city-sunset[2x] |
+| emo                  | emoj                 | <code>city-sunset</code>\        |
+| ji:circus-tent[2x] | i:city-sunrise[2x] | emoj                  |
+| <code>circus-tent</code>\       | <code>city-sunrise</code>\      | i:crossed-flags[2x] |
+| emoj                 | emoji:con            | <code>crossed-flags</code>\      |
+| i:construction[2x] | venience-store[2x] | emoji:europ           |
+| <code>construction</code>\      | <code>convenience-store</code>\ | ean-post-office[2x] |
+| emoji:de             | emoji:e              | <code>e                    |
+| partment-store\[2x\] | uropean-castle\[2x\] | uropean-post-office</code>\ |
+| <code>department-store</code>\  | <code>european-castle</code>\   | em                    |
+| emoji:factory[2x]  | emoj                 | oji:fire-engine[2x] |
+| <code>factory</code>\           | i:ferris-wheel[2x] | <code>fire-engine</code>\        |
+| emoji:fountain[2x] | <code>ferris-wheel</code>\      | e                     |
+| <code>fountain</code>\          | emoji:fuelpump[2x] | moji:helicopter[2x] |
+| emoji:hospital[2x] | <code>fuelpump</code>\          | <code>helicopter</code>\         |
+| <code>hospital</code>\          | emoji:hotel[2x]    | e                     |
+| emoji:house[2x]    | <code>hotel</code>\             | moji:hotsprings[2x] |
+| <code>house</code>\             | emoji:hou            | <code>hotsprings</code>\         |
+| emoji:j              | se-with-garden[2x] | emoji:japan[2x]     |
+| apanese-castle[2x] | <code>house-with-garden</code>\ | <code>japan</code>\              |
+| <code>japanese-castle</code>\   | em                   | e                     |
+| emoji:minibus[2x]  | oji:light-rail[2x] | moji:love-hotel[2x] |
+| <code>minibus</code>\           | <code>light-rail</code>\        | <code>love-hotel</code>\         |
+| emoji:mou            | emoji:monorail[2x] | e                     |
+| ntain-cableway[2x] | <code>monorail</code>\          | moji:mount-fuji[2x] |
+| <code>mountain-cableway</code>\ | emoji:mo             | <code>mount-fuji</code>\         |
+| emoji:office[2x]   | untain-railway[2x] | emoji:moyai[2x]     |
+| <code>office</code>\            | <code>mountain-railway</code>\  | <code>moyai</code>\              |
+| emoji:oncom          | emoji:oncom          | emo                   |
+| ing-police-car[2x] | ing-automobile[2x] | ji:oncoming-bus[2x] |
+| <code>o                   | </code>o                   | <code>oncoming-bus</code>\       |
+| ncoming-police-car<code>\ | ncoming-automobile</code>\ | emoji:                |
+| em                   | emoji                | performing-arts[2x] |
+| oji:police-car[2x] | :oncoming-taxi[2x] | <code>performing-arts</code>\    |
+| <code>police-car</code>\        | <code>oncoming-taxi</code>\     | em                    |
+| emoji:rainbow[2x]  | emo                  | oji:railway-car[2x] |
+| <code>rainbow</code>\           | ji:post-office[2x] | <code>railway-car</code>\        |
+| emoji:               | <code>post-office</code>\       | emoji                 |
+| rotating-light[2x] | emoji:rocket[2x]   | :roller-coaster[2x] |
+| <code>rotating-light</code>\    | <code>rocket</code>\            | <code>roller-coaster</code>\     |
+| emoji:school[2x]   | emoji                | emoji:rowboat[2x]   |
+| <code>school</code>\            | :round-pushpin[2x] | <code>rowboat</code>\            |
+| e                    | <code>round-pushpin</code>\     | emo                   |
+| moji:speedboat[2x] | emoji:ship[2x]     | ji:slot-machine[2x] |
+| <code>speedboat</code>\         | <code>ship</code>\              | <code>slot-machine</code>\       |
+| emoji:sta            | emoji:stars[2x]    | emoji:station[2x]   |
+| tue-of-liberty[2x] | <code>stars</code>\             | <code>station</code>\            |
+| <code>statue-of-liberty</code>\ | emoji:st             | emoji:sunrise[2x]   |
+| emoji:sunrise-       | eam-locomotive[2x] | <code>sunrise</code>\            |
+| over-mountains[2x] | <code>steam-locomotive</code>\  | emoji:taxi[2x]      |
+| <code>sunr                | emoji:susp           | </code>taxi<code>\               |
+| ise-over-mountains</code>\ | ension-railway[2x] | em                    |
+| emoji:tent[2x]     | <code>                   | oji:tokyo-tower\[2x\] |
+|</code>tent<code>\              | suspension-railway</code>\ | <code>tokyo-tower</code>\        |
+| emoji:tractor[2x]  | emoji:ticket[2x]   | emoji:train2[2x]    |
+| <code>tractor</code>\           | <code>ticket</code>\            | <code>train2</code>\             |
+| emoji:tram[2x]     | emoji                | e                     |
+| <code>tram</code>\              | :traffic-light[2x] | moji:trolleybus[2x] |
+| emoji:truck[2x]    | <code>traffic-light</code>\     | <code>trolleybus</code>\         |
+| <code>truck</code>\             | emoji:triangula      | emoji:warning[2x]   |
+| emoji:wedding[2x]  | r-flag-on-post[2x] | <code>warning</code>\            |
+| <code>wedding</code>\           | <code>trian               | emoji:kr\[2x\] </code>kr<code>\  |
+| emoji:cn\[2x\] </code>cn<code>\ | gular-flag-on-post</code>\ | emoji:fr[2x] <code>fr</code>\  |
+| emoji:es[2x] <code>es</code>\ | emoji:vertical       | emoji:ru[2x] <code>ru</code>\  |
+| emoji:gb[2x] <code>gb</code>\ | -traffic-light[2x] |                       |
+|                      | <code>vert                |                       |
+|                      | ical-traffic-light</code>\ |                       |
+|                      | emoji:jp[2x] <code>jp</code>\ |                       |
+|                      | emoji:us[2x] <code>us</code>\ |                       |
+|                      | emoji:it[2x] <code>it</code>\ |                       |
+|                      | emoji:de[2x] <code>de</code>\ |                       |
++----------------------+----------------------+-----------------------+</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="symbols"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#symbols" title="Direct link to heading">#</a>Symbols</h2><p>+----------------------+----------------------+-----------------------+
+| emoji:100[2x]      | emoji:1234[2x]     | emoji:a[2x] <code>a</code>\    |
+| <code>100</code>\               | <code>1234</code>\              | emoji:abcd[2x]      |
+| emoji:ab[2x] <code>ab</code>\ | emoji:abc[2x]      | <code>abcd</code>\               |
+| emoji:accept[2x]   | <code>abc</code>\               | emoji:aries[2x]     |
+| <code>accept</code>\            | emoji:aquarius[2x] | <code>aries</code>\              |
+| emoji:               | <code>aquarius</code>\          | emoji:                |
+| arrow-backward[2x] | emoji:arr            | arrow-double-up[2x] |
+| <code>arrow-backward</code>\    | ow-double-down[2x] | <code>arrow-double-up</code>\    |
+| em                   | <code>arrow-double-down</code>\ | emoj                  |
+| oji:arrow-down[2x] | emoji:ar             | i:arrow-forward[2x] |
+| <code>arrow-down</code>\        | row-down-small[2x] | <code>arrow-forward</code>\      |
+| emoji:arro           | <code>arrow-down-small</code>\  | e                     |
+| w-heading-down[2x] | emoji:ar             | moji:arrow-left[2x] |
+| <code>                   | row-heading-up\[2x\] |</code>arrow-left<code>\         |
+| arrow-heading-down</code>\ | <code>arrow-heading-up</code>\  | em                    |
+| emoji:ar             | emoji:arr            | oji:arrow-right[2x] |
+| row-lower-left[2x] | ow-lower-right[2x] | <code>arrow-right</code>\        |
+| <code>arrow-lower-left</code>\  | <code>arrow-lower-right</code>\ | emoj                  |
+| emoji:ar             | emoji:arrow-up[2x] | i:arrow-up-down[2x] |
+| row-right-hook[2x] | <code>arrow-up</code>\          | <code>arrow-up-down</code>\      |
+| <code>arrow-right-hook</code>\  | emoji:ar             | emoji:ar              |
+| emoji:               | row-upper-left[2x] | row-upper-right[2x] |
+| arrow-up-small[2x] | <code>arrow-upper-left</code>\  | <code>arrow-upper-right</code>\  |
+| <code>arrow-up-small</code>\    | emoji:arrows-co      | emoji:b[2x] <code>b</code>\    |
+| emoji:ar             | unterclockwise[2x] | emoji:ballot          |
+| rows-clockwise[2x] | <code>arrow               | -box-with-check\[2x\] |
+| </code>arrows-clockwise<code>\  | s-counterclockwise</code>\ | <code>ba                   |
+| emo                  | emoji                | llot-box-with-check</code>\ |
+| ji:baby-symbol[2x] | :baggage-claim[2x] | emoji:blac            |
+| <code>baby-symbol</code>\       | <code>baggage-claim</code>\     | k-square-button[2x] |
+| emoji:bangbang[2x] | emoj                 | <code>                    |
+|</code>bangbang<code>\          | i:black-circle\[2x\] | black-square-button</code>\ |
+| emoji:cancer[2x]   | <code>black-circle</code>\      | emoji:capricorn[2x] |
+| <code>cancer</code>\            | emoj                 | <code>capricorn</code>\          |
+| emoji:chart[2x]    | i:capital-abcd[2x] | emoji:cinema[2x]    |
+| <code>chart</code>\             | <code>capital-abcd</code>\      | <code>cinema</code>\             |
+| emoji:cl[2x] <code>cl</code>\ | emoji:chi            | emoji:clock10[2x]   |
+| e                    | ldren-crossing[2x] | <code>clock10</code>\            |
+| moji:clock1030[2x] | <code>children-crossing</code>\ | emoji:clock1130[2x] |
+| <code>clock1030</code>\         | emoji:clock1[2x]   | <code>clock1130</code>\          |
+| emoji:clock12[2x]  | <code>clock1</code>\            | emoji:clock130[2x]  |
+| <code>clock12</code>\           | emoji:clock11[2x]  | <code>clock130</code>\           |
+| emoji:clock2[2x]   | <code>clock11</code>\           | emoji:clock3[2x]    |
+| <code>clock2</code>\            | e                    | <code>clock3</code>\             |
+| emoji:clock330[2x] | moji:clock1230[2x] | emoji:clock430[2x]  |
+| <code>clock330</code>\          | <code>clock1230</code>\         | <code>clock430</code>\           |
+| emoji:clock5[2x]   | emoji:clock230[2x] | emoji:clock6[2x]    |
+| <code>clock5</code>\            | <code>clock230</code>\          | <code>clock6</code>\             |
+| emoji:clock630[2x] | emoji:clock4[2x]   | emoji:clock730[2x]  |
+| <code>clock630</code>\          | <code>clock4</code>\            | <code>clock730</code>\           |
+| emoji:clock8[2x]   | emoji:clock530[2x] | emoji:clock9[2x]    |
+| <code>clock8</code>\            | <code>clock530</code>\          | <code>clock9</code>\             |
+| emoji:clock930[2x] | emoji:clock7[2x]   | emoji:cool[2x]      |
+| <code>clock930</code>\          | <code>clock7</code>\            | <code>cool</code>\               |
+| e                    | emoji:clock830[2x] | emoji:cu              |
+| moji:copyright[2x] | <code>clock830</code>\          | rrency-exchange[2x] |
+| <code>copyright</code>\         | emoji:c              | <code>currency-exchange</code>\  |
+| emoji:customs[2x]  | ongratulations[2x] | emoj                  |
+| <code>customs</code>\           | <code>congratulations</code>\   | i:do-not-litter[2x] |
+| emoji:eight[2x]    | em                   | <code>do-not-litter</code>\      |
+| <code>eight</code>\             | oji:curly-loop[2x] | emoji:eight-          |
+| emoji:end[2x]      | <code>curly-loop</code>\        | spoked-asterisk[2x] |
+| <code>end</code>\               | emo                  | <code>ei                   |
+| emoji:four\[2x\]     | ji:diamond-shape-wit | ght-spoked-asterisk</code>\ |
+| <code>four</code>\              | h-a-dot-inside[2x] | emoji:five[2x]      |
+| emoji:hash[2x]     | <code>diamond-shape       | </code>five<code>\               |
+| </code>hash<code>\              | -with-a-dot-inside</code>\ | emoji:gemini[2x]    |
+| emoji:heavy          | emoji:eight-poin     | <code>gemini</code>\             |
+| -division-sign[2x] | ted-black-star[2x] | emoji:h               |
+| <code>h                   | </code>eight-              | eavy-check-mark[2x] |
+| eavy-division-sign<code>\ | pointed-black-star</code>\ | <code>heavy-check-mark</code>\   |
+| emoji:heavy-mu       | emoj                 | emoji:h               |
+| ltiplication-x[2x] | i:fast-forward[2x] | eavy-minus-sign[2x] |
+| <code>heav                | </code>fast-forward<code>\      | </code>heavy-minus-sign<code>\   |
+| y-multiplication-x</code>\ | emoji:free[2x]     | emoji:id[2x] <code>id</code>\  |
+| emoji:ideog          | <code>free</code>\              | em                    |
+| raph-advantage[2x] | emoji:he             | oji:interrobang[2x] |
+| <code>i                   | art-decoration\[2x\] | </code>interrobang<code>\        |
+| deograph-advantage</code>\ | <code>heart-decoration</code>\  | emoji:la              |
+| em                   | emoji:hea            | rge-blue-circle[2x] |
+| oji:keycap-ten[2x] | vy-dollar-sign[2x] | <code>large-blue-circle</code>\  |
+| <code>keycap-ten</code>\        | <code>heavy-dollar-sign</code>\ | emo                   |
+| emoji:larg           | emoji:h              | ji:left-luggage[2x] |
+| e-blue-diamond[2x] | eavy-plus-sign[2x] | <code>left-luggage</code>\       |
+| <code>                   |</code>heavy-plus-sign<code>\   | emoji:leo\[2x\]       |
+| large-blue-diamond</code>\ | emoji:info           | <code>leo</code>\                |
+| emoji:le             | rmation-source[2x] | emoji:m[2x] <code>m</code>\    |
+| ft-right-arrow[2x] | <code>                   | emoji:m               |
+|</code>left-right-arrow<code>\  | information-source</code>\ | obile-phone-off[2x] |
+| emoji:libra[2x]    | emoji:koko[2x]     | <code>mobile-phone-off</code>\   |
+| <code>libra</code>\             | <code>koko</code>\              | emoji:ng[2x] <code>ng</code>\  |
+| emoji:mens[2x]     | emoji:large-         | emoji:no-entry[2x]  |
+| <code>mens</code>\              | orange-diamond[2x] | <code>no-entry</code>\           |
+| emoji:negative-squa  | <code>la                  | emoji                 |
+| red-cross-mark\[2x\] | rge-orange-diamond</code>\ | :no-pedestrians[2x] |
+| <code>negative-           | emoji:leftwards-a    | </code>no-pedestrians<code>\     |
+| squared-cross-mark</code>\ | rrow-with-hook[2x] | emoji:o[2x] <code>o</code>\    |
+| emoji:nine[2x]     | <code>leftwar             | emoji:on\[2x\] </code>on<code>\  |
+| </code>nine<code>\              | ds-arrow-with-hook</code>\ | emoji:parking[2x]   |
+| emoji                | emoji:link[2x]     | <code>parking</code>\            |
+| :no-entry-sign[2x] | <code>link</code>\              | emoji:pisces[2x]    |
+| <code>no-entry-sign</code>\     | emoji:metro[2x]    | <code>pisces</code>\             |
+| em                   | <code>metro</code>\             | emo                   |
+| oji:no-smoking[2x] | emoji:new[2x]      | ji:radio-button[2x] |
+| <code>no-smoking</code>\        | <code>new</code>\               | <code>radio-button</code>\       |
+| emoji:o2[2x] <code>o2</code>\ | emo                  | e                     |
+| emoji:one[2x]      | ji:no-bicycles[2x] | moji:registered[2x] |
+| <code>one</code>\               | <code>no-bicycles</code>\       | <code>registered</code>\         |
+| emoji:part-al        | emoji:no             | emoji:restroom[2x]  |
+| ternation-mark[2x] | -mobile-phones[2x] | <code>restroom</code>\           |
+| <code>par                 | </code>no-mobile-phones<code>\  | em                    |
+| t-alternation-mark</code>\ | emoji:non            | oji:sagittarius[2x] |
+| emoji                | -potable-water[2x] | <code>sagittarius</code>\        |
+| :potable-water[2x] | <code>non-potable-water</code>\ | emoji:seven[2x]     |
+| <code>potable-water</code>\     | emoji:ok[2x] <code>ok</code>\ | <code>seven</code>\              |
+| emoji:recycle[2x]  | e                    | emoji:s               |
+| <code>recycle</code>\           | moji:ophiuchus[2x] | ix-pointed-star[2x] |
+| emoji:repeat[2x]   | <code>ophiuchus</code>\         | <code>six-pointed-star</code>\   |
+| <code>repeat</code>\            | emoji:pa             | emoji:sma             |
+| emoji:rewind[2x]   | ssport-control[2x] | ll-red-triangle[2x] |
+| <code>rewind</code>\            | <code>passport-control</code>\  | <code>small-red-triangle</code>\ |
+| emoji:scorpius[2x] | emoji:put-litte      | emoji:sos[2x]       |
+| <code>scorpius</code>\          | r-in-its-place[2x] | <code>sos</code>\                |
+| emoji:s              | <code>put-l               | emoji:three\[2x\]     |
+| ignal-strength\[2x\] | itter-in-its-place</code>\ | <code>three</code>\              |
+| <code>signal-strength</code>\   | em                   | emoji:trident[2x]   |
+| emoji:smal           | oji:red-circle[2x] | <code>trident</code>\            |
+| l-blue-diamond[2x] | <code>red-circle</code>\        | emoji:u5272[2x]     |
+| <code>                   | em                   |</code>u5272<code>\              |
+| small-blue-diamond</code>\ | oji:repeat-one[2x] | emoji:u6307[2x]     |
+| emoji:small-red      | <code>repeat-one</code>\        | <code>u6307</code>\              |
+| -triangle-down[2x] | emoji:sa[2x] <code>sa</code>\ | emoji:u6e80[2x]     |
+| <code>small               | emoji:secret\[2x\]   | </code>u6e80<code>\              |
+| -red-triangle-down</code>\ | <code>secret</code>\            | emoji:u7981[2x]     |
+| emoji:symbols[2x]  | emoji:six[2x]      | <code>u7981</code>\              |
+| <code>symbols</code>\           | <code>six</code>\               | emoji:up[2x] <code>up</code>\  |
+| emoji:tm[2x] <code>tm</code>\ | emoji:small-         | emoji:vs[2x] <code>vs</code>\  |
+| emoji:twisted-rig    | orange-diamond[2x] | e                     |
+| htwards-arrows[2x] | <code>sm                  | moji:wheelchair\[2x\] |
+| </code>twisted             | all-orange-diamond<code>\ | </code>wheelchair<code>\         |
+| -rightwards-arrows</code>\ | emoji:soon[2x]     | emo                   |
+| emoji:u5408[2x]    | <code>soon</code>\              | ji:white-flower[2x] |
+| <code>u5408</code>\             | emoji:taurus[2x]   | <code>white-flower</code>\       |
+| emoji:u6708[2x]    | <code>taurus</code>\            | emoji:x[2x] <code>x</code>\    |
+| <code>u6708</code>\             | emoji:top[2x]      |                       |
+| emoji:u7121[2x]    | <code>top</code>\               |                       |
+| <code>u7121</code>\             | emoji:two[2x]      |                       |
+| emoji:u7a7a[2x]    | <code>two</code>\               |                       |
+| <code>u7a7a</code>\             | emoji:u55b6[2x]    |                       |
+| emoji:               | <code>u55b6</code>\             |                       |
+| vibration-mode[2x] | emoji:u6709[2x]    |                       |
+| <code>vibration-mode</code>\    | <code>u6709</code>\             |                       |
+| e                    | emoji:u7533[2x]    |                       |
+| moji:wavy-dash[2x] | <code>u7533</code>\             |                       |
+| <code>wavy-dash</code>\         | emoji:underage[2x] |                       |
+| emoji:wh             | <code>underage</code>\          |                       |
+| ite-check-mark[2x] | emoji:virgo[2x]    |                       |
+| <code>white-check-mark</code>\  | <code>virgo</code>\             |                       |
+| emoji:white          | emoji:wc[2x] <code>wc</code>\ |                       |
+| -square-button[2x] | emoj                 |                       |
+| <code>w                   | i:white-circle\[2x\] |                       |
+| hite-square-button</code>\ | <code>white-circle</code>\      |                       |
+| emoji:zero[2x]     | emoji:womens[2x]   |                       |
+| <code>zero</code>\              | <code>womens</code>\            |                       |
++----------------------+----------------------+-----------------------+</p></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/8keep/wikidemo/edit/master/docs/wiki/emoji.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#people" class="contents__link">People</a></li><li><a href="#nature" class="contents__link">Nature</a></li><li><a href="#objects" class="contents__link">Objects</a></li><li><a href="#places" class="contents__link">Places</a></li><li><a href="#symbols" class="contents__link">Symbols</a></li></ul></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div>Copyright © 2020 jMonkeyEngine.</div></div></div></footer>
+</div>
+
+<script src="/wikidemo/styles.08ff7081.js"></script>
+
+<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+
+<script src="/wikidemo/main.1b6aa70f.js"></script>
+
+<script src="/wikidemo/1.e501629b.js"></script>
+
+<script src="/wikidemo/2.c824d386.js"></script>
+
+<script src="/wikidemo/302.1d1a2997.js"></script>
+
+<script src="/wikidemo/394d525a.30c299b8.js"></script>
+
+<script src="/wikidemo/17896441.d065d5f5.js"></script>
+
+<script src="/wikidemo/1b095a6f.d8b2ce04.js"></script>
+
+
+</body>
+</html>

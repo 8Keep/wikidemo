@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Docusaurus v2.0.0-alpha.50">
+<script src="/js/dark_default.js"></script>
+
+<title data-react-helmet="true">application_deployment | jMonkeyEngine Documentation</title>
+
+<meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="application_deployment | jMonkeyEngine Documentation"><meta data-react-helmet="true" name="description" content="After you have written and tested your game, you want to brand it and"><meta data-react-helmet="true" property="og:description" content="After you have written and tested your game, you want to brand it and"><meta data-react-helmet="true" property="og:url" content="https://8keep.github.io/wikidemo/docs/sdk/application_deployment">
+
+<link data-react-helmet="true" rel="shortcut icon" href="/wikidemo/img/favicon.ico">
+
+
+<link rel="stylesheet" href="/wikidemo/styles.7d008dc0.css">
+
+
+<link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
+
+<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+
+<link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
+
+<link rel="preload" href="/wikidemo/1.e501629b.js" as="script">
+
+<link rel="preload" href="/wikidemo/2.c824d386.js" as="script">
+
+<link rel="preload" href="/wikidemo/302.1d1a2997.js" as="script">
+
+<link rel="preload" href="/wikidemo/394d525a.30c299b8.js" as="script">
+
+<link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
+
+<link rel="preload" href="/wikidemo/d6bd7cf1.068ef855.js" as="script">
+
+</head>
+<body>
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=window.matchMedia("(prefers-color-scheme: dark)"),n=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();null!==n?t(n):e.matches&&t("dark")}()</script>
+<div id="__docusaurus">
+<nav class="navbar navbar--light navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><div aria-label="Navigation bar toggle" class="navbar__toggle" role="button" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></div><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></div><div class="navbar__items navbar__items--right"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="navbar__item navbar__link">GitHub</a><div class="react-toggle react-toggle--disabled displayOnlyInLargeViewport_1gtM"><div class="react-toggle-track"><div class="react-toggle-track-check"><span class="toggle_keGJ moon_1gwN"></span></div><div class="react-toggle-track-x"><span class="toggle_keGJ sun_3CPA"></span></div></div><div class="react-toggle-thumb"></div><input type="checkbox" disabled="" aria-label="Dark mode toggle" class="react-toggle-screenreader-only"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div><div class="navbar-sidebar"><div class="navbar-sidebar__brand"><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a></div><div class="navbar-sidebar__items"><div class="menu"><ul class="menu__list"><li class="menu__list-item"><a aria-current="page" class="menu__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></li><li class="menu__list-item"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="menu__link">GitHub</a></li></ul></div></div></div></nav><div class="main-wrapper"><div class="docPage_1kjD"><main class="docMainContainer_FFX1"><div class="padding-vert--lg"><div class="container"><div class="row"><div class="col docItemCol_2GOA"><div class="docItemContainer_2cwg"><article><header><h1 class="docTitle_1vWb">application_deployment</h1></header><div class="markdown"><p>After you have written and tested your game, you want to brand it and
+distribute it to your users. If you use the build script provided by the
+jMonkeyEngine SDK&#x27;s BaseGame, you have the following deployment options:</p><ul><li><p>Desktop application (.JAR)</p></li><li><p>WebStart from URL (.JNLP + .JAR)</p></li><li><p>Applet in web browser (.JNLP + .JAR)</p></li><li><p>Android mobile device (.APK)</p></li><li><p>iOS mobile device (XCode project)</p></li></ul><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="requirements"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#requirements" title="Direct link to heading">#</a>Requirements</h1><p>Since JAR files are platform independent, your customers can play your
+jMonkeyEngine application on Windows, Mac OS, or Linux. The only
+requirement is that the user has the correct version of the free Java
+Runtime (or browser plugin) installed. For more information see
+<a href="http://java.com">http://java.com</a>.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="branding"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#branding" title="Direct link to heading">#</a>Branding</h1><p><img src="../sdk/jmonkey-branding.png" alt="jmonkey-branding.png"></p><p>Make your game unique and recognizable:</p><ol><li><p>Open your game project in the SDK&#x27;s Projects window.</p></li><li><p>Right-click the project and open the Properties</p></li><li><p>Open the Properties → Application section. Here you configure your
+branding:</p><p>a.  Title: Enter the game&#x27;s name</p><p>b.  Vendor: Enter your name (the development team)</p><p>c.  Description: Write one line why your game is the coolest ever
+emoji:wink[]</p><p>d.  Homepage: Enter your web URL, so your fans can find you</p><p>e.  Splashscreen: Browse to a cool screenshot that will be displayed
+while the game loads.</p></li><li><p>Click OK.</p></li><li><p>Clean and Build.</p></li></ol><p>Your executables are now branded.</p><p>TODO: where does this info actually show up?</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="creating-the-distributable"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#creating-the-distributable" title="Direct link to heading">#</a>Creating the Distributable</h1><p><img src="../sdk/deploy_android.png" alt="deploy_android.png"></p><p>When you run the build script provided by the jMonkeyEngine SDK, it
+automatically compiles your classes, libraries, and assets. It creates a
+<code>dist</code> directory in your project directory which contains the executable
+JAR and a directory with libraries.</p><p>In the simplest case, you zip up the <code>dist</code> directory and distribute it
+to your customers. Companies often have additional tools to create
+executables and installers.</p><p>Here are your deployment options in detail:</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="desktop-application-jar"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#desktop-application-jar" title="Direct link to heading">#</a>Desktop Application (JAR)</h2><p>The JAR file is the most common deployment method for Java desktop
+applications. The user downloads the executable JAR file to his machine
+and runs it to start the game.</p><ol><li><p>Right-click your project and open the Project Properties.</p></li><li><p>In the Application&gt;Web Start category, make sure the box &quot;Enable
+Web Start is not checked. Click OK.</p></li><li><p>Right-click your project and Clean and Build.</p></li><li><p>If the build succeeds you see a line similar to\
+<code>Building jar: /home/joe/jMonkeyPlatform/MySuperTestGame/dist/MySuperTestGame.jar</code>\
+this means the executable JAR has been generated successfully in
+your project directory.</p></li><li><p>Zip up the <code>dist</code> directory and distribute it to your users. Make
+sure to keep the <code>lib</code> directory in it!</p></li></ol><p>Most operating systems execute a JAR when users double-click on it, but
+you can also create a launcher.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="desktop-executables-exe-app-jar"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#desktop-executables-exe-app-jar" title="Direct link to heading">#</a>Desktop Executables (.EXE, .APP, .JAR)</h2><p>jMonkeyEngine SDK allows you to create launchers for different desktop
+platforms, like an .exe file for Windows systems, an Application for
+MaxOSX and a launcher for Linux systems.</p><ol><li><p>Right-click your project and open the Project Properties.</p></li><li><p>In the Application&gt;Desktop category, select the checkboxes for the
+platforms you want to distribute to.</p></li><li><p>Click OK.</p></li></ol><p>A <code>resources</code> folder in your project folder will be created that
+contains the template icons and settings files for each selected
+platform. If you change one of them, de-selecting the deployment for
+that platform will not delete this resource file anymore and it will not
+be overwritten when you re-enable deployment for that platform.</p><p>When you build your project, zip files for each selected platform will
+be created in the <code>dist</code> folder that contain all that is needed to run
+your application on that platform.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="web-start-jnlp"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#web-start-jnlp" title="Direct link to heading">#</a>Web Start (.JNLP)</h2><p>Web Start allows your users to start your application by simply clicking
+a link that you provide, for example in a button on your web page. The
+browser downloads the JAR file and then automatically runs your game in
+an extra window. The only requirement is that the user&#x27;s browser has the
+Java plugin installed. This is a very user-friendly way for your
+customers to play your game without any extra steps to install it.
+Optionally, you can set it up so the file is saved to their desktop and
+can be restarted later, so they do not need to be online to play.</p><ol><li><p>Right-click your project and open the Project Properties.</p><p>a.  In the Application&gt;Web Start category, check the box to Enable
+Web Start.</p><p>b.  Check the box to make the application self-signed.</p><p>c.  Optionally, check the box to allow offline use.</p><p>d.  Make sure <code>Application Descriptor</code> is activated. Click OK.</p></li><li><p>Right-click your project and Clean and Build. The <code>dist</code> directory
+is generated.</p></li><li><p>Upload the contents of the <code>dist</code> directory to a public http server</p></li><li><p>Either edit the sample launch.html file, or simply add a standard
+link (A HREF) pointing to your .jnlp file to one of your web pages.</p></li><li><p>Tell your users to open your page in a webbrowser, and click the
+link to webstart the application.</p></li></ol><p>Look at the sample launch.html, you can have any custom content around
+the link. Keep a copy of your launcher file because the jMonkeyEngine
+SDK will always regenerate its default launch.html. Also, see this <a href="http://www.youtube.com/watch?v=oZnssg8TBWQ">demo
+video</a> on creating
+WebStarts.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="browser-applet"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#browser-applet" title="Direct link to heading">#</a>Browser Applet</h2><p>A browser Applet is a Java application that runs in the web browser
+while the user is visiting your web page. The only requirement is that
+the user&#x27;s browser has the Java plugin installed. There is no
+installation step, the user can play right away in the browser. The user
+will not be able to save the game to his harddrive, nor can he play
+offline.</p><p>These instructions assume that you have already written a game that you
+want to turn into an Applet. As opposed to other jME3 games, Applets
+cannot capture the mouse for navigation, so the camera will be switched
+to dragToRotate mode. The jMonkeyEngine SDK and the included build
+script already contain what you need.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="to-turn-a-project-into-an-applet"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#to-turn-a-project-into-an-applet" title="Direct link to heading">#</a>To Turn a Project Into an Applet</h3><ol><li><p>Right-click your project and open the Project Properties.</p><p>a.  In the Application&gt;Applet category, check the box to enable
+Applet creation.</p><p>b.  Change the applet width and height as you want it.</p><p>c.  Click OK.</p></li><li><p>Right-click your project and Clean and Build.</p></li></ol><p>The <code>dist/Applet</code> directory now contains all the files necessary for the
+game to run as Applet. To test the Applet-based game, run the project in
+the jMonkeyEngine SDK.</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="to-deploy-the-game-as-applet"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#to-deploy-the-game-as-applet" title="Direct link to heading">#</a>To Deploy the Game as Applet</h3><ol><li><p>Edit the <code>dist/Applet/run-applet.html</code> file in anyway you like. Just
+keep the Applet code.</p></li><li><p>Upload the contents of the <code>dist/Applet</code> directory to a public http
+server.</p></li><li><p>Access the run-applet.html file using a webbrowser</p></li><li><p>Click the link to web-start your application.</p></li></ol><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="to-troubleshoot-applets"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#to-troubleshoot-applets" title="Direct link to heading">#</a>To Troubleshoot Applets</h3><ul><li><p>Open the Java console for error messages.</p></li><li><p>Depending on your settings, the browser caches the applet, the html
+page, and/or the jnlp file, even after you have cleaned and built
+the project. Make sure to empty the browser cache.</p></li></ul><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="android-mobile-device"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#android-mobile-device" title="Direct link to heading">#</a>Android Mobile Device</h2><p>You can set the jMonkeyEngine SDK to build an executable for Android
+mobile platforms.</p><p>Learn more about <a href="/wikidemo/docs/jme3/android">Android Support</a> here.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="ios-device"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#ios-device" title="Direct link to heading">#</a>iOS Device</h2><p>You can set the jMonkeyEngine SDK to build an executable for iOS
+platforms. A Mac with XCode installed is needed.</p><p>Learn more about <a href="/wikidemo/docs/jme3/ios">iOS Support</a> here.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="tip-switching-build-configurations"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#tip-switching-build-configurations" title="Direct link to heading">#</a>Tip: Switching Build Configurations</h1><p>The jMonkeyEngine SDK has a Run Configuration menu in the toolbar. Use
+it to save your various sets of Project Property configuations, and
+switch between them.</p><ol><li><p>Click the <code>Set Project Configuration</code> popup in the toolbar and
+choose Customize.</p></li><li><p>The Project Properties Run section opens. Under Configuration, click
+New.</p></li><li><p>Name the saved configuration, for instance &quot;my webstart vs &quot;my
+desktop app, or &quot;development vs &quot;deployment. Click OK.</p></li><li><p>Make sure the new config is selected in the
+<code>Set Project Configuration</code> popup above the editor.</p></li><li><p>Make changes to the Project Properties as described above.</p></li></ol><p>Now you can use the <code>Set Project Configuration</code> popup menu to switch
+between your run/build configurations.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="tip-reduce-distribution-file-size"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#tip-reduce-distribution-file-size" title="Direct link to heading">#</a>Tip: Reduce Distribution File Size</h1><p>There may be several parts of the full jMonkeyEngine library that you do
+not even use in your application. You should leave out the corresponding
+libraries from your distribution.</p><p>To remove unused libraries:</p><ol><li><p>Right-click your project and select &quot;Properties</p></li><li><p>Select &quot;Libraries on the left</p></li><li><p>Select the &quot;jme3-libraries entry and press &quot;remove.\
+This library package contains <strong>all</strong> libraries for jME3 and is
+quite large.</p></li><li><p>Press the &quot;Add Library button</p></li><li><p>Select the &quot;jme3-libraries-lwjgl-minimum library</p></li><li><p>Add other jME3 libraries in the same way depending which features
+you use:\
+jme3-libraries-gui, jme3-libraries-physics, jme3-libraries-video,
+etc.</p></li><li><p>Click OK.</p></li><li><p>Clean, Build and Run the project and make sure you have not missed
+anything.</p></li></ol></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/8keep/wikidemo/edit/master/docs/sdk/application_deployment.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#desktop-application-jar" class="contents__link">Desktop Application (JAR)</a></li><li><a href="#desktop-executables-exe-app-jar" class="contents__link">Desktop Executables (.EXE, .APP, .JAR)</a></li><li><a href="#web-start-jnlp" class="contents__link">Web Start (.JNLP)</a></li><li><a href="#browser-applet" class="contents__link">Browser Applet</a><ul><li><a href="#to-turn-a-project-into-an-applet" class="contents__link">To Turn a Project Into an Applet</a></li><li><a href="#to-deploy-the-game-as-applet" class="contents__link">To Deploy the Game as Applet</a></li><li><a href="#to-troubleshoot-applets" class="contents__link">To Troubleshoot Applets</a></li></ul></li><li><a href="#android-mobile-device" class="contents__link">Android Mobile Device</a></li><li><a href="#ios-device" class="contents__link">iOS Device</a></li></ul></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div>Copyright © 2020 jMonkeyEngine.</div></div></div></footer>
+</div>
+
+<script src="/wikidemo/styles.08ff7081.js"></script>
+
+<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+
+<script src="/wikidemo/main.1b6aa70f.js"></script>
+
+<script src="/wikidemo/1.e501629b.js"></script>
+
+<script src="/wikidemo/2.c824d386.js"></script>
+
+<script src="/wikidemo/302.1d1a2997.js"></script>
+
+<script src="/wikidemo/394d525a.30c299b8.js"></script>
+
+<script src="/wikidemo/17896441.d065d5f5.js"></script>
+
+<script src="/wikidemo/d6bd7cf1.068ef855.js"></script>
+
+
+</body>
+</html>

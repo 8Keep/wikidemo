@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Docusaurus v2.0.0-alpha.50">
+<script src="/js/dark_default.js"></script>
+
+<title data-react-helmet="true">pbr_part1 | jMonkeyEngine Documentation</title>
+
+<meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="pbr_part1 | jMonkeyEngine Documentation"><meta data-react-helmet="true" name="description" content="I&#x27;ve been looking at Physically Based Rendering (PBR from now on) since"><meta data-react-helmet="true" property="og:description" content="I&#x27;ve been looking at Physically Based Rendering (PBR from now on) since"><meta data-react-helmet="true" property="og:url" content="https://8keep.github.io/wikidemo/docs/jme3/advanced/pbr_part1">
+
+<link data-react-helmet="true" rel="shortcut icon" href="/wikidemo/img/favicon.ico">
+
+
+<link rel="stylesheet" href="/wikidemo/styles.7d008dc0.css">
+
+
+<link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
+
+<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+
+<link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
+
+<link rel="preload" href="/wikidemo/1.e501629b.js" as="script">
+
+<link rel="preload" href="/wikidemo/2.c824d386.js" as="script">
+
+<link rel="preload" href="/wikidemo/302.1d1a2997.js" as="script">
+
+<link rel="preload" href="/wikidemo/394d525a.30c299b8.js" as="script">
+
+<link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
+
+<link rel="preload" href="/wikidemo/4b0fa273.98d2925c.js" as="script">
+
+</head>
+<body>
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=window.matchMedia("(prefers-color-scheme: dark)"),n=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();null!==n?t(n):e.matches&&t("dark")}()</script>
+<div id="__docusaurus">
+<nav class="navbar navbar--light navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><div aria-label="Navigation bar toggle" class="navbar__toggle" role="button" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></div><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></div><div class="navbar__items navbar__items--right"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="navbar__item navbar__link">GitHub</a><div class="react-toggle react-toggle--disabled displayOnlyInLargeViewport_1gtM"><div class="react-toggle-track"><div class="react-toggle-track-check"><span class="toggle_keGJ moon_1gwN"></span></div><div class="react-toggle-track-x"><span class="toggle_keGJ sun_3CPA"></span></div></div><div class="react-toggle-thumb"></div><input type="checkbox" disabled="" aria-label="Dark mode toggle" class="react-toggle-screenreader-only"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div><div class="navbar-sidebar"><div class="navbar-sidebar__brand"><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a></div><div class="navbar-sidebar__items"><div class="menu"><ul class="menu__list"><li class="menu__list-item"><a aria-current="page" class="menu__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></li><li class="menu__list-item"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="menu__link">GitHub</a></li></ul></div></div></div></nav><div class="main-wrapper"><div class="docPage_1kjD"><main class="docMainContainer_FFX1"><div class="padding-vert--lg"><div class="container"><div class="row"><div class="col docItemCol_2GOA"><div class="docItemContainer_2cwg"><article><header><h1 class="docTitle_1vWb">pbr_part1</h1></header><div class="markdown"><p>I&#x27;ve been looking at Physically Based Rendering (PBR from now on) since
+a few weeks, because that&#x27;s what all the cool kids are talking about
+these days. I read almost all the interweb about it and finally somehow
+wrapped my head around the mechanics behind the concept.</p><p>None of the papers I read gave me the epiphany though, the understanding
+came little by little, literally reading some of the papers 10 times.</p><p>The intent of this series of posts is first to brush up the concept of
+PBR from the artist point of view (the easy part :D), and then to
+explain the physical concepts behind it and what you have to understand
+as a developer.</p><p>This paper aims to present PBR as I would explain it to my mother. You
+shouldn&#x27;t need a degree in image rendering theories, neither should you
+need to be a genius to understand what&#x27;s coming.</p><p>There are a lot of papers out there, with a lot of complicated words and
+equations, that assume a solid background knowledge of image rendering,
+lighting, shading etc...</p><p>I won&#x27;t assume this here.</p><p>Of course, I&#x27;d like this to be as accurate as possible, so if you have
+more information, or if explanations are not clear, feel free to chime
+in.</p><p><strong>I&#x27;m an artist, I want to know what PBR is :</strong></p><p>So you&#x27;re an artist, and have some experience in making assets for
+games. The most commonly used model for describing a material is the
+Phong reflection model (from <a href="https://en.wikipedia.org/wiki/Bui_Tuong_Phong">Bui Tuong
+Phong</a>, a clever guy that
+died very young).</p><p>This model describes how light reflects on a material by splitting it in
+3 factors: Ambient color, Diffuse color, Specular color. This should
+sound familiar to 3D game artists.</p><p>This model is a very rough approximation of what&#x27;s really going on when
+light hit a surface of a real life material, but until then it was
+pretty much enough for a video game. Of course there are dozens of other
+models and even modification of Phong model, but this one is the most
+used, and that&#x27;s the one we use in jMonkeyEngine.</p><p>The issue with this model is that it&#x27;s complicated to have a material
+that looks consistent under different lighting environment.</p><ul><li><p>Ambient is supposed to represent Ambient lighting, being some sort
+of omnipresent dim light, that tries to fake indirect lighting
+coming from reflection of light on the surrounding objects.</p></li><li><p>Diffuse is more straightforward: it&#x27;s the actual color of the object
+when it&#x27;s under a white light.</p></li><li><p>Specular represent the color of the reflected highlights, and the
+intensity is driven by a &quot;shininess&quot; parameter (at least in jME but
+that&#x27;s pretty common). The issue is that the specular color also
+drives the intensity because the brighter the color the more intense
+the specular will be.</p></li></ul><p>All of this leads to a lot of tweaking to look correct, and may not look
+as good as it should under a different lighting environment. It also
+relies heavily on an artist&#x27;s best guesses about the material.</p><p>So here comes Physically Based Rendering. Not that the previous one was
+not physically based...but whatever, that sounds pretty cool.</p><p>Everybody has their own way to implement PBR, but every implementation
+share common goals and concepts.</p><p><strong>Goals :</strong></p><ul><li><p>Ease the artist&#x27;s material workflow.</p></li><li><p>More &quot;photo realistic&quot; rendering.</p></li></ul><p><strong>Concepts :</strong></p><ul><li><p>Every surface has a reflection (specular); even the rougher ones at
+grazing angles.</p></li><li><p>Energy conservation: a surface cannot reflect more light that it has
+received.</p></li></ul><p>This wraps up the entire concept but how does it translate in practice?</p><p>A material can now be described with 3 parameters :</p><p><strong>Base color :</strong> Base color is the raw color of the material, it&#x27;s also
+often referred as the Albedo. It&#x27;s similar to the Diffuse color you know
+from Phong model, but with some crucial differences :</p><ul><li><p>It should not contain any shading information. Very often with phong
+model, Ambient Occlusion (AO) is baked into the diffuse map. Here
+Base color must be the raw color of the material</p></li><li><p>It does not only influence the diffuse color, but also the specular
+color of the material.</p></li></ul><p><strong>Metalness :</strong> The degree of metallicity of the material. What does
+that mean? is your material rather metallic or rather not (non metallic
+materials are called dielectric materials in the literature). Some
+implementation calls that parameter &quot;specular&quot;, but I found it pretty
+misleading as it&#x27;s completely different as the specular we know today.
+In practice, just start out with extreme values to get the feel for it:
+1 for metallic, 0 for dielectric.</p><p><img src="/images/jme3/advanced/metalness.png" alt="metalness"></p><p>Here is the same material with metalness of 0 (dielectric) on the left
+and 1 (metallic) on the right.</p><p>Of course there are intermediary values, but from my reading, most
+dielectric material should vary from 0.04 and 0.1, and metallic are
+usually 1. Those values are based on real life measures and you can find
+some references about them
+<a href="https://seblagarde.wordpress.com/2012/04/30/dontnod-specular-and-glossiness-chart/">here</a>
+and
+<a href="https://seblagarde.wordpress.com/2014/04/14/dontnod-physically-based-rendering-chart-for-unreal-engine-4/">here</a>.
+Note that those values are not subject to interpretation, and are
+&quot;known&quot; factors and artist may follow them if they want to keep
+realistic look.</p><p><strong>Roughness :</strong> The degree of roughness of the material : Is your
+material smooth or rough. 0 means smooth, 1 means rough. Some
+implementations refer to this as Smoothness or Glossiness. That&#x27;s
+essentially the same except it&#x27;s the other way around. 1 is smooth and 0
+is rough. I find the term &quot;Roughness&quot; pretty much self explanatory and
+doesn&#x27;t leave room for misinterpretation.</p><p><img src="/images/jme3/advanced/Roughness.png" alt="Roughness"></p><p>Here is the same material with different level of roughness from 0
+(left) to 1 (right). As opposed to metalness, this parameter is very
+artist driven. The roughness of a material does not really depend on
+physics, it&#x27;s more related to micro scratches, wearing, etc... So that&#x27;s
+where artists should be creative!</p><p>These parameters are the basics of PBR. Of course, each of them can be
+stored in a texture, and more common additional parameters can be used.</p><p><strong>For example :</strong></p><ul><li><p>Normal map : the same as with phong model.</p></li><li><p>AO map : since we can&#x27;t bake AO in diffuse anymore, it&#x27;s now an
+extra channel.</p></li></ul><p>The nice thing is that Metalness, Roughness and AO are grey scaled
+textures, so basically they only use one channel of a texture. So you
+can pack those 3 maps in one texture.</p><p>You can find an example asset that should work in a typical PBR
+implementation <a href="http://artisaverb.info/PBT.html">here</a>. This page
+showcases pretty well what the textures should look like.</p><p>That&#x27;s it for PBR from the artist point of view. Next week I&#x27;ll explain
+what&#x27;s under the hood for you fellow developers 😉</p><p><strong>Updates (01/01/2015)</strong></p><p>Since this post I had some discussions about it and it appears, it lacks
+some informations about the different art pipeline you may come across,
+the differences and what to expect from them.</p><p>The post above is about the <strong>Metalness Workflow</strong>.</p><p>The question I had frequently about it is &quot;how one specify the specular
+color if you just have a black and white metalness texture?&quot;.</p><p>The answer is you do in the albedo map.</p><p>In the metalness workflow the albedo map is used for both diffuse color
+and specular color. When the metalness is zero (dielectric material) the
+base color is the diffuse color of the material. When the metalness is
+one (metallic material), the base color is the specular color.</p><p>So if you wonder what this base color should be, just look at it in the
+most naive way. &quot;What color is that thing?&quot; and don&#x27;t care if that&#x27;s
+diffuse or specular.</p><p>The other common workflow is called the <strong>Specular workflow</strong> as it uses
+a specular color map instead of the metalness map. In this workflow, the
+albedo map is the diffuse color, the specular map is the specular color,
+and you have a gray scale gloss map that is the same as the roughness
+map but inverted (1 is smooth and 0 is rough).</p><p>Now there are pro and cons on using one or the other. Here are the main
+points :</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="metalness-workflow-"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#metalness-workflow-" title="Direct link to heading">#</a>Metalness workflow :</h1><p><strong>Pros</strong></p><ul><li><p>Use less texture space. Albedo map is an rgba map, metal and
+roughness can be packed in another rgba map and you have 2
+additional channels for whatever you want (AO, cavity, ...w/e)</p></li><li><p>Harder to make implausible materials (some may see this as a con
+thought). it&#x27;s not more physically accurate, but you&#x27;re sure to
+follow the energy conservation paradigm.</p></li><li><p>Easier color concept : base color is the color of the material.</p></li></ul><p><strong>Cons</strong></p><ul><li><p>May produce some white artifacts at the junction between metal and
+non metal</p></li><li><p>Harder to make implausible materials, not impossible though.</p></li></ul><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="specular-workflow"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#specular-workflow" title="Direct link to heading">#</a>Specular workflow</h1><p><strong>Pros</strong></p><ul><li>Closer to the current phong workflow : diffuse map, specular map.
+Must be easier for seasoned artists to transition to PBR.</li></ul><p><strong>Cons</strong></p><ul><li><p>You&#x27;re in charge of the energy conservation paradigm (may be seen as
+a + for some).</p></li><li><p>More memory used : 2 rgba textures for diffuse and specular, you may
+be able to pack glossiness in the alpha channel of specular map, but
+you have no room left for anything and you may have to use a third
+texture.</p></li></ul><p>IMO, the metalness workflow is more suited to real time 3D engine. And
+as an artist I find it more intuitive.</p><p>That said, as a developer making his PBR pipeline; especially for an
+engine mainly used by Indie devs; whatever pipeline you choose, you
+can&#x27;t ignore the other. Free or charged PBR ready model you can find are
+done with whatever workflow suited the artist. Some conversion are
+possible, but that&#x27;s easier for user to be able to use the model as is.
+That&#x27;s why I decided to support both in my implementation.</p><ul><li><p><a href="/wikidemo/docs/jme3/advanced/pbr_part2">Physically Based Rendering -- Part
+Two</a></p></li><li><p><a href="../../jme3/advanced/pbr_part3.xml#image-based-lighting-in-pbr#">Physically Based Rendering -- Part
+Three</a></p></li></ul></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/8keep/wikidemo/edit/master/docs/jme3/advanced/pbr_part1.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div>Copyright © 2020 jMonkeyEngine.</div></div></div></footer>
+</div>
+
+<script src="/wikidemo/styles.08ff7081.js"></script>
+
+<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+
+<script src="/wikidemo/main.1b6aa70f.js"></script>
+
+<script src="/wikidemo/1.e501629b.js"></script>
+
+<script src="/wikidemo/2.c824d386.js"></script>
+
+<script src="/wikidemo/302.1d1a2997.js"></script>
+
+<script src="/wikidemo/394d525a.30c299b8.js"></script>
+
+<script src="/wikidemo/17896441.d065d5f5.js"></script>
+
+<script src="/wikidemo/4b0fa273.98d2925c.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="generator" content="Docusaurus v2.0.0-alpha.50">
+<script src="/js/dark_default.js"></script>
+
+<title data-react-helmet="true">mixamo | jMonkeyEngine Documentation</title>
+
+<meta data-react-helmet="true" name="twitter:card" content="summary_large_image"><meta data-react-helmet="true" property="og:title" content="mixamo | jMonkeyEngine Documentation"><meta data-react-helmet="true" name="description" content="Using Mixamo For Model Animation"><meta data-react-helmet="true" property="og:description" content="Using Mixamo For Model Animation"><meta data-react-helmet="true" property="og:url" content="https://8keep.github.io/wikidemo/docs/jme3/advanced/mixamo">
+
+<link data-react-helmet="true" rel="shortcut icon" href="/wikidemo/img/favicon.ico">
+
+
+<link rel="stylesheet" href="/wikidemo/styles.7d008dc0.css">
+
+
+<link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
+
+<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+
+<link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
+
+<link rel="preload" href="/wikidemo/1.e501629b.js" as="script">
+
+<link rel="preload" href="/wikidemo/2.c824d386.js" as="script">
+
+<link rel="preload" href="/wikidemo/302.1d1a2997.js" as="script">
+
+<link rel="preload" href="/wikidemo/394d525a.30c299b8.js" as="script">
+
+<link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
+
+<link rel="preload" href="/wikidemo/52f66f98.43fcfe2e.js" as="script">
+
+</head>
+<body>
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=window.matchMedia("(prefers-color-scheme: dark)"),n=function(){var t=null;try{t=localStorage.getItem("theme")}catch(t){}return t}();null!==n?t(n):e.matches&&t("dark")}()</script>
+<div id="__docusaurus">
+<nav class="navbar navbar--light navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><div aria-label="Navigation bar toggle" class="navbar__toggle" role="button" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" focusable="false"><title>Menu</title><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></div><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></div><div class="navbar__items navbar__items--right"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="navbar__item navbar__link">GitHub</a><div class="react-toggle react-toggle--disabled displayOnlyInLargeViewport_1gtM"><div class="react-toggle-track"><div class="react-toggle-track-check"><span class="toggle_keGJ moon_1gwN"></span></div><div class="react-toggle-track-x"><span class="toggle_keGJ sun_3CPA"></span></div></div><div class="react-toggle-thumb"></div><input type="checkbox" disabled="" aria-label="Dark mode toggle" class="react-toggle-screenreader-only"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div><div class="navbar-sidebar"><div class="navbar-sidebar__brand"><a aria-current="page" class="navbar__brand active" href="/wikidemo/"><img class="navbar__logo" src="/wikidemo/img/iconx128.png" alt="JmonkeyEngine"><strong class="navbar__title"></strong></a></div><div class="navbar-sidebar__items"><div class="menu"><ul class="menu__list"><li class="menu__list-item"><a aria-current="page" class="menu__link navbar__link--active" href="/wikidemo/docs/documentation">Docs</a></li><li class="menu__list-item"><a target="_blank" rel="noopener noreferrer" href="https://github.com/8keep/wikidemo" class="menu__link">GitHub</a></li></ul></div></div></div></nav><div class="main-wrapper"><div class="docPage_1kjD"><main class="docMainContainer_FFX1"><div class="padding-vert--lg"><div class="container"><div class="row"><div class="col docItemCol_2GOA"><div class="docItemContainer_2cwg"><article><header><h1 class="docTitle_1vWb">mixamo</h1></header><div class="markdown"><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="using-mixamo-for-model-animation"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#using-mixamo-for-model-animation" title="Direct link to heading">#</a>Using Mixamo For Model Animation</h1><p>With very little effort, you can use Adobes Mixamo to fully animate your
+Blender models. Once you understand the process that is.</p><p>This guide requires:</p><ul><li><p><a href="https://www.blender.org/download/">Blender version 2.78c+</a> with its
+default settings. The exception being <code>Select With:</code>, under
+<code>File User Preferences Input</code> is set to <code>Left Click</code>.</p></li><li><p>Blender FBX file Importing and Exporting, enabled.</p></li><li><p>A Modest amount of Blender knowledge.</p></li><li><p>A <a href="https://www.mixamo.com/">Mixamo</a> account.</p></li></ul><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="prepare-to-export"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#prepare-to-export" title="Direct link to heading">#</a>Prepare to Export</h1><p>To properly animate your models there are a few rules you should follow.</p><ul><li><p>Read the <a href="https://helpx.adobe.com/creative-cloud/faq/mixamo-faq.html">Common
+Questions</a>
+guide before you do anything else.</p></li><li><p>Clean up your Blender file prior to exporting. This means you have a
+game ready model that will become the base for all your animations.
+Do this in a copy of your file so you have the original as a backup.
+The following checklist is provided for your convenience.</p><ul><li><p>❏ You have no Animations.</p></li><li><p>❏ You have applied a triangulate modifier. Some exporters other
+than Ogre, have an option to apply the modifier on export. This
+would be the preferred method.</p></li><li><p>❏ You have UV Mapped your model. It isn&#x27;t required by Mixamo,
+just for loading your models into jme.</p></li><li><p>❏ Your models origin is at the base of the mesh.</p></li><li><p>❏ You have your materials and textures done for your model. It
+isn&#x27;t required by Mixamo, just for loading your model into jme.</p></li><li><p>❏ You have <a href="/wikidemo/docs/jme3/external/blender/blender_buffer_clearing">cleared your
+buffers</a>.
+It isn&#x27;t required by Mixamo, just makes your models cleaner for
+jme.</p></li><li><p>❏ You have applied the Location, Rotation, and Scale to your
+model.</p></li><li><p>❏ <strong>MOST IMPORTANT OF ALL</strong>, in the
+<code>Properties Panel Scene Tab Units Panel</code> set the Unit of Measure
+to Meters and the Length to Metric. Adobe uses centimeters for
+the FBX exporter and if this is not set the models scale will be
+unusual to say the least. JME3 uses 1 WU = whatever you
+determine but meters will make things easier for all aspects of
+your modeling. If you are doing this now, you may have to
+re-scale your model before proceeding.</p></li></ul></li></ul><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>See <a href="/wikidemo/docs/jme3/external/blender">Creating assets in Blender3D</a> for
+help on creating jME3 compatible models.</p></div></div><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="blender-fbx-export"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#blender-fbx-export" title="Direct link to heading">#</a>Blender FBX Export</h1><ol><li><p>In the <code>3d Viewport</code>, select your model, it will be high-lighted in
+orange.</p></li><li><p>In the <code>Info</code> header, select <code>File Export FBX</code>.</p></li><li><p>Enter a file path to export to, usually the same folder as your
+<code>.blend</code> file for simplicity.</p></li><li><p>Enter a file name.</p></li><li><p>In the <code>Export FBX</code> panel, located in the bottom left of the export
+dialog:</p><p>Main Tab</p><p>:   -   ✓ Selected Objects</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">-   Scale = 1</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
+</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    ::: {.important}</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    Click the button next to scale to deselect Scale all data.</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    Failure to do so will destroy the scale of your model. If</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    the button is selected, it will be dark in color.</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    :::</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
+</span></div><div class="token-line" style="color:#393A34"><span class="token plain">-   Forward = -Z Forward</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
+</span></div><div class="token-line" style="color:#393A34"><span class="token plain">-   Up = Y Up</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
+</span></div><div class="token-line" style="color:#393A34"><span class="token plain">-   Which kind of object to export = Mesh</span></div></div></div></div></div><p>Geometries Tab</p><p>:   -   ✓ Apply Modifiers</p></li><li><p>When you are done, click the Export FBX button to export the file.</p></li></ol><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>You can save these FBX export settings by clicking the + button next to
+Operator Presets.</p></div></div><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="mixamo-fbx-import"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#mixamo-fbx-import" title="Direct link to heading">#</a>Mixamo FBX Import</h1><ol><li><p>Create an <a href="https://www.mixamo.com/#/">Mixamo</a> account and login.</p></li><li><p>From the <code>Default Character</code> panel, select <code>Upload Character</code>.</p></li><li><p>Navigate to the file to be uploaded or drag and drop it onto the
+file up-loader.</p></li><li><p>Select <code>Open</code>.</p></li></ol><p>::: {.note}
+Generally, if at any time during the import and rigging process the
+model does not appear within the time specified in the dialog that is
+showing, something has gone wrong and you will have to restart the
+process over.
+:::</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="mixamo-auto-rigger"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#mixamo-auto-rigger" title="Direct link to heading">#</a>Mixamo Auto-Rigger</h1><p>If everything went well the <code>Auto-Rigger</code> will open and your model will
+be facing you. If not, fix your model in Blender before proceeding.</p><ol><li><p>If the model is facing you, click Next.</p></li><li><p>In this panel you will rig your model. Place the markers as shown in
+the Auto-Rigger dialog image.</p><p>::: {.note}
+Remember that the model is facing you so its right is on your left.
+:::</p></li><li><p>Select the LOD you are after. This is based off how many bones you
+want the hand of the model to have. Feel free to cycle through the
+options to see what each one does.</p></li><li><p>When you are through click the Next button to rig your model.</p></li><li><p>When the model appears, if satisfied with the results, click
+<code>Finish</code>.</p></li></ol><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="mixamo-animations"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#mixamo-animations" title="Direct link to heading">#</a>Mixamo Animations</h1><ol><li><p>In the far right panel select Find Animations.</p></li><li><p>After deciding on an animation, click the animation to have it
+applied to your model.</p></li><li><p>After the animation is applied to your model, toggle the In Place
+checkbox if it&#x27;s a moving animation.</p><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>You can make small adjustments to the animation by using the
+sliders. The most common adjustment you will make is the
+<code>Character Arm-Space</code>. If you find the models hands are clipping
+through the model then use this slider to remedy the situation.</p></div></div></li><li><p>When satisfied with the animation, select the Download button and
+follow the <code>Mixamo Download</code> instructions below.</p></li></ol><p>If you wish to add more animations, after the download, remove the
+animation by clicking on the X button located next to the animations
+name. Add your new animation and when satisfied, download the new
+animation. Repeat as often as is neccessary.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="mixamo-download"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#mixamo-download" title="Direct link to heading">#</a>Mixamo Download</h1><p>When downloading <code>Animations</code> from Mixamo:</p><ol><li><p>Make sure the In Place checkbox is selected if it&#x27;s a moving
+animation.</p></li><li><p>In the <code>Download Settings</code> dialog use the default settings.</p><ul><li><p>Format = FBX</p></li><li><p>Skin = With Skin</p></li><li><p>Frames per second = 30</p></li><li><p>Keyframe Reduction = none</p></li></ul></li><li><p>Click Download and save it to your computer.</p></li></ol><p>When downloading <code>Characters</code> from Mixamo:</p><ol><li><p>In the <code>Download Settings</code> dialog the <code>Format</code> is FBX and <code>Pose</code> is
+TPose.</p></li><li><p>Click Download and save it to your computer.</p></li></ol><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="creating-blender-animations"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#creating-blender-animations" title="Direct link to heading">#</a>Creating Blender Animations</h1><p>Download your TPose model using the instructions for downloading
+<code>Characters</code> given above. We will use it as our newly rigged model for
+Blender. To keep things organized we will create a <code>.blend</code> file for
+every animation and later use a separate <code>.blend</code> file to combine all
+animations into one jME3 compatible animation.</p><p>The following steps apply to any animation you want to add in the
+future.</p><ol><li><p>Start Blender if it is not already open.</p></li><li><p>In the <code>Info</code> header, at the top of the program, select
+<code>File New Reload Startup</code>.</p></li><li><p>Select the default cube and delete it.</p><p>Scene Tab</p><p>:   -   In the <code>Properties</code> panel, located at the bottom right,
+select the <code>Scene</code> tab.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">-   In the `Units` panel, change the `Units of measure` to</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    `Meters` and `Length` to `Metric`. You must **always** have</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    these settings when importing from or exporting to Mixamo.</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
+</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    :::note</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    You should create and save a default startup file in</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    Blender. `File Save Startup File`. This way you will not</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    have to constantly redo things. Setting your</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    `Units of measure` is the least you should do. You can</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    always restore the default startup file by selecting</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    `File Load Factory Settings` at any time.</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    :::</span></div></div></div></div></div></li><li><p>In the <code>Info</code> header, select <code>File Import FBX</code>.</p></li><li><p>Select the FBX file you downloaded earlier.</p></li><li><p>In the <code>Import Fbx</code> panel located at the bottom left of the import
+dialog, leave all settings at their defaults.</p><p>Main</p><p>:   -   Scale = 1</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">-   ✓ Import Normals</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
+</span></div><div class="token-line" style="color:#393A34"><span class="token plain">-   ✓ Import Animations</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
+</span></div><div class="token-line" style="color:#393A34"><span class="token plain">-   Armature offset = 1</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
+</span></div><div class="token-line" style="color:#393A34"><span class="token plain">-   ✓ Image Search</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
+</span></div><div class="token-line" style="color:#393A34"><span class="token plain">-   Decal offset = 0</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
+</span></div><div class="token-line" style="color:#393A34"><span class="token plain">-   ✓ Use pre/post rotation</span></div></div></div></div></div><p>Armatures</p><p>:   -   Nothing checked</p></li><li><p>When ready click Import FBX.</p></li><li><p>After Blender imports the file, both the armature and model are
+selected, in this order, select <code>Object Apply Rotation</code>. Repeat this
+for the <code>Location</code> and <code>Scale</code>. Alternatively, select the armature
+and model individually and repeat the process.</p></li><li><p>Select the Armature.</p></li><li><p>In the <code>Timeline</code>, determine the Length of the animation by RMB
+selecting the last keyframe in the timeline.\
+Set <code>End:</code> to this value.</p></li><li><p>Click the |\&lt;\&lt; button to reset timeline back to the first frame.</p></li><li><p>In the <code>Info</code> header, change the <code>Default</code> screen layout to
+<code>Animation</code>.</p></li><li><p>In the <code>Dope Sheet Editor</code>, change the <code>Dope Sheet</code> mode/context to
+<code>Action Editor</code>. The <code>Linked Action</code> will now show the action name
+of the animation you imported.</p></li><li><p>Rename this to the name of the imported animation. In this instance
+it was TPose. .  Select the F button to save the action. .  Save
+your file with the same name as the action.</p></li></ol><p>::: {.note}
+Mixamo sets the rotation mode of bones to <code>Quaternion</code> as is appropriate
+for preventing
+<a href="https://en.wikipedia.org/wiki/Gimbal_lock"><code>Gimbal Lock</code></a>. Keep this in
+mind if you decide to modify your animation. Blender defaults to
+<code>XYZ Euler</code> so you will need to change this setting prior to inserting
+new keyframes.
+:::</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="creating-the-rigged-animation-file"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#creating-the-rigged-animation-file" title="Direct link to heading">#</a>Creating The Rigged Animation File</h1><p>It&#x27;s good practice to have a separate file for combining animations.
+Things can go wrong, animations may change, and you don&#x27;t want to
+destroy your original model file by accident. Our plan of attack has
+been we create a .blend file for every animation and then use this
+separate rigged file to combine them into one. To keep it simple we will
+use a copy of the first animation we downloaded and created a <code>.blend</code>
+file for.</p><p>You create a rigged animation file only one time per model.</p><ol><li><p>If you have closed the TPose.blend file, open it. In the <code>Info</code>
+header select <code>File Save As</code> and save the file using the models name
+with the word <code>Rigged</code> added. This will be the only file we add
+animations to, for this model, from now on. It has our default TPose
+action which will allow us to start our animation track for <code>Ogre</code>
+animation exporting.</p></li><li><p>Select your <code>Armature</code>.</p><p>Object Tab</p><p>:   a.  In the <code>Properties</code> panel, navigate to the <code>Object</code> tab. In
+the <code>Display</code> panel toggle <code>X-Ray</code> on.</p></li><li><p>With your mouse inside the <code>3d Viewport</code>, press Num Pad 1 followed
+by Numpad 5.</p></li><li><p>Tab into <code>Edit Mode</code>.</p></li><li><p>Set the <code>3d Cursor</code> to the models origin.</p></li><li><p>Select <code>Add Single Bone</code>.</p><p>::: {.important}
+The models origin and the <code>Root</code> bone origin must be at the same
+location.
+:::</p></li><li><p>Scale the bone down or up as needed by selecting the <code>Tip</code> (ball at
+the narrowest part of the bone) and dragging the <code>Z</code> arrow (blue
+arrow) of the manipulator up or down until you are satisfied with
+its scale. <strong>DO NOT CHANGE THE ANGLE OR MOVE THE BASE OF THE BONE
+FROM CENTER</strong>.</p></li><li><p>When satisfied with the scale, select the body of the bone to select
+the entire bone.</p><p>Bone Tab</p><p>:   a.  In the <code>Properties</code> panel, navigate to the <code>Bone</code> tab.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">b.  Rename the bone to `Root`.</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
+</span></div><div class="token-line" style="color:#393A34"><span class="token plain">c.  Deselect the `Deform` panel checkbox.</span></div></div></div></div></div></li><li><p>In the <code>3d Viewport</code>, select the body of the armatures <code>Hip</code> bone,
+the lowest bone in the center of the armature, to select the entire
+bone.</p></li><li><p>While holding Shift down, LMB select the <code>Root</code> bone.</p></li><li><p>Press Ctrl + P.</p></li><li><p>In the <code>Make Parent</code> dialog choose <code>Keep Offset</code>.</p></li><li><p>With the mouse inside the 3d Viewport, Tab out of <code>Edit Mode</code>.</p></li><li><p>Select your model.</p><p>Data Tab</p><p>:   a.  In the <code>Properties</code> panel, navigate to the <code>Data</code> tab and
+make sure the <code>Mesh</code> has the same name as your model.</p><p>Material Tab</p><p>:   a.  In the <code>Properties</code> panel, navigate to the <code>Material</code> tab
+and make sure there is one <code>Material</code> in the <code>Material List</code>
+and it is the same name as your model.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">b.  In the `Transparency` panel, move the `Alpha` slider to 1.</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
+</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    ::: {.important}</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    There appears to be a bug where the FBX importer adds an</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    `Alpha` map texture to your model. If the `Alpha` slider is</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    not at one, and you use the Blender importer of the SDK, or</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    convert a .blend file, it will be transparent. `Ogre` export</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    is unaffected.</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    :::</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
+</span></div><div class="token-line" style="color:#393A34"><span class="token plain">c.  Deselect the checkbox of the `Transparency` panel.</span></div></div></div></div></div><p>Texture Tab</p><p>:   a.  In the <code>Properties</code> panel, navigate to the <code>Texture</code> tab,
+you will note that your texture has duplicate names in the
+<code>Texture List</code>. The bottom texture is actually a transparent
+<code>Alpha</code> texture and appears to be a bug. Select the
+<strong>second</strong> texture in the <code>Texture List</code> to highlight it.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">b.  While holding down the Shift key, press the X button next to</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    the `Texture Data Block` to delete it.</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
+</span></div><div class="token-line" style="color:#393A34"><span class="token plain">c.  Select your remaining texture in the `Texture List` to</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    highlight it. You will note the `Texture Data Block` is now</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    red due to no texture being assigned.</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
+</span></div><div class="token-line" style="color:#393A34"><span class="token plain">d.  Click on the Browse Texture to be linked button next to the</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    `Texture Data Block` and select your texture.</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
+</span></div><div class="token-line" style="color:#393A34"><span class="token plain">e.  In the `Image` panel, click the Small Box button located</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    next to your texture&#x27;s path to pack the image file.</span></div></div></div></div></div></li><li><p>In the <code>Info</code> header, change the layout from <code>Animation</code> to
+<code>UV Editing</code>.</p></li><li><p>With your mouse inside the <code>3d Viewport</code> and the model still
+selected, Tab into edit mode. If your model is not completely orange
+press A untill all vertices are selected. You will see your UV
+Mapped mesh appear in the <code>UV Image Editor</code> window.</p></li><li><p>In the <code>UV Image Editor</code>, click the Browse Image to be linked button
+and select your UV image.</p></li><li><p>Tab out of <code>Edit Mode</code>.</p></li><li><p>In the <code>Info</code> header, change the layout from <code>UV Editing</code> to
+<code>Default</code> and then click the + button to create a new layout.</p></li><li><p>Rename this new layout <code>NLA Editing</code>.</p></li><li><p>Click the <code>Current Editor Type</code> button, located at the bottom left
+(small box) of the <code>3d Viewport</code>, and change it from <code>3d View</code> to
+<code>NLA Editor</code>. Our TPose action is now visible.</p><p>::: {.note}
+If the action is not visible, navigate to the <code>Dope Sheet Editor</code>
+and from the <code>Action Editor</code> context, select the <code>Action</code>.
+:::</p></li><li><p>Click the <img src="./images/icons/angle-double-down.png" alt="angle double down">
+button to push the action down into the stack.</p></li><li><p>Beneath the TPose strip you will see a slider. Drag this slider to
+the right until your strip is nested up against the left margin of
+the window.</p></li><li><p>Save your file.</p></li></ol><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="export"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#export" title="Direct link to heading">#</a>Export</h1><p>Your rigged file is now ready to export. Export your model using one of
+the <a href="../../jme3/features.xml#supported-external-file-types">Supported External File
+Types</a> of your
+choice.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="appending-blender-animations"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#appending-blender-animations" title="Direct link to heading">#</a>Appending Blender Animations</h1><p>Follow the directions for <a href="../../jme3/advanced/mixamo.xml#mixamo-animations#">Mixamo
+Animations</a>, <a href="../../jme3/advanced/mixamo.xml#mixamo-download#">Mixamo
+Download</a>, <a href="../../jme3/advanced/mixamo.xml#creating-blender-animations#">Creating
+Blender
+Animations</a>,
+<a href="../../jme3/external/blender.xml#action-baking">Blender Action Baking</a>
+and <a href="../../jme3/external/blender/blender_buffer_clearing.xml#the-linked-action-buffer">Clearing The Linked Action
+Buffer</a>
+for all animations you wish to append to your <strong>rigged</strong> animation file.</p><ol><li><p>If your <code>Rigged</code> file is closed, open it.</p></li><li><p>From the <code>Info</code> header, change the Layout to <code>Default</code>.</p></li><li><p>In the <code>3d Viewport</code>, select the armature of the model.</p></li><li><p>From the <code>Info</code> header, select <code>File Append</code>.</p></li><li><p>Navigate to, and select the <code>.blend</code> animation file you want to
+append.</p></li><li><p>From the folders list select the <code>Action</code> folder, followed by your
+action.</p></li><li><p>When ready, select the Append From Library button to finalize your
+selection.</p></li><li><p>From the <code>Info</code> header, change your layout to <code>Animation</code>.</p></li><li><p>In the <code>Dope Sheet Editor</code>, change the context to <code>Action Editor</code> if
+not already selected.</p></li><li><p>Click the Action to be linked button and select your append action
+from the list.</p></li><li><p>Select the F button to save the action.</p></li><li><p>From the <code>Info</code> header, change the layout from <code>Animation</code> to the
+<code>NLA Editing</code> layout we created in the <a href="../../jme3/advanced/mixamo.xml#creating-the-rigged-animation-file#">Creating The Rigged
+Animation
+File</a>
+section of this tutorial. You will see your append <code>Action</code> at the
+top of the list.</p></li><li><p>From the <code>NLA Editor</code> header, select <code>Add Add Tracks</code>. A new track
+has now been added to the top of the list.</p></li><li><p>Click the <img src="./images/icons/angle-double-down.png" alt="angle double down">
+button next to the <code>Action</code> to push it down into the stack.</p></li><li><p>LMB select the strip to make it the only strip selected.</p></li><li><p>LMB drag the selected strip to the right until there is at least a 4
+keyframe gap between the furthest strip to the right in the list and
+the append strip you are dragging.</p><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>When the strip is in drag mode it will be purple. While in drag mode
+you do not need to keep the LMB pressed.</p></div></div></li><li><p>When you are satisfied with the position, LMB click the strip to
+finalize your selection. Your append strip should now be the
+furthest strip to the right in the list.</p><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>You can use the mouse scroll wheel to shrink or expand the strip
+window to bring all strips into the view.</p><p>You can drag the slider, at the bottom of the strip window, to the
+right or left to position the strips against the side of the window.</p></div></div></li><li><p>With the mouse inside the strip window, press the N key to open the
+properties window.</p></li><li><p>In the <code>Active Strip</code> panel, under <code>Strip Extents</code>, you will see the
+<code>End Frame</code> number. In the <code>Timeline</code>, set <code>End:</code> to this number.
+Every time you append an <code>Action</code> you must increase this number to
+equal the total length off all strips combined, including the gaps
+between strips.</p></li><li><p>Save your file.</p></li></ol><p>Your file is now ready to
+<a href="../../jme3/advanced/mixamo.xml#export">export</a>.</p><p>::: {.important}
+Prior to export:</p><p>In the <code>NLA Editor</code> make sure no <code>Actions</code> are waiting to be pushed down
+into the stack. If there are, it must be removed or made into a strip
+prior to export.</p><p>In the <code>Dope Sheet Editor</code> make sure no <code>Actions</code> are selected in the
+<code>Action Editor</code> context. If one is selected, it will be sitting at the
+top of the <code>NLA Editor</code> stack.</p><p>An <code>Action</code> that has not been pushed down into the <code>NLA Stack</code> will
+block your <code>NLA Strip</code> from playing.</p><p>Some export methods bake your actions automatically on export, others
+don&#x27;t. Test the animation in-game and if your animations are all messed
+up, try <a href="/wikidemo/docs/jme3/external/blender/blender_action_baking">baking
+them</a> or use a
+different exporter.
+:::</p><p>Your NLA strip should look something like this:</p><p><img src="/images/jme3/advanced/MixamoNLA.png" alt="MixamoNLA.png"></p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="notes"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#notes" title="Direct link to heading">#</a>Notes</h1><ul><li><p>You can see a similar video demonstration of this entire process in
+<a href="../../jme3.xml#animations-and-scenes#">Animations And Scenes</a> under
+the CadNav <img src="./images/icons/long-arrow-right.png" alt="long arrow right">
+Mixamo <img src="./images/icons/long-arrow-right.png" alt="long arrow right"> JME
+Workflow heading.</p></li><li><p>See <a href="/wikidemo/docs/jme3/beginner/hello_animation">Hello Animation</a> and
+<a href="/wikidemo/docs/jme3/advanced/animation">Animation in JME3</a> to learn how
+to use your animated model.</p></li></ul></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/8keep/wikidemo/edit/master/docs/jme3/advanced/mixamo.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"></div><div class="pagination-nav__item pagination-nav__item--next"></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="text--center"><div>Copyright © 2020 jMonkeyEngine.</div></div></div></footer>
+</div>
+
+<script src="/wikidemo/styles.08ff7081.js"></script>
+
+<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+
+<script src="/wikidemo/main.1b6aa70f.js"></script>
+
+<script src="/wikidemo/1.e501629b.js"></script>
+
+<script src="/wikidemo/2.c824d386.js"></script>
+
+<script src="/wikidemo/302.1d1a2997.js"></script>
+
+<script src="/wikidemo/394d525a.30c299b8.js"></script>
+
+<script src="/wikidemo/17896441.d065d5f5.js"></script>
+
+<script src="/wikidemo/52f66f98.43fcfe2e.js"></script>
+
+
+</body>
+</html>
