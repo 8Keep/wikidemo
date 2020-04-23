@@ -1,11 +1,11 @@
 module.exports = {
   title: 'jMonkeyEngine Documentation',
   tagline: '',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://8keep.github.io',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'jmonkeyengine',
-  projectName: 'wikidemo',
+  organizationName: '8keep',
+  projectName: '8keep.github.io',
   themeConfig: {
     prism: {
       theme: require('prism-react-renderer/themes/github'),
@@ -25,7 +25,7 @@ module.exports = {
           position: 'left',
         },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/8keep/wikidemo',
           label: 'GitHub',
           position: 'right',
         },
@@ -43,7 +43,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+            'https://github.com/8keep/wikidemo/edit/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
