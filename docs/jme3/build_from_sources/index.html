@@ -18,7 +18,7 @@
 
 <link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
 
-<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+<link rel="preload" href="/wikidemo/runtime~main.7418f8ca.js" as="script">
 
 <link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
 
@@ -32,7 +32,7 @@
 
 <link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
 
-<link rel="preload" href="/wikidemo/a84e87bd.c4a61bf6.js" as="script">
+<link rel="preload" href="/wikidemo/a84e87bd.97523a87.js" as="script">
 
 </head>
 <body>
@@ -55,10 +55,8 @@ git client.</p></li><li><p>Update the Engine: <code>update.bat</code>\
 This file downloads any changed files from github using the git
 client.</p></li><li><p>Build the Engine: <code>build.bat</code>\
 This file builds the engine using the gradle wrapper and places them
-in your local repository.</p><p>::: {.note}
-This is USER-SPECIFIC. My files are stored in
-<code>C:\Users\James\.m2\repository</code>
-:::</p><p><a href="https://gist.github.com/jayfella/12af46c2fc4650640652b69b84b3dd01">https://gist.github.com/jayfella/12af46c2fc4650640652b69b84b3dd01</a></p><p><strong>download.bat.</strong></p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">@echo off</span></div><div class="token-line" style="color:#393A34"><span class="token plain">echo &quot;downloading engine...&quot;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">git clone -b master --single-branch --depth 10 https://github.com/jMonkeyEngine/jMonkeyEngine/ jmonkeyengine</span></div></div></div></div></div><p><strong>build.bat.</strong></p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">@echo off</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
+in your local repository.</p><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>This is USER-SPECIFIC. My files are stored in
+<code>C:\Users\James\.m2\repository</code></p></div></div><p><a href="https://gist.github.com/jayfella/12af46c2fc4650640652b69b84b3dd01">https://gist.github.com/jayfella/12af46c2fc4650640652b69b84b3dd01</a></p><p><strong>download.bat.</strong></p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">@echo off</span></div><div class="token-line" style="color:#393A34"><span class="token plain">echo &quot;downloading engine...&quot;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">git clone -b master --single-branch --depth 10 https://github.com/jMonkeyEngine/jMonkeyEngine/ jmonkeyengine</span></div></div></div></div></div><p><strong>build.bat.</strong></p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">@echo off</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
 </span></div><div class="token-line" style="color:#393A34"><span class="token plain">echo &quot;Building JME engine to your local maven repo....&quot;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">cd jmonkeyengine</span></div><div class="token-line" style="color:#393A34"><span class="token plain">gradlew.bat -PbuildJavaDoc=true install</span></div><div class="token-line" style="color:#393A34"><span class="token plain">cd ..</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
 </span></div><div class="token-line" style="color:#393A34"><span class="token plain">cmd /k</span></div></div></div></div></div><p><strong>update.bat.</strong></p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">@echo off</span></div><div class="token-line" style="color:#393A34"><span class="token plain">cd jmonkeyengine</span></div><div class="token-line" style="color:#393A34"><span class="token plain">git pull</span></div><div class="token-line" style="color:#393A34"><span class="token plain">cd ..</span></div><div class="token-line" style="color:#393A34"><span class="token plain">cmd /k</span></div></div></div></div></div></li></ol><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="using-the-built-engine-in-your-game"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#using-the-built-engine-in-your-game" title="Direct link to heading">#</a>Using the built engine in your game</h1><p>Add the maven plugin to your build script, and put the mavenLocal()
 repository in your list of repositories. Then just reference the
@@ -73,7 +71,7 @@ NetBeans</a></p></li></ul></div></article><div class="margin-vert--xl"><div clas
 
 <script src="/wikidemo/styles.08ff7081.js"></script>
 
-<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+<script src="/wikidemo/runtime~main.7418f8ca.js"></script>
 
 <script src="/wikidemo/main.1b6aa70f.js"></script>
 
@@ -87,7 +85,7 @@ NetBeans</a></p></li></ul></div></article><div class="margin-vert--xl"><div clas
 
 <script src="/wikidemo/17896441.d065d5f5.js"></script>
 
-<script src="/wikidemo/a84e87bd.c4a61bf6.js"></script>
+<script src="/wikidemo/a84e87bd.97523a87.js"></script>
 
 
 </body>

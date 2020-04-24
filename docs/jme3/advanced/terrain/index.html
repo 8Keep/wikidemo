@@ -18,7 +18,7 @@
 
 <link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
 
-<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+<link rel="preload" href="/wikidemo/runtime~main.7418f8ca.js" as="script">
 
 <link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
 
@@ -32,7 +32,7 @@
 
 <link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
 
-<link rel="preload" href="/wikidemo/8a1eb053.ce1c655c.js" as="script">
+<link rel="preload" href="/wikidemo/8a1eb053.27a7bec8.js" as="script">
 
 </head>
 <body>
@@ -105,10 +105,8 @@ read on for the implementation details.
 :::</p><p>Here are the names of TerrainLighting.j3md&#x27;s material properties:</p><p><img src="/images/jme3/beginner/mountains512.png" alt="A heightmap encodes the topological highs and lows of the
 terrain"></p><ul><li><p>1-3 Alpha Maps</p><ul><li><p><code>AlphaMap</code></p></li><li><p><code>AlphaMap_1</code></p></li><li><p><code>AlphaMap_2</code></p></li></ul></li><li><p>12 Diffuse and/or Normal Maps (either in 6 pairs, or 12 stand-alone
 Diffuse Maps)</p><ul><li><p><code>DiffuseMap</code>, <code>DiffuseMap_0_scale</code>, <code>NormalMap</code></p></li><li><p><code>DiffuseMap_1</code>, <code>DiffuseMap_1_scale</code>, <code>NormalMap_1</code></p></li><li><p><code>DiffuseMap_2</code>, <code>DiffuseMap_2_scale</code>, <code>NormalMap_2</code></p></li><li><p><code>DiffuseMap_3</code>, <code>DiffuseMap_3_scale</code>, <code>NormalMap_3</code></p></li></ul></li></ul><p><img src="/images/jme3/beginner/alphamap.png" alt="An alpha map can describe where 4 textures are painted onto the
-terrain."></p><ul><li><p><code>DiffuseMap_4</code>, <code>DiffuseMap_4_scale</code>, <code>NormalMap_4</code></p></li><li><p>...</p></li><li><p><code>DiffuseMap_11</code>, <code>DiffuseMap_11_scale</code>, <code>NormalMap_11</code></p><ul><li>Light maps</li></ul></li><li><p><code>GlowMap</code></p></li><li><p><code>SpecularMap</code></p></li></ul><p>::: {.note}
-<code>DiffuseMap_0_scale</code> is a float value (e.g. 1.0f); you must specify one
-scale per Diffuse Map.
-:::</p><p>OpenGL supports a maximum of 16 <em>samplers</em> in any given shader. This
+terrain."></p><ul><li><p><code>DiffuseMap_4</code>, <code>DiffuseMap_4_scale</code>, <code>NormalMap_4</code></p></li><li><p>...</p></li><li><p><code>DiffuseMap_11</code>, <code>DiffuseMap_11_scale</code>, <code>NormalMap_11</code></p><ul><li>Light maps</li></ul></li><li><p><code>GlowMap</code></p></li><li><p><code>SpecularMap</code></p></li></ul><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p><code>DiffuseMap_0_scale</code> is a float value (e.g. 1.0f); you must specify one
+scale per Diffuse Map.</p></div></div><p>OpenGL supports a maximum of 16 <em>samplers</em> in any given shader. This
 means you can only use a subset of material properties at the same time
 if you use the terrain&#x27;s default lighting shader (TerrainLighting.j3md)!</p><p>Adhere to the following constraints:</p><p><img src="/images/jme3/beginner/road.jpg" alt="The Diffuse Map of one of the terrain textures depicts the colors of a
 paved surface"></p><ul><li><p>1-12 Diffuse Maps. One Diffuse Map is the minimum!</p></li><li><p>1-3 Alpha Maps. For each 4 Diffuse Maps, you need 1 more Alpha Map!</p></li><li><p>0-6 Normal Maps. Diffuse Maps &amp; Normal Maps always come in pairs!</p></li><li><p>0 or 1 Glow Map</p></li><li><p>0 or 1 Specular Map.</p></li><li><p><strong>The sum of all textures used must be 16, or less.</strong></p></li></ul><p>Here are some common examples what this means:</p><p><img src="/images/jme3/beginner/road_normal.png" alt="The Normal Map of one of the terrain textures depicts the bumpiness of
@@ -129,7 +127,7 @@ Hill hightmap:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32
 
 <script src="/wikidemo/styles.08ff7081.js"></script>
 
-<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+<script src="/wikidemo/runtime~main.7418f8ca.js"></script>
 
 <script src="/wikidemo/main.1b6aa70f.js"></script>
 
@@ -143,7 +141,7 @@ Hill hightmap:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32
 
 <script src="/wikidemo/17896441.d065d5f5.js"></script>
 
-<script src="/wikidemo/8a1eb053.ce1c655c.js"></script>
+<script src="/wikidemo/8a1eb053.27a7bec8.js"></script>
 
 
 </body>

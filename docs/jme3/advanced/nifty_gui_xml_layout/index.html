@@ -18,7 +18,7 @@
 
 <link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
 
-<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+<link rel="preload" href="/wikidemo/runtime~main.7418f8ca.js" as="script">
 
 <link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
 
@@ -32,7 +32,7 @@
 
 <link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
 
-<link rel="preload" href="/wikidemo/ab06243a.1b8107c3.js" as="script">
+<link rel="preload" href="/wikidemo/ab06243a.67fc99c6.js" as="script">
 
 </head>
 <body>
@@ -69,10 +69,8 @@ another; the panels contain the actual content (text, images, or
 controls).</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="make-screens"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#make-screens" title="Direct link to heading">#</a>Make Screens</h2><p>The following minimal XML file contains a start screen and a HUD screen.
 (Neither has been defined yet.) Copy and paste the following code into
 your scene.xml file.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-{.xml} codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;nifty xmlns=&quot;http://nifty-gui.lessvoid.com/nifty-gui&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;https://raw.githubusercontent.com/void256/nifty-gui/1.4/nifty-core/src/main/resources/nifty.xsd https://raw.githubusercontent.com/void256/nifty-gui/1.4/nifty-core/src/main/resources/nifty.xsd&quot;&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">  &lt;screen id=&quot;start&quot;&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    &lt;!-- ... --&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">  &lt;/screen&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">  &lt;screen id=&quot;hud&quot;&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    &lt;!-- ... --&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">  &lt;/screen&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/nifty&gt;</span></div></div></div></div></div><p>Every Nifty GUI must have a start screen. The others (in this example,
-the HUD screen) are optional.</p><p>::: {.note}
-In the following examples, the XML schema header is abbreviated to just
-<code>&lt;nifty&gt;</code>.
-:::</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="make-layers"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#make-layers" title="Direct link to heading">#</a>Make Layers</h2><p>The following minimal XML file shows how we added layers to the start
+the HUD screen) are optional.</p><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>In the following examples, the XML schema header is abbreviated to just
+<code>&lt;nifty&gt;</code>.</p></div></div><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="make-layers"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#make-layers" title="Direct link to heading">#</a>Make Layers</h2><p>The following minimal XML file shows how we added layers to the start
 screen and HUD screen. Delete all from the file and add following code.</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-{.xml} codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">&lt;nifty&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">  &lt;screen id=&quot;start&quot; controller=&quot;de.lessvoid.nifty.screen.DefaultScreenController&quot;&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    &lt;layer id=&quot;background&quot; backgroundColor=&quot;#000f&quot;&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">      &lt;!-- ... --&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    &lt;/layer&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    &lt;layer id=&quot;foreground&quot; backgroundColor=&quot;#0000&quot; childLayout=&quot;vertical&quot;&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">      &lt;!-- ... --&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    &lt;/layer&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">  &lt;/screen&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">  &lt;screen id=&quot;hud&quot; controller=&quot;de.lessvoid.nifty.screen.DefaultScreenController&quot;&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    &lt;layer id=&quot;background&quot; backgroundColor=&quot;#000f&quot;&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">      &lt;!-- ... --&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    &lt;/layer&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    &lt;layer id=&quot;foreground&quot; backgroundColor=&quot;#0000&quot; childLayout=&quot;horizontal&quot;&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">      &lt;!-- ... --&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">    &lt;/layer&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">  &lt;/screen&gt;</span></div><div class="token-line" style="color:#393A34"><span class="token plain">&lt;/nifty&gt;</span></div></div></div></div></div><p>In a layer, you can now add panels and arrange them. Panels are
 containers that mark the areas where you want to display text, images,
 or controls (buttons etc) later. To connect a screen with a
@@ -126,7 +124,7 @@ jME3 game content).</p><p><img src="/images/jme3/advanced/nifty-gui-simple-demo.
 
 <script src="/wikidemo/styles.08ff7081.js"></script>
 
-<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+<script src="/wikidemo/runtime~main.7418f8ca.js"></script>
 
 <script src="/wikidemo/main.1b6aa70f.js"></script>
 
@@ -140,7 +138,7 @@ jME3 game content).</p><p><img src="/images/jme3/advanced/nifty-gui-simple-demo.
 
 <script src="/wikidemo/17896441.d065d5f5.js"></script>
 
-<script src="/wikidemo/ab06243a.1b8107c3.js"></script>
+<script src="/wikidemo/ab06243a.67fc99c6.js"></script>
 
 
 </body>

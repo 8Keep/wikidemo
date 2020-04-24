@@ -18,7 +18,7 @@
 
 <link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
 
-<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+<link rel="preload" href="/wikidemo/runtime~main.7418f8ca.js" as="script">
 
 <link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
 
@@ -32,7 +32,7 @@
 
 <link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
 
-<link rel="preload" href="/wikidemo/0f876abc.7705621b.js" as="script">
+<link rel="preload" href="/wikidemo/0f876abc.53954361.js" as="script">
 
 </head>
 <body>
@@ -106,12 +106,10 @@ using:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><but
 GL_ARB_framebuffer_sRGB or the GL_EXT_texture_sRGB. This can be
 toggled at run time.</p><p>This uses Opengl hardware gamma correction that uses an approximated
 Gamma value of 2.2 and uses the following formula : color =
-pow(color,1/gamma)</p><p>::: {.note}
-This will not yield exact results, as the real gamma can vary depending
+pow(color,1/gamma)</p><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>This will not yield exact results, as the real gamma can vary depending
 on the monitor.\
 If this is a problem, please refer to the &quot;handling gamma correction in
-a post process section.
-:::</p><h4><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="enabling-texture-linearization"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#enabling-texture-linearization" title="Direct link to heading">#</a>Enabling texture linearization</h4><p>You can enable or disable texture linearization by using</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">renderer</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">setLinearizeSrgbImages</span><span class="token punctuation" style="color:#393A34">(</span><span class="token keyword" style="color:#00009f">boolean</span><span class="token plain"> linearize</span><span class="token punctuation" style="color:#393A34">)</span></div></div></div></div></div><p>This will be ignored if the hardware doesn&#x27;t have the
+a post process section.</p></div></div><h4><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="enabling-texture-linearization"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#enabling-texture-linearization" title="Direct link to heading">#</a>Enabling texture linearization</h4><p>You can enable or disable texture linearization by using</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">renderer</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">setLinearizeSrgbImages</span><span class="token punctuation" style="color:#393A34">(</span><span class="token keyword" style="color:#00009f">boolean</span><span class="token plain"> linearize</span><span class="token punctuation" style="color:#393A34">)</span></div></div></div></div></div><p>This will be ignored if the hardware doesn&#x27;t have the
 GL_ARB_framebuffer_sRGB or the GL_EXT_texture_sRGB.</p><p>::: {.important}
 Toggling this setting at runtime will produce unexpected behavior for
 now. A change in this setting would need a proper reload of the context
@@ -157,11 +155,9 @@ Linear color space.
 should use the setAsSRGB method of ColorRGBA. This will convert the
 given values to linear color space by using the same formula as before :
 color = pow (color, gamma) where gamma = 2.2;</p><p>If you want to retrieve those values from a ColorRGBA, you can call the
-getAsSRGB method. The values will be converted back to sRGB color Space.</p><p>::: {.note}
-The return type of that method is a Vector4f and not a ColorRGBA,
+getAsSRGB method. The values will be converted back to sRGB color Space.</p><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>The return type of that method is a Vector4f and not a ColorRGBA,
 because as stated before, all ColorRGBA objects r,g,b attributes are
-assumed in Linear color space.
-:::</p><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="handling-rendered-output-gamma-correction-with-a-post-process-filter"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#handling-rendered-output-gamma-correction-with-a-post-process-filter" title="Direct link to heading">#</a>Handling rendered output Gamma Correction with a post process filter</h3><p>As stated before, the hardware gamma correction uses and approximated
+assumed in Linear color space.</p></div></div><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="handling-rendered-output-gamma-correction-with-a-post-process-filter"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#handling-rendered-output-gamma-correction-with-a-post-process-filter" title="Direct link to heading">#</a>Handling rendered output Gamma Correction with a post process filter</h3><p>As stated before, the hardware gamma correction uses and approximated
 gamma value of 2.2. Some may not be satisfied with that approximations
 and may want to pick a more appropriate gamma value. You can see in some
 games some Gamma calibration screens, that are here to help the player
@@ -178,7 +174,7 @@ kept a way to turn it off, for backward compatibility.</p></div></article><div c
 
 <script src="/wikidemo/styles.08ff7081.js"></script>
 
-<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+<script src="/wikidemo/runtime~main.7418f8ca.js"></script>
 
 <script src="/wikidemo/main.1b6aa70f.js"></script>
 
@@ -192,7 +188,7 @@ kept a way to turn it off, for backward compatibility.</p></div></article><div c
 
 <script src="/wikidemo/17896441.d065d5f5.js"></script>
 
-<script src="/wikidemo/0f876abc.7705621b.js"></script>
+<script src="/wikidemo/0f876abc.53954361.js"></script>
 
 
 </body>

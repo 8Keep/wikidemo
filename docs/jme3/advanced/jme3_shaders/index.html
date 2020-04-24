@@ -18,7 +18,7 @@
 
 <link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
 
-<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+<link rel="preload" href="/wikidemo/runtime~main.7418f8ca.js" as="script">
 
 <link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
 
@@ -32,7 +32,7 @@
 
 <link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
 
-<link rel="preload" href="/wikidemo/081d45da.f3ca755c.js" as="script">
+<link rel="preload" href="/wikidemo/081d45da.99e0d27c.js" as="script">
 
 </head>
 <body>
@@ -75,9 +75,7 @@ shaders.</p><p>For example let&#x27;s have a look at the SolidColor.j3md file :<
 <a href="https://hub.jmonkeyengine.org/t/jmonkeyengine3-material-system-full-explanation/12947">jMonkeyEngine3 material system - full
 explanation</a>.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="jme3-global-uniforms"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#jme3-global-uniforms" title="Direct link to heading">#</a>JME3 Global uniforms</h2><p>JME3 can expose pre-computed global uniforms to your shaders. You must
 specify the ones that are required for your shader in the
-WorldParameter&#x27;s section of the material definition file (.j3md).</p><p>::: {.note}
-In the shader, the uniform names will be prefixed by a &quot;g_&quot;.
-:::</p><p>In the example above, WorldViewProjectionMatrix is declared as uniform
+WorldParameter&#x27;s section of the material definition file (.j3md).</p><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>In the shader, the uniform names will be prefixed by a &quot;g_&quot;.</p></div></div><p>In the example above, WorldViewProjectionMatrix is declared as uniform
 mat4 g_WorldViewProjectionMatrix in the shader.</p><p>The complete list of global uniforms that can be used in JME3 can be
 found in
 <a href="https://github.com/jMonkeyEngine/jmonkeyengine/blob/master/jme3-core/src/main/java/com/jme3/shader/UniformBinding.java">UniformBinding.java</a>.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="jme3-lighting-global-uniforms"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#jme3-lighting-global-uniforms" title="Direct link to heading">#</a>JME3 Lighting Global uniforms</h2><p>JME3 uses some global uniforms for lighting:</p><ul><li><p>g_LightDirection (vec4): the direction of the light</p><ul><li>use for SpotLight: x,y,z contain the world direction vector of
@@ -90,9 +88,7 @@ know if it&#x27;s a directionalLight or not.</p></li></ul></li><li><p>g_AmbientL
 in the j3md file, but you have to specify in the technique definition &quot;
 LightMode MultiPass see lighting.j3md for more information.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="jme3-attributes"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#jme3-attributes" title="Direct link to heading">#</a>JME3 attributes</h2><p>Those are different attributes that are always passed to your shader.</p><p>You can find a complete list of those attribute in the Type enum of the
 VertexBuffer in
-<a href="https://github.com/jMonkeyEngine/jmonkeyengine/blob/master/jme3-core/src/main/java/com/jme3/scene/VertexBuffer.java">VertexBuffer.java</a>.</p><p>::: {.note}
-In the shader the attributes names will be prefixed by an &quot;in&quot;.
-:::</p><p>When the enumeration lists some usual types for each attribute (for
+<a href="https://github.com/jMonkeyEngine/jmonkeyengine/blob/master/jme3-core/src/main/java/com/jme3/scene/VertexBuffer.java">VertexBuffer.java</a>.</p><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>In the shader the attributes names will be prefixed by an &quot;in&quot;.</p></div></div><p>When the enumeration lists some usual types for each attribute (for
 example texCoord specifies two floats) then that is the format expected
 by all standard JME3 shaders that use that attribute. When writing your
 own shaders though you can use alternative formats such as placing three
@@ -148,7 +144,7 @@ attributes.</p><p>Here is a list of deprecated attributes and their equivalent i
 
 <script src="/wikidemo/styles.08ff7081.js"></script>
 
-<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+<script src="/wikidemo/runtime~main.7418f8ca.js"></script>
 
 <script src="/wikidemo/main.1b6aa70f.js"></script>
 
@@ -162,7 +158,7 @@ attributes.</p><p>Here is a list of deprecated attributes and their equivalent i
 
 <script src="/wikidemo/17896441.d065d5f5.js"></script>
 
-<script src="/wikidemo/081d45da.f3ca755c.js"></script>
+<script src="/wikidemo/081d45da.99e0d27c.js"></script>
 
 
 </body>

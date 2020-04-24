@@ -18,7 +18,7 @@
 
 <link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
 
-<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+<link rel="preload" href="/wikidemo/runtime~main.7418f8ca.js" as="script">
 
 <link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
 
@@ -32,7 +32,7 @@
 
 <link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
 
-<link rel="preload" href="/wikidemo/fced939a.299bdabc.js" as="script">
+<link rel="preload" href="/wikidemo/fced939a.6bc7dfa9.js" as="script">
 
 </head>
 <body>
@@ -119,8 +119,7 @@ various open-source dev portals like
 | <code>assets/Models</code>.                  | because these unoptimized files   |
 |                                   | are not packaged into the JAR.    |
 +-----------------------------------+-----------------------------------+</p><p>Learn details about the <a href="/wikidemo/docs/jme3/intermediate/multi-media_asset_pipeline">Multi-Media Asset
-Pipeline</a> here.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="development-phase"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#development-phase" title="Direct link to heading">#</a>Development Phase</h1><p>::: {.note}
-Many game developers dream of creating their very own MMORPG with
+Pipeline</a> here.</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="development-phase"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#development-phase" title="Direct link to heading">#</a>Development Phase</h1><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>Many game developers dream of creating their very own MMORPG with
 full-physics, AI, post-rendering effects, multi-player networking,
 procedurally generated maps, and customizable characters. So why aren&#x27;t
 there tons of MMORPGs out there?\
@@ -129,8 +128,7 @@ complex game is time-intensive and failure-prone. How familiar are you
 with multi-threading, persistence, optimization, client-server
 synchonization, ...? Unless your answer is \&quot;very!\&quot;, then start with a
 single-player desktop game, and work your way up -- just as the pros did
-when they started.
-:::</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="extend-simpleapplication"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#extend-simpleapplication" title="Direct link to heading">#</a>Extend SimpleApplication</h2><p>Every jME3 game is centered around one main class that (directly or
+when they started.</p></div></div><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="extend-simpleapplication"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#extend-simpleapplication" title="Direct link to heading">#</a>Extend SimpleApplication</h2><p>Every jME3 game is centered around one main class that (directly or
 indirectly) extends
 com.jme3.app.<a href="/wikidemo/docs/jme3/intermediate/simpleapplication">SimpleApplication</a>.</p><p>::: {.important}
 Note that although the \&quot;SimpleApplication\&quot; name might be misleading,
@@ -222,14 +220,12 @@ etc).</p></li></ul></li><li><p>Use <a href="/wikidemo/docs/jme3/advanced/custom_
 the <em>behaviour of game entities</em>.</p><ul><li><p>Controls add a type of behaviour (methods and fields) to an
 individual Spatial (a player, an NPC).</p></li><li><p>Each Control runs its own <em>thread-safe</em> <code>controlUpdate()</code> loop
 that hooks into the main <code>simpleUpdate()</code> loop.</p></li><li><p>One Spatial can be influenced by several Controls. (!)</p></li><li><p>Each Spatial needs its own instance of the Control.</p></li><li><p>A Control only has control over and access to the spatial that
-it is attached to (and its sub-spatials).</p></li></ul></li></ul><p>::: {.note}
-A game contains algorithms that do not directly affect spatials (for
+it is attached to (and its sub-spatials).</p></li></ul></li></ul><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>A game contains algorithms that do not directly affect spatials (for
 example, AI pathfinding code that calculates and chooses paths, but does
 not actually move spatials). You do not need to put such non-spatial
 code in controls, you can run thse things in a new thread. Only the
 tranformation code that actually modifies the spatial must be called
-from a control, or must be enqueue()ed.
-:::</p><p>Controls and AppStates often work together: An AppState can reach up to
+from a control, or must be enqueue()ed.</p></div></div><p>Controls and AppStates often work together: An AppState can reach up to
 the application and <code>get</code> all Spatials from the rootNode that carry a
 specific Control, and perform a global action on them. Example: In
 BulletPhysics, all physical Spatials that carry RigidBodyControls are
@@ -358,7 +354,7 @@ Document</a></li></ul></div></article><div class="margin-vert--xl"><div class="r
 
 <script src="/wikidemo/styles.08ff7081.js"></script>
 
-<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+<script src="/wikidemo/runtime~main.7418f8ca.js"></script>
 
 <script src="/wikidemo/main.1b6aa70f.js"></script>
 
@@ -372,7 +368,7 @@ Document</a></li></ul></div></article><div class="margin-vert--xl"><div class="r
 
 <script src="/wikidemo/17896441.d065d5f5.js"></script>
 
-<script src="/wikidemo/fced939a.299bdabc.js"></script>
+<script src="/wikidemo/fced939a.6bc7dfa9.js"></script>
 
 
 </body>

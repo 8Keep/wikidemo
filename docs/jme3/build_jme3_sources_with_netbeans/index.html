@@ -18,7 +18,7 @@
 
 <link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
 
-<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+<link rel="preload" href="/wikidemo/runtime~main.7418f8ca.js" as="script">
 
 <link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
 
@@ -32,7 +32,7 @@
 
 <link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
 
-<link rel="preload" href="/wikidemo/26d61380.bdef6048.js" as="script">
+<link rel="preload" href="/wikidemo/26d61380.6e1217ce.js" as="script">
 
 </head>
 <body>
@@ -43,10 +43,8 @@ features! This document shows how to download, set up, build, and run
 the latest development version from the sources. These instructions work
 in NetBeans IDE 8.x or better.</p><ol><li><p>Have a <a href="https://github.com/">GitHub account</a>.</p></li><li><p>Are a jMonkeyEngine project member.</p></li></ol><p>If you are not a member, you fork the repository into your GitHub
 account and issue pull requests from there.</p><p>To fork the jMonkeyEngine repository into your GitHub Account:</p><ol><li><p>Navigate to <a href="https://github.com/jMonkeyEngine/jmonkeyengine">https://github.com/jMonkeyEngine/jmonkeyengine</a>.</p></li><li><p>In the menu at the top of the page, select the <img src="./images/icons/code-fork.png" alt="code
-fork"><strong>Fork</strong> button.</p></li></ol><p>::: {.note}
-In the following, always replace ~ with the path to your home
-directory.
-:::</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="downloading-the-sources"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#downloading-the-sources" title="Direct link to heading">#</a>Downloading the Sources</h1><p>Clone the sources from the repository.</p><ol><li><p>In NetBeans, go to <code>Team Git Clone</code>.</p><p>a.  Repository URL:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">    https://github.com/jMonkeyEngine/jmonkeyengine</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
+fork"><strong>Fork</strong> button.</p></li></ol><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>In the following, always replace ~ with the path to your home
+directory.</p></div></div><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="downloading-the-sources"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#downloading-the-sources" title="Direct link to heading">#</a>Downloading the Sources</h1><p>Clone the sources from the repository.</p><ol><li><p>In NetBeans, go to <code>Team Git Clone</code>.</p><p>a.  Repository URL:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-undefined codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">    https://github.com/jMonkeyEngine/jmonkeyengine</span></div><div class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block">
 </span></div><div class="token-line" style="color:#393A34"><span class="token plain">::: {.important}</span></div><div class="token-line" style="color:#393A34"><span class="token plain">Use the URL to your repository fork and clone your fork if a</span></div><div class="token-line" style="color:#393A34"><span class="token plain">non-member and you wish to contribute.</span></div><div class="token-line" style="color:#393A34"><span class="token plain">:::</span></div></div></div></div></div><p>b.  You can leave user/pw blank for anonymous access unless you are
 going to <code>push</code> a <code>commit</code>.</p><p>c.  Specify Destination Folder.\
 Local Folder: <code>~/NetBeansProjects]/jmonkeyengine</code></p><p>d.  Click Next.</p></li><li><p>Select:</p><ul><li><p>✓ master*</p><p>a.  Click Next.</p></li></ul></li><li><p>Verify the auto-fill information in the <code>Destination Directory</code>
@@ -63,9 +61,7 @@ pull request again.</p></li><li><p>Select Rebase And Merge from the drop down me
 <strong>your fork</strong>:</p><ol><li><p>Go to your version of the repository on GitHub.</p></li><li><p>Click the New Pull Request button at the top.</p></li><li><p>Note that the jMonkeyEngine repository will be on the left and your
 repository will be on the right.</p></li><li><p>Click the green button Create pull request.</p></li><li><p>Give a succinct and informative title, in the comment field give a
 short explanation of the changes.</p></li><li><p>Click the green button Create pull request again to submit the
-request.</p></li></ol><p>::: {.note}
-::: {.title}
-Everyone
+request.</p></li></ol><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"></div></div><p>Everyone
 :::</p><p>See <a href="https://github.com/jMonkeyEngine/jmonkeyengine/blob/master/CONTRIBUTING.md">How to contribute to
 jMonkeyEngine</a>
 before submitting a P/R.
@@ -112,7 +108,7 @@ have to download the javadoc/sources from their home page separately).</p><p>Sou
 
 <script src="/wikidemo/styles.08ff7081.js"></script>
 
-<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+<script src="/wikidemo/runtime~main.7418f8ca.js"></script>
 
 <script src="/wikidemo/main.1b6aa70f.js"></script>
 
@@ -126,7 +122,7 @@ have to download the javadoc/sources from their home page separately).</p><p>Sou
 
 <script src="/wikidemo/17896441.d065d5f5.js"></script>
 
-<script src="/wikidemo/26d61380.bdef6048.js"></script>
+<script src="/wikidemo/26d61380.6e1217ce.js"></script>
 
 
 </body>

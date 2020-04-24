@@ -18,7 +18,7 @@
 
 <link rel="preload" href="/wikidemo/styles.08ff7081.js" as="script">
 
-<link rel="preload" href="/wikidemo/runtime~main.0f38d2b7.js" as="script">
+<link rel="preload" href="/wikidemo/runtime~main.7418f8ca.js" as="script">
 
 <link rel="preload" href="/wikidemo/main.1b6aa70f.js" as="script">
 
@@ -32,7 +32,7 @@
 
 <link rel="preload" href="/wikidemo/17896441.d065d5f5.js" as="script">
 
-<link rel="preload" href="/wikidemo/3e73a88b.91b20b82.js" as="script">
+<link rel="preload" href="/wikidemo/3e73a88b.24ab1001.js" as="script">
 
 </head>
 <body>
@@ -69,10 +69,8 @@ streamed sound by setting the boolean to true:</li></ul><div class="mdxCodeBlock
 | getVolume()                       | Returns the volume.               |
 +-----------------------------------+-----------------------------------+
 | getPitch()                        | Returns the pitch.                |
-+-----------------------------------+-----------------------------------+</p><p>::: {.note}
-There are other obvious getters to poll the status of all corresponding
-setters listed here.
-:::</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="setting-audionode-properties"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#setting-audionode-properties" title="Direct link to heading">#</a>Setting AudioNode Properties</h1><p>+-----------------------------------+-----------------------------------+
++-----------------------------------+-----------------------------------+</p><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>There are other obvious getters to poll the status of all corresponding
+setters listed here.</p></div></div><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="setting-audionode-properties"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#setting-audionode-properties" title="Direct link to heading">#</a>Setting AudioNode Properties</h1><p>+-----------------------------------+-----------------------------------+
 | AudioNode Method                  | Usage                             |
 +===================================+===================================+
 | setTimeOffset(0.5f)               | Play the sound starting at a 0.5  |
@@ -178,10 +176,8 @@ Positional 3D sounds require an <code>AudioListener</code> object in the scene
 Directional 3D sounds require an AudioListener object in the scene
 (representing the player&#x27;s ears).
 :::</p><h1><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="play-pause-stop"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#play-pause-stop" title="Direct link to heading">#</a>Play, Pause, Stop</h1><p>You play, pause, and stop a node called myAudioNode by using the
-respective of the following three methods:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">myAudioNode</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">play</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">myAudioNode</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">pause</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">myAudioNode</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">stop</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><p>::: {.note}
-Whether an Audio Node plays continuously or only once, depends on the
-Loop properties you have set above!
-:::</p><p>You can also start playing instances of an AudioNode. Use the
+respective of the following three methods:</p><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">myAudioNode</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">play</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">myAudioNode</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">pause</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><div class="mdxCodeBlock_iHAB"><div class="codeBlockContent_32p_"><button type="button" aria-label="Copy code to clipboard" class="copyButton_1BYj">Copy</button><div tabindex="0" class="prism-code language-java codeBlock_19pQ"><div class="codeBlockLines_2n9r" style="color:#393A34;background-color:#f6f8fa"><div class="token-line" style="color:#393A34"><span class="token plain">myAudioNode</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">stop</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">;</span></div></div></div></div></div><div class="admonition admonition-note alert alert--secondary"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</h5></div><div class="admonition-content"><p>Whether an Audio Node plays continuously or only once, depends on the
+Loop properties you have set above!</p></div></div><p>You can also start playing instances of an AudioNode. Use the
 <code>playInstance()</code> method if you need to play the same AudioNode multiple
 times, possibly simulatenously. Note that changes to the parameters of
 the original AudioNode do not affect the instances that are already
@@ -213,7 +209,7 @@ you get the message
 
 <script src="/wikidemo/styles.08ff7081.js"></script>
 
-<script src="/wikidemo/runtime~main.0f38d2b7.js"></script>
+<script src="/wikidemo/runtime~main.7418f8ca.js"></script>
 
 <script src="/wikidemo/main.1b6aa70f.js"></script>
 
@@ -227,7 +223,7 @@ you get the message
 
 <script src="/wikidemo/17896441.d065d5f5.js"></script>
 
-<script src="/wikidemo/3e73a88b.91b20b82.js"></script>
+<script src="/wikidemo/3e73a88b.24ab1001.js"></script>
 
 
 </body>
