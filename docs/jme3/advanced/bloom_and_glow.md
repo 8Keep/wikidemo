@@ -6,7 +6,7 @@ rendered scene, blurred and finally added up to the render.
 Those images gives an idea of what bloom does. The left image has no
 bloom effect, the right image does.\
 ![No
-bloom](/wikidemo/images/jme3/advanced/nobloomsky.png)![Bloom](/wikidemo/images/jme3/advanced/blomsky.png)
+bloom](../../../images/jme3/advanced/nobloomsky.png)![Bloom](../../../images/jme3/advanced/blomsky.png)
 
 Bloom Usage
 ===========
@@ -28,31 +28,12 @@ Bloom Usage
 
 Here are the parameters that you can tweak :
 
-+-----------------+-----------------+-----------------+-----------------+
-| Parameter       | Method          | Default         | Description     |
-+=================+=================+=================+=================+
-| blur scale      | `setBl          | 1.5f            | the scale of    |
-|                 | urScale(float)` |                 | the bloom       |
-|                 |                 |                 | effect, but be  |
-|                 |                 |                 | careful, high   |
-|                 |                 |                 | values does     |
-|                 |                 |                 | artifacts       |
-+-----------------+-----------------+-----------------+-----------------+
-| exposure Power  | `setExposu      | 5.0f            | the glowing     |
-|                 | rePower(float)` |                 | channel color   |
-|                 |                 |                 | is raised to    |
-|                 |                 |                 | the value power |
-+-----------------+-----------------+-----------------+-----------------+
-| exposure        | `setExposur     | 0.0f            | the threshold   |
-| cut-off         | eCutOff(float)` |                 | of color to     |
-|                 |                 |                 | bloom during    |
-|                 |                 |                 | extraction      |
-+-----------------+-----------------+-----------------+-----------------+
-| bloom intensity | `setBloomIn     | 2.0f            | the resulting   |
-|                 | tensity(float)` |                 | bloom value is  |
-|                 |                 |                 | multiplied by   |
-|                 |                 |                 | this intensity  |
-+-----------------+-----------------+-----------------+-----------------+
+| Parameter        | Method                     | Default | Description                                                               |
+| ---------------- | -------------------------- | ------- | ------------------------------------------------------------------------- |
+| blur scale       | `setBlurScale(float)`      | 1.5f    | the scale of the bloom effect, but be careful, high values does artifacts |
+| exposure Power   | `setExposurePower(float)`  | 5.0f    | the glowing channel color is raised to the value power                    |
+| exposure cut-off | `setExposureCutOff(float)` | 0.0f    | the threshold of color to bloom during extraction                         |
+| bloom intensity  | `setBloomIntensity(float)` | 2.0f    | the resulting bloom value is multiplied by this intensity                 |
 
 You'll probably need to adjust those parameters depending on your scene.
 
@@ -69,8 +50,8 @@ Let's take the hover tank example bundled with JME3 test data.\
 Here you can see the diffuse map of the tank, and the associated glow
 map that only contains the parts of the texture that will glow and their
 glowing color:\
-![Tank diffuse map](/wikidemo/images/jme3/advanced/tank_diffuse_ss.png) ![Tank glow
-map](/wikidemo/images//jme3/advanced/tank_glow_map_ss.png)
+![Tank diffuse map](../../../images/jme3/advanced/tank_diffuse_ss.png) ![Tank glow
+map](../../../images//jme3/advanced/tank_glow_map_ss.png)
 
 Glow maps work with Lighting.j3md, Particles.j3md and Unshaded.j3md
 material definitions. The tank material looks like this :
@@ -112,7 +93,7 @@ Usage
       viewPort.addProcessor(fpp);
 
 Here is the result :\
-![Glowing hover tank](/wikidemo/images//jme3/advanced/tanlglow1.png)
+![Glowing hover tank](../../../images//jme3/advanced/tanlglow1.png)
 
 Bloom with a glow color
 =======================
@@ -147,8 +128,8 @@ Usage
 Here is the result on Oto's plasma ball (before and after) :\
 
 ![Oto's plasma ball is just a big
-pea](/wikidemo/images//jme3/advanced/otonobloom.png)![Oto's plasma ball radiates
-incredible power!!!](/wikidemo/images//jme3/advanced/otoglow.png)
+pea](../../../images//jme3/advanced/otonobloom.png)![Oto's plasma ball radiates
+incredible power!!!](../../../images//jme3/advanced/otoglow.png)
 
 Hints and tricks
 ================

@@ -28,7 +28,7 @@ All these physical properties can be simulated in JME3. Let's have a
 look at a simulation of physical forces in this example where you shoot
 cannon balls at a brick wall.
 
-![beginner-physics.png](/images/jme3/beginner/beginner-physics.png)
+![beginner-physics.png](../../../images/jme3/beginner/beginner-physics.png)
 
 :::note
 To use the example assets in a new jMonkeyEngine SDK project,

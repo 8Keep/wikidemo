@@ -1,4 +1,4 @@
-![custom\_mesh.png](/wikidemo/images//jme3/advanced/custom_mesh.png)
+![custom\_mesh.png](../../../images//jme3/advanced/custom_mesh.png)
 
 Use the Mesh class to create custom shapes that go beyond Quad, Box,
 Cylinder, and Sphere, even procedural shapes are possible. Thank you to

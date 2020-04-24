@@ -19,7 +19,7 @@ more related code samples under [Mouse
 Picking](../../jme3/advanced/mouse_picking) and [Collision and
 Intersection](../../jme3/advanced/collision_and_intersection).
 
-![beginner-picking.png](/images/jme3/beginner/beginner-picking.png)
+![beginner-picking.png](../../../images/jme3/beginner/beginner-picking.png)
 
 Sample Code
 ===========

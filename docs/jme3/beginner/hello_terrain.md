@@ -7,7 +7,7 @@ can be quite slow. This tutorial explains how to create fast-rendering
 terrains from heightmaps, and how to use texture splatting to make the
 terrain look good.
 
-![beginner-terrain.png](/images/jme3/beginner/beginner-terrain.png)
+![beginner-terrain.png](../../../images/jme3/beginner/beginner-terrain.png)
 
 :::note
 If you get an error when trying to create your `ImageBasedHeightMap`
@@ -132,7 +132,7 @@ In Java, a heightmap is a float array containing height values between
 0f and 255f. Here is a very simple example of a terrain generated from a
 heightmap with 5x5=25 height values.
 
-![terrain-from-float-array.png](/images/jme2/terrain-from-float-array.png)
+![terrain-from-float-array.png](../../../images/jme2/terrain-from-float-array.png)
 
 Important things to note:
 
@@ -158,7 +158,7 @@ image (heightmap) that was used as a base to generate the depicted
 terrain. To make the hilly shape better visible, the mountain tops are
 colored white, valleys brown, and the areas inbetween green:
 
-![terrain-from-heightmap.png](/images/jme2/terrain-from-heightmap.png)
+![terrain-from-heightmap.png](../../../images/jme2/terrain-from-heightmap.png)
 
 In a real game, you will want to use more complex and smoother terrains
 than the simple heightmaps shown here. Heightmaps typically have square
@@ -184,7 +184,7 @@ following properties:
 
 -   Save the map as a .jpg or .png image file
 
-![mountains512.png](/images/jme3/beginner/mountains512.png)
+![mountains512.png](../../../images/jme3/beginner/mountains512.png)
 
 The file `mountains512.png` that you see here is a typical example of an
 image heightmap.
@@ -243,9 +243,9 @@ Before you can start painting, you have to make a few decisions:
 1.  Choose three textures. For example grass.jpg, dirt.jpg, and
     road.jpg.
 
-    <img src="/images/jme3/beginner/grass.jpg" width="200px"/>
-    <img src="/images/jme3/beginner/dirt.jpg" width="200px"/>
-    <img src="/images/jme3/beginner/road.jpg" width="200px"/>
+    <img src="../../../images/jme3/beginner/grass.jpg" width="200px"/>
+    <img src="../../../images/jme3/beginner/dirt.jpg" width="200px"/>
+    <img src="../../../images/jme3/beginner/road.jpg" width="200px"/>
 
 2.  You "paint" three texture layers by using three colors: Red, blue
     and, green. You arbitrarily decide that...
@@ -278,9 +278,9 @@ Now you start painting the texture:
         landscape.
 
 4.  The end result should look similar to this:
-    <img src="/images/jme3/beginner/mountains512.png" width="200px"/>
+    <img src="../../../images/jme3/beginner/mountains512.png" width="200px"/>
     ⇒
-    <img src="/images/jme3/beginner/alphamap.png" width="200px"/>
+    <img src="../../../images/jme3/beginner/alphamap.png" width="200px"/>
 
 Looking at the Texturing Code
 -----------------------------

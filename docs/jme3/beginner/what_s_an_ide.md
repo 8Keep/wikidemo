@@ -27,7 +27,7 @@ you, the person using these tools. There is an expectation that you, the
 person using these tools, already know how to program in Java.
 :::
 
-![jme3-jmonkeyplatform.png](/images/sdk/jme3-jmonkeyplatform.png)
+![jme3-jmonkeyplatform.png](../../../images/sdk/jme3-jmonkeyplatform.png)
 
 The Past: A World Without IDEs
 ==============================
@@ -162,7 +162,7 @@ The jMonkeyEngine SDK is the same as NetBeans IDE, plus
 
 -   And more...
 
-![jmonkeyplatform-docu-1.png](/images/sdk/jmonkeyplatform-docu-1.png)
+![jmonkeyplatform-docu-1.png](../../../images/sdk/jmonkeyplatform-docu-1.png)
 
 You see how such a unique IDE can speed up your development process
 drastically, it's worth giving it a try!

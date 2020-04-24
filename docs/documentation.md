@@ -9,8 +9,8 @@ game project going. You can search the contents of this wiki using the
 
 You are also very welcome to fix mistakes or spelling as well as unclear
 paragraphs using the “Wiki” menu “Edit” ![pencil
-square](/wikidemo/images/icons/pencil-square.png) and “Add” ![plus
-square](/wikidemo/images/icons/plus-square.png) buttons. You have to be logged
+square](../images/icons/pencil-square.png) and “Add” ![plus
+square](../images/icons/plus-square.png) buttons. You have to be logged
 into GitHub to edit the wiki. You can learn more about editing and
 contributing under the [Contribute](#contribute#) heading.
 
@@ -47,13 +47,65 @@ minor rules you will need to observe.
 [requirements](jme3/requirements).** Then choose one of these
 options:
 
-|                 |  Recommended                     | Optional                         | Optional                        |
-|-----------------|----------------------------------|----------------------------------|---------------------------------|
-| You want to…    | Get started with jMonkeyEngine   | Use jMonkeyEngine in another IDE | Build custom engine from sources|
-| Then download…  | jMonkeyEngine SDK                | Binaries                         | Engine Sources                  |
-| You receive…    | SDK, binaries, javadoc, sources  | Binaries, javadoc, sources       | Sources                         |
-| Learn more here…| <ul><li>Using the SDK</li><li>Project Creation</li></ul> | <ul><li>Setting up jME3 with Maven and Gradle compatible IDEs</li><li>Setting up JME3 in the NetBeans IDE</li><li>Setting up JME3 in the Eclipse IDE</li></ul> | <ul><li>Building JME3 from the Sources</li><li>Building JME3 from the sources with NetBeans</li><li>Setting up JME3 on the commandline</li></ul>
-| Learn about the source structure |      
+<table>
+  <colgroup>
+    <col/>
+    <col/>
+    <col/>
+    <col/>
+  </colgroup>
+  <thead>
+    <tr>
+    <th></th>
+    <th>Recommended</th>
+    <th>Optional</th>
+    <th>Optional</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td><p>You want to…</p></td>
+    <td><p>Get started with jMonkeyEngine</p></td>
+    <td><p>Use jMonkeyEngine in another IDE</p></td>
+    <td><p>Build custom engine from sources</p></td>
+    </tr>
+    <tr>
+    <td><p>Then download…</p></td>
+    <td><p><a href="https://github.com/jMonkeyEngine/sdk/releases">jMonkeyEngine SDK</a></p></td>
+    <td><p><a href="https://github.com/jMonkeyEngine/jmonkeyengine/releases">Binaries</a></p></td>
+    <td><p><a href="https://github.com/jMonkeyEngine/jmonkeyengine">Engine Sources</a></p></td>
+    </tr>
+    <tr>
+    <td><p>You receive…</p></td>
+    <td><p>SDK, binaries, javadoc, sources</p></td>
+    <td><p>Binaries, javadoc, sources</p></td>
+    <td><p>Sources</p></td>
+    </tr>
+    <tr>
+    <td><p>Learn more here…</p></td>
+    <td><ul>
+    <li><p><a href="sdk">Using the SDK</a></p></li>
+    <li><p><a href="sdk/project_creation">Project Creation</a></p></li>
+    </ul></td>
+    <td><ul>
+    <li><p><a href="jme3/maven">Setting up jME3 with Maven and Gradle compatible IDEs</a></p></li>
+    <li><p><a href="jme3/setting_up_netbeans_and_jme3">Setting up JME3 in the NetBeans IDE</a></p></li>
+    <li><p><a href="jme3/setting_up_jme3_in_eclipse">Setting up JME3 in the Eclipse IDE</a></p></li>
+    </ul></td>
+    <td><ul>
+    <li><p><a href="jme3/build_from_sources">Building JME3 from the Sources</a></p></li>
+    <li><p><a href="jme3/build_jme3_sources_with_netbeans">Building JME3 from the sources with NetBeans</a></p></li>
+    <li><p><a href="jme3/simpleapplication_from_the_commandline">Setting up JME3 on the commandline</a></p></li>
+    </ul></td>
+    </tr>
+    <tr>
+    <td><p><a href="jme3/jme3_source_structure">Learn about the source structure</a></p></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    </tr>
+  </tbody>
+</table>
 
 
 \* The SDK creates Ant-based projects that any Java IDE can import. We
@@ -68,11 +120,11 @@ format.
 After downloading and installing, [bookmark the jME Documentation
 page](jme3) and start writing your first game\!
 
-| Tutorials                                                                   | jMonkeyEngine SDK                                              | Other Documentation                                   |
-| --------------------------------------------------------------------------- | -------------------------------------------------------------- | ----------------------------------------------------- |
-| [jME3 beginner tutorials](jme3.xml#tutorials-for-beginners)                 | [jMonkeyEngine SDK Documentation and Video Tutorials](sdk) | [Full API JavaDoc](https://javadoc.jmonkeyengine.org) |
-| [jME3 intermediate articles](jme3.xml#documentation-for-intermediate-users) | [jMonkeyEngine SDK - the Comic :-)](sdk/comic)             | [Blender Modeling Guide](jme3/external/blender)   |
-| [jME3 advanced documentation](jme3.xml#documentation-for-advanced-users)    |                                                                | [Answers to Frequently Asked Questions](jme3/faq) |
+| Tutorials                                                               | jMonkeyEngine SDK                                          | Other Documentation                                   |
+| ----------------------------------------------------------------------- | ---------------------------------------------------------- | ----------------------------------------------------- |
+| [jME3 beginner tutorials](jme3#tutorials-for-beginners)                 | [jMonkeyEngine SDK Documentation and Video Tutorials](sdk) | [Full API JavaDoc](https://javadoc.jmonkeyengine.org) |
+| [jME3 intermediate articles](jme3#documentation-for-intermediate-users) | [jMonkeyEngine SDK - the Comic :-)](sdk/comic)             | [Blender Modeling Guide](jme3/external/blender)       |
+| [jME3 advanced documentation](jme3#documentation-for-advanced-users)    |                                                            | [Answers to Frequently Asked Questions](jme3/faq)     |
 
 # Contribute
 

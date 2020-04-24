@@ -65,7 +65,7 @@ To start writing your own projects, create a new file from the
 not necessarily the recommended way to build an app with JME, they are
 just simple one class test case that showcase a feature.
 
-![beginner-physics.png](jme3/beginner/beginner-physics.png)
+![beginner-physics.png](../images/jme3/beginner/beginner-physics.png)
 
   - Make sure you are familiar with basic [3D game development
     concepts](jme3/terminology) such as [the scene

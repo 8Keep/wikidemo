@@ -1,4 +1,4 @@
-![hellovectorsumm2.png](/images/jme3/beginner/hellovectorsumm2.png)
+![hellovectorsumm2.png](../../../images/jme3/beginner/hellovectorsumm2.png)
 
 HelloVectorSumm.java
 

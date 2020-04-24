@@ -10,7 +10,7 @@ materials is covered in [Hello
 Asset](../../jme3/beginner/hello_asset). In this tutorial you learn
 to create and use custom JME3 Material Definitions.
 
-![beginner-materials.png](/images/jme3/beginner/beginner-materials.png)
+![beginner-materials.png](../../../images/jme3/beginner/beginner-materials.png)
 
 :::note
 To use the example assets in a new jMonkeyEngine SDK project,
@@ -266,34 +266,34 @@ shiny bumpy rock.
 
     a.  Set a standard rocky texture in the `DiffuseMap` layer.
 
-        ![Pond.jpg](https://github.com/jMonkeyEngine/jmonkeyengine/raw/445f7ed010199d30c484fe75bacef4b87f2eb38e/jme3-testdata/src/main/resources/Textures/Terrain/Pond/Pond.jpg)
+    ![Pond.jpg](https://github.com/jMonkeyEngine/jmonkeyengine/raw/445f7ed010199d30c484fe75bacef4b87f2eb38e/jme3-testdata/src/main/resources/Textures/Terrain/Pond/Pond.jpg)
 
-        ```java
-            sphereMat.setTexture("DiffuseMap",
-                assetManager.loadTexture("Textures/Terrain/Pond/Pond.jpg"));
-        ```
+    ```java
+        sphereMat.setTexture("DiffuseMap",
+            assetManager.loadTexture("Textures/Terrain/Pond/Pond.jpg"));
+    ```
 
     b.  Set the `NormalMap` layer that contains the bumpiness. The
         NormalMap was generated for this particular DiffuseMap with a
         special tool (e.g. Blender).
 
-        ![Pond\_normal.png](https://github.com/jMonkeyEngine/jmonkeyengine/raw/445f7ed010199d30c484fe75bacef4b87f2eb38e/jme3-testdata/src/main/resources/Textures/Terrain/Pond/Pond_normal.png)
+    ![Pond\_normal.png](https://github.com/jMonkeyEngine/jmonkeyengine/raw/445f7ed010199d30c484fe75bacef4b87f2eb38e/jme3-testdata/src/main/resources/Textures/Terrain/Pond/Pond_normal.png)
 
-        ```java
-            sphereMat.setTexture("NormalMap",
-                assetManager.loadTexture("Textures/Terrain/Pond/Pond_normal.png"));
-        ```
+    ```java
+        sphereMat.setTexture("NormalMap",
+            assetManager.loadTexture("Textures/Terrain/Pond/Pond_normal.png"));
+    ```
 
     c.  Set the Material's Shininess to a value between 1 and 128. For a
         rock, a low fuzzy shininess is appropriate. Use material colors
         to define the shiny Specular color.
 
-        ```java
-            sphereMat.setBoolean("UseMaterialColors",true);
-            sphereMat.setColor("Diffuse",ColorRGBA.White);  // minimum material color
-            sphereMat.setColor("Specular",ColorRGBA.White); // for shininess
-            sphereMat.setFloat("Shininess", 64f); // [1,128] for shininess
-        ```
+    ```java
+        sphereMat.setBoolean("UseMaterialColors",true);
+        sphereMat.setColor("Diffuse",ColorRGBA.White);  // minimum material color
+        sphereMat.setColor("Specular",ColorRGBA.White); // for shininess
+        sphereMat.setFloat("Shininess", 64f); // [1,128] for shininess
+    ```
 
 3.  Assign your newly created material to the Geometry.
 
@@ -323,23 +323,37 @@ Default Material Definitions
 As you have seen, you can find the following default materials in
 `jme/core-data/Common/MatDefs/…`.
 
-+-------------+---------------------------+---------------------------+
-| Default     | Usage                     | Parameters                |
-| Definition  |                           |                           |
-+=============+===========================+===========================+
-| `Misc/Uns   | Colored: Use with         | Color : Color\            |
-| haded.j3md` | mat.setColor() and        | ColorMap : Texture2D      |
-|             | ColorRGBA.\               |                           |
-|             | Textured: Use with        |                           |
-|             | mat.setTexture() and      |                           |
-|             | Texture.                  |                           |
-+-------------+---------------------------+---------------------------+
-| `Light/Lig  | Use with shiny Textures,  | Ambient, Diffuse,         |
-| hting.j3md` | Bump- and NormalMaps      | Specular : Color\         |
-|             | textures.\                | DiffuseMap, NormalMap,    |
-|             | Requires a light source.  | SpecularMap : Texture2D\  |
-|             |                           | Shininess : Float         |
-+-------------+---------------------------+---------------------------+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Default Definition</th>
+<th>Usage</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><code>Misc/Unshaded.j3md</code></p></td>
+<td><p>Colored: Use with mat.setColor() and ColorRGBA.<br />
+Textured: Use with mat.setTexture() and Texture.</p></td>
+<td><p>Color : Color<br />
+ColorMap : Texture2D</p></td>
+</tr>
+<tr class="even">
+<td><p><code>Light/Lighting.j3md</code></p></td>
+<td><p>Use with shiny Textures, Bump- and NormalMaps textures.<br />
+Requires a light source.</p></td>
+<td><p>Ambient, Diffuse, Specular : Color<br />
+DiffuseMap, NormalMap, SpecularMap : Texture2D<br />
+Shininess : Float</p></td>
+</tr>
+</tbody>
+</table>
 
 For a game, you create custom Materials based on these existing
 MaterialDefintions -- as you have just seen in the example with the

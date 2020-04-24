@@ -4,7 +4,7 @@ title: SDK
 ---
 # Why jMonkeyEngine SDK?
 
-![jme3-jmonkeyplatform.png](/wikidemo/images/sdk/jme3-jmonkeyplatform.png)
+![jme3-jmonkeyplatform.png](../images/sdk/jme3-jmonkeyplatform.png)
 
 The jMonkeyEngine SDK (software development kit) is the recommended game
 development environment for the jMonkeyEngine 3 library.
@@ -88,8 +88,8 @@ info about installed plugins and generic IDE features.
   - [Video: Animation and Effect
     TrackEditing](http://www.youtube.com/watch?v=D7JM4VMKqPc)
 
-![jmonkeyplatform-docu-4.png](/wikidemo/images/sdk/jmonkeyplatform-docu-4.png)  
-![jme3-built-in-help.png](/wikidemo/images/jme3-built-in-help.png)
+![jmonkeyplatform-docu-4.png](../images/sdk/jmonkeyplatform-docu-4.png)  
+![jme3-built-in-help.png](../images/jme3-built-in-help.png)
 
 ## SDK User Guide
 
@@ -161,7 +161,7 @@ future](https://github.com/jMonkeyEngine/jmonkeyengine/issues/198)
 
 </div>
 
-![jmonkey-sdk-workflow.png](/wikidemo/images/jme3/jmonkey-sdk-workflow.png)
+![jmonkey-sdk-workflow.png](../images/jme3/jmonkey-sdk-workflow.png)
 
 # Advanced Usage
 

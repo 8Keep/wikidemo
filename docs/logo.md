@@ -15,11 +15,11 @@ thread](http://jmonkeyengine.org/groups/general-2/forum/topic/jme-logo-3/).
 
 ## Good
 
-![yes.png](/wikidemo/images/yes.png)
+![yes.png](../images/yes.png)
 
 ## Bad
 
-![no.png](/wikidemo/images/no.png)
+![no.png](../images/no.png)
 
 # Logos
 
