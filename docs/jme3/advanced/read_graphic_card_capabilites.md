@@ -12,7 +12,7 @@ Collection<Caps> caps = renderer.getCaps();
 Logger.getLogger(HelloWorld.class.getName()).log(Level.INFO, “Caps: {0}”, caps.toString());
 ```
 
-::: {.note}
+:::note
 Replace `HelloWorld` by the name of the class where you are using this
 line.
 :::

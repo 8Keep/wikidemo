@@ -7,7 +7,7 @@ for two reasons:
 -   2\. Use of styles to allow for global settings for all text using
     the Label class.
 
-::: {.note}
+:::note
 Style information can be overridden by any instance by using the
 Text/Font setters provided by the Element class
 :::

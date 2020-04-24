@@ -39,7 +39,7 @@ At this point, the button will use the following effect anytime the user
 mouseovers the button, as well as manage any setting required to execute
 the effect properly.
 
-::: {.note}
+:::note
 Some effects require a blend image (to pulse to and from in the above
 case)\
 Some require a blend color\

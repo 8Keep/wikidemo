@@ -68,7 +68,7 @@ Physics
 |                                   | bullet (not jbullet) on android.  |
 +-----------------------------------+-----------------------------------+
 
-::: {.note}
+:::note
 \* Only one of the physics libraries can be used at a time as they
 replace each other.
 
@@ -136,7 +136,7 @@ Structure of lib directory
 JME3 depends on the following JARs and native libraries in the `lib`
 directory. The JAR libraries must be on the classpath.
 
-::: {.note}
+:::note
 The jME3-**natives**.jar bundles contain the native libraries, those are
 necessary `.dll`, `.jnilib`, `lib.so` files. You do not need to manually
 include native libraries on the java.library.path! jME3 handles the
@@ -152,7 +152,7 @@ extraction of natives automatically via the JAR bundles.
     -   android, jME3-bullet-natives-android.jar,
         jME3-bullet-natives.jar, jarcontent (natives)
 
-        ::: {.note}
+        :::note
         **Only one version of jme3-jbullet OR jme3-bullet with "natives"
         library can be used.**
         :::

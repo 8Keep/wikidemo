@@ -123,7 +123,7 @@ Mixamo FBX Import
 
 4.  Select `Open`.
 
-::: {.note}
+:::note
 Generally, if at any time during the import and rigging process the
 model does not appear within the time specified in the dialog that is
 showing, something has gone wrong and you will have to restart the
@@ -141,7 +141,7 @@ be facing you. If not, fix your model in Blender before proceeding.
 2.  In this panel you will rig your model. Place the markers as shown in
     the Auto-Rigger dialog image.
 
-    ::: {.note}
+    :::note
     Remember that the model is facing you so its right is on your left.
     :::
 
@@ -297,7 +297,7 @@ future.
     it was TPose. .  Select the F button to save the action. .  Save
     your file with the same name as the action.
 
-::: {.note}
+:::note
 Mixamo sets the rotation mode of bones to `Quaternion` as is appropriate
 for preventing
 [`Gimbal Lock`](https://en.wikipedia.org/wiki/Gimbal_lock). Keep this in
@@ -444,7 +444,7 @@ You create a rigged animation file only one time per model.
     (small box) of the `3d Viewport`, and change it from `3d View` to
     `NLA Editor`. Our TPose action is now visible.
 
-    ::: {.note}
+    :::note
     If the action is not visible, navigate to the `Dope Sheet Editor`
     and from the `Action Editor` context, select the `Action`.
     :::

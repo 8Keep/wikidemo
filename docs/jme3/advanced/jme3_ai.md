@@ -59,7 +59,7 @@ The jme3 Artificial Intelligence Library contains:
     system that uses path-following and forces to move a character
     through its environment. Includes a test case as well.[^2] 
 
-::: {.note}
+:::note
 This scope of this tutorial is restricted to the NavMesh part of the
 library and expands upon the lessons taught in the
 [tutorials](../../jme3.xml#tutorials-for-beginners). It demonstrates the
@@ -168,7 +168,7 @@ it pertains to jme3AI.
     to appear at the edges and if it is more than that, the
     simplification starts to cut some corners.
 
-::: {.note}
+:::note
 A summary of the parameter effects is included in the comments of the
 [NavMeshState.java](https://github.com/jMonkeyEngine/doc-examples/blob/master/src/com/jme3/examples/jme3ai/ai/NavMeshState.java)
 file and discussed in the Procedural code examples that follow this
@@ -523,7 +523,7 @@ charNode.addControl(navControl);
 picked = navControl;
 ```
 
-::: {.note}
+:::note
 This tutorial uses a custom control, `NavigationControl`, that extends
 the `NavMeshPathfinder` class. As this is a tutorial, some extra
 variables are used for dispalying the navigation path and are not

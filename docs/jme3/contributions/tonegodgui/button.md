@@ -117,7 +117,7 @@ button.clearAltImages();
 button.setInterval(float intervalsPerSecond); // 0 deactivates
 ```
 
-::: {.note}
+:::note
 When not otherwise specified, use the primitive Element method for
 setting the text of a control. For instance, to set the text of the
 Button instance, you simply call:

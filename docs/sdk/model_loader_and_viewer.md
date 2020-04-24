@@ -63,7 +63,7 @@ Using the model files directly
 7.  Click on the lightbulb to turn on the light if you cannot see your
     model.
 
-::: {.note}
+:::note
 It is important that you export the model file and its textures to the
 correct assets folder before creating the j3o file because the paths for
 textures (and possibly other things) will be stored as absolute (to the
@@ -71,7 +71,7 @@ assets folder root) when you convert that model. This means the texture
 location should not change after the import.
 :::
 
-::: {.note}
+:::note
 If the SceneViewer doesn't work refer to [Troubleshooting jMonkeyEngine3
 SDK](../sdk/troubleshooting).
 :::

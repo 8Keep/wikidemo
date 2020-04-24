@@ -19,7 +19,7 @@ public void rotateGeometry(final Geometry geo, final Quaternion rot) {
 }
 ```
 
-::: {.note}
+:::note
 This example does not fetch the returned value by calling `get()` on the
 Future object returned from `enqueue()`. This means that the example
 method `rotateGeometry()` will return immediately and will not wait for

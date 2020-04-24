@@ -21,7 +21,7 @@ After the opaque bucket is drawn, the transparent bucket is drawn and it
 is sorted back to front. So in the ideal case it would appear exactly as
 in this picture.
 
-::: {.note}
+:::note
 Sorting is done at the object level and it can never be perfect. It is
 impossible to properly sort objects by distance in the general case even
 if they were just triangles. Simply imagine intersecting triangles and
@@ -38,7 +38,7 @@ This is what will happen if you put all of your objects in the opaque
 buffer. JME will sort them front to back and you will get these strange
 \'windows\' into your background.
 
-::: {.note}
+:::note
 Because sorting is done at the object level, you may have triangle to
 triangle overlap even within the same mesh if it is non-convex. Think of
 a glass donut where the near surface triangles are drawn before the

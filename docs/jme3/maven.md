@@ -33,7 +33,7 @@ The following artifacts are currently available (version
 -   jme3-bullet - Physics support using native bullet, needs
     jme3-bullet-native or jme3-bullet-native-android (beta)
 
-    ::: {.note}
+    :::note
     **Only one version of jme3-jbullet OR jme3-bullet with a single
     "natives" library can be used.**
     :::
@@ -66,7 +66,7 @@ The following artifacts are currently available (version
 -   jme3-jbullet - Physics support using jbullet (desktop only, not
     available in JCenter)
 
-    ::: {.note}
+    :::note
     **Only one version of jme3-jbullet OR jme3-bullet with a single
     "natives" library can be used.**
     :::

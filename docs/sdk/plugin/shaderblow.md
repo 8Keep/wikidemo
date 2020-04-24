@@ -41,7 +41,7 @@ shaders much better.
 
     -   Texture Bombing (added by \@wezrule)
 
-::: {.note}
+:::note
 Official Forum:
 [https://hub.jmonkeyengine.org/forum/t/shaderblow-project/26655](https://hub.jmonkeyengine.org/t/shaderblow-project/26655)
 Or you can use the forum threads of shaders.
@@ -159,7 +159,7 @@ Features:
     fade to black from the inner to outer ring. Any part of the frame
     outside of the outer ring would be completely black.
 
-::: {.note}
+:::note
 I chose to clamp this value inside the frag shader code instead of using
 java code because I thought this way is faster (better from preformace
 point of view). You can clamp this values using java code if you want.
@@ -336,7 +336,7 @@ The shader requires 2 parameters:
     -   the second value is an int use as an inversion switch, 1 to
         invert the dissolve/discard, 0 to leave as is.
 
-::: {.note}
+:::note
 Dissolver is based on Common/MatDefs/Lighting.j3md. So, all
 Common/MatDefs/Lighting.j3md features should be available on the
 dissolver too.

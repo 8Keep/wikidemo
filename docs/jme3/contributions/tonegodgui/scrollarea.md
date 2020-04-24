@@ -27,7 +27,7 @@ ScrollArea scrollArea = new ScrollArea(
 );
 ```
 
-::: {.note}
+:::note
 The ScrollArea implements Vertical Scrolling only. Why? Because I was
 lazy. Eventually I will add Horizontal scrolling as well.
 :::

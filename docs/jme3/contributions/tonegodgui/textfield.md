@@ -22,7 +22,7 @@ functionality:
 
 -   Cut & Paste
 
-::: {.note}
+:::note
 This control is still a work in progress and will be updated as either
 time permits or issues arise. There is a known issue with the Cut &
 Paste function as of right now and it has been disabled.

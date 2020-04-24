@@ -121,7 +121,7 @@ mainBehaviour.addBehavior(steer);
 myAgent.setMainBehavior(mainBehavior);
 ```
 
-::: {.note}
+:::note
 Note that you can have nested containers, like is shown in the following
 example:
 :::
@@ -154,7 +154,7 @@ To optimize the process speed add the behaviors with the lowest priority
 first.
 :::
 
-::: {.note}
+:::note
 The layer and the min length to consider the behavior invalid are 0 by
 default.
 :::
@@ -214,7 +214,7 @@ resultant velocity for the agent:
 The braking force must be a float contained in the \[0,1\] interval
 :::
 
-::: {.note}
+:::note
 0 means the maximum braking force and 1 No braking force
 :::
 

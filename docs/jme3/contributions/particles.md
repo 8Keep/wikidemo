@@ -202,7 +202,7 @@ quad and as a result can allow any size on the screen and any
 orientation. The following example combines two separate particle
 emitters to produce a spell-like effect.
 
-::: {.note}
+:::note
 The flame image from before is used for the second emitter, the first
 emitter uses this image which you can download and use:
 
@@ -404,7 +404,7 @@ The previous mesh examples all use simple 2d quads to display images.
 There is another mesh type though, the TemplateMesh, which allows fully
 featured 3d particles to be used.
 
-::: {.note}
+:::note
 There is a rock texture available in the jME3 test data, or you can
 substitute any other suitable texture. The model for this example is:
 [FracturedCube.j3o](http://www.zero-separation.com/particles/FracturedCube.j3o)

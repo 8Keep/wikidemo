@@ -23,7 +23,7 @@ Use of glTF (or another standard format) has a significant advantage as
 new versions of Blender with significant enhancements are released
 fairly regularly.
 
-::: {.note}
+:::note
 Blender 2.7 had a number of problems in exporting glTF; these notes
 refer exclusively to Blender 2.8+
 :::
@@ -124,7 +124,7 @@ unless they are part of an animation. To include shape keys in the
 export, select the `Shape Keys` option in the `Animation` tab of the
 glTF export options.
 
-::: {.note}
+:::note
 Shape keys are supported as of jME version 3.3.0-beta2+. Use the
 PBRLighting.j3md material definition when doing so.
 :::

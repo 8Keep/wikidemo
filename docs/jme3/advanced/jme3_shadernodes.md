@@ -184,7 +184,7 @@ All that is not between \[\] is mandatory.
     -   **VarName** : the name of the variable. Note that you can't have
         several outputs with the same name.
 
-::: {.note}
+:::note
 If you use the same name for an input and an ouput, the generator will
 consider them as the SAME variable so they should be of the same glsl
 type.
@@ -248,7 +248,7 @@ NumberOfElement **HAS** to be declared in the material definition as a
 material parameter. It will be mapped to a define and used in the
 shader.
 
-::: {.note}
+:::note
 If this value change the shader will have to be recompiled, due to the
 fact that it's mapped to a define.
 :::
@@ -611,7 +611,7 @@ All inputs are mapped here :
     Global color variable. this is defaulted to vec4(1.0) (opaque
     white).
 
-::: {.note}
+:::note
 In a very complex material def this variable could already have been
 assigned with a previous Shader Node output.
 :::

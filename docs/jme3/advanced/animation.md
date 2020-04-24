@@ -295,7 +295,7 @@ Playing Animations
 
 Animations are played by channel.
 
-::: {.note}
+:::note
 Whether the animation channel plays continuously or only once, depends
 on the Loop properties you have set.
 :::

@@ -172,7 +172,7 @@ terrain.](/images/jme3/beginner/alphamap.png)
 
 -   `SpecularMap`
 
-::: {.note}
+:::note
 `DiffuseMap_0_scale` is a float value (e.g. 1.0f); you must specify one
 scale per Diffuse Map.
 :::

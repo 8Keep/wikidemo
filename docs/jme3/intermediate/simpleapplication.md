@@ -18,7 +18,7 @@ extend [AbstractAppState](../../jme3/advanced/application_states)
 (don't extend SimpleApplication once more).
 :::
 
-::: {.note}
+:::note
 The SimpleApplication class is undergoing changes. To understand how
 these changes may affect your projects and how to best prepare for them,
 see [The Future of

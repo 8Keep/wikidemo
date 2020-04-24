@@ -219,7 +219,7 @@ When reading your saved file, the
 class will see that the `name` field is `null` and this is when the
 defVal is set.
 
-::: {.note}
+:::note
 If you rely on the compiler to initialize class or instance variables
 for you, this can lead too unintended consequences.
 

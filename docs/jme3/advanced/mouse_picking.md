@@ -4,7 +4,7 @@ implement aiming and shooting, casting spells, picking up objects,
 selecting targets, dragging and moving objects, etc. Mouse picking can
 be done using fixed crosshairs, or using the mouse pointer.
 
-![mouse-picking.png](/images/jme3/advanced/mouse-picking.png)
+![mouse-picking.png](../../../images/jme3/advanced/mouse-picking.png)
 
 See [Input Handling](../../jme3/advanced/input_handling) for details
 on how to define the necessary input triggers, input mappings, and input

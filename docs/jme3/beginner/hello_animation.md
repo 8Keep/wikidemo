@@ -171,7 +171,7 @@ in. You can access the subnode with the following code.
 player.getChild("Subnode").getControl(AnimControl.class);
 ```
 
-::: {.note}
+:::note
 In response to a question about animations on different channels
 interefering with each other, **Nehon on the jME forum
 [wrote](http://jmonkeyengine.org/groups/general-2/forum/topic/helloanimation-animations-seem-to-be-clashing/#post-180994),**

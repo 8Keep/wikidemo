@@ -32,7 +32,7 @@ Element el = new Element(
 );
 ```
 
-::: {.note}
+:::note
 All setter provide getters.
 :::
 
@@ -182,7 +182,7 @@ el.setIsDragDropDropElement(boolean isDropElement);
 screen.getDropObject();
 ```
 
-::: {.note}
+:::note
 You must manage your own list of acceptable drop objects as any Element
 flagged as isDropObject will be returned.
 :::

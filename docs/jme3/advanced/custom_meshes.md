@@ -1,10 +1,10 @@
-![custom\_mesh.png](/images/jme3/advanced/custom_mesh.png)
+![custom\_mesh.png](/wikidemo/images//jme3/advanced/custom_mesh.png)
 
 Use the Mesh class to create custom shapes that go beyond Quad, Box,
 Cylinder, and Sphere, even procedural shapes are possible. Thank you to
 KayTrance for providing the sample code!
 
-::: {.note}
+:::note
 In this tutorial, we (re)create a very simple rectangular mesh (a quad),
 and we have a look at different ways of coloring it. Coding a custom
 quad may not be very useful because it's exactly the same as the

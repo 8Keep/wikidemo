@@ -1,7 +1,7 @@
 Formulas
 ========
 
-::: {.note}
+:::note
 Typically you have to string these formulas together. Look in the table
 for what you want, and what you have. If the two are not the same line,
 than you need conversion steps inbetween. E.g. if you have an angle in

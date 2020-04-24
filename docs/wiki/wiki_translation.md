@@ -42,7 +42,7 @@ You will need to meet these requirements to continue:
 -   Either [Git](https://help.github.com/articles/set-up-git/) or the
     [Atom Editor](../wiki/atom_editor) installed on your system.
 
-::: {.note}
+:::note
 The Atom editor also has a [Git Plus](https://atom.io/packages/git-plus)
 package that uses Git if it's already on your system. Open
 `File Settings` and enter "git" into the search box to locate and
@@ -86,7 +86,7 @@ before you do anything else.
         link and scroll down to the "GitHub Pages" panel for more
         configuration options and to see your sites new URL.
 
-        ::: {.note}
+        :::note
         There are two URLs you will need for configuration.
 
         -   Your `gh-pages` URL: https://username.github.io/repo-name/

@@ -7,7 +7,7 @@ published on gamedev.net. Here's a video:
 
 ![water-post.png](/images/jme3/advanced/water-post.png)
 
-::: {.note}
+:::note
 The SeaMonkey WaterFilter is ideal for oceans and lakes, and especially
 for under-water scenes. If you only need a small simple water surface,
 such as a water trough or a shallow fountain, the

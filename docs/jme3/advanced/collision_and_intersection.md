@@ -185,7 +185,7 @@ Supported types:
     sphere. Typically used for mobile characters. (Currently not
     supported.)
 
-::: {.note}
+:::note
 Note: If you are looking for bounding volumes for physical objects, use
 [CollisionShapes](../../jme3/advanced/physics).
 :::

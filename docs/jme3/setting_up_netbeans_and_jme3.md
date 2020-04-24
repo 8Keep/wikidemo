@@ -100,7 +100,7 @@ The necessary libraries are now on the classpath and should appear in
 the Libraries list. You now have a global library you can add to any
 project.
 
-::: {.note}
+:::note
 If you configured your library with sources and javadocs, open a class
 of your HelloJME3 project, place the caret into a jme3 class, and press
 Ctrl + Space to see the javadoc popup, as well as code-completion.

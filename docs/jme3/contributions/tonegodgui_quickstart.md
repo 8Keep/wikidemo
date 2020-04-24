@@ -25,7 +25,7 @@ two ways.
     guiNode.addControl(screen);
     ```
 
-::: {.note}
+:::note
 style\_map.xml consists of a list of xml documents containing varied
 styles for varied use. You can copy the default style map and replace
 one, many, all with project specific style (Covered later in this
@@ -82,7 +82,7 @@ screen.addElement(win);
 Any parameters not specified are derived from the defaults specified in
 the Window style information.
 
-::: {.note}
+:::note
 The occasional control extends this contructor format, adding an
 additional Orientation parameter or possibly a boolean flag for controls
 that provide multiple configurable layouts.
@@ -96,7 +96,7 @@ is called because the Button requires the use of stillPressed events.
 This and much more will be cover in later documentation. Again, you ave
 the three options above for creating an instance of the button control.
 
-::: {.note}
+:::note
 The button control (like many controls) is abstract and provides methods
 for handling user input. All events can be consumed by using
 evt.setConsumed();
@@ -139,7 +139,7 @@ ButtonAdapter makeWindow = new ButtonAdapter( screen, “Btn1″, new Vector2f(1
 win.addChild(makeWindow);
 ```
 
-::: {.note}
+:::note
 For layout purposes, it is suggested that you add all child Elements toa
 control PRIOR to adding the control to the screen... so, ceate a window,
 add a button, add window to screen.
@@ -181,7 +181,7 @@ setDockW(boolean); // also enables/disables dock east
 setIgnoreMouse(boolean);
 ```
 
-::: {.note}
+:::note
 There are far more behaviors, however, these are the most critical when
 creating custom controls to ensure that nested Elements react as you
 would like when a parent Element is altered.

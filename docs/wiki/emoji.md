@@ -90,7 +90,7 @@ following syntax.
     emoji:heart[2x] // the "[2x]" is a size modifier
     emoji:rage[]
 
-::: {.note}
+:::note
 You can change the icon size with the size modifier `[2x]`.
 
 `emoji:heart[]` emoji:heart\[\] `emoji:heart[2x]` emoji:heart\[2x\]

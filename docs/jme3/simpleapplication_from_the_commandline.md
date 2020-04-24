@@ -221,7 +221,7 @@ We build the sample application into the build directory...
     cd build
     java -cp "../lib/eventbus.jar:../lib/j-ogg-all.jar:../lib/jme3-lwjgl.jar:../lib/jme3-bullet.jar:../lib/jinput.jar:../lib/lwjgl.jar:../lib/stack-alloc.jar:../lib/vecmath.jar:../lib/xpp3.jar:../lib/jme3-blender.jar:../lib/jme3-core.jar:../lib/jme3-desktop.jar:../lib/jme3-jogg.jar:../lib/jme3-plugins.jar:../lib/jme3-terrain.jar:../lib/jme3-testdata.jar:../lib/jme3-niftygui.jar:../lib/nifty-default-controls.jar:../lib/nifty-examples.jar:../lib/nifty-style-black.jar:../lib/nifty.jar:." mygame/HelloJME3
 
-::: {.note}
+:::note
 If you use Windows, the classpath separator is \\ instead of /.
 :::
 

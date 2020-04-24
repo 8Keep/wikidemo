@@ -65,7 +65,7 @@ Getting AudioNode Properties
 | getPitch()                        | Returns the pitch.                |
 +-----------------------------------+-----------------------------------+
 
-::: {.note}
+:::note
 There are other obvious getters to poll the status of all corresponding
 setters listed here.
 :::
@@ -217,7 +217,7 @@ myAudioNode.pause();
 myAudioNode.stop();
 ```
 
-::: {.note}
+:::note
 Whether an Audio Node plays continuously or only once, depends on the
 Loop properties you have set above!
 :::

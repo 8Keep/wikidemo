@@ -1,4 +1,4 @@
-::: {.note}
+:::note
 Deprecated. Look at
 <https://hub.jmonkeyengine.org/t/design-question-terrain/28771> instead.
 :::

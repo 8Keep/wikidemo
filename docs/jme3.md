@@ -2,11 +2,11 @@
 id: jme3
 title: jME3
 ---
-```note
+:::tip
 This is an Admonition. You will see many of these scattered throughout
 the Wiki. See the [Admonition Definitions](wiki/admonitions) for the
 meaning of this and all the other Admonitions.
-```
+:::
 
 # Installation
 
@@ -280,8 +280,8 @@ at a time, champ\! :)
   - [Video: Create jme3 compatible models in
     blender](http://www.youtube.com/watch?v=3481ueuDJwQ&feature=youtu.be)
 
-  - CadNav ![long arrow right](./images/icons/long-arrow-right.png)
-    Mixamo ![long arrow right](./images/icons/long-arrow-right.png) JME
+  - CadNav >
+    Mixamo > JME
     Workflow \[Video\]
     
       - [Part1- Download Free Human 3D Model From

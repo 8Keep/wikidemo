@@ -42,7 +42,7 @@ applyDefaultTexture();
 ```
 
 ![A 256x256 mercator projection of planet
-earth.](/images/jme3/tools/globe.png)
+earth.](/wikidemo/images/jme3/tools/globe.png)
 
 In essence, 3D chart visualization is achieved by converting the
 polygons composing planet earth's landmass into float matrices whereby
@@ -395,7 +395,7 @@ algorithm can be summarized as follows:
 
 ![Summarizing process of visualizing a chart. From left to right: We
 draw the coordinates downloaded from noaa.gov.
-Ideally](/images/jme3/tools/heightmap_modelling.png) **Above:**
+Ideally](/wikidemo/images/jme3/tools/heightmap_modelling.png) **Above:**
 Summarizing process of visualizing a chart. From left to right: We draw
 the coordinates downloaded from noaa.gov. Ideally, each polygon should
 be filled in a light colour, whilst the surrounding ocean remains dark.
@@ -497,8 +497,8 @@ chart of Ireland and your heightmap is named Ireland.png then your
 descriptor file should be named *Ireland.desc*, while your alphamap
 should be named *Ireland.png.Alphamap.png*.
 
-![The Tile Tree](/images/jme3/tools/slide1.jpg) ![Looking inside a
-node...​](/images/jme3/tools/slide2.jpg) **Above:** A look inside the
+![The Tile Tree](/wikidemo/images/jme3/tools/slide1.jpg) ![Looking inside a
+node...​](/wikidemo/images/jme3/tools/slide2.jpg) **Above:** A look inside the
 "Ireland node. We can see the heightmap, descriptor file and alphamap.
 
 ```java
@@ -933,4 +933,4 @@ public void createGrid(double longitudeLevel, float increment) {
     }
 ```
 
-![screen\_shot\_2011-12-18\_at\_13.12.01.png](/images/jme3/tools/screen_shot_2011-12-18_at_13.12.01.png)
+![screen\_shot\_2011-12-18\_at\_13.12.01.png](/wikidemo/images/jme3/tools/screen_shot_2011-12-18_at_13.12.01.png)

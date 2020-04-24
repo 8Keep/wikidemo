@@ -43,7 +43,7 @@ Window win = new Window(screen, “win”, new Vector2f(15, 15), new Vector2f(40
 );
 ```
 
-::: {.note}
+:::note
 Once again, default behaviors, such as moving, and resizing can be
 disabled calling the appropriate setters from the
 [Element](../../../jme3/contributions/tonegodgui/element) class.

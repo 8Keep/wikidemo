@@ -18,8 +18,7 @@ To fork the Wiki repository into your GitHub Account:
 
 1.  Navigate to <https://github.com/jMonkeyEngine/wiki>.
 
-2.  In the menu at the top of the page, select the ![code
-    fork](./images/icons/code-fork.png)**Fork** button.
+2.  In the menu at the top of the page, select the **Fork** button.
 
 Downloading the Sources
 =======================
@@ -142,7 +141,7 @@ your fork.
 
 2.  Click the New Pull Request button at the top.
 
-    ::: {.note}
+    :::note
     The Wiki repository will be on the left and your repository will be
     on the right.
     :::

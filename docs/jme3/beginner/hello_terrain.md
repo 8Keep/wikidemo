@@ -9,7 +9,7 @@ terrain look good.
 
 ![beginner-terrain.png](/images/jme3/beginner/beginner-terrain.png)
 
-::: {.note}
+:::note
 If you get an error when trying to create your `ImageBasedHeightMap`
 object, you may need to update the SDK, click on
 `Help Check for Updates`.

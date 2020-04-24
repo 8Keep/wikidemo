@@ -38,7 +38,7 @@ That's all!
 Advanced Way
 ============
 
-::: {.note}
+:::note
 This way of A/V recording is still in development. It works for all of
 jMonkeyEngine's test cases. If you experience any problems or if
 something isn't clear, please [let me

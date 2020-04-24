@@ -63,13 +63,13 @@ public class TestTutorial extends SimpleApplication{
 }
 ```
 
-::: {.note}
+:::note
 This code uses the test settings offered by the framework - You can
 replace the call `CubesTestAssets.getSettings(this);` as described
 [here](../../../jme3/contributions/cubes/settings).
 :::
 
-::: {.note}
+:::note
 This code uses the test blocks offered by the framework - You can
 replace the call `CubesTestAssets.registerBlocks();` as described
 [here](../../../jme3/contributions/cubes/register_your_blocks).

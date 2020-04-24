@@ -25,7 +25,7 @@ Screen screen = new Screen(this, “tonegod/gui/style/def/style_map.xml”);
 guiNode.addControl(screen);
 ```
 
-::: {.note}
+:::note
 style\_map.xml consists of a list of xml documents containing varied
 styles for varied use. You can copy the default style map and replace
 one, many, all with project specific style (Covered later in this
@@ -86,7 +86,7 @@ Window win = new Window(screen, “win”, new Vector2f(15, 15), new Vector2f(40
 screen.addElement(win);
 ```
 
-::: {.note}
+:::note
 3 new constructor options have been added recently. They are the same as
 the 3 above minus the UID parameter.
 :::
@@ -94,7 +94,7 @@ the 3 above minus the UID parameter.
 Any parameters not specified are derived from the defaults specified in
 the Window style information.
 
-::: {.note}
+:::note
 The occasional control extends this contructor format, adding an
 additional Orientation parameter or possibly a boolean flag for controls
 that provide multiple configurable layouts.
@@ -112,7 +112,7 @@ is called because the Button requires the use of stillPressed events.
 This and much more will be cover in later documentation. Again, you ave
 the three options above for creating an instance of the button control.
 
-::: {.note}
+:::note
 The button control (like many controls) is abstract and provides methods
 for handling user input.
 :::
@@ -198,7 +198,7 @@ element.setDockW(boolean); // also enables/disables dock east
 element.setIgnoreMouse(boolean);
 ```
 
-::: {.note}
+:::note
 There are more behaviors, however, these are the most critical when
 creating custom controls to ensure that nested Elements react as you
 would like when a parent Element is altered.

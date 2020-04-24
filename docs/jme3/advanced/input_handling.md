@@ -29,7 +29,7 @@ Choose one or several key/mouse events for the interaction. We use
 and `JoyButtonTrigger` constants from the `com.jme3.input.controls`
 package.
 
-::: {.note}
+:::note
 The MouseAxis and JoyAxis triggers go along the X axis (right/left) or Y
 axis (up/down). These Triggers come with extra booleans for the negative
 half of the axis (left, down). Remember to write code that listens to
@@ -188,7 +188,7 @@ AnalogListener and ActionListener. You can use one or both listeners in
 the same application. Add one or both of the following code snippets to
 your main SimpleApplication-based class to activate the listeners.
 
-::: {.note}
+:::note
 The two input listeners do not know, and do not care, which actual key
 was pressed. They only know which *named input mapping* was triggered.
 :::

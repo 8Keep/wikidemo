@@ -344,7 +344,7 @@ public class TestLoadingScreen extends SimpleApplication implements
 }
 ```
 
-::: {.note}
+:::note
 Try and add all controls near the end, as their update loops may begin
 executing.
 :::

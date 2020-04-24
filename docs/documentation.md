@@ -9,16 +9,16 @@ game project going. You can search the contents of this wiki using the
 
 You are also very welcome to fix mistakes or spelling as well as unclear
 paragraphs using the “Wiki” menu “Edit” ![pencil
-square](/images/icons/pencil-square.png) and “Add” ![plus
-square](/images/icons/plus-square.png) buttons. You have to be logged
+square](/wikidemo/images/icons/pencil-square.png) and “Add” ![plus
+square](/wikidemo/images/icons/plus-square.png) buttons. You have to be logged
 into GitHub to edit the wiki. You can learn more about editing and
 contributing under the [Contribute](#contribute#) heading.
 
-```note
+:::note
 This is an Admonition. You will see many of these scattered throughout
 the Wiki. See the [Admonition Definitions](wiki/admonitions) for the
 meaning of this and all the other Admonitions.
-```
+:::
 
 # Forum
 

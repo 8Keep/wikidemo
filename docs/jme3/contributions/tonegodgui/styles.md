@@ -188,7 +188,7 @@ Each entry in the style\_map.xml file are formatted as follows:
 <style control=”CustomControl” path=”somePath/MyNewControl.xml” />
 ```
 
-::: {.note}
+:::note
 The control= property is not enforced, it is their for you to keep track
 of what XML file is used for what control.
 :::

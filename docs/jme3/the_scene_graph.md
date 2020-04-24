@@ -39,7 +39,7 @@ coordinate system.\
 Example: The point `new Vector3f(3,-5,1)` is 3 steps to the right, 5
 steps down, and 1 towards you.
 
-::: {.note}
+:::note
 The unit of meassurement ("one step) in jME3 is the **world unit**,
 short: wu. Typically, 1 wu is considered to be one meter. As long as you
 are consistant throughout your game, 1 wu can be any distance you like.
@@ -107,7 +107,7 @@ inherits the `rootNode` object from the `SimpleApplication` class.
 All objects in the scene graph are in a parent-child relationship. When
 you transform (move, rotate, scale) one parent, all its children follow.
 
-::: {.note}
+:::note
 The scene graph only manages the parent-child relationship of spatials.
 The actual location, rotation, or scale of an object is stored inside
 each Spatial.

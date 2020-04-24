@@ -109,7 +109,7 @@ Pictures
 Core elements and its alternative
 ---------------------------------
 
-::: {.note}
+:::note
 Definition notations:
 :::
 

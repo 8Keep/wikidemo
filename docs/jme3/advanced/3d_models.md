@@ -22,7 +22,7 @@ To use 3D models in a jME3 application:
         "Models/MonkeyHead/MonkeyHead.mesh.xml" );
     ```
 
-::: {.note}
+:::note
 (For the release build:) Use one of methods recommended for your 3D
 model [Supported External File
 Type](../../jme3/features.html.xml#supported-external-file-types#) to

@@ -195,7 +195,7 @@ Pipeline](../../jme3/intermediate/multi-media_asset_pipeline) here.
 Development Phase
 =================
 
-::: {.note}
+:::note
 Many game developers dream of creating their very own MMORPG with
 full-physics, AI, post-rendering effects, multi-player networking,
 procedurally generated maps, and customizable characters. So why aren't
@@ -405,7 +405,7 @@ classes of their own. In jME3, these resuable classes are called
     -   A Control only has control over and access to the spatial that
         it is attached to (and its sub-spatials).
 
-::: {.note}
+:::note
 A game contains algorithms that do not directly affect spatials (for
 example, AI pathfinding code that calculates and chooses paths, but does
 not actually move spatials). You do not need to put such non-spatial

@@ -52,7 +52,7 @@ give you my cheat-sheet:
 |                      |                      | head.                 |
 +----------------------+----------------------+-----------------------+
 
-::: {.note}
+:::note
 These are the three most common examples -- technically you can rotate
 around any axis expressed by a vector.
 :::

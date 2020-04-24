@@ -8,7 +8,7 @@ back about 10-40 fps, but the result looks much better.
 
 See Example: <http://i.imgur.com/0yiv9.jpg>
 
-![anisotropy\_example\_mifth\_01.jpg](/images/jme3/advanced/anisotropy_example_mifth_01.jpg)
+![anisotropy\_example\_mifth\_01.jpg](/wikidemo/images/jme3/advanced/anisotropy_example_mifth_01.jpg)
 
 JME has DEFAULT AnisotropicFiltering = 0. So, if you make a game for
 Windows/Linux/Mac.. you need to set the Anisotropic Filtering more than

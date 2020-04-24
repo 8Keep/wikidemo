@@ -203,7 +203,7 @@ sun.setDirection(new Vector3f(-0.1f, -0.7f, -1.0f).normalizeLocal());
 rootNode.addLight(sun);
 ```
 
-::: {.note}
+:::note
 You do not need to create a Material if you exported the model with a
 material. Remember to add a light source, as shown, otherwise the
 material (and the whole model) is not visible!

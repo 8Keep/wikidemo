@@ -154,7 +154,7 @@ JME3 can expose pre-computed global uniforms to your shaders. You must
 specify the ones that are required for your shader in the
 WorldParameter's section of the material definition file (.j3md).
 
-::: {.note}
+:::note
 In the shader, the uniform names will be prefixed by a "g\_".
 :::
 
@@ -205,7 +205,7 @@ You can find a complete list of those attribute in the Type enum of the
 VertexBuffer in
 [VertexBuffer.java](https://github.com/jMonkeyEngine/jmonkeyengine/blob/master/jme3-core/src/main/java/com/jme3/scene/VertexBuffer.java).
 
-::: {.note}
+:::note
 In the shader the attributes names will be prefixed by an "in".
 :::
 

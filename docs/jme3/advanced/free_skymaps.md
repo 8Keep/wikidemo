@@ -26,7 +26,7 @@ such, I will translate it to paper for you. You can view his video by
 following this link: [jMonkeyEngine Tutorial - How to create skymaps
 using blender](https://youtu.be/z38Aikz5nE8).
 
-::: {.note}
+:::note
 This tutorial is an adaptation of contributor glaucomardanos production,
 not an exact duplicate.\
 These steps assume you're using the default blender setup and apply to

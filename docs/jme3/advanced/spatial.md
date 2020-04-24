@@ -127,7 +127,7 @@ models. Using the [Asset
 Manager](../../jme3/advanced/asset_manager)\'s `loadModel()` method
 will automatically do the right thing for your models.
 
-::: {.note}
+:::note
 "Box worlds are not made up of statically cloned `Box()` shapes, this
 would still be too slow for large worlds. To learn how to make real fast
 box worlds, search the web for *voxelization* techniques.

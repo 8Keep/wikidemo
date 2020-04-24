@@ -116,7 +116,7 @@ This uses Opengl hardware gamma correction that uses an approximated
 Gamma value of 2.2 and uses the following formula : color =
 pow(color,1/gamma)
 
-::: {.note}
+:::note
 This will not yield exact results, as the real gamma can vary depending
 on the monitor.\
 If this is a problem, please refer to the "handling gamma correction in
@@ -232,7 +232,7 @@ color = pow (color, gamma) where gamma = 2.2;
 If you want to retrieve those values from a ColorRGBA, you can call the
 getAsSRGB method. The values will be converted back to sRGB color Space.
 
-::: {.note}
+:::note
 The return type of that method is a Vector4f and not a ColorRGBA,
 because as stated before, all ColorRGBA objects r,g,b attributes are
 assumed in Linear color space.

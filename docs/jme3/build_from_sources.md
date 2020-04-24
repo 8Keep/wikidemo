@@ -45,7 +45,7 @@ download and update files in the `./jmonkeyengine/` sub-directory.
     This file builds the engine using the gradle wrapper and places them
     in your local repository.
 
-    ::: {.note}
+    :::note
     This is USER-SPECIFIC. My files are stored in
     `C:\Users\James\.m2\repository`
     :::

@@ -127,7 +127,7 @@ your scene.xml file.
 Every Nifty GUI must have a start screen. The others (in this example,
 the HUD screen) are optional.
 
-::: {.note}
+:::note
 In the following examples, the XML schema header is abbreviated to just
 `<nifty>`.
 :::

@@ -1,4 +1,4 @@
-::: {.note}
+:::note
 This is a Note Admonition. They are used to give you additionl
 information about the topic at hand.
 :::

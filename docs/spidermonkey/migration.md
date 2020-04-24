@@ -173,7 +173,7 @@ public class MyGenericListener implements MessageListener<MessageConnection> {
 
 Your listeners will fall into one of those three categories.
 
-::: {.note}
+:::note
 Several of the old MessageListener's methods have gone away. The
 object-based methods didn't fit with the new API and messageSent()
 seemed of little utility. It could be resurrected if there is demand.
@@ -206,7 +206,7 @@ After you've done all of that, the compiler will be complaining about
 the fact that send(), broadcast(), etc. no longer throw IOException. So
 remove all of those try/catch blocks.
 
-::: {.note}
+:::note
 The truth is that even in the old API, expecting a real IOException from
 these methods was unreasonable because often times the message was
 queued and actually sent later by a separate thread. The new API assumes
@@ -237,7 +237,7 @@ player ID and when to use the old client ID as the new client ID serves
 both purposes. This leaves the game to be able to define its own player
 ID based on whatever user criteria it wants.
 
-::: {.note}
+:::note
 Many of the reasons for accessing the client ID on the server can now be
 taken care of using the session attributes on HostedConnection. It seems
 like a common use-case for these IDs was to look-up

@@ -1,4 +1,4 @@
-::: {.note}
+:::note
 By default, the mouse pointer is invisible, and the mouse is set up to
 control the camera rotation.
 :::

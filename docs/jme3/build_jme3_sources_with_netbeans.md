@@ -17,7 +17,7 @@ To fork the jMonkeyEngine repository into your GitHub Account:
 2.  In the menu at the top of the page, select the ![code
     fork](./images/icons/code-fork.png)**Fork** button.
 
-::: {.note}
+:::note
 In the following, always replace \~ with the path to your home
 directory.
 :::
@@ -130,7 +130,7 @@ To submit changes to the jMonkeyEngine repository after pushing them to
 6.  Click the green button Create pull request again to submit the
     request.
 
-::: {.note}
+:::note
 ::: {.title}
 Everyone
 :::

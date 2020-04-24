@@ -88,7 +88,7 @@ To create an animation from scratch do the following:
         mapped to the model vertices initially. Select With Automatic
         Weights.
 
-        ::: {.note}
+        :::note
         When you parent your mesh to the armature, Blender automatically
         adds the `Armature` modifier to the mesh.
 
