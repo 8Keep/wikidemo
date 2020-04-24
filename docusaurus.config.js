@@ -52,6 +52,6 @@ module.exports = {
     ],
   ],
   scripts: [
-    '/js/dark_default.js',
+    './js/dark_default.js',
   ],
 };
