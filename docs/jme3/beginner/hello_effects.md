@@ -1,7 +1,7 @@
 Previous: [Hello Audio](../../jme3/beginner/hello_audio), Next:
 [Hello Physics](../../jme3/beginner/hello_physics)
 
-![beginner-effect-fire.png](/wikidemo/images//jme3/beginner/beginner-effect-fire.png)
+![beginner-effect-fire.png](../../../images/jme3/beginner/beginner-effect-fire.png)
 
 When you see one of the following in a game, then a particle system is
 likely behind it:
@@ -109,7 +109,7 @@ here.](https://github.com/jMonkeyEngine/jmonkeyengine/tree/master/jme3-examples/
 Texture Animation and Variation
 -------------------------------
 
-![Debris.png](/images/jme3/beginner/Debris.png)
+![Debris.png](../../../images/jme3/beginner/Debris.png)
 
 Start by choosing a material texture for your effect. If you provide the
 emitter with a set of textures (see image), it can use them either for
@@ -160,29 +160,13 @@ Default Particle Textures
 The following particle textures included in `test-data.jar`. You can
 copy and use them in your own effects.
 
-+----------------------+----------------------+-----------------------+
-| Texture Path         | Dimension            | Preview               |
-+======================+======================+=======================+
-| Effects/             | 3\*3                 | ![D                   |
-| Explosion/Debris.png |                      | ebris.png](/images/jme3 |
-|                      |                      | /beginner/Debris.png) |
-+----------------------+----------------------+-----------------------+
-| Effects              | 2\*2                 | !                     |
-| /Explosion/flame.png |                      | [flame.png](/images/jme |
-|                      |                      | 3/beginner/flame.png) |
-+----------------------+----------------------+-----------------------+
-| Effects/Exp          | 1\*1                 | ![shockwa             |
-| losion/shockwave.png |                      | ve.png](/images/jme3/be |
-|                      |                      | ginner/shockwave.png) |
-+----------------------+----------------------+-----------------------+
-| Effects/Expl         | 1\*3                 | ![smoketrai           |
-| osion/smoketrail.png |                      | l.png](/images/jme3/beg |
-|                      |                      | inner/smoketrail.png) |
-+----------------------+----------------------+-----------------------+
-| Eff                  | 1\*15                | !                     |
-| ects/Smoke/Smoke.png |                      | [Smoke.png](/images/jme |
-|                      |                      | 3/beginner/Smoke.png) |
-+----------------------+----------------------+-----------------------+
+| Texture Path                    | Dimension     | Preview                                                        |
+|---------------------------------|---------------|----------------------------------------------------------------|
+| Effects/Explosion/Debris.png    | 3\*3          | ![Debris.png](../../../images/jme3/beginner/Debris.png)        |
+| Effects/Explosion/flame.png     | 2\*2          | ![flame.png](../../../images/jme3/beginner/flame.png)          |
+| Effects/Explosion/shockwave.png | 1\*1          | ![shockwave.png](../../../images/jme3/beginner/shockwave.png)  |
+| Effects/Explosion/smoketrail.png| 1\*3          | ![smoketrail.png](../../../images/jme3/beginner/smoketrail.png)|
+| Effects/Smoke/Smoke.png         | 1\*15         | ![Smoke.png](../../../images/jme3/beginner/Smoke.png)          |
 
 Copy them into your `assets/Effects` directory to use them.
 
@@ -206,7 +190,7 @@ the fire example again.
     fire.setStartColor(new ColorRGBA(1f, 1f, 0f, 0.5f)); // yellow
 ```
 
-![flame.png](/images/jme3/beginner/flame.png)
+![flame.png](../../../images/jme3/beginner/flame.png)
 
 Compare the texture with the resulting effect.
 

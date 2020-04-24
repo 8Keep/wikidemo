@@ -9,7 +9,7 @@ how to set up the default first-person camera to work with
 physics-controlled navigation. You can use the solution shown here for
 first-person shooters, mazes, and similar games.
 
-![beginner-scene.png](/images/jme3/beginner/beginner-scene.png)
+![beginner-scene.png](../../../images/jme3/beginner/beginner-scene.png)
 
 Sample Code
 ===========

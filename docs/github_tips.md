@@ -15,7 +15,7 @@ To create a link to a specific line in a file located on github all you
 need to do is click the line number inside the file. A three dot tag
 will appear and the line will be highlighted in yellow.
 
-![github\_tag.png](/wikidemo/images/wiki/github_tag.png)
+![github\_tag.png](../images/wiki/github_tag.png)
 
 This will append the line number to the URL in your address bar with the
 format `#L<number>`, in our case `#L61`.
@@ -24,20 +24,20 @@ format `#L<number>`, in our case `#L61`.
 
 Click the three dot tag and a option menu will appear.
 
-![github\_tag\_menue.png](/wikidemo/images/wiki/github_tag_menue.png)
+![github\_tag\_menue.png](../images/wiki/github_tag_menue.png)
 
 Select the `Copy permalink` option and now you can paste the URL into
 any forum post or wiki issue and the code display window will show your
 selection like so:
 
-![github\_jme\_forum.png](/wikidemo/images/wiki/github_jme_forum.png)*jMonkey forum.*
+![github\_jme\_forum.png](../images/wiki/github_jme_forum.png)*jMonkey forum.*
 
 The same thing applies to github.
 
 
-![github\_issue\_write.png ](/wikidemo/images/wiki/github_issue_write.png)*Github issue.*
+![github\_issue\_write.png ](../images/wiki/github_issue_write.png)*Github issue.*
 
-![github\_issue\_preview.png](/wikidemo/images/wiki/github_issue_preview.png)
+![github\_issue\_preview.png](../images/wiki/github_issue_preview.png)
 
 If you want to select more than one line:
 
@@ -47,7 +47,7 @@ If you want to select more than one line:
 
 3.  Select the ending line number.
 
-![github\_multiline.png](/wikidemo/images/wiki/github_multiline.png)
+![github\_multiline.png](../images/wiki/github_multiline.png)
 
 All the lines between will be highlighted as well. This will change the
 URL using the format `#L<number>-L<number>`, in our case `#L83-L86`.

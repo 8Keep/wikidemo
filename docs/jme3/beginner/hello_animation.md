@@ -5,7 +5,7 @@ This tutorial shows how to add an animation controller and channels, and
 how to respond to user input by triggering an animation in a loaded
 model.
 
-![beginner-animation.png](/images/jme3/beginner/beginner-animation.png)
+![beginner-animation.png](../../../images/jme3/beginner/beginner-animation.png)
 
 :::note
 To use the example assets in a new jMonkeyEngine SDK project, RMB select

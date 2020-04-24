@@ -6,7 +6,7 @@ graph, using the jME [Asset
 Manager](../../jme3/advanced/asset_manager). You will also learn how
 to determine the correct paths, and which file formats to use.
 
-![beginner-assets-models.png](/images/jme3/beginner/beginner-assets-models.png)
+![beginner-assets-models.png](../../../images/jme3/beginner/beginner-assets-models.png)
 
 :::note
 [Trouble finding the files to run this
