@@ -1,7 +1,3 @@
-Previous: [Hello Input
-System](../../jme3/beginner/hello_input_system), Next: [Hello
-Animation](../../jme3/beginner/hello_animation)
-
 The term Material includes everything that influences what the surface
 of a 3D model looks like: The color, texture, shininess, and
 opacity/transparency. Plain coloring is covered in [Hello

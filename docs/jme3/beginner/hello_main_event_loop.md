@@ -1,6 +1,3 @@
-Previous: [Hello Assets](../../jme3/beginner/hello_asset), Next:
-[Hello Input System](../../jme3/beginner/hello_input_system)
-
 Now that you know how to load assets, such as 3D models, you want to
 implement some gameplay that uses these assets. In this tutorial we look
 at the update loop. The update loop of your game is where the action

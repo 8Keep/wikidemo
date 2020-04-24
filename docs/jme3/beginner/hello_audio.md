@@ -1,6 +1,3 @@
-Previous: [Hello Terrain](../../jme3/beginner/hello_terrain), Next:
-[Hello Effects](../../jme3/beginner/hello_effects)
-
 This tutorial explains how to add 3D sound to a game, and how to make
 sounds play together with events, such as clicking. You learn how to use
 an Audio Listener and Audio Nodes. You also make use of an Action

@@ -1,6 +1,3 @@
-Previous: [Hello Node](../../jme3/beginner/hello_node), Next: [Hello
-Update Loop](../../jme3/beginner/hello_main_event_loop)
-
 In this tutorial we will learn to load 3D models and text into the scene
 graph, using the jME [Asset
 Manager](../../jme3/advanced/asset_manager). You will also learn how

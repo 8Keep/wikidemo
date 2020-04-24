@@ -1,6 +1,3 @@
-Previous: [Hello Audio](../../jme3/beginner/hello_audio), Next:
-[Hello Physics](../../jme3/beginner/hello_physics)
-
 ![beginner-effect-fire.png](../../../images/jme3/beginner/beginner-effect-fire.png)
 
 When you see one of the following in a game, then a particle system is

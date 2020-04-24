@@ -1,6 +1,3 @@
-Previous: [Hello Effects](../../jme3/beginner/hello_effects), Next:
-[JME 3 documentation](../../jme3)
-
 Do you remember the [Hello
 Collision](../../jme3/beginner/hello_collision) tutorial where you
 made the model of a town solid and walked through it in a first-person

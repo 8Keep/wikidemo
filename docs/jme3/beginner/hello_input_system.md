@@ -1,7 +1,3 @@
-Previous: [Hello Update
-Loop](../../jme3/beginner/hello_main_event_loop), Next: [Hello
-Material](../../jme3/beginner/hello_material)
-
 By default, SimpleApplication sets up a camera control that allows you
 to steer the camera with the W A S D keys, the arrow keys, and the
 mouse. You can use it as a flying first-person camera right away. But

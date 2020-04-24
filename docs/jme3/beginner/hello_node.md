@@ -1,7 +1,3 @@
-Previous: [Hello
-SimpleApplication](../../jme3/beginner/hello_simpleapplication),
-Next: [Hello Assets](../../jme3/beginner/hello_asset).
-
 In this tutorial we will have a look at the creation of a 3D scene.
 
 -   This tutorial assumes that you know what [the Scene

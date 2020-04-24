@@ -1,6 +1,3 @@
-Previous: [Hello Material](../../jme3/beginner/hello_material),
-Next: [Hello Picking](../../jme3/beginner/hello_picking)
-
 This tutorial shows how to add an animation controller and channels, and
 how to respond to user input by triggering an animation in a loaded
 model.

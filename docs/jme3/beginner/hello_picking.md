@@ -1,6 +1,3 @@
-Previous: [Hello Animation](../../jme3/beginner/hello_animation),
-Next: [Hello Collision](../../jme3/beginner/hello_collision)
-
 Typical interactions in games include shooting, picking up objects, and
 opening doors. From an implementation point of view, these apparently
 different interactions are surprisingly similar: The user first aims and

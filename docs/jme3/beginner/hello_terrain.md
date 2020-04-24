@@ -1,6 +1,3 @@
-Previous: [Hello Collision](../../jme3/beginner/hello_collision),
-Next: [Hello Audio](../../jme3/beginner/hello_audio)
-
 One way to create a 3D landscape is to sculpt a huge terrain model. This
 gives you a lot of artistic freedom -- but rendering such a huge model
 can be quite slow. This tutorial explains how to create fast-rendering

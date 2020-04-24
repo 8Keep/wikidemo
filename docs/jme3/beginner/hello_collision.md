@@ -1,6 +1,3 @@
-Previous: [Hello Picking](../../jme3/beginner/hello_picking), Next:
-[Hello Terrain](../../jme3/beginner/hello_terrain)
-
 This tutorial demonstrates how you load a scene model and give it solid
 walls and floors for a character to walk around. You use a
 `RigidBodyControl` for the static collidable scene, and a
